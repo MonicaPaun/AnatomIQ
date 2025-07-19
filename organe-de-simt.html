@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Organe de simț</title>
+  <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+ 
+  <link rel="stylesheet" href="assets/css/style-org.css" />
+
+   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<!--Google Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- Butonul pentru meniul retractabil -->
+   <div id="menu-toggle" class="menu-toggle">
+    <i class='bx bx-menu'></i> <!-- Iconița pentru meniu -->
+  </div>
+
+  <!-- Buton Notițe în colțul dreapta sus -->
+<div id="notite-btn-container" class="top-right">
+  <button id="notiteBtn" class="notite-btn" onclick="toggleNotite()">
+    <i class='bx bx-notepad'></i> Notițe
+  </button>
+</div>
+
+<div id="notitePanel" class="notite-panel">
+  <div class="notite-header">
+    <span>Notițele mele</span>
+    <span class="close-small" onclick="toggleNotite()">&times;</span>
+  </div>
+  <iframe src="notite1.html"></iframe>
+  
+ </div>
+
+<div id="side-menu" class="side-menu">
+  <ul>
+    <li class="has-submenu">
+      <a href="#"><i class='bx bx-book-open'></i>Introducere<i class='bx bx-chevron-down arrow'></i></a>
+      <ul class="submenu">
+        <li><a href="#ce-este"><i class='bx bx-question-mark'></i> Ce sunt organele de simț ?</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#aeroba"><i class='bx bx-bug '></i>Tipuri de receptori senzoriali</a></li>
+    <li><a href="#organe-simt"><i class='bx bx-leaf '></i>Organele de simț ale corpului uman</a></li>
+
+   
+  <li class="has-submenu">
+      <a href="#"><i class='bx bx-wind'></i>Organe de simț<i class='bx bx-chevron-down arrow'></i></a>
+      <ul class="submenu">
+        <li><a href="#ochiul"><i class='bx bx-cloud'></i>Ochiul</a></li>
+        <li><a href="#organ-urechea"><i class='bx bx-cloud'></i>Urechea</a></li>
+        <li><a href="#nasul"><i class='bx bx-cloud'></i>Nasul</a></li>
+        <li><a href="#organ-limba"><i class='bx bx-cloud'></i>Limba</a></li>
+        <li><a href="#pielea"><i class='bx bx-cloud'></i>Pielea</a></li>
+      </ul>
+    </li>
+ <li><a href="#afectiuni"><i class='bx bx-health'></i>Afecțiuni comune ale organelor de simț</a></li>
+    <li><a href="#harta-sistem"><i class='bx bx-health'></i>Hartă schematică senzorială</a></li>
+  </ul>
+</div>
+
+  <!-- HEADER -->
+  <header class="hero">
+    <h1>Organele de simț </h1>
+  <p>Ne ajută să simțim lumea din jur: văz, auz, miros, gust și atingere.</p>
+    <div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Caută..." autocomplete="off" />
+  <div id="searchInfo" style="font-size: 0.9em; margin-top: 4px; color: #555;"></div>
+</div>
+  </header>
+
+<div id="searchContainer">
+ <!-- CE ESTE? -->
+<section id="ce-este" class="section">
+  <h2>Ce sunt organele de simț?</h2>
+
+  <div class="content-wrapper">
+    <p>
+      <span class="highlight">Organele de simț</span> sunt structuri specializate care recepționează stimuli din mediu (luminoși, sonori, chimici, mecanici) și îi transformă în impulsuri nervoase ce ajung la creier, unde sunt interpretate. Sunt esențiale pentru percepția lumii înconjurătoare.
+    </p>
+    <p>
+      Organele principale de simț includ: <strong>ochii</strong> (vedere), <strong>urechile</strong> (auz și echilibru), <strong>nasul</strong> (miros), <strong>limba</strong> (gust) și <strong>pielea</strong> (atingere, temperatură, durere).
+    </p>
+    <p>
+      Aceste organe ne ajută să interacționăm cu mediul înconjurător, să detectăm pericole, să comunicăm și să experimentăm lumea în moduri diverse.
+    </p>
+  </div>
+
+  <img src="assets/poze/organe-de-simt.png" alt="organele de simt" class="center-img dynamic-img">
+</section>
+
+
+<section id="aeroba" class="section">
+
+    <h2 class="section-title">Tipuri de receptori senzoriali</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tip receptor</th>
+          <th>Stimuli percepuți</th>
+          <th>Exemple</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fotoreceptori</td>
+          <td>Stimuli luminoși</td>
+          <td>Retina ochiului</td>
+        </tr>
+        <tr>
+          <td>Mecanoreceptori</td>
+          <td>Presiune, vibrații, sunete, atingere</td>
+          <td>Urechea internă, piele</td>
+        </tr>
+        <tr>
+          <td>Termoreceptori</td>
+          <td>Temperatură</td>
+          <td>Piele</td>
+        </tr>
+        <tr>
+          <td>Chemioreceptori</td>
+          <td>Substanțe chimice</td>
+          <td>Limba (gust), mucoasa nazală (miros)</td>
+        </tr>
+        <tr>
+          <td>Nociceptori</td>
+          <td>Durere</td>
+          <td>Piele, organe interne</td>
+        </tr>
+      </tbody>
+    </table>
+
+ 
+</section>
+
+
+
+
+<section id="organe-simt" class="section">
+  <div class="container">
+    <h2 class="section-title">Organele de simț ale corpului uman</h2>
+    <p class="desc">Fiecare organ este specializat să perceapă diferiți stimuli din mediul înconjurător. Apasă pe un card pentru a afla mai multe!</p>
+
+    <div class="cards-wrapper">
+      <div class="card" tabindex="0">
+        <div class="emoji">👁️</div>
+        <h3>Ochi</h3>
+        <p class="short-desc">Percepție: Vedere</p>
+        <div class="more-info">
+          <p><strong>Locație:</strong> Cavitatea orbitară</p>
+          <p>Ochiul transformă lumina în semnale electrice pentru creier, oferindu-ne imaginea lumii.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="emoji">👂</div>
+        <h3>Ureche</h3>
+        <p class="short-desc">Percepție: Auz și echilibru</p>
+        <div class="more-info">
+          <p><strong>Locație:</strong> Os temporal</p>
+          <p>Urechea detectează sunetele și ajută la menținerea echilibrului corpului.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="emoji">👃</div>
+        <h3>Nas</h3>
+        <p class="short-desc">Percepție: Miros</p>
+        <div class="more-info">
+          <p><strong>Locație:</strong> Cavitate nazală</p>
+          <p>Nasul simte moleculele din aer, ajutând la recunoașterea mirosurilor.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="emoji">👅</div>
+        <h3>Limbă</h3>
+        <p class="short-desc">Percepție: Gust</p>
+        <div class="more-info">
+          <p><strong>Locație:</strong> Cavitatea bucală</p>
+          <p>Limba detectează diverse arome, făcând mâncarea plăcută sau neplăcută.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="emoji">✋</div>
+        <h3>Piele</h3>
+        <p class="short-desc">Percepție: Tact, durere, temperatură</p>
+        <div class="more-info">
+          <p><strong>Locație:</strong> Întregul corp</p>
+          <p>Pielea ne protejează și simte tot ce atingem, de la texturi la temperaturi extreme.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ochiul" class="section">
+  <div class="container">
+    <h2 class="section-title">Organul vederii – OCHIUL</h2>
+    <p class="desc">Descoperă componentele ochiului, fotoreceptorii și cum funcționează căile nervoase pentru vedere.</p>
+
+    <div class="content-wrapper">
+      <div class="accordion-wrapper">
+
+        <!-- Componentele ochiului -->
+        <div class="accordion-card" tabindex="0">
+          <h3 class="accordion-title">🧩 Componentele ochiului</h3>
+          <div class="accordion-content">
+            <table>
+              <thead>
+                <tr><th>Structură</th><th>Funcție</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Cornee</td><td>Refractă lumina, protejează globul ocular</td></tr>
+                <tr><td>Sclerotică</td><td>Protejează ochiul, structură fibroasă albă</td></tr>
+                <tr><td>Iris</td><td>Controlează diametrul pupilei (culoarea ochilor)</td></tr>
+                <tr><td>Pupilă</td><td>Reglează cantitatea de lumină care pătrunde</td></tr>
+                <tr><td>Cristalin</td><td>Lentilă biconvexă care focalizează lumina</td></tr>
+                <tr><td>Corpul ciliar</td><td>Controlează forma cristalinului</td></tr>
+                <tr><td>Retină</td><td>Conține fotoreceptori (conuri și bastonașe), transformă lumina în impuls nervos</td></tr>
+                <tr><td>Vitreu</td><td>Gel transparent care menține forma ochiului</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Fotoreceptorii -->
+        <div class="accordion-card" tabindex="0">
+          <h3 class="accordion-title">🔆 Fotoreceptorii</h3>
+          <div class="accordion-content">
+            <table>
+              <thead>
+                <tr><th>Tip</th><th>Sensibilitate</th><th>Funcție</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Conuri</td><td>Lumină intensă, culori</td><td>Vedere clară, colorată (ziua)</td></tr>
+                <tr><td>Bastonașe</td><td>Lumină slabă, alb-negru</td><td>Vedere nocturnă</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Căi nervoase -->
+        <div class="accordion-card" tabindex="0">
+          <h3 class="accordion-title">🧠 Căi nervoase</h3>
+          <div class="accordion-content">
+            <p>Impulsurile nervoase sunt transmise de nervul optic către lobul occipital al creierului, unde sunt procesate și interpretate ca imagini.</p>
+          </div>
+        </div>
+
+      </div>
+
+      
+        <img src="assets/poze/ochi.jpg" alt="Imagine detaliată a ochiului" />
+      </div>
+    </div>
+  </div>
+</section>
+<section id="organ-ureche" class="section">
+  <div class="container">
+    <h2 class="section-title">Organul auzului și echilibrului – URECHEA</h2>
+    <p class="desc">Explorează componentele urechii, receptorii și căile nervoase implicate în auz și echilibru.</p>
+
+    <div class="content-wrapper">
+      <div class="accordion-wrapper">
+
+        <!-- Componentele urechii -->
+        <div class="accordion-card" tabindex="0">
+          <h3 class="accordion-title">🦻 Componentele urechii</h3>
+          <div class="accordion-content">
+            <table>
+              <thead>
+                <tr><th>Regiune</th><th>Structuri</th><th>Funcții</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Urechea externă</td><td>Pavilion, canal auditiv extern</td><td>Colectează și direcționează sunetul</td></tr>
+                <tr><td>Urechea medie</td><td>Timpan, ciocan, nicovală, scăriță</td><td>Transmite vibrațiile către urechea internă</td></tr>
+                <tr><td>Urechea internă</td><td>Cohleea (melcul), vestibul, canale semicirculare</td><td>Auz (cohleea), echilibru (vestibul + canale semicirculare)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Receptori -->
+        <div class="accordion-card" tabindex="0">
+          <h3 class="accordion-title">🎧 Receptori</h3>
+          <div class="accordion-content">
+            <ul>
+              <li><strong>Cohleea:</strong> celule ciliate – percep sunetele</li>
+              <li><strong>Vestibul și canale semicirculare:</strong> celule ciliate – percep poziția și mișcările capului</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Căi nervoase -->
+        <div class="accordion-card" tabindex="0">
+          <h3 class="accordion-title">🧠 Căi nervoase</h3>
+          <div class="accordion-content">
+            <p>Nervul vestibulocohlear → trunchi cerebral → lob temporal (auz) / cerebel (echilibru)</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="image-wrapper">
+        <img src="assets/poze/urechea.png" alt="Imagine detaliată a urechii" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="nasul" class="section">
+  <div class="container">
+    <h2 class="section-title">Organul mirosului – NASUL</h2>
+    <div class="content-wrapper">
+      <img src="assets/poze/nasul.jpeg" alt="Imagine Nas" class="organ-image" />
+      <div class="text-content">
+        <h3>a. Componente</h3>
+        <ul class="component-list">
+          <li><strong>Mucoasa olfactivă</strong> (partea superioară a foselor nazale) – Conține chemoreceptori pentru miros</li>
+          <li><strong>Celule olfactive</strong> – Transformă moleculele volatile în impulsuri nervoase</li>
+        </ul>
+
+        <h3>b. Căi nervoase</h3>
+        <p class="desc">
+          Nervul olfactiv → bulb olfactiv → cortex olfactiv (lob temporal)
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="organ-limba" class="section">
+  <div class="container">
+    <h2 class="section-title">Organul gustului – LIMBA</h2>
+    <p class="desc">Limba este responsabilă pentru detectarea a cinci gusturi principale și este dotată cu receptori specializați.</p>
+
+    <div class="content-wrapper">
+      <div class="accordion-wrapper">
+        <div class="accordion-card" tabindex="0" role="button" aria-expanded="false" aria-controls="comp-limba" aria-label="Componente Limba">
+          <h3 class="accordion-title">a. Componente</h3>
+          <div class="accordion-content" id="comp-limba">
+            <table>
+              <thead>
+                <tr>
+                  <th>Structură</th>
+                  <th>Funcție</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Papile gustative</td>
+                  <td>Conțin chemoreceptori pentru gust</td>
+                </tr>
+                <tr>
+                  <td>Receptori gustativi</td>
+                  <td>Identifică 5 tipuri de gusturi: dulce, sărat, acru, amar, umami</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="accordion-card" tabindex="0" role="button" aria-expanded="false" aria-controls="ca-limba" aria-label="Căi nervoase Limba">
+          <h3 class="accordion-title">b. Căi nervoase</h3>
+          <div class="accordion-content" id="ca-limba">
+            <p>
+              Impulsul gustativ → nervi facial, glosofaringian și vag → trunchi cerebral → cortex gustativ (lob parietal)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-wrapper">
+        <img src="assets/poze/limba.jpg" alt="Imagine detaliată a limbii cu papile gustative" />
+      </div>
+    </div>
+  </div>
+</section>
+<section id="pielea" class="section">
+  <div class="container">
+    <h2 class="section-title">Organul tactil – PIELEA</h2>
+    <div class="content-wrapper">
+     
+      <div class="text-content">
+        <h3>a. Receptori senzoriali în piele</h3>
+        <table class="receptori-table">
+          <thead>
+            <tr>
+              <th>Tip receptor</th>
+              <th>Stimuli</th>
+              <th>Localizare</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tabindex="0">
+              <td>Corpusculi Meissner</td>
+              <td>Atingere fină</td>
+              <td>Dermul pielii, degete, buze</td>
+            </tr>
+            <tr tabindex="0">
+              <td>Corpusculi Pacini</td>
+              <td>Presiune și vibrații</td>
+              <td>Straturi profunde ale pielii</td>
+            </tr>
+            <tr tabindex="0">
+              <td>Corpusculi Ruffini</td>
+              <td>Întindere</td>
+              <td>Derm</td>
+            </tr>
+            <tr tabindex="0">
+              <td>Corpusculi Krause</td>
+              <td>Rece</td>
+              <td>Zone sensibile (ochi, buze)</td>
+            </tr>
+            <tr tabindex="0">
+              <td>Receptori termici</td>
+              <td>Cald/rece</td>
+              <td>Epiderm</td>
+            </tr>
+            <tr tabindex="0">
+              <td>Nociceptori</td>
+              <td>Durere</td>
+              <td>Epiderm</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>b. Funcții ale pielii ca organ de simț</h3>
+        <ul class="functions-list">
+          <li>Detectarea presiunii, temperaturii, durerii</li>
+          <li>Protecție senzorială</li>
+          <li>Contribuie la reflexele de apărare</li>
+        </ul>
+      </div>
+    </div> 
+    <img src="assets/poze/pielea.png" alt="Imagine Piele" class="organ-image" />
+  </div>
+</section>
+
+<section id="afectiuni" class="section">
+  <div class="container">
+    <h2 class="section-title"> Afecțiuni comune ale organelor de simț</h2>
+    <p class="desc">Apasă pe o afecțiune pentru a vedea detalii!</p>
+
+    <div class="cards-wrapper">
+      <div class="card" tabindex="0">
+        <h3>Miopie</h3>
+        <p class="short-desc">Imaginea se formează în fața retinei – dificultate la distanță</p>
+        <div class="more-info">
+          <p>Imaginea nu se focalizează corect pe retină, ceea ce face ca obiectele îndepărtate să pară neclare.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <h3>Hipermetropie</h3>
+        <p class="short-desc">Imaginea se formează în spatele retinei – dificultate la aproape</p>
+        <div class="more-info">
+          <p>Persoana vede clar la distanță, dar are dificultăți în a vedea obiectele apropiate clar.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <h3>Astigmatism</h3>
+        <p class="short-desc">Curbură neregulată a corneei – imagine distorsionată</p>
+        <div class="more-info">
+          <p>Corneea are o formă neregulată, iar imaginea este deformata, afectând vederea clară.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <h3>Cataractă</h3>
+        <p class="short-desc">Opacifierea cristalinului</p>
+        <div class="more-info">
+          <p>Cristalinul devine opac, reducând semnificativ claritatea și luminozitatea vederii.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <h3>Otită</h3>
+        <p class="short-desc">Inflamație a urechii medii</p>
+        <div class="more-info">
+          <p>Inflamația cauzează durere, pierdere temporară a auzului și uneori febră.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <h3>Surditate</h3>
+        <p class="short-desc">Pierdere parțială/totală a auzului</p>
+        <div class="more-info">
+          <p>Poate fi cauzată de probleme la nivelul urechii sau nervului auditiv.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <h3>Anosmie</h3>
+        <p class="short-desc">Pierderea simțului mirosului</p>
+        <div class="more-info">
+          <p>Imposibilitatea de a percepe mirosurile, uneori temporară, alteori permanentă.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <h3>Ageuzie</h3>
+        <p class="short-desc">Pierderea simțului gustului</p>
+        <div class="more-info">
+          <p>Imposibilitatea de a detecta gusturile, afectând percepția alimentelor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="afectiuni" class="section">
+  <div class="container">
+    <h2 class="section-title">Hartă schematică senzorială</h2>
+    <p class="desc">Apasă pe o parte pentru detalii!</p>
+
+    <div class="cards-wrapper">
+      <div class="card" tabindex="0">
+        <div class="emoji">👁️</div>
+        <h3>VEDERE (Ochi)</h3>
+        <p class="short-desc">Cornee → Cristalin → Retină (conuri, bastonașe) → Nerv optic → Lob occipital</p>
+        <div class="more-info">
+          <p>Informațiile vizuale sunt procesate de ochi și transmise creierului prin nervul optic, pentru percepția imaginii.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="emoji">👂</div>
+        <h3>AUZ (Ureche)</h3>
+        <p class="short-desc">Timpan → Ciocan → Nicovală → Scăriță → Cohlee → Nerv vestibulocohlear → Lob temporal</p>
+        <div class="more-info">
+          <p>Sunetele sunt captate de ureche și transmise către lobul temporal prin nervul auditiv.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="emoji">⚖️</div>
+        <h3>ECHILIBRU (Ureche internă)</h3>
+        <p class="short-desc">Canale semicirculare + vestibul → Cerebel</p>
+        <div class="more-info">
+          <p>Sistemul vestibular din urechea internă ajută la menținerea echilibrului, coordonând cu cerebelul.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="emoji">👃</div>
+        <h3>MIROS (Nas)</h3>
+        <p class="short-desc">Molecule volatile → Mucoasă olfactivă → Nerv olfactiv → Lob temporal</p>
+        <div class="more-info">
+          <p>Nasul detectează moleculele din aer, iar informația este transmisă creierului pentru recunoașterea mirosurilor.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="emoji">👅</div>
+        <h3>GUST (Limbă)</h3>
+        <p class="short-desc">Papile gustative → Nervii facial/glosofaringian → Cortex gustativ</p>
+        <div class="more-info">
+          <p>Limba transmite senzațiile gustative către cortexul gustativ prin nervii aferenți.</p>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="emoji">✋</div>
+        <h3>TACT (Piele)</h3>
+        <p class="short-desc">Corpusculi tactili → Nervi somatici → Măduva spinării → Cortex somatosenzitiv</p>
+        <div class="more-info">
+          <p>Pielea percepe stimulii tactili care sunt procesați în cortexul somatosenzitiv.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+  <!-- ÎNAPOI -->
+  <div class="buttons" style="margin-bottom: 3rem;">
+    <button id="goBackBtn">Înapoi la Sisteme</button>
+  </div>
+
+  <!-- SWITCH TEMĂ -->
+  <div id="theme-toggle" onclick="toggleTheme()">
+    <i class='bx bx-moon'></i>
+  </div>
+<button id="scrollTopBtn" title="Du-te sus">
+  <i class='bx bx-up-arrow-alt'></i>
+</button>
+
+
+<!-- Buton deschidere ChatBot -->
+<div id="chat-toggle"><i class='bx bx-bot'></i></div>
+
+<!-- Fereastra ChatBot -->
+<div id="chat-box">
+  <div id="chat-header">
+    <span>BioBot</span>
+    <button id="chat-close">✖</button>
+  </div>
+  <iframe src="bio-bot2.html"></iframe>
+</div>
+
+<select id="lang-select">
+  <option value="ro" data-i18n="text_499">Română</option>
+  <option value="en" data-i18n="text_500">Engleză</option>
+  <option value="es" data-i18n="text_501">Spaniolă</option>
+  <option value="zh" data-i18n="text_502">Chineză</option>
+  <option value="ar" data-i18n="text_503">Arabă</option>
+  <option value="hi" data-i18n="text_504">Hindi</option>
+  <option value="fr" data-i18n="text_505">Franceză</option>
+  <option value="ru" data-i18n="text_506">Rusă</option>
+</select>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="assets/js/script-activitate.js"></script>
+<script src="assets/traducerile/org-traducere.js"></script>
+  <script src="assets/js/script-org.js"></script>
+</body>
+</html>

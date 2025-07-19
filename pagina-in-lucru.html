@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina în lucru</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .background {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: url('assets/poze/BioStream.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .typing-effect {
+      border-right: 2px solid #ff4d4d;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(20, end) forwards, blink-caret 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 17ch; }
+    }
+
+    @keyframes blink-caret {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #ff4d4d; }
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e60000;
+      box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+      transform: scale(1.05);
+    }
+
+    .instagram {
+      margin-top: 40px;
+      font-size: 1rem;
+      color: #ffc1c1;
+      max-width: 90%;
+    }
+
+    .instagram a {
+      color: #ff4d4d;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+
+    .instagram a:hover {
+      color: #ffffff;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Responsivitate pentru ecrane mici */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+
+      .instagram {
+        font-size: 0.9rem;
+        padding: 0 10px;
+      }
+
+      .typing-effect {
+        font-size: 1.4rem;
+      }
+      .background {
+  background-position: center center;
+  background-size: contain;         
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background">
+    <div class="overlay">
+      <h1><span class="typing-effect">Pagina în lucru...</span></h1>
+      <button onclick="goBack()">Înapoi pe prima pagină</button>
+
+      <div class="instagram">
+        Urmărește-ne pe 
+        <a href="https://www.instagram.com/anatom_iq?igsh=MTk4b2I1NGp4MDF0aQ==" target="_blank">Instagram</a> și 
+        <a href="https://youtube.com/@anatomiq" target="_blank">YouTube</a> pentru a rămâne la curent cu noutățile!
+      </div>
+    </div>
+  </div>
+
+  <footer>&copy; 2025 AnatomIQ</footer>
+
+  <script>
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil - AnatomIQ</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style-profile.css" />
+  <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+
+  <!-- Select limbă -->
+  <select id="lang-select">
+    <option value="ro" data-i18n="text_1">Română</option>
+    <option value="en" data-i18n="text_2">Engleză</option>
+    <option value="es" data-i18n="text_21">Spaniolă</option>
+    <option value="zh" data-i18n="text_22">Chineză</option>
+    <option value="ar" data-i18n="text_23">Arabă</option>
+    <option value="hi" data-i18n="text_24">Hindi</option>
+    <option value="fr" data-i18n="text_25">Franceză</option>
+    <option value="ru" data-i18n="text_26">Rusă</option>
+  </select>
+
+  <a href="index.html" class="buton-inapoi">Înapoi pe prima pagină</a>
+
+  <div class="profile-container">
+    <!-- Aici afișăm numele și iconița -->
+    <div id="user-profile">
+      <div id="user-icon">?</div>
+      <div id="user-name">Încărcare nume...</div>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.instagram.com/anatom_iq?igsh=MTk4b2I1NGp4MDF0aQ==" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+      <a href="https://www.youtube.com/channel/UC657aN8Mt4JHz8PO4_xd67Q" target="_blank" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
+      <a href="https://www.tiktok.com/@anatomiq25?_t=ZN-8xwIgPzNBIN&_r=1" target="_blank" aria-label="TikTok"><i class='bx bxl-tiktok'></i></a>
+    </div>
+    <div class="profile-buttons">
+      <a href="#" class="profile-button" onclick="afiseazaActivitate()">Vezi activitatea ta</a>
+ <button onclick="logout()" id="logoutBtn" class="hidden">Deconectează-te</button>
+    </div>
+  </div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+  import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDqWtrwa4BiCmHWKAbt3ACY_pB3I9T6-ac",
+    authDomain: "anatomiq-infoeducatie.firebaseapp.com",
+    projectId: "anatomiq-infoeducatie",
+    storageBucket: "anatomiq-infoeducatie.firebasestorage.app",
+    messagingSenderId: "393497248694",
+    appId: "1:393497248694:web:ed3897fea512024715f717",
+    measurementId: "G-3Z0KR90WTT"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const userNameElem = document.getElementById("user-name");
+  const userIconElem = document.getElementById("user-icon");
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  function getInitials(name) {
+    return name
+      .split(' ')
+      .filter(n => n.length > 0)
+      .map(n => n[0].toUpperCase())
+      .join('');
+  }
+
+  window.logout = async function () {
+    await signOut(auth);
+    alert("Te-ai deconectat.");
+    window.location.href = "index.html";
+  };
+
+  onAuthStateChanged(auth, (user) => {
+    if (user && user.emailVerified) {
+      logoutBtn.classList.remove("hidden");
+
+      const displayName = user.displayName || "";
+      if(displayName.trim() === "") {
+        userNameElem.textContent = user.email; // fallback la email dacă nu există nume
+        userIconElem.textContent = "?";
+      } else {
+        userNameElem.textContent = displayName;
+        userIconElem.textContent = getInitials(displayName);
+      }
+    } else {
+      logoutBtn.classList.add("hidden");
+      window.location.href = "index.html";
+    }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/script-activitate.js"></script>
+<script src="assets/js/script-profile.js"></script>
+<script src="assets/traducerile/profile-traducere.js"></script>
+
+</body>
+</html>

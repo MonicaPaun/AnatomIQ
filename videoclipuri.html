@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <title>Videoclipuri</title>
+    <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  
+     <link rel="stylesheet" href="assets/css/style-sisteme.css">
+  <link rel="stylesheet" href="assets/css/style-video.css">
+
+    <style>
+      
+
+  body.page-biologie {
+    background-image: url('assets/poze/video.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  body.page-biologie {
+    background-attachment: scroll;
+  }
+}
+
+body.page-biologie #background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+body.light-mode.page-biologie {
+    background-image: url('assets/poze/video.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+body.dark-mode.page-biologie {
+    background-image: url('assets/poze/video.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+
+
+    </style>
+</head>
+<body class="page-biologie">
+    <div id="background-overlay"></div>
+   <!-- Bara de meniu roșie cu titlul "SISTEME" și icon -->
+<div class="top-menu">
+    <h1 data-i18n="text_00"><span class="icon" >🎥</span> VIDEO</h1>
+  </div>
+  
+    <!-- Progress bar -->
+    <div id="progress-bar"></div>
+
+    <!-- User icon in top-right corner -->
+    <div id="user-toggle">
+        <i class="bx bx-user-circle"></i>
+        <div id="user-menu" class="hidden">
+          <ul>
+             <li>
+  <a href="logare.html">
+    <i class="bx bxs-user"></i>
+    <span data-i18n="text_000">Profil</span>
+  </a>
+</li>
+          </ul>
+        </div>
+    </div>
+
+    <!-- Light/Dark toggle at the bottom-right corner -->
+    <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+        <i class="bx bx-moon"></i>
+    </div>
+
+
+<!-- Buton pentru deschiderea/închiderea meniului -->
+<button id="menu-toggle" class="menu-toggle" data-i18n="text_1">
+  ☰
+</button>
+
+<select id="lang-select">
+  <option value="ro" data-i18n="text_2">Română</option>
+  <option value="en" data-i18n="text_3">Engleză</option>
+  <option value="es" data-i18n="text_4">Spaniolă</option>
+  <option value="zh" data-i18n="text_5">Chineză</option>
+  <option value="ar" data-i18n="text_6">Arabă</option>
+  <option value="hi" data-i18n="text_7">Hindi</option>
+  <option value="fr" data-i18n="text_8">Franceză</option>
+  <option value="ru" data-i18n="text_9">Rusă</option>
+</select>
+
+
+    <!-- Main Layout -->
+    <div class="container">
+        <div class="sidebar">
+           <!-- Logo-ul din pagină -->
+<div class="logo">
+    <img src="assets/poze/logo-ANATOMIQ.png" alt="Logo" class="logo-img" />
+  <div class="logo-preview">
+                <img src="assets/poze/logo-ANATOMIQ.png" alt="Logo Preview" />
+            </div>
+        </div>
+  
+ 
+          <ul>
+                <li><a href="index.html" class="nav-link"><i class="bx bxs-home"></i><span class="item-txt" data-i18n="text_10">Introducere</span></a></li>
+                <li><a href="sisteme.html" class="nav-link"><i class="bx bxs-capsule"></i><span class="item-txt" data-i18n="text_11">Sisteme ale corpului</span></a></li>
+                <li><a href="teste.html" class="nav-link"><i class="bx bx-task"></i><span class="item-txt" data-i18n="text_12">Teste</span></a></li>
+                <li><a href="generator.html" class="nav-link"><i class='bx  bx-ruler'></i><span class="item-txt" data-i18n="text_01619">BioCheck</span></a></li>
+                <li><a href="bio-bot.html" class="nav-link"><i class="bx bxs-message-dots"></i><span class="item-txt" data-i18n="text_13">Chatbot</span></a></li>
+                <li><a href="modele3d.html" class="nav-link"><i class="bx bxs-cube"></i><span class="item-txt" data-i18n="text_14">Modele 3D</span></a></li>
+                <li><a href="videoclipuri.html" class="nav-link"><i class="bx bxs-video"></i><span class="item-txt" data-i18n="text_15">Videoclipuri</span></a></li>
+                <li><a href="notite.html" class="nav-link"><i class="bx bxs-pencil"></i><span class="item-txt" data-i18n="text_16">Notițe</span></a></li>
+                 <li><a href="todo.html" class="nav-link"><i class="bx bxs-pencil"></i><span class="item-txt" data-i18n="text_9090">TaskIQ</span></a></li>
+                <li><a href="calculator.html" class="nav-link"><i class="bx bxs-calculator"></i><span class="item-txt" data-i18n="text_17">Calculator</span></a></li>
+                <li><a href="subiecte-bac.html" class="nav-link"><i class="bx bxs-book"></i><span class="item-txt" data-i18n="text_18">Subiecte BAC</span></a></li>
+                <li><a href="biblioteca.html" class="nav-link"><i class="bx bxs-book"></i><span class="item-txt" data-i18n="text_19">Biblioteca</span></a></li>
+                <li><a href="contact.html" class="nav-link"><i class="bx bxs-phone-call"></i><span class="item-txt" data-i18n="text_20">Contact</span></a></li>
+               <li><a href="biostream.html" class="nav-link"><i class="bx  bx-rocket"></i><span class="item-txt" data-i18n="text_016">BioStream</span></a></li>
+                <li><a href="recenzii.html" class="nav-link"><i class="bx  bx-like"></i><span class="item-txt" data-i18n="text_0160">Recenzii</span></a></li>
+                <li><a href="translate.html" class="nav-link"><i class="bx  bx-wifi-2"></i><span class="item-txt" data-i18n="text_0161">TranslaIQ</span></a></li>
+          </ul>
+        </div>
+      
+
+    <div class="main-content">
+ 
+  <div class="video-gallery">
+
+   <div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-diviziune"
+      data-ro="assets/video/Diviziunea celulara-romana.mp4"
+      data-en="assets/video/Diviziunea celulara-engleza.mp4"
+      data-es="assets/video/Diviziunea celulara-spaniola.mp4"
+        data-zh="assets/video/Diviziunea celulara-chineza.mp4"
+        data-ar="assets/video/Diviziunea celulara-araba.mp4"
+        data-hi="assets/video/Diviziunea celulara-hindi.mp4"
+        data-fr="assets/video/Diviziunea celulara-franceza.mp4"
+        data-ru="assets/video/Diviziunea celulara-rusa.mp4"
+    >
+      <source src="assets/video/Diviziunea celulara-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+  data-ro="Diviziunea celulară" 
+  data-en="Cell Division" 
+  data-es="División celular" 
+  data-zh="细胞分裂" 
+  data-ar="الانقسام الخلوي" 
+  data-hi="कोशिका विभाजन" 
+  data-fr="Division cellulaire" 
+  data-ru="Деление клетки"
+>
+  Diviziunea celulară
+</span>
+
+    </div>
+  </div>
+</div>
+
+<div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-tesuturi"
+      data-ro="assets/video/Tesuturile-romana.mp4"
+      data-en="assets/video/Tesuturile-engleza.mp4"
+      data-es="assets/video/Tesuturile-spaniola.mp4"
+      data-zh="assets/video/Tesuturile-chineza.mp4"
+      data-ar="assets/video/Tesuturile-araba.mp4"
+      data-hi="assets/video/Tesuturile-hindi.mp4"
+      data-fr="assets/video/Tesuturile-franceza.mp4"
+      data-ru="assets/video/Tesuturile-rusa.mp4"
+    >
+      <source src="assets/video/Tesuturile-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Țesuturile" 
+        data-en="Tissues" 
+        data-es="Tejidos" 
+        data-zh="组织" 
+        data-ar="الأنسجة" 
+        data-hi="ऊतक" 
+        data-fr="Les tissus" 
+        data-ru="Ткани"
+      >
+        Țesuturile
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-sistemul-osos"
+      data-ro="assets/video/Sistemul osos-1-romana.mp4"
+      data-en="assets/video/Sistemul osos-1-engleza.mp4"
+      data-es="assets/video/Sistemul osos-1-spaniola.mp4"
+      data-zh="assets/video/Sistemul osos-1-chineza.mp4"
+      data-ar="assets/video/Sistemul osos-1-araba.mp4"
+      data-hi="assets/video/Sistemul osos-1-hindi.mp4"
+      data-fr="assets/video/Sistemul osos-1-franceza.mp4"
+      data-ru="assets/video/Sistemul osos-1-rusa.mp4"
+    >
+      <source src="assets/video/Sistemul osos-1-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Sistemul osos" 
+        data-en="Skeletal System" 
+        data-es="Sistema óseo" 
+        data-zh="骨骼系统" 
+        data-ar="الجهاز العظمي" 
+        data-hi="कंकाल तंत्र" 
+        data-fr="Système squelettique" 
+        data-ru="Скелетная система"
+      >
+        Sistemul osos
+      </span>
+    </div>
+  </div>
+</div>
+
+
+    
+    <div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-sistemul-muscular"
+      data-ro="assets/video/Sistemul muscular-romana.mp4"
+      data-en="assets/video/Sistemul muscular-engleza.mp4"
+      data-es="assets/video/Sistemul muscular-spaniola.mp4"
+      data-zh="assets/video/Sistemul muscular-chineza.mp4"
+      data-ar="assets/video/Sistemul muscular-araba.mp4"
+      data-hi="assets/video/Sistemul muscular-hindi.mp4"
+      data-fr="assets/video/Sistemul muscular-franceza.mp4"
+      data-ru="assets/video/Sistemul muscular-rusa.mp4"
+    >
+      <source src="assets/video/Sistemul muscular-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Sistemul muscular" 
+        data-en="Muscular System" 
+        data-es="Sistema muscular" 
+        data-zh="肌肉系统" 
+        data-ar="الجهاز العضلي" 
+        data-hi="मांसपेशीय तंत्र" 
+        data-fr="Système musculaire" 
+        data-ru="Мышечная система"
+      >
+        Sistemul muscular
+      </span>
+    </div>
+  </div>
+</div>
+
+
+  <div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-sistemul-circulator"
+      data-ro="assets/video/Sistemul circulator-romana.mp4"
+      data-en="assets/video/Sistemul circulator-engleza.mp4"
+      data-es="assets/video/Sistemul circulator-spaniola.mp4"
+      data-zh="assets/video/Sistemul circulator-chineza.mp4"
+      data-ar="assets/video/Sistemul circulator-araba.mp4"
+      data-hi="assets/video/Sistemul circulator-hindi.mp4"
+      data-fr="assets/video/Sistemul circulator-franceza.mp4"
+      data-ru="assets/video/Sistemul circulator-rusa.mp4"
+    >
+      <source src="assets/video/Sistemul circulator-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Sistemul circulator" 
+        data-en="Circulatory System" 
+        data-es="Sistema circulatorio" 
+        data-zh="循环系统" 
+        data-ar="الجهاز الدوري" 
+        data-hi="रक्त परिसंचरण प्रणाली" 
+        data-fr="Système circulatoire" 
+        data-ru="Кровеносная система"
+      >
+        Sistemul circulator
+      </span>
+    </div>
+  </div>
+</div>
+
+
+    <div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-sistemul-respirator"
+      data-ro="assets/video/Sistemul respirator-romana.mp4"
+      data-en="assets/video/Sistemul respirator-engleza.mp4"
+      data-es="assets/video/Sistemul respirator-spaniola.mp4"
+      data-zh="assets/video/Sistemul respirator-chineza.mp4"
+      data-ar="assets/video/Sistemul respirator-araba.mp4"
+      data-hi="assets/video/Sistemul respirator-hindi.mp4"
+      data-fr="assets/video/Sistemul respirator-franceza.mp4"
+      data-ru="assets/video/Sistemul respirator-rusa.mp4"
+    >
+      <source src="assets/video/Sistemul respirator-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Sistemul respirator" 
+        data-en="Respiratory System" 
+        data-es="Sistema respiratorio" 
+        data-zh="呼吸系统" 
+        data-ar="الجهاز التنفسي" 
+        data-hi="श्वसन तंत्र" 
+        data-fr="Système respiratoire" 
+        data-ru="Дыхательная система"
+      >
+        Sistemul respirator
+      </span>
+    </div>
+  </div>
+</div>
+
+
+    <div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-sistemul-nervos"
+      data-ro="assets/video/Sistemul nervos-romana.mp4"
+      data-en="assets/video/Sistemul nervos-engleza.mp4"
+      data-es="assets/video/Sistemul nervos-spaniola.mp4"
+      data-zh="assets/video/Sistemul nervos-chineza.mp4"
+      data-ar="assets/video/Sistemul nervos-araba.mp4"
+      data-hi="assets/video/Sistemul nervos-hindi.mp4"
+      data-fr="assets/video/Sistemul nervos-franceza.mp4"
+      data-ru="assets/video/Sistemul nervos-rusa.mp4"
+    >
+      <source src="assets/video/Sistemul nervos-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Sistemul nervos" 
+        data-en="Nervous System" 
+        data-es="Sistema nervioso" 
+        data-zh="神经系统" 
+        data-ar="الجهاز العصبي" 
+        data-hi="तंत्रिका तंत्र" 
+        data-fr="Système nerveux" 
+        data-ru="Нервная система"
+      >
+        Sistemul nervos
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-sistemul-digestiv"
+      data-ro="assets/video/Sistemul digestiv-romana.mp4"
+      data-en="assets/video/Sistemul digestiv-engleza.mp4"
+      data-es="assets/video/Sistemul digestiv-spaniola.mp4"
+      data-zh="assets/video/Sistemul digestiv-chineza.mp4"
+      data-ar="assets/video/Sistemul digestiv-araba.mp4"
+      data-hi="assets/video/Sistemul digestiv-hindi.mp4"
+      data-fr="assets/video/Sistemul digestiv-franceza.mp4"
+      data-ru="assets/video/Sistemul digestiv-rusa.mp4"
+    >
+      <source src="assets/video/Sistemul digestiv-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Sistemul digestiv" 
+        data-en="Digestive System" 
+        data-es="Sistema digestivo" 
+        data-zh="消化系统" 
+        data-ar="الجهاز الهضمي" 
+        data-hi="पाचन तंत्र" 
+        data-fr="Système digestif" 
+        data-ru="Пищеварительная система"
+      >
+        Sistemul digestiv
+      </span>
+    </div>
+  </div>
+</div>
+
+
+  <div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-sistemul-excretor"
+      data-ro="assets/video/Sistemul excretor-romana.mp4"
+      data-en="assets/video/Sistemul excretor-engleza.mp4"
+      data-es="assets/video/Sistemul excretor-spaniola.mp4"
+      data-zh="assets/video/Sistemul excretor-chineza.mp4"
+      data-ar="assets/video/Sistemul excretor-araba.mp4"
+      data-hi="assets/video/Sistemul excretor-hindi.mp4"
+      data-fr="assets/video/Sistemul excretor-franceza.mp4"
+      data-ru="assets/video/Sistemul excretor-rusa.mp4"
+    >
+      <source src="assets/video/Sistemul excretor-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Sistemul excretor" 
+        data-en="Excretory System" 
+        data-es="Sistema excretor" 
+        data-zh="泌尿系统" 
+        data-ar="الجهاز البولي" 
+        data-hi="निर्गमन तंत्र" 
+        data-fr="Système excréteur" 
+        data-ru="Выделительная система"
+      >
+        Sistemul excretor
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-sistemul-endocrin"
+      data-ro="assets/video/Sistemul endocrin-romana.mp4"
+      data-en="assets/video/Sistemul endocrin-engleza.mp4"
+      data-es="assets/video/Sistemul endocrin-spaniola.mp4"
+      data-zh="assets/video/Sistemul endocrin-chineza.mp4"
+      data-ar="assets/video/Sistemul endocrin-araba.mp4"
+      data-hi="assets/video/Sistemul endocrin-hindi.mp4"
+      data-fr="assets/video/Sistemul endocrin-franceza.mp4"
+      data-ru="assets/video/Sistemul endocrin-rusa.mp4"
+    >
+      <source src="assets/video/Sistemul endocrin-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Sistemul endocrin" 
+        data-en="Endocrine System" 
+        data-es="Sistema endocrino" 
+        data-zh="内分泌系统" 
+        data-ar="الجهاز الصماوي" 
+        data-hi="अंतःस्रावी तंत्र" 
+        data-fr="Système endocrinien" 
+        data-ru="Эндокринная система"
+      >
+        Sistemul endocrin
+      </span>
+    </div>
+  </div>
+</div>
+
+   <div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-sistem-limfatic"
+      data-ro="assets/video/Sistem limfatic-romana.mp4"
+      data-en="assets/video/Sistem limfatic-engleza.mp4"
+      data-es="assets/video/Sistem limfatic-spaniola.mp4"
+      data-zh="assets/video/Sistem limfatic-chineza.mp4"
+      data-ar="assets/video/Sistem limfatic-araba.mp4"
+      data-hi="assets/video/Sistem limfatic-hindi.mp4"
+      data-fr="assets/video/Sistem limfatic-franceza.mp4"
+      data-ru="assets/video/Sistem limfatic-rusa.mp4"
+    >
+      <source src="assets/video/Sistem limfatic-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Sistemul limfatic" 
+        data-en="Lymphatic System" 
+        data-es="Sistema linfático" 
+        data-zh="淋巴系统" 
+        data-ar="الجهاز اللمفاوي" 
+        data-hi="लसिका तंत्र" 
+        data-fr="Système lymphatique" 
+        data-ru="Лимфатическая система"
+      >
+        Sistemul limfatic
+      </span>
+    </div>
+  </div>
+</div>
+
+
+  <div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-sistem-imunitar"
+      data-ro="assets/video/Sistemul imunitar-romana.mp4"
+      data-en="assets/video/Sistemul imunitar-engleza.mp4"
+      data-es="assets/video/Sistemul imunitar-spaniola.mp4"
+      data-zh="assets/video/Sistemul imunitar-chineza.mp4"
+      data-ar="assets/video/Sistemul imunitar-araba.mp4"
+      data-hi="assets/video/Sistemul imunitar-hindi.mp4"
+      data-fr="assets/video/Sistemul imunitar-franceza.mp4"
+      data-ru="assets/video/Sistemul imunitar-rusa.mp4"
+    >
+      <source src="assets/video/Sistemul imunitar-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Sistemul imunitar" 
+        data-en="Immune System" 
+        data-es="Sistema inmunológico" 
+        data-zh="免疫系统" 
+        data-ar="الجهاز المناعي" 
+        data-hi="प्रतिरक्षा तंत्र" 
+        data-fr="Système immunitaire" 
+        data-ru="Иммунная система"
+      >
+        Sistemul imunitar
+      </span>
+    </div>
+  </div>
+</div>
+
+
+ <div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-sistem-reproductor"
+      data-ro="assets/video/Sistemul reproducator-romana.mp4"
+      data-en="assets/video/Sistemul reproducator-engleza.mp4"
+      data-es="assets/video/Sistemul reproducator-spaniola.mp4"
+      data-zh="assets/video/Sistemul reproducator-chineza.mp4"
+      data-ar="assets/video/Sistemul reproducator-araba.mp4"
+      data-hi="assets/video/Sistemul reproducator-hindi.mp4"
+      data-fr="assets/video/Sistemul reproducator-franceza.mp4"
+      data-ru="assets/video/Sistemul reproducator-rusa.mp4"
+    >
+      <source src="assets/video/Sistemul reproducator-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Sistemul reproducător" 
+        data-en="Reproductive System" 
+        data-es="Sistema reproductor" 
+        data-zh="生殖系统" 
+        data-ar="الجهاز التناسلي" 
+        data-hi="प्रजनन प्रणाली" 
+        data-fr="Système reproducteur" 
+        data-ru="Репродуктивная система"
+      >
+        Sistemul reproducător
+      </span>
+    </div>
+  </div>
+</div>
+
+
+   <div class="video-card">
+  <div class="video-preview">
+    <video 
+      muted 
+      preload="metadata" 
+      class="dynamic-video" 
+      id="video-organele-de-simt"
+      data-ro="assets/video/Organele de simt-romana.mp4"
+      data-en="assets/video/Organele de simt-engleza.mp4"
+      data-es="assets/video/Organele de simt-spaniola.mp4"
+      data-zh="assets/video/Organele de simt-chineza.mp4"
+      data-ar="assets/video/Organele de simt-araba.mp4"
+      data-hi="assets/video/Organele de simt-hindi.mp4"
+      data-fr="assets/video/Organele de simt-franceza.mp4"
+      data-ru="assets/video/Organele de simt-rusa.mp4"
+    >
+      <source src="assets/video/Organele de simt-romana.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <i class='bx bx-play-circle'></i>
+      <span 
+        data-ro="Organele de simț" 
+        data-en="Sense Organs" 
+        data-es="Órganos sensoriales" 
+        data-zh="感官器官" 
+        data-ar="الأعضاء الحسية" 
+        data-hi="इंद्रिय अंग" 
+        data-fr="Organes des sens" 
+        data-ru="Органы чувств"
+      >
+        Organele de simț
+      </span>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+
+  </div>
+</div>
+
+
+
+
+<button data-i18n="text_600" id="startPauseBtn" style="position:fixed; bottom:20px; right:20px; z-index: 999999; padding:10px 15px; font-size:14px; border:none; border-radius:5px; background:#8b0000; color:#fff; cursor:pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: background-color 0.3s ease;">
+  Start pauză
+</button>
+
+<div id="pauseOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); color:white; z-index:1000000; align-items:center; justify-content:center; flex-direction:column; text-align:center; padding:20px;">
+  <h2 id="pauseMessage"></h2>
+  <p id="pauseTimer"></p>
+  <iframe id="gameFrame" src="" ></iframe>
+
+  <div style="margin-top: 15px;">
+    <button data-i18n="text_601" id="endPauseBtn" style="padding:8px 12px; font-size:14px; border:none; border-radius:5px; background:#fff; color:#8b0000; cursor:pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: background-color 0.3s ease;" disabled>
+      Renunță la pauză
+    </button>
+
+   <select id="changeGameSelect" style="padding:8px 12px; font-size:14px; border:none; border-radius:5px; margin-left:10px; display:none;">
+  <option data-i18n="text_602" value="">Schimbă jocul...</option>
+  <option data-i18n="text_603" value="Puzzle">Puzzle</option>
+
+  <option data-i18n="text_605" value="Memory">Memorie</option>
+  <option data-i18n="text_606" value="Desen">Desen</option>
+</select>
+
+  </div>
+</div>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/script-pauza.js"></script>
+<script src="assets/js/script-activitate.js"></script>
+<script src="assets/js/script-video.js"></script>
+<script src="assets/traducerile/video-traducere.js"></script>
+</body>
+
+</html>

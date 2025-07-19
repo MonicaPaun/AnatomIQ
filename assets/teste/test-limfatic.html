@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>🦠 Test - Sistemul Limfatic </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="../../assets/teste/css/limfatic.css">
+  <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="../../assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+<h2>🦠 Test Biologie - Sistemul Limfatic Uman</h2>
+
+
+<form id="quizForm">
+    <!-- Întrebarea 1 -->
+    <div class="question">
+        <label>1. Ce este limfa?</label>
+        <div class="quiz-option"><input type="radio" name="q1" value="a"> O enzimă secretată de glande</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="b"> Un lichid ce transportă nutrienți în neuroni</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="c"> Un lichid transparent ce conține celule imune</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="d"> O substanță toxică eliminată de celule</div>
+        <div class="explanation" id="explanation-q1"></div>
+    </div>
+
+    <!-- Întrebarea 2 -->
+    <div class="question">
+        <label>2. Care este funcția principală a ganglionilor limfatici?</label>
+        <div class="quiz-option"><input type="radio" name="q2" value="a"> Stocarea glucozei</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="b"> Producerea hormonilor</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="c"> Filtrarea limfei și distrugerea agenților patogeni</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="d"> Transportul oxigenului</div>
+        <div class="explanation" id="explanation-q2"></div>
+    </div>
+
+    <!-- Întrebarea 3 -->
+    <div class="question">
+        <label>3. Ce organ este responsabil pentru maturarea limfocitelor T?</label>
+        <div class="quiz-option"><input type="radio" name="q3" value="a"> Splina</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="b"> Amigdalele</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="c"> Timusul</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="d"> Măduva osoasă</div>
+        <div class="explanation" id="explanation-q3"></div>
+    </div>
+
+    <!-- Întrebarea 4 -->
+    <div class="question">
+        <label>4. Ce duct limfatic drenează limfa din partea dreaptă a capului și toracelui?</label>
+        <div class="quiz-option"><input type="radio" name="q4" value="a"> Ductul toracic</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="b"> Ductul gastric</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="c"> Ductul limfatic drept</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="d"> Canalul pancreatic</div>
+        <div class="explanation" id="explanation-q4"></div>
+    </div>
+
+    <!-- Întrebarea 5 -->
+    <div class="question">
+        <label>5. Adevărat sau Fals: Splina filtrează sângele și elimină celulele vechi.</label>
+        <div class="quiz-option"><input type="radio" name="q5" value="true"> Adevărat</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="false"> Fals</div>
+        <div class="explanation" id="explanation-q5"></div>
+    </div>
+
+    <!-- Întrebarea 6 -->
+    <div class="question">
+        <label>6. Unde are loc absorbția grăsimilor prin vase limfatice?</label>
+        <div class="quiz-option"><input type="radio" name="q6" value="a"> Ficat</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="b"> Intestinul subțire</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="c"> Stomac</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="d"> Colon</div>
+        <div class="explanation" id="explanation-q6"></div>
+    </div>
+
+    <!-- Întrebarea 7 -->
+    <div class="question">
+        <label>7. Ce sunt vasele chilifere?</label>
+        <div class="quiz-option"><input type="radio" name="q7" value="a"> Vase din rinichi care absorb apă</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="b"> Vase limfatice din intestinul subțire care absorb lipide</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="c"> Vase sangvine ce transportă grăsimi</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="d"> Canale nervoase din colon</div>
+        <div class="explanation" id="explanation-q7"></div>
+    </div>
+
+    <!-- Întrebarea 8 -->
+    <div class="question">
+        <label>8. Care dintre următoarele este un simptom al limfedemului?</label>
+        <div class="quiz-option"><input type="radio" name="q8" value="a"> Tuse persistentă</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="b"> Pierdere de masă musculară</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="c"> Acumulare de lichid în țesuturi (edem)</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="d"> Lipsa senzației tactile</div>
+        <div class="explanation" id="explanation-q8"></div>
+    </div>
+
+    <!-- Întrebarea 9 -->
+    <div class="question">
+        <label>9. Ce rol are măduva osoasă în sistemul limfatic?</label>
+        <div class="quiz-option"><input type="radio" name="q9" value="a"> Absorbția limfei</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="b"> Producția de celule sanguine, inclusiv limfocite</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="c"> Stocarea de limfă</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="d"> Eliminarea toxinelor</div>
+        <div class="explanation" id="explanation-q9"></div>
+    </div>
+
+    <!-- Întrebarea 10 -->
+    <div class="question">
+        <label>10. Ce se întâmplă cu limfa după ce trece prin ductele limfatice?</label>
+        <div class="quiz-option"><input type="radio" name="q10" value="a"> Se varsă în splină</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="b"> Se acumulează în ganglioni</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="c"> Este eliminată prin transpirație</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="d"> Se varsă în circulația sanguină prin vena subclaviculară</div>
+        <div class="explanation" id="explanation-q10"></div>
+    </div>
+
+    <button type="button" onclick="evaluateQuiz()">Evaluare</button>
+</form>
+
+
+<div id="results"></div>
+
+<button onclick="window.location.href='../../teste.html';" style="position: fixed; bottom: 20px; left: 20px; padding: 10px 20px; background-color: #00796b; color: white; font-size: 18px; border: none; border-radius: 30px; cursor: pointer; transition: background-color 0.3s ease; box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);">
+⟵ Înapoi la Teste
+</button>
+
+
+<script src="../../assets/js/script-activitate.js"></script>
+<script src="../../assets/teste/traduceri/limf.js"></script>
+<script src="../../assets/teste/js/limfatic.js"></script>
+</body>
+</html>

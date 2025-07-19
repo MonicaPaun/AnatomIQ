@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>🌬️ Test - Sistemul Respirator Uman</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="../../assets/teste/css/respirator.css">
+    <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="../../assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+  
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+<h2>🌬️ Test Biologie - Sistemul Respirator Uman</h2>
+
+<form id="quizForm">
+    <!-- Question 1 -->
+    <div class="question">
+        <label>1. Care este rolul principal al sistemului respirator?</label>
+        <div class="quiz-option"><input type="radio" name="q1" value="a"> Crearea de energie</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="b"> Schimbul de gaze între organism și mediul înconjurător</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="c"> Reglarea temperaturii corpului</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="d"> Digestia alimentelor</div>
+        <div class="explanation" id="explanation-q1"></div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <label>2. Cavitatea nazală ajută la filtrarea, umidificarea și încălzirea aerului inspirat. (Adevărat/Fals)</label>
+        <div class="quiz-option"><input type="radio" name="q2" value="true"> Adevărat</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="false"> Fals</div>
+        <div class="explanation" id="explanation-q2"></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <label>3. Care este unitatea funcțională a plămânului, responsabilă pentru schimbul de gaze?</label>
+        <div class="quiz-option"><input type="radio" name="q3" value="a"> Bronhiole</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="b"> Alveole pulmonare</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="c"> Bronhii</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="d"> Laringe</div>
+        <div class="explanation" id="explanation-q3"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <label>4. Care este rolul principal al diafragmei în respirație?</label>
+        <div class="quiz-option"><input type="radio" name="q4" value="a"> Producrea de oxigen</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="b"> Controlul schimbului de gaze în alveole</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="c"> Creșterea și scăderea volumului toracic în timpul inspirației și expirației</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="d"> Protejarea plămânilor de infecții</div>
+        <div class="explanation" id="explanation-q4"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <label>5. Care este procesul de schimb de gaze dintre oxigen și dioxid de carbon la nivelul alveolelor?</label>
+        <div class="quiz-option"><input type="radio" name="q5" value="a"> Difuzie</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="b"> Osmotica</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="c"> Filtrare activă</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="d"> Apărare imunologică</div>
+        <div class="explanation" id="explanation-q5"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <label>6. Astmul bronșic este caracterizat de inflamația cronică a căilor respiratorii. (Adevărat/Fals)</label>
+        <div class="quiz-option"><input type="radio" name="q6" value="true"> Adevărat</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="false"> Fals</div>
+        <div class="explanation" id="explanation-q6"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+        <label>7. Ce rol are epiglota în laringe?</label>
+        <div class="quiz-option"><input type="radio" name="q7" value="a"> Produce sunete vocale</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="b"> Previne pătrunderea alimentelor în trahee</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="c"> Reglează volumul aerului inspirat</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="d"> Protejează mucoasa traheală</div>
+        <div class="explanation" id="explanation-q7"></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <label>8. Unde are loc schimbul de gaze între oxigen și dioxidul de carbon la nivel celular?</label>
+        <div class="quiz-option"><input type="radio" name="q8" value="a"> Alveole pulmonare</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="b"> Țesuturi</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="c"> Trahee</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="d"> Bronhii</div>
+        <div class="explanation" id="explanation-q8"></div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+        <label>9. Care este efectul fumatului asupra sistemului respirator?</label>
+        <div class="quiz-option"><input type="radio" name="q9" value="a"> Îmbunătățește eficiența hematozei</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="b"> Distruge epiteliul ciliar și reduce eficiența hematozei</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="c"> Crește volumul toracic</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="d"> Stimulează respirația</div>
+        <div class="explanation" id="explanation-q9"></div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+        <label>10. Care este rolul principal al mucoasei olfactive din cavitatea nazală?</label>
+        <div class="quiz-option"><input type="radio" name="q10" value="a"> Protejează căile respiratorii de infecții</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="b"> Contribuie la miros</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="c"> Filtrarea aerului inspirat</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="d"> Încălzirea aerului</div>
+        <div class="explanation" id="explanation-q10"></div>
+    </div>
+
+    <button type="button" onclick="evaluateQuiz()">Evaluare</button>
+</form>
+
+
+<div id="results"></div>
+
+<button onclick="window.location.href='../../teste.html';" style="position: fixed; bottom: 20px; left: 20px; padding: 10px 20px; background-color: #00796b; color: white; font-size: 18px; border: none; border-radius: 30px; cursor: pointer; transition: background-color 0.3s ease; box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);">
+⟵ Înapoi la Teste
+</button>
+
+<script src="../../assets/js/script-activitate.js"></script>
+<script src="../../assets/teste/traduceri/resp.js"></script>
+<script src="../../assets/teste/js/respirator.js"></script>
+</body>
+</html>

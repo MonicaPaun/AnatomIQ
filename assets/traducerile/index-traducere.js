@@ -1,0 +1,377 @@
+const translations = {
+    ro:  {
+   "text_0": "☰",
+  "text_1": "Română",
+  "text_2": "Engleză",
+  "text_21": "Spaniolă",
+  "text_22": "Chineză",
+  "text_23": "Arabă",
+  "text_24": "Hindi",
+  "text_25": "Franceză",
+  "text_26": "Rusă",
+  "text_3": "Introducere",
+  "text_4": "Sisteme ale corpului",
+  "text_5": "Teste",
+  "text_01619": "BioCheck",
+  "text_6": "Chatbot",
+  "text_7": "Modele 3D",
+  "text_8": "Videoclipuri",
+  "text_9": "Notițe",
+  "text_10": "Calculator",
+  "text_11": "Subiecte BAC",
+  "text_12": "Bibliotecă",
+  "text_13": "Contact",
+  "text_016": "BioStream",
+  "text_0160": "Recenzii",
+  "text_0161": "TranslaIQ",
+
+  "text_250": "<span>Bine ai venit pe AnatomIQ! 🧠</span>",
+  "text_260": " AnatomIQ este o platformă interactivă dedicată tuturor celor care vor să descopere, învețe și aprofundeze anatomia umană într-un mod modern și captivant. Am gândit acest site pentru a transforma învățarea biologiei într-o experiență dinamică, plăcută și accesibilă, indiferent dacă ești elev, pasionat de științe sau doar curios să înțelegi mai bine cum funcționează corpul tău.",
+  "text_27": "Pe AnatomIQ vei găsi:",
+  "text_28": "🧬 Modele 3D detaliate pentru fiecare sistem al corpului uman",
+  "text_29": "📝 Teste interactive și un generator de teste personalizate",
+  "text_30": "🎥 Filmulețe explicative pentru fiecare sistem",
+  "text_31": "📚 Manuale digitale (PDF) ușor de accesat",
+  "text_32": "🤖 BioBot – chatbot-ul nostru inteligent, gata să răspundă întrebărilor tale",
+  "text_33": "🖊️ Funcția de notițe personale direct pe platformă",
+  "text_34": "🧠 Mini-jocuri educative și opțiuni pentru pauze relaxante",
+  "text_35": "🧮 Calculator inclus, ideal pentru rezolvarea subiectelor de BAC",
+  "text_36": "Îți poți crea un cont gratuit pentru a-ți salva progresul, notițele și pentru a-ți personaliza experiența de învățare. Astfel, știi mereu unde ai rămas și ce mai ai de parcurs.",
+ "text_37": "Proiectul a fost realizat cu pasiune de <strong>Păun Monica Georgiana</strong> și <strong>Treanță Daria Mihaela</strong>, eleve ale Colegiului Național „Tudor Vladimirescu”, sub îndrumarea doamnei profesoare <strong>Mădălina Mareș</strong>. Ne-am propus să aducem biologia mai aproape de elevi, într-un mod care să inspire și să motiveze.",
+  "text_40": "Ești gata să explorezi corpul uman dintr-o perspectivă cu adevărat interactivă? Hai să învățăm împreună!"
+},
+    en: {
+   "text_0": "☰",
+  "text_1": "Romanian",
+  "text_2": "English",
+  "text_21": "Spanish",
+  "text_22": "Chinese",
+  "text_23": "Arabic",
+  "text_24": "Hindi",
+  "text_25": "French",
+  "text_26": "Russian",
+  "text_3": "Introduction",
+  "text_4": "Body Systems",
+  "text_5": "Tests",
+  "text_01619": "BioCheck",
+  "text_6": "Chatbot",
+  "text_7": "3D Models",
+  "text_8": "Videos",
+  "text_9": "Notes",
+  "text_10": "Calculator",
+  "text_11": "Baccalaureate Topics",
+  "text_12": "Library",
+  "text_13": "Contact",
+  "text_016": "BioStream",
+  "text_0160": "Reviews",
+  "text_0161": "TranslaIQ",
+ "text_250": "<span>Welcome to AnatomIQ! 🧠</span>",
+"text_260": "AnatomIQ is an interactive platform designed for everyone who wants to discover, learn, and deepen their understanding of human anatomy in a modern and engaging way. We created this site to transform biology learning into a dynamic, enjoyable, and accessible experience — whether you're a student, a science enthusiast, or just curious to better understand how your body works.",
+"text_27": "On AnatomIQ you’ll find:",
+"text_28": "🧬 Detailed 3D models for each system of the human body",
+"text_29": "📝 Interactive quizzes and a custom test generator",
+"text_30": "🎥 Explanatory videos for each system",
+"text_31": "📚 Easy-to-access digital textbooks (PDF)",
+"text_32": "🤖 BioBot – our intelligent chatbot ready to answer your questions",
+"text_33": "🖊️ Personal notes feature built into the platform",
+"text_34": "🧠 Educational mini-games and relaxing break options",
+"text_35": "🧮 Built-in calculator – ideal for BAC exam exercises",
+"text_36": "You can create a free account to save your progress, notes, and personalize your learning experience. That way, you always know where you left off and what’s next.",
+"text_37": "This project was created with passion by <strong>Păun Monica Georgiana</strong> and <strong>Treanță Daria Mihaela</strong>, students of the “Tudor Vladimirescu” National College, under the guidance of teacher <strong>Mădălina Mareș</strong>. Our goal was to bring biology closer to students in a way that inspires and motivates.",
+"text_40": "Are you ready to explore the human body in a truly interactive way? Let’s learn together!"
+},
+es: {
+   "text_0": "☰",
+  "text_1": "Rumano",
+  "text_2": "Inglés",
+  "text_21": "Español",
+  "text_22": "Chino",
+  "text_23": "Árabe",
+  "text_24": "Hindi",
+  "text_25": "Francés",
+  "text_26": "Ruso",
+  "text_3": "Introducción",
+  "text_4": "Sistemas del cuerpo",
+  "text_5": "Pruebas",
+  "text_01619": "BioCheck",
+  "text_6": "Chatbot",
+  "text_7": "Modelos 3D",
+  "text_8": "Videos",
+  "text_9": "Notas",
+  "text_10": "Calculadora",
+  "text_11": "Temas del BAC",
+  "text_12": "Biblioteca",
+  "text_13": "Contacto",
+  "text_016": "BioStream",
+  "text_0160": "Reseñas",
+  "text_0161": "TranslaIQ",
+ "text_250": "<span>¡Bienvenido a AnatomIQ! 🧠</span>",
+    "text_260": "AnatomIQ es una plataforma interactiva diseñada para todos los que desean descubrir, aprender y profundizar en la anatomía humana de una manera moderna y atractiva. Creamos este sitio para transformar el aprendizaje de la biología en una experiencia dinámica, agradable y accesible, ya seas estudiante, amante de la ciencia o simplemente tengas curiosidad por entender mejor cómo funciona tu cuerpo.",
+    "text_27": "En AnatomIQ encontrarás:",
+    "text_28": "🧬 Modelos 3D detallados de cada sistema del cuerpo humano",
+    "text_29": "📝 Pruebas interactivas y un generador de tests personalizados",
+    "text_30": "🎥 Videos explicativos para cada sistema",
+    "text_31": "📚 Libros digitales (PDF) de fácil acceso",
+    "text_32": "🤖 BioBot – nuestro chatbot inteligente, listo para responder tus preguntas",
+    "text_33": "🖊️ Función de notas personales directamente en la plataforma",
+    "text_34": "🧠 Mini-juegos educativos y opciones para pausas relajantes",
+    "text_35": "🧮 Calculadora integrada, ideal para preparar los exámenes",
+    "text_36": "Puedes crear una cuenta gratuita para guardar tu progreso, notas y personalizar tu experiencia de aprendizaje. Así sabrás siempre dónde te quedaste y qué te falta por aprender.",
+    "text_37": "El proyecto fue creado con pasión por <strong>Păun Monica Georgiana</strong> y <strong>Treanță Daria Mihaela</strong>, estudiantes del Colegio Nacional «Tudor Vladimirescu», bajo la guía de la profesora <strong>Mădălina Mareș</strong>. Nuestro objetivo fue acercar la biología a los estudiantes de una manera que inspire y motive.",
+    "text_40": "¿Estás listo para explorar el cuerpo humano desde una perspectiva realmente interactiva? ¡Aprendamos juntos!"
+  },
+  zh: {
+   "text_0": "☰",
+  "text_1": "罗马尼亚语",
+  "text_2": "英语",
+  "text_21": "西班牙语",
+  "text_22": "中文",
+  "text_23": "阿拉伯语",
+  "text_24": "印地语",
+  "text_25": "法语",
+  "text_26": "俄语",
+  "text_3": "介绍",
+  "text_4": "身体系统",
+  "text_5": "测试",
+  "text_01619": "BioCheck",
+  "text_6": "聊天机器人",
+  "text_7": "3D模型",
+  "text_8": "视频",
+  "text_9": "笔记",
+  "text_10": "计算器",
+  "text_11": "高考主题",
+  "text_12": "图书馆",
+  "text_13": "联系",
+  "text_016": "BioStream",
+  "text_0160": "评论",
+  "text_0161": "TranslaIQ",
+   "text_250": "<span>欢迎来到 AnatomIQ！🧠</span>",
+    "text_260": "AnatomIQ 是一个互动平台，适合所有想要以现代且引人入胜的方式探索、学习和深入了解人体解剖学的人。我们创建这个网站，是为了让生物学习变得更有趣、动态且容易接触，不论你是学生、科学爱好者，还是只是对人体运作感到好奇。",
+    "text_27": "在 AnatomIQ 上你将会发现：",
+    "text_28": "🧬 每个系统的详细 3D 模型",
+    "text_29": "📝 互动测验和个性化测试生成器",
+    "text_30": "🎥 每个系统的讲解视频",
+    "text_31": "📚 易于访问的数字教材（PDF）",
+    "text_32": "🤖 BioBot —— 我们智能的聊天机器人，随时回答你的问题",
+    "text_33": "🖊️ 平台内直接记录个人笔记的功能",
+    "text_34": "🧠 教育小游戏和放松休息选项",
+    "text_35": "🧮 内置计算器，非常适合考试练习",
+    "text_36": "你可以创建一个免费账户来保存你的进度、笔记，并个性化你的学习体验。这样你总是知道自己学到了哪里，还需要完成哪些内容。",
+    "text_37": "该项目由 <strong>Păun Monica Georgiana</strong> 和 <strong>Treanță Daria Mihaela</strong> 热情创建，她们是“都铎·弗拉迪米雷斯库”国家学院的学生，在 <strong>Mădălina Mareș</strong> 老师的指导下完成。我们的目标是以激发和激励的方式让学生更接近生物学。",
+    "text_40": "准备好以真正互动的方式探索人体了吗？让我们一起学习吧！"
+  },
+  ar: {
+   "text_0": "☰",
+  "text_1": "الرومانية",
+  "text_2": "الإنجليزية",
+  "text_21": "الإسبانية",
+  "text_22": "الصينية",
+  "text_23": "العربية",
+  "text_24": "الهندية",
+  "text_25": "الفرنسية",
+  "text_26": "الروسية",
+  "text_3": "مقدمة",
+  "text_4": "أنظمة الجسم",
+  "text_5": "اختبارات",
+  "text_01619": "BioCheck",
+  "text_6": "الدردشة الآلية",
+  "text_7": "نماذج ثلاثية الأبعاد",
+  "text_8": "فيديوهات",
+  "text_9": "ملاحظات",
+  "text_10": "آلة حاسبة",
+  "text_11": "مواضيع البكالوريا",
+  "text_12": "المكتبة",
+  "text_13": "اتصال",
+  "text_016": "BioStream",
+  "text_0160": "مراجعات",
+  "text_0161": "TranslaIQ",
+ "text_250": "<span>مرحبًا بك في AnatomIQ! 🧠</span>",
+    "text_260": "AnatomIQ هي منصة تفاعلية مخصصة لكل من يرغب في اكتشاف وتعلم وفهم علم تشريح الإنسان بطريقة حديثة وجذابة. أنشأنا هذا الموقع لتحويل تعلم علم الأحياء إلى تجربة ديناميكية وممتعة وسهلة الوصول، سواء كنت طالبًا، أو شغوفًا بالعلوم، أو فقط فضوليًا لمعرفة كيفية عمل جسمك.",
+    "text_27": "في AnatomIQ ستجد:",
+    "text_28": "🧬 نماذج ثلاثية الأبعاد مفصلة لكل نظام في جسم الإنسان",
+    "text_29": "📝 اختبارات تفاعلية ومنشئ اختبارات مخصصة",
+    "text_30": "🎥 مقاطع فيديو توضيحية لكل نظام",
+    "text_31": "📚 كتب رقمية (PDF) سهلة الوصول",
+    "text_32": "🤖 BioBot – روبوتنا الذكي، جاهز للإجابة على أسئلتك",
+    "text_33": "🖊️ ميزة الملاحظات الشخصية على المنصة مباشرة",
+    "text_34": "🧠 ألعاب تعليمية صغيرة وخيارات لأوقات استراحة مريحة",
+    "text_35": "🧮 آلة حاسبة مدمجة، مثالية للتحضير للامتحانات",
+    "text_36": "يمكنك إنشاء حساب مجاني لحفظ تقدمك وملاحظاتك ولتخصيص تجربة التعلم الخاصة بك. وبهذا، ستعرف دائمًا أين توقفت وماذا عليك إكماله.",
+    "text_37": "تم تنفيذ هذا المشروع بشغف من قبل <strong>Păun Monica Georgiana</strong> و <strong>Treanță Daria Mihaela</strong>، طالبات في المدرسة الوطنية «Tudor Vladimirescu»، تحت إشراف الأستاذة <strong>Mădălina Mareș</strong>. هدفنا هو تقريب علم الأحياء من الطلاب بطريقة ملهمة ومحفزة.",
+    "text_40": "هل أنت مستعد لاستكشاف جسم الإنسان من منظور تفاعلي حقيقي؟ دعنا نتعلم معًا!"
+  },
+  hi: {
+     "text_0": "☰",
+  "text_1": "रोमानियाई",
+  "text_2": "अंग्रेज़ी",
+  "text_21": "स्पेनिश",
+  "text_22": "चीनी",
+  "text_23": "अरबी",
+  "text_24": "हिंदी",
+  "text_25": "फ़्रेंच",
+  "text_26": "रूसी",
+  "text_3": "परिचय",
+  "text_4": "शरीर प्रणाली",
+  "text_5": "परीक्षण",
+  "text_01619": "BioCheck",
+  "text_6": "चैटबॉट",
+  "text_7": "3D मॉडल",
+  "text_8": "वीडियो",
+  "text_9": "नोट्स",
+  "text_10": "कैलकुलेटर",
+  "text_11": "BAC विषय",
+  "text_12": "पुस्तकालय",
+  "text_13": "संपर्क करें",
+  "text_016": "BioStream",
+  "text_0160": "समीक्षाएं",
+  "text_0161": "TranslaIQ",
+ "text_250": "<span>अनैटोमआईक्यू में आपका स्वागत है! 🧠</span>",
+    "text_260": "AnatomIQ एक इंटरैक्टिव प्लेटफॉर्म है जो उन सभी लोगों के लिए बनाया गया है जो मानव शरीर रचना को आधुनिक और आकर्षक तरीके से सीखना और समझना चाहते हैं। हमने इस साइट को बायोलॉजी की पढ़ाई को मज़ेदार, गतिशील और सुलभ बनाने के लिए डिज़ाइन किया है — चाहे आप छात्र हों, विज्ञान प्रेमी हों या सिर्फ यह जानने में रुचि रखते हों कि आपका शरीर कैसे काम करता है।",
+    "text_27": "AnatomIQ पर आपको मिलेगा:",
+    "text_28": "🧬 मानव शरीर के प्रत्येक तंत्र के लिए विस्तृत 3D मॉडल",
+    "text_29": "📝 इंटरैक्टिव परीक्षण और एक कस्टम टेस्ट जेनरेटर",
+    "text_30": "🎥 हर तंत्र के लिए समझाने वाले वीडियो",
+    "text_31": "📚 डिजिटल किताबें (PDF) जिन्हें आसानी से एक्सेस किया जा सकता है",
+    "text_32": "🤖 BioBot – हमारा स्मार्ट चैटबॉट, आपके सवालों का जवाब देने के लिए तैयार",
+    "text_33": "🖊️ प्लेटफॉर्म पर ही पर्सनल नोट्स की सुविधा",
+    "text_34": "🧠 एजुकेशनल मिनी-गेम्स और आरामदायक ब्रेक विकल्प",
+    "text_35": "🧮 अंतर्निर्मित कैलकुलेटर, परीक्षा अभ्यास के लिए आदर्श",
+    "text_36": "आप एक फ्री अकाउंट बना सकते हैं जिससे आप अपनी प्रगति, नोट्स को सहेज सकते हैं और अपनी लर्निंग को पर्सनलाइज़ कर सकते हैं। इस तरह आप हमेशा जान पाएंगे कि आपने कहाँ छोड़ा था और क्या आगे करना है।",
+    "text_37": "यह प्रोजेक्ट <strong>Păun Monica Georgiana</strong> और <strong>Treanță Daria Mihaela</strong> द्वारा जुनून के साथ बनाया गया है, जो ‘Tudor Vladimirescu’ राष्ट्रीय कॉलेज की छात्राएँ हैं, और <strong>Mădălina Mareș</strong> की मार्गदर्शकता में किया गया है। हमारा लक्ष्य छात्रों को प्रेरित और प्रोत्साहित करने वाले तरीके से जीवविज्ञान को करीब लाना था।",
+    "text_40": "क्या आप मानव शरीर को एक इंटरेक्टिव दृष्टिकोण से एक्सप्लोर करने के लिए तैयार हैं? आइए साथ में सीखते हैं!"
+  },
+  fr: {
+     "text_0": "☰",
+  "text_1": "Roumain",
+  "text_2": "Anglais",
+  "text_21": "Espagnol",
+  "text_22": "Chinois",
+  "text_23": "Arabe",
+  "text_24": "Hindi",
+  "text_25": "Français",
+  "text_26": "Russe",
+  "text_3": "Introduction",
+  "text_4": "Systèmes du corps",
+  "text_5": "Tests",
+  "text_01619": "BioCheck",
+  "text_6": "Chatbot",
+  "text_7": "Modèles 3D",
+  "text_8": "Vidéos",
+  "text_9": "Notes",
+  "text_10": "Calculatrice",
+  "text_11": "Sujets du BAC",
+  "text_12": "Bibliothèque",
+  "text_13": "Contact",
+  "text_016": "BioStream",
+  "text_0160": "Avis",
+  "text_0161": "TranslaIQ",
+
+   "text_250": "<span>Bienvenue sur AnatomIQ ! 🧠</span>",
+    "text_260": "AnatomIQ est une plateforme interactive conçue pour tous ceux qui souhaitent découvrir, apprendre et approfondir l'anatomie humaine de manière moderne et captivante. Nous avons créé ce site pour transformer l’apprentissage de la biologie en une expérience dynamique, agréable et accessible, que vous soyez élève, passionné de sciences ou simplement curieux de comprendre le fonctionnement de votre corps.",
+    "text_27": "Sur AnatomIQ, vous trouverez :",
+    "text_28": "🧬 Des modèles 3D détaillés pour chaque système du corps humain",
+    "text_29": "📝 Des quiz interactifs et un générateur de tests personnalisés",
+    "text_30": "🎥 Des vidéos explicatives pour chaque système",
+    "text_31": "📚 Des manuels numériques (PDF) faciles à consulter",
+    "text_32": "🤖 BioBot – notre chatbot intelligent, prêt à répondre à vos questions",
+    "text_33": "🖊️ Une fonction de prise de notes personnelles sur la plateforme",
+    "text_34": "🧠 Des mini-jeux éducatifs et des options de pause relaxante",
+    "text_35": "🧮 Une calculatrice intégrée, idéale pour préparer les examens",
+    "text_36": "Vous pouvez créer un compte gratuit pour sauvegarder votre progression, vos notes et personnaliser votre expérience d'apprentissage. Ainsi, vous saurez toujours où vous en êtes et ce qu'il vous reste à faire.",
+    "text_37": "Ce projet a été réalisé avec passion par <strong>Păun Monica Georgiana</strong> et <strong>Treanță Daria Mihaela</strong>, élèves du Lycée National « Tudor Vladimirescu », sous la direction de <strong>Mădălina Mareș</strong>. Notre objectif est de rapprocher la biologie des élèves d'une manière inspirante et motivante.",
+    "text_40": "Prêt à explorer le corps humain d'une manière vraiment interactive ? Apprenons ensemble !"
+  },
+  
+  ru: {
+     "text_0": "☰",
+  "text_1": "Румынский",
+  "text_2": "Английский",
+  "text_21": "Испанский",
+  "text_22": "Китайский",
+  "text_23": "Арабский",
+  "text_24": "Хинди",
+  "text_25": "Французский",
+  "text_26": "Русский",
+  "text_3": "Введение",
+  "text_4": "Системы тела",
+  "text_5": "Тесты",
+  "text_01619": "BioCheck",
+  "text_6": "Чат-бот",
+  "text_7": "3D модели",
+  "text_8": "Видео",
+  "text_9": "Заметки",
+  "text_10": "Калькулятор",
+  "text_11": "Темы ЕГЭ",
+  "text_12": "Библиотека",
+  "text_13": "Контакт",
+  "text_016": "BioStream",
+  "text_0160": "Отзывы",
+  "text_0161": "TranslaIQ",
+
+  "text_250": "<span>Добро пожаловать на AnatomIQ! 🧠</span>",
+    "text_260": "AnatomIQ — это интерактивная платформа для всех, кто хочет изучать и лучше понимать анатомию человека в современном и увлекательном формате. Мы создали этот сайт, чтобы сделать обучение биологии динамичным, приятным и доступным — будь вы ученик, любитель науки или просто любопытный исследователь своего тела.",
+    "text_27": "На AnatomIQ вы найдете:",
+    "text_28": "🧬 Детализированные 3D-модели всех систем человеческого тела",
+    "text_29": "📝 Интерактивные тесты и генератор индивидуальных заданий",
+    "text_30": "🎥 Объяснительные видео по каждой системе",
+    "text_31": "📚 Цифровые учебники (PDF) с удобным доступом",
+    "text_32": "🤖 BioBot – наш умный чат-бот, готовый ответить на ваши вопросы",
+    "text_33": "🖊️ Функция личных заметок прямо на платформе",
+    "text_34": "🧠 Образовательные мини-игры и опции для расслабляющих перерывов",
+    "text_35": "🧮 Встроенный калькулятор, идеален для подготовки к экзаменам",
+    "text_36": "Вы можете создать бесплатный аккаунт, чтобы сохранить свой прогресс, заметки и персонализировать обучение. Так вы всегда будете знать, на чем остановились и что еще нужно пройти.",
+    "text_37": "Проект был создан с энтузиазмом <strong>Păun Monica Georgiana</strong> и <strong>Treanță Daria Mihaela</strong>, ученицами Национального колледжа «Тудор Владимиреску», под руководством <strong>Мэдэлина Мареш</strong>. Мы стремились сделать биологию ближе к ученикам — вдохновляющей и мотивирующей.",
+    "text_40": "Готовы изучать человеческое тело в действительно интерактивной форме? Давайте учиться вместе!"
+  }
+
+ };
+
+  let currentLang = localStorage.getItem('lang') || 'ro';
+
+  function loadTranslations(lang) {
+    if (!translations[lang]) return;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadTranslations(currentLang);
+
+    const langSelect = document.getElementById('lang-select');
+    if (langSelect) {
+      langSelect.value = currentLang;
+      langSelect.addEventListener('change', (e) => {
+        currentLang = e.target.value;
+        localStorage.setItem('lang', currentLang);
+        loadTranslations(currentLang);
+      });
+    }
+  });
+
+function updateImageByLang(lang) {
+  const img = document.getElementById('main-image');
+  if (!img) return;
+  const newSrc = img.getAttribute(`data-${lang}`);
+  if (newSrc) {
+    img.src = newSrc;
+  }
+}
+function loadTranslations(lang) {
+  if (!translations[lang]) return;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+
+  // Schimbă și imaginea
+  updateImageByLang(lang);
+}

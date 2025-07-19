@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>🧠 Test - Sistemul Nervos Uman</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="../../assets/teste/css/nervos.css">
+    <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="../../assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+<h2>🧠 Test Biologie - Sistemul Nervos Uman</h2>
+
+<form id="quizForm">
+    <!-- Question 1 -->
+    <div class="question">
+        <label>1. Care este rolul principal al sistemului nervos?</label>
+        <div class="quiz-option"><input type="radio" name="q1" value="a"> Recepționarea, prelucrarea și transmiterea informațiilor</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="b"> Regenerarea celulelor nervoase</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="c"> Protejarea organismului de infecții</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="d"> Controlul funcțiilor digestive</div>
+        <div class="explanation" id="explanation-q1"></div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <label>2. Sistemului nervos periferic controlează mișcările voluntare și percepțiile senzoriale. (Adevărat/Fals)</label>
+        <div class="quiz-option"><input type="radio" name="q2" value="true"> Adevărat </div>
+        <div class="quiz-option"><input type="radio" name="q2" value="false"> Fals </div>
+        <div class="explanation" id="explanation-q2"></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <label>3. Care este unitatea structurală și funcțională a sistemului nervos?</label>
+        <div class="quiz-option"><input type="radio" name="q3" value="a"> Neuronul</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="b"> Axonul</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="c"> Măduva spinării</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="d"> Ganglionul nervos</div>
+        <div class="explanation" id="explanation-q3"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <label>4. Care este funcția principală a sistemului nervos vegetativ?</label>
+        <div class="quiz-option"><input type="radio" name="q4" value="a"> Controlul mișcărilor voluntare</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="b"> Reglarea funcțiilor involuntare, cum ar fi respirația și ritmul cardiac</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="c"> Procesarea informațiilor senzoriale</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="d"> Controlul mișcărilor ochilor</div>
+        <div class="explanation" id="explanation-q4"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <label>5. Care dintre următoarele este o componentă a sistemului nervos periferic?</label>
+        <div class="quiz-option"><input type="radio" name="q5" value="a"> Creierul</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="b"> Nervii cranieni și spinali</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="c"> Măduva spinării</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="d"> Cortexul cerebral</div>
+        <div class="explanation" id="explanation-q5"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <label>6. Ce rol are teaca de mielină la nivelul neuronului?</label>
+        <div class="quiz-option"><input type="radio" name="q6" value="a"> Protejează axonul de leziuni</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="b"> Accelerază transmiterea impulsului nervos</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="c"> Realizează sinapsa între neuroni</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="d"> Permite formarea neurotransmițătorilor</div>
+        <div class="explanation" id="explanation-q6"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+        <label>7. Care dintre următoarele afecțiuni ale sistemului nervos este o boală neurodegenerativă?</label>
+        <div class="quiz-option"><input type="radio" name="q7" value="a"> Parkinson</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="b"> Epilepsie</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="c"> Scleroză multiplă</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="d"> AVC</div>
+        <div class="explanation" id="explanation-q7"></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <label>8. Ce structură a creierului este responsabilă pentru coordonarea mișcărilor și menținerea echilibrului?</label>
+        <div class="quiz-option"><input type="radio" name="q8" value="a"> Telencefalul</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="b"> Cerebelul</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="c"> Trunchiul cerebral</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="d"> Diencefalul</div>
+        <div class="explanation" id="explanation-q8"></div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+        <label>9. Care este rolul neurotransmițătorilor în sistemul nervos?</label>
+        <div class="quiz-option"><input type="radio" name="q9" value="a"> Transmiterea impulsului nervos între neuroni</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="b"> Reglarea hormonilor din sânge</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="c"> Protejarea neuronilor împotriva toxinelor</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="d"> Încurajarea formării mielinei</div>
+        <div class="explanation" id="explanation-q9"></div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+        <label>10. Care este rolul arcului reflex?</label>
+        <div class="quiz-option"><input type="radio" name="q10" value="a"> Detectează stimuli și trimite comenzi către mușchi</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="b"> Permite procesarea informațiilor senzoriale la nivelul creierului</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="c"> Asigură o reacție rapidă și automată la stimuli</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="d"> Reglează activitatea mușchilor scheletici</div>
+        <div class="explanation" id="explanation-q10"></div>
+    </div>
+
+    <button type="button" onclick="evaluateQuiz()">Evaluare</button>
+</form>
+
+
+<div id="results"></div>
+
+<button onclick="window.location.href='../../teste.html';" style="position: fixed; bottom: 20px; left: 20px; padding: 10px 20px; background-color: #00796b; color: white; font-size: 18px; border: none; border-radius: 30px; cursor: pointer; transition: background-color 0.3s ease; box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);">
+⟵ Înapoi la Teste
+</button>
+<script src="../../assets/js/script-activitate.js"></script>
+<script src="../../assets/teste/traduceri/nerv.js"></script>
+<script src="../../assets/teste/js/nervos.js"></script>
+</body>
+</html>

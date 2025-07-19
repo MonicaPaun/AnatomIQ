@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>🩺 Test - Sistemul Circulator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/teste/css/circulator.css">
+   <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="../../assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+<h2>🩺 Test Biologie - Sistemul Circulator Uman</h2>
+
+<form id="quizForm">
+    <!-- Question 1 -->
+    <div class="question">
+        <label>1. Care este definiția sistemului circulator uman?</label>
+        <div class="quiz-option"><input type="radio" name="q1" value="a"> Ansamblul organelor care asigură digestia alimentelor</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="b"> Ansamblul organelor care asigură transportul substanțelor prin intermediul sângelui și limfei</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="c"> Sistemul care controlează mișcările corpului</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="d"> Sistemul care reglează temperatura corpului</div>
+        <div class="explanation" id="explanation-q1"></div>
+    </div>
+
+    <!-- Question 2 -->
+<div class="question">
+    <label>2. Sistemul circulator transportă oxigen și nutrienți în corp. (Adevărat/Fals)</label>
+    <div class="quiz-option"><input type="radio" name="q2" value="true"> Adevărat</div>
+    <div class="quiz-option"><input type="radio" name="q2" value="false"> Fals</div>
+    <div class="explanation" id="explanation-q2"></div>
+</div>
+
+
+    <!-- Question 3 -->
+    <div class="question">
+        <label>3. Care dintre următoarele componente face parte din sistemul circulator?</label>
+        <div class="quiz-option"><input type="radio" name="q3" value="a"> Nefronii</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="b"> Arterele, venele, capilarele și inima</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="c"> Stomacul și pancreasul</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="d"> Oasele și mușchii</div>
+        <div class="explanation" id="explanation-q3"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <label>4. Care este rolul principal al vaselor limfatice?</label>
+        <div class="quiz-option"><input type="radio" name="q4" value="a"> Transportul sângelui oxigenat</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="b"> Drenarea excesului de lichid interstițial și contribuirea la apărarea imună</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="c"> Transportul oxigenului în corp</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="d"> Realizarea schimburilor gazoase între sânge și țesuturi</div>
+        <div class="explanation" id="explanation-q4"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <label>5. Care dintre următoarele vase transportă sângele de la inimă către țesuturi?</label>
+        <div class="quiz-option"><input type="radio" name="q5" value="a"> Vene</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="b"> Capilare</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="c"> Artere</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="d"> Limfă</div>
+        <div class="explanation" id="explanation-q5"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <label>6. Ce rol au eritrocitele (hematiile) în sânge?</label>
+        <div class="quiz-option"><input type="radio" name="q6" value="a"> Apărarea împotriva infecțiilor</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="b"> Coagularea sângelui</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="c"> Transportul oxigenului prin hemoglobină</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="d"> Transportul nutrienților în corp</div>
+        <div class="explanation" id="explanation-q6"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+        <label>7. Care este structura principală a inimii?</label>
+        <div class="quiz-option"><input type="radio" name="q7" value="a"> 2 camere</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="b"> 3 camere</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="c"> 4 camere</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="d"> 5 camere</div>
+        <div class="explanation" id="explanation-q7"></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <label>8. Care este rolul valvei semilunare aortei?</label>
+        <div class="quiz-option"><input type="radio" name="q8" value="a"> Împiedică sângele să curgă înapoi din ventriculul stâng în atriu</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="b"> Permite sângele să treacă din ventriculul stâng în aortă</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="c"> Împiedică sângele să curgă înapoi din ventriculul drept în atriu</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="d"> Permite sângele să treacă din atriu drept în ventriculul drept</div>
+        <div class="explanation" id="explanation-q8"></div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+        <label>9. Ce este hipertensiunea arterială?</label>
+        <div class="quiz-option"><input type="radio" name="q9" value="a"> Tensiune arterială normală</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="b"> Tensiune arterială peste valorile normale, risc pentru AVC și infarct</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="c"> Scăderea tensiunii arteriale</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="d"> Lipsa oricărei probleme de sănătate legată de circulație</div>
+        <div class="explanation" id="explanation-q9"></div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+        <label>10. Care dintre următoarele este un tip de vas sanguin?</label>
+        <div class="quiz-option"><input type="radio" name="q10" value="a"> Venele pulmonare</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="b"> Vase limfatice</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="c"> Rădăcini nervoase</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="d"> Ganglioni limfatici</div>
+        <div class="explanation" id="explanation-q10"></div>
+    </div>
+
+    <button type="button" onclick="evaluateQuiz()">Evaluare</button>
+</form>
+
+
+<div id="results"></div>
+
+<button onclick="window.location.href='../../teste.html';" style="position: fixed; bottom: 20px; left: 20px; padding: 10px 20px; background-color: #00796b; color: white; font-size: 18px; border: none; border-radius: 30px; cursor: pointer; transition: background-color 0.3s ease; box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);">
+⟵ Înapoi la Teste
+</button>
+<script src="../../assets/js/script-activitate.js"></script>
+<script src="../../assets/teste/traduceri/circ.js"></script>
+<script src="../../assets/teste/js/circulator.js"></script>
+</body>
+</html>

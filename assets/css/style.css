@@ -1,0 +1,662 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+   
+    min-height: 100vh;
+    transition: background 0.4s ease, color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+
+}
+ 
+
+/* LAYOUT */
+.container {
+    display: flex;
+    height: 100vh;
+}
+/* SIDEBAR */
+.sidebar {
+    width: 60px;
+    background-color: #b22222;
+    color: white;
+    transition: width 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y:hidden;
+    overflow-x: hidden;
+    z-index: 10;
+}
+
+.sidebar:hover {
+    width: 220px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.sidebar li {
+    padding: 7px;
+    border-bottom: 1px solid white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar li:hover {
+    background-color: white;
+    color: #b22222;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.item-icon {
+    font-size: 1rem;
+}
+
+.item-txt {
+    margin-left: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.sidebar:hover .item-txt {
+    opacity: 1;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    flex: 1;
+    padding: 5rem;
+    overflow: auto;
+    z-index: 1;
+   
+}
+
+
+
+
+
+/* SCROLL PROGRESS BAR */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: #8b0000;
+    z-index: 10000;
+    transition: width 0.3s ease-in-out;
+}
+
+/* SCROLL PROGRESS BAR (when scroll progresses) */
+#progress-bar.active {
+    animation: progressFill 0.3s ease-out forwards;
+}
+
+@keyframes progressFill {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+
+
+.intro {
+    background-color: transparent;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 1230px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #333;
+    overflow: hidden;
+  bottom: 10px;
+    left: 16%;
+    position: center;
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.intro-text h2 {
+    text-align: center; 
+  width: 100%;      
+  font-size: 42px; 
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.intro-text h2 span {
+  background: linear-gradient(
+    90deg,
+    #b22222 0%,
+    #ff4444 45%,
+    #ff6b6b 50%,
+    #ff4444 55%,
+    #b22222 100%
+  );
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.intro-text p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.intro-text strong {
+    color: #e73f3f;
+    font-weight: bold;
+}
+
+.intro-image {
+    flex: 1;
+    text-align: center;
+    animation: float 4s ease-in-out infinite;
+}
+
+.intro-image img {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.intro-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Plutire ușoară */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+.intro-content {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media query pentru ecrane mici (telefoane) */
+@media (max-width: 600px) {
+    .main-content {
+        padding: 2rem;
+         overflow-x: none; 
+    overflow-y: auto; /* Permitem scroll vertical */
+    }
+  .intro {
+    position: center; 
+    width: 100%;
+  max-width: 360px;
+    margin: 20px 10px;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    top: 20px !important;
+    left :-15px !important;
+    overflow-y: auto;
+   
+  }
+
+  .intro-content {
+    flex-direction: column; /* Coloană pe mobil */
+    align-items: center;
+    gap: 10px;
+    
+  }
+
+  .intro-text {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .intro-text h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .intro-text p {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .intro-image {
+    width: 100%;
+    max-height: 250px;
+  }
+
+  .intro-image img {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 15px;
+  }
+}
+
+
+   /* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+body.dark {
+    background: linear-gradient(to right, #3b0a0a, #5a1f1f);
+    color: white;
+}
+
+body.dark .main-content {
+    background: rgba(255,255,255,0.05);
+}
+
+body.dark .sidebar {
+    background: #3a0f0f;
+    color: #eee;
+}
+
+body.dark .sidebar li:hover {
+    background-color: #ffffff22;
+    color: #fff;
+}
+
+
+/* CONTENIT SELECTION LIMBI */
+#lang-select {
+    position: fixed;
+top: 10px;
+right: 20px;
+    font-size: 1rem;
+    background: #fff;
+    color: #8b0000;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 10001;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 140px;
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'7'%20viewBox%3D'0%200%2010%207'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%207%205-7H0z'%20fill%3D'%238b0000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px 7px;
+}
+
+#lang-select:hover {
+    background-color: #8b0000;
+    color: #fff;
+    border-color: #8b0000;
+}
+
+#lang-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #8b0000aa;
+    background-color: #8b0000;
+    color: #fff;
+}
+
+/* opțiunile dropdown */
+#lang-select option {
+    color: #8b0000;
+    background: #fff;
+}
+
+body.dark #lang-select {
+    background: #3a0f0f;
+    color: #eee;
+    border-color: #eee;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'7'%20viewBox%3D'0%200%2010%207'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%207%205-7H0z'%20fill%3D'%23eee'/%3E%3C/svg%3E");
+}
+
+body.dark #lang-select:hover,
+body.dark #lang-select:focus {
+    background-color: #eee;
+    color: #3a0f0f;
+    border-color: #eee;
+}
+
+
+/* Logo Styles */
+ .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    left: -6px;
+    position: relative;
+    
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    
+}
+.logo-img:hover {
+    transform: scale(1.2);
+}
+
+
+.logo-preview {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 100;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
+}
+.logo-preview img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.logo:hover .logo-preview {
+    display: block;
+}
+
+/* Scrollbar personalizat - ADN / Nervos */
+::-webkit-scrollbar {
+    width: 14px; /* Lățimea scrollbar-ului */
+}
+
+/* Fundalul scrollbar-ului (partea de fundal) */
+::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Fundal deschis pentru a se distinge clar */
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Butonul scrollbar-ului (partea care se mișcă) */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff6f61, #d4af37);
+    border-radius: 10px;
+    border: 2px solid #fff; /* Mărim contrastul cu un border alb */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Când mouse-ul este deasupra butonului */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ff4040, #ffcc00);
+    transform: scale(1.1); /* Crește dimensiunea când treci cu mouse-ul */
+}
+
+/* Efect fluid pentru track */
+::-webkit-scrollbar-track-piece {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+
+
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  button, .button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.3s;
+  }
+  
+  button:hover, .button:hover {
+    transform: scale(1.05);
+  }
+
+
+
+/* Ascunde butonul pe desktop */
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+    
+   .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 4px;
+    left: 10px;
+    z-index: 9999;
+    background: #b22222;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .menu-toggle:hover {
+    transform: scale(1.1);
+  }
+
+  .logo {
+    position: relative;
+    top: 2px;
+    left: 140px !important; 
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: none !important;
+  }
+
+  .logo-img:hover {
+    transform: none !important;
+  }
+
+  .logo-preview {
+    display: none !important;
+  }
+ .sidebar {
+    width: 220px !important;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 9998;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    overflow-x: none;
+  }
+
+  .sidebar.mobile-active {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+      overflow-y: auto;
+    overflow-x: none;
+  }
+
+
+
+  .sidebar .item-txt {
+    opacity: 1 !important;
+  }
+}
+
+body.dark {
+    background: linear-gradient(to right, #890a0a, #8f2929);
+    color: #eee;
+}
+
+body.dark .main-content {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #eee;
+}
+
+/* Intro în dark mode */
+body.dark .intro {
+    background-color: #880909;
+    color: #f0dcdc;
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Asigurăm culoare pentru textele din intro */
+body.dark .intro-text h2 {
+    color: #ffffff;
+}
+
+body.dark .intro-text p,
+body.dark .intro-text strong {
+    color: #f0dcdc;
+}
+
+/* Imaginea din intro cu shadow mai subtil */
+body.dark .intro-image img {
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar dark (rămâne așa) */
+body.dark .sidebar {
+    background: #3a0f0f;
+    color: #eee;
+}
+
+body.dark .sidebar li:hover {
+    background-color: #ffffff22;
+    color: #fff;
+}
+
+/* Limba */
+body.dark #lang-select {
+    background: #3a0f0f;
+    color: #eee;
+    border-color: #eee;
+    background-color: #661111;
+}
+
+body.dark #lang-select:hover,
+body.dark #lang-select:focus {
+    background-color: #eee;
+    color: #3a0f0f;
+    border-color: #eee;
+}
+
+/* Butoane în dark */
+body.dark button,
+body.dark .button {
+    background-color: #661111;
+    color: #f0dcdc;
+    box-shadow: 0 0 10px #8b0000cc;
+}
+
+body.dark button:hover,
+body.dark .button:hover {
+    background-color: #8b0000;
+    color: white;
+}
+
+/* Scrollbar adaptat dark */
+body.dark ::-webkit-scrollbar-track {
+    background: #3a0f0f;
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #8b0000, #d47c7c);
+    border: 2px solid #3a0f0f;
+}
+
+/* Logo border in dark */
+body.dark .logo-img {
+    border-color: #eee;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}

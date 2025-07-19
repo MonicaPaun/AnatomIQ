@@ -1,0 +1,1145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+   
+    min-height: 100vh;
+    transition: background 0.4s ease, color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+
+}
+ 
+
+/* LAYOUT */
+.container {
+    display: flex;
+    height: 100vh;
+}
+/* SIDEBAR */
+.sidebar {
+    width: 60px;
+    background-color: #b22222;
+    color: white;
+    transition: width 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y:hidden;
+    overflow-x: hidden;
+    z-index: 10;
+}
+
+.sidebar:hover {
+    width: 220px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.sidebar li {
+    padding: 7px;
+    border-bottom: 1px solid white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar li:hover {
+    background-color: white;
+    color: #b22222;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.item-icon {
+    font-size: 1rem;
+}
+
+.item-txt {
+    margin-left: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.sidebar:hover .item-txt {
+    opacity: 1;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    flex: 1;
+    padding: 5rem;
+    overflow: auto;
+    z-index: 1;
+   
+}
+
+
+/* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+body.dark {
+    background: linear-gradient(to right, #3b0a0a, #5a1f1f);
+    color: white;
+}
+
+body.dark .main-content {
+    background: rgba(255,255,255,0.05);
+}
+
+body.dark .sidebar {
+    background: #3a0f0f;
+    color: #eee;
+}
+
+body.dark .sidebar li:hover {
+    background-color: #ffffff22;
+    color: #fff;
+}
+
+/* SCROLL PROGRESS BAR */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: #8b0000;
+    z-index: 10000;
+    transition: width 0.3s ease-in-out;
+}
+
+/* SCROLL PROGRESS BAR (when scroll progresses) */
+#progress-bar.active {
+    animation: progressFill 0.3s ease-out forwards;
+}
+
+@keyframes progressFill {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+
+
+/* Icona User în colțul din dreapta sus */
+#user-icon {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 5rem;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+#user-toggle {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: #eb3030; /* Culoare roșie pentru butonul care deschide meniul */
+    cursor: pointer;
+    z-index: 10001;
+}
+
+#user-toggle i {
+    color: white; /* Setează culoarea iconiței de afisaj pe alb */
+}
+
+#user-menu {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: rgb(198, 27, 27); /* Fundal roșu pentru meniu */
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    min-width: 140px;
+    display: none;
+    z-index: 10002;
+}
+
+#user-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#user-menu li {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#user-menu li:hover {
+    background-color: #f2f2f2;
+}
+
+#user-menu li i {
+    font-size: 1.1rem;
+    color: #eb3030; /* Iconițele din meniu vor fi roșii */
+}
+
+/* Show menu when active */
+#user-menu.show {
+    display: block;
+}
+
+/* Dark mode adaptation */
+body.dark #user-menu {
+    background: #3b0a0a;
+    color: white;
+}
+
+body.dark #user-menu li:hover {
+    background-color: #5a1f1f;
+}
+
+/* Meniu User cu efect de tranziție */
+#user-menu {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: white; /* Fundal alb pentru meniul de utilizator */
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    min-width: 140px;
+    display: block;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10002;
+}
+
+#user-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Meniu User cu fundal alb pentru tema deschisă */
+#user-menu {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    min-width: 140px;
+    display: block;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10002;
+}
+
+#user-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+
+
+/* Logo Styles */
+ .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    left: -6px;
+    position: relative;
+    
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    
+}
+.logo-img:hover {
+    transform: scale(1.2);
+}
+
+
+.logo-preview {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 100;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
+}
+.logo-preview img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.logo:hover .logo-preview {
+    display: block;
+}
+
+
+/* APP CONTAINER */
+.app {
+  display: flex;
+  width: 90%;
+  max-width: 1000px;
+  height: 90vh;
+  box-shadow:
+    0 15px 25px rgba(0, 0, 0, 0.12),
+    0 10px 10px rgba(0, 0, 0, 0.07);
+  border-radius: 50px;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+  left: 180px;
+  bottom: 20px;
+}
+
+/* Sidebar pentru notițe */
+.sidebar-notite {
+  width: 280px;
+  background: linear-gradient(180deg, #ff5f5f 0%, #fe7b7b 100%);
+  border-right: 5px solid #d30000;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  box-shadow: inset 0 0 15px rgba(255, 126, 95, 0.3);
+  overflow-y: auto;
+}
+
+/* Butonul Adaugă Notiță */
+#add-note {
+  padding: 14px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #fff 0%, #ffd1d1 100%);
+  color: #d30000;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.15s ease;
+  font-size: 1.1rem;
+}
+
+#add-note:hover {
+  background: linear-gradient(45deg, #d30000 0%, #ff5f5f 100%);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(211, 0, 0, 0.6);
+}
+
+/* Lista de notițe */
+#notes-list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Note Items */
+.note-item {
+  padding: 14px 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.4s forwards;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.note-item:hover {
+  background: #fff7f1;
+  box-shadow: 0 6px 12px rgba(255, 95, 95, 0.3);
+}
+
+.note-item.active {
+  background: #ffd8d8;
+  border-color: #ff5f5f;
+  box-shadow: 0 0 15px rgba(255, 95, 95, 0.7);
+}
+
+/* Note Editor */
+.note-editor {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background: #fffdfa;
+  border-radius: 0 50px 50px 0;
+  box-shadow:
+    inset 0 0 40px rgba(255, 126, 95, 0.05);
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Input și textarea în editor */
+.note-editor input,
+.note-editor textarea {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 1.15rem;
+  border: 2px solid #f0e6db;
+  border-radius: 16px;
+  background: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+ 
+}
+
+.note-editor input:focus,
+.note-editor textarea:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  box-shadow: 0 0 0 4px rgba(255, 126, 95, 0.3);
+}
+.note-editor textarea {
+  width: 100%;
+  height: 524px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 1.15rem;
+  border: 2px solid #f0e6db;
+  border-radius: 16px;
+  background: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  resize: none;
+  overflow-y: auto;
+}
+
+/* Scrollbar styling pentru WebKit (Chrome, Safari, Edge) */
+.note-editor textarea::-webkit-scrollbar {
+  width: 8px;               /* grosime scrollbar */
+}
+
+.note-editor textarea::-webkit-scrollbar-track {
+  background: #f0e6db;      /* fundalul pistei scroll */
+  border-radius: 10px;
+}
+
+.note-editor textarea::-webkit-scrollbar-thumb {
+  background-color: #ff4c4c; /* roșu intens */
+  border-radius: 10px;
+  border: 2px solid #f0e6db; /* margine ca să iasă thumb-ul în evidență */
+}
+
+.note-editor textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #e03e3e; /* roșu mai închis la hover */
+}
+
+
+/* Buton ștergere */
+.notes__delete-btn {
+  background: transparent;
+  border: none;
+  color: #ff6347;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: absolute;
+  top: -5px;
+  right: 0;
+}
+
+.notes__delete-btn:hover {
+  color: #e03e2f;
+  transform: scale(1.2);
+}
+
+.notes__delete-btn:focus {
+  outline: none;
+}
+
+/* Notes preview */
+.notes__preview {
+  flex: 1;
+  padding: 25px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow:
+    0 8px 20px rgba(255, 126, 95, 0.15);
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.notes__title,
+.notes__body {
+  width: 100%;
+  padding: 18px 20px;
+  margin-bottom: 25px;
+  font-size: 1.15rem;
+  border: 2px solid #f0e6db;
+  border-radius: 14px;
+  box-sizing: border-box;
+  background: #fffefb;
+  transition: border-color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.notes__title:focus,
+.notes__body:focus {
+  border-color: #ff7e5f;
+  box-shadow: 0 0 8px rgba(255, 126, 95, 0.3);
+}
+
+/* Spacing between sidebar and preview */
+.notes-sidebar + .notes__preview {
+  margin-left: 25px;
+}
+
+
+/* APP CONTAINER */
+body.dark .app {
+  background: #121212;
+  box-shadow:
+    0 15px 25px rgba(0, 0, 0, 0.9),
+    0 10px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Sidebar pentru notițe */
+body.dark .sidebar-notite {
+  background: linear-gradient(180deg, #720000 0%, #9e0000 100%);
+  border-right: 5px solid #bb4444;
+  box-shadow: inset 0 0 15px rgba(187, 68, 68, 0.5);
+  color: #eee;
+}
+
+/* Butonul Adaugă Notiță */
+body.dark #add-note {
+  background: linear-gradient(45deg, #444 0%, #666 100%);
+  color: #ff6b6b;
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+}
+
+body.dark #add-note:hover {
+  background: linear-gradient(45deg, #ff4c4c 0%, #d93030 100%);
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(255, 76, 76, 0.8);
+}
+
+/* Lista de notițe */
+body.dark #notes-list {
+  color: #ddd;
+}
+
+/* Note Items */
+body.dark .note-item {
+  background: #222;
+  border: 1px solid #444;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.8),
+    0 1px 3px rgba(0, 0, 0, 0.6);
+  color: #ccc;
+}
+
+body.dark .note-item:hover {
+  background: #3a1a1a;
+  box-shadow: 0 6px 12px rgba(255, 76, 76, 0.5);
+}
+
+body.dark .note-item.active {
+  background: #550000;
+  border-color: #ff4c4c;
+  box-shadow: 0 0 15px rgba(255, 76, 76, 1);
+  color: #fff;
+}
+
+/* Note Editor */
+body.dark .note-editor {
+  background: #181818;
+  box-shadow:
+    inset 0 0 40px rgba(255, 76, 76, 0.1);
+  color: #eee;
+}
+
+/* Input și textarea în editor */
+body.dark .note-editor input,
+body.dark .note-editor textarea {
+  background: #222;
+  border: 2px solid #444;
+  color: #eee;
+  font-weight: 400;
+}
+
+body.dark .note-editor input:focus,
+body.dark .note-editor textarea:focus {
+  border-color: #ff4c4c;
+  box-shadow: 0 0 0 4px rgba(255, 76, 76, 0.5);
+}
+
+/* Scrollbar */
+body.dark .note-editor textarea::-webkit-scrollbar-track {
+  background: #333;
+}
+
+body.dark .note-editor textarea::-webkit-scrollbar-thumb {
+  background-color: #ff4c4c;
+  border: 2px solid #333;
+}
+
+body.dark .note-editor textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #e03e3e;
+}
+
+/* Buton ștergere */
+body.dark .notes__delete-btn {
+  color: #ff7f7f;
+}
+
+body.dark .notes__delete-btn:hover {
+  color: #ff4c4c;
+}
+
+/* Notes preview */
+body.dark .notes__preview {
+  background-color: #202020;
+  box-shadow:
+    0 8px 20px rgba(255, 76, 76, 0.3);
+  color: #ddd;
+}
+
+body.dark .notes__title,
+body.dark .notes__body {
+  background: #222;
+  border: 2px solid #444;
+  color: #eee;
+}
+
+body.dark .notes__title:focus,
+body.dark .notes__body:focus {
+  border-color: #ff4c4c;
+  box-shadow: 0 0 8px rgba(255, 76, 76, 0.6);
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+    padding: 0;
+  }
+
+  .main-content {
+    padding: 1.5rem 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .app {
+    flex-direction: column;
+    width: 70vw; 
+    max-width: 70vw;
+    margin: 0 auto; /* centrat frumos */
+    height: auto;
+    left: 8px;
+    bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top:70px;
+
+  }
+  .trash-section {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.note-item.trashed {
+  background-color: #f8d7da;
+  border-left: 4px solid #dc3545;
+  padding: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+  .sidebar-notite {
+    width: 100%;
+    border-right: none;
+    border-bottom: 5px solid #d30000;
+    border-radius: 0;
+    padding: 22px 16px;
+    box-shadow: none;
+  }
+
+  #add-note {
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 16px;
+  }
+
+  #notes-list {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .note-item {
+    padding: 16px;
+    font-size: 1.05rem;
+  }
+
+  .note-editor {
+    padding: 22px 16px;
+    border-radius: 0;
+  }
+
+  .note-editor textarea {
+    width: 100%;
+    height: 340px;
+    font-size: 1.1rem;
+    padding: 16px;
+  }
+
+  .notes__preview {
+    padding: 22px 16px;
+    margin-top: 22px;
+    border-radius: 14px;
+  }
+
+  .notes__title,
+  .notes__body {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .notes__delete-btn {
+    font-size: 22px;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+
+
+  
+/* CONTENIT SELECTION LIMBI */
+#lang-select {
+    position: fixed;
+top: 6px;
+right: 55px;
+    font-size: 1rem;
+    background: #fff;
+    color: #8b0000;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000; /* Asigură că este deasupra altor elemente */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 140px;
+    appearance: none; /* scoate stilul nativ */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'7'%20viewBox%3D'0%200%2010%207'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%207%205-7H0z'%20fill%3D'%238b0000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px 7px;
+}
+
+#lang-select:hover {
+    background-color: #8b0000;
+    color: #fff;
+    border-color: #8b0000;
+}
+
+#lang-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #8b0000aa;
+    background-color: #8b0000;
+    color: #fff;
+}
+
+/* opțiunile dropdown */
+#lang-select option {
+    color: #8b0000;
+    background: #fff;
+}
+
+/* Limba */
+body.dark #lang-select {
+    background: #3a0f0f;
+    color: #eee;
+    border-color: #eee;
+    background-color: #661111;
+}
+
+
+body.dark #lang-select:hover,
+body.dark #lang-select:focus {
+    background-color: #eee;
+    color: #3a0f0f;
+    border-color: #eee;
+}
+
+ #gameFrame {
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: none;
+    margin-top: 20px;
+  }
+
+   @media (max-width: 768px) {
+    #gameFrame {
+      width: 95vw;
+      height: 700px;
+     
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #gameFrame {
+      width: 100vw;
+      height: 700px;  
+      aspect-ratio: unset; 
+      margin-top: 8px;
+    }
+  }
+.top-menu {
+    width: 100%;
+    background-color: #c0392b; /* Roșu plăcut */
+    padding: 7px 20px; /* Creștem puțin padding-ul pentru a face bara mai mare */
+    color: white;
+    font-size: 20px; /* Mărim puțin fontul */
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px; /* Înalțimea barei este mai mare */
+}
+
+.top-menu h1 {
+    margin: 0;
+    font-size: 20px;
+    padding-left: 40px; 
+}
+
+
+.top-menu .icon {
+    font-size: 28px; 
+    margin-left: 10px;
+}
+/* Stiluri pentru bara de meniu în Dark Mode */
+body.dark .top-menu {
+    background-color: #8e1f1f; 
+}
+
+body.dark .top-menu h1 {
+    color: white; /* Asigurăm că textul rămâne alb în dark mode */
+}
+
+body.dark .top-menu .icon {
+    color: white; /* Facem și iconițele albe în dark mode */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  button, .button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.3s;
+  }
+  
+  button:hover, .button:hover {
+    transform: scale(1.05);
+  }
+
+
+  .fancy-button {
+    background: linear-gradient(135deg, #ff4e50, #f44336); /* Gradient roșu */
+    color: white; /* Culoare text */
+    border: none;
+    border-radius: 8px; /* Colțuri rotunjite */
+    padding: 10px 20px; /* Spațiu intern */
+    font-size: 16px; /* Mărimea textului */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
+    transition: all 0.3s ease; /* Animație de tranziție pentru toate efectele */
+  }
+
+  /* Efect la hover */
+  .fancy-button:hover {
+     background: linear-gradient(135deg, #e53935, #d32f2f); /* Schimbă culoarea pe hover */
+    transform: translateY(-3px); /* Ridică ușor butonul */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Umbră mai puternică */
+  }
+
+  /* Efect de focus (când butonul este activat cu click) */
+  .fancy-button:focus {
+    outline: none; /* Elimină conturul implicit */
+     box-shadow: 0 0 0 4px rgba(255, 82, 82, 0.4);
+  }
+
+  /* Efect de apăsare */
+  .fancy-button:active {
+    transform: translateY(1px); /* Simulează un efect de apăsare */
+  }
+
+
+
+  /* Ascunde butonul pe desktop */
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+    
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 4px;
+    left: 10px;
+    z-index: 9999;
+    background: #b22222;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .menu-toggle:hover {
+    transform: scale(1.1);
+  }
+
+  .logo {
+    position: relative;
+    top: 2px;
+    left: 140px !important; 
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: none !important;
+  }
+
+  .logo-img:hover {
+    transform: none !important;
+  }
+
+  .logo-preview {
+    display: none !important;
+  }
+ .sidebar {
+    width: 220px !important;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 9998;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    overflow-x: none;
+  }
+
+  .sidebar.mobile-active {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+      overflow-y: auto;
+    overflow-x: none;
+  }
+
+
+
+  .sidebar .item-txt {
+    opacity: 1 !important;
+  }
+ 
+.top-menu h1 {
+    margin: 0;
+    font-size: 18px ;
+    padding-left: 40px; 
+}
+
+
+}
+
+/* Scrollbar personalizat - ADN / Nervos */
+::-webkit-scrollbar {
+    width: 14px; /* Lățimea scrollbar-ului */
+}
+
+/* Fundalul scrollbar-ului (partea de fundal) */
+::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Fundal deschis pentru a se distinge clar */
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Butonul scrollbar-ului (partea care se mișcă) */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff6f61, #d4af37);
+    border-radius: 10px;
+    border: 2px solid #fff; /* Mărim contrastul cu un border alb */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Când mouse-ul este deasupra butonului */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ff4040, #ffcc00);
+    transform: scale(1.1); /* Crește dimensiunea când treci cu mouse-ul */
+}
+
+/* Efect fluid pentru track */
+::-webkit-scrollbar-track-piece {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  margin: 8px 8px 8px 0; /* sus, dreapta, jos, stanga */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  line-height: 1.5;
+}
+
+.btn-restore {
+  background-color: #4caf50; /* verde */
+  color: white;
+}
+
+.btn-restore:hover {
+  background-color: #45a049;
+}
+
+.btn-delete {
+  background-color: #f44336; /* roșu */
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #da190b;
+}
+
+/* Pentru containerul note șterse ca să aibă spațiu între elemente */
+.trashed-note-item {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}

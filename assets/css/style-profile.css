@@ -1,0 +1,673 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+  body {
+    font-family: 'Quicksand', sans-serif;
+    background: #fff4f4; /* un rosu foarte deschis */
+    margin: 0;
+    padding: 0;
+    color: #330000;
+  }
+
+  .profile-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 35px 40px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+  }
+
+  .profile-avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid #cc0000;
+    color: #cc0000;
+    font-size: 52px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    user-select: none;
+  }
+
+  h2 {
+    color: #cc0000;
+    font-size: 28px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 14px;
+    background: #ffe6e6;
+    color: #cc0000;
+    border-radius: 25px;
+    font-size: 14px;
+    margin: 7px 6px;
+    font-weight: 600;
+    border: 1.5px solid #cc0000;
+    user-select: none;
+  }
+
+  .new-badge {
+    background: #cc0000;
+    color: #fff;
+  }
+
+  .profile-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 35px;
+  }
+
+  .profile-button {
+    text-decoration: none;
+    padding: 14px 0;
+    border-radius: 14px;
+    background: transparent;
+    border: 2px solid #cc0000;
+    color: #cc0000;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .profile-button:hover {
+    background: #cc0000;
+    color: #fff;
+  }
+
+  .social-icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 14px;
+  }
+
+  .social-icons a {
+    color: #cc0000;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #990000;
+  }
+
+  @media (max-width: 600px) {
+    .profile-buttons {
+      grid-template-columns: 1fr;
+    }
+    .social-icons {
+      position: static;
+      justify-content: center;
+      margin-top: 25px;
+    }
+  }
+
+
+  
+   .buton-inapoi {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #e60000; /* roșu intens */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+
+    .buton-inapoi:hover {
+      background-color: #cc0000; /* roșu mai închis la hover */
+    }
+
+
+  .popup-activitate {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: 2px solid #b30000;
+    padding: 15px;
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 600px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .header-popup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .header-popup button {
+    background: #b30000;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    user-select: none;
+  }
+  .header-popup button:hover {
+    background: #990000;
+  }
+  .content-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  #zile-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .zi-popup {
+    background: #f9f9f9;
+    border: 1.5px solid #b30000;
+    border-radius: 8px;
+    padding: 8px 6px;
+    width: 58px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+  }
+  .zi-popup.selectata {
+    background: #b30000;
+    color: white;
+    font-weight: 700;
+  }
+  .nume-zi {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .data-zi {
+    font-size: 10px;
+    color: #555;
+    margin-bottom: 6px;
+  }
+  .durata-zi {
+    font-size: 12px;
+    font-family: monospace;
+  }
+  #detalii-zi {
+    text-align: center;
+    background: #fafafa;
+    border: 1px solid #b30000;
+    border-radius: 10px;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    user-select: none;
+  }
+  #durata-zi {
+    font-size: 22px;
+    margin-top: 4px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  #graficZile {
+    max-width: 100%;
+  }
+  #inchidePopup {
+    margin-top: 15px;
+    width: 100%;
+    background: #b30000;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+  }
+  #inchidePopup:hover {
+    background: #990000;
+  }
+
+#logoutBtn {
+  background-color: #ff4b5c;      /* un roșu aprins */
+  color: white;                   /* text alb */
+  border: none;                  /* fără bordură */
+  padding: 12px 24px;            /* spațiu interior confortabil */
+  font-size: 16px;               /* text lizibil */
+  border-radius: 6px;            /* colțuri rotunjite */
+  cursor: pointer;               /* cursor pointer când e hover */
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: inline-block;
+}
+
+#logoutBtn:hover {
+  background-color: #e04350;     /* roșu mai închis la hover */
+}
+
+#logoutBtn:active {
+  background-color: #c0392b;     /* roșu și mai închis la apăsare */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Clasa pentru ascuns */
+.hidden {
+  display: none !important;
+}
+ #user-profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    #user-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #3f51b5;
+      color: white;
+      font-weight: 700;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+    }
+    #user-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+  
+  @media (max-width: 640px) {
+  .popup-activitate {
+    width: 90vw;       /* lățime aproape toată ecranului */
+    max-height: 90vh;  /* înălțime maximă, să nu depășească ecranul */
+    padding: 12px;
+    border-radius: 12px;
+    overflow: auto;
+  }
+
+  #zile-container {
+    flex-wrap: wrap;       /* elementele zilelor să treacă pe rânduri */
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .zi-popup {
+    width: 50px;          /* mai mici pe mobil */
+    padding: 6px 4px;
+    font-size: 12px;
+  }
+
+  .header-popup {
+    font-size: 14px; /* mai mic text */
+    margin-bottom: 8px;
+  }
+  .header-popup button {
+    padding: 4px 10px; /* mai puțin padding */
+    font-size: 14px;   /* font mai mic */
+    border-radius: 4px;
+  }
+  #detalii-zi {
+    font-size: 14px;
+    padding: 8px 6px;
+  }
+
+  #durata-zi {
+    font-size: 18px;
+  }
+
+  #inchidePopup {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #lang-select {
+    position: fixed;
+    top: 70px; 
+    left: 20px; 
+    font-size: 1rem;
+    background: #fff;
+    color: #8b0000;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 10;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 140px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'7'%20viewBox%3D'0%200%2010%207'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%207%205-7H0z'%20fill%3D'%238b0000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px 7px;
+}
+
+#lang-select:hover {
+    background-color: #8b0000;
+    color: #fff;
+    border-color: #8b0000;
+}
+
+#lang-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #8b0000aa;
+    background-color: #8b0000;
+    color: #fff;
+}
+
+/* opțiunile dropdown */
+#lang-select option {
+    color: #8b0000;
+    background: #fff;
+}
+
+body.dark #lang-select {
+    background: #3a0f0f;
+    color: #eee;
+    border-color: #eee;
+    background-color: #661111;
+}
+
+body.dark #lang-select:hover,
+body.dark #lang-select:focus {
+    background-color: #eee;
+    color: #3a0f0f;
+    border-color: #eee;
+}
+
+
+   /* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+body.dark {
+    background: linear-gradient(to right, #3b0a0a, #5a1f1f);
+    color: white;
+}
+
+body.dark .main-content {
+    background: rgba(255,255,255,0.05);
+}
+
+body.dark .sidebar {
+    background: #3a0f0f;
+    color: #eee;
+}
+
+body.dark .sidebar li:hover {
+    background-color: #ffffff22;
+    color: #fff;
+}
+
+
+@media (max-width: 600px) {
+  .profile-container {
+    margin: 40px 20px;
+    padding: 25px 30px;
+    max-width: 100%;
+  }
+
+  .profile-avatar {
+    width: 110px;
+    height: 110px;
+    font-size: 44px;
+    border-width: 3.5px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .badge {
+    font-size: 13px;
+    padding: 6px 12px;
+    margin: 6px 5px;
+  }
+
+  .profile-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-button {
+    font-size: 15px;
+    padding: 12px 0;
+    border-radius: 13px;
+  }
+
+  .social-icons {
+    position: static;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .buton-inapoi,
+#lang-select {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.buton-inapoi{
+   padding: 5px 10px;
+   left: 30px;
+}
+
+/* selectorul de limba pe partea dreapta */
+#lang-select {
+  left: 25px;
+ 
+  top: 20px; 
+   padding: 5px 10px;
+}
+
+/* când ascundem butoanele */
+.hidden-on-scroll {
+  opacity: 0;
+  pointer-events: none;
+}
+}
+  /* Dark theme styles */
+body.dark {
+  background: linear-gradient(to right, #390000, #420000);
+  color: #eee;
+}
+
+body.dark .container,
+body.dark .profile-container {
+  background: #5f0000;
+  box-shadow: 0 6px 20px rgba(129, 0, 0, 0.1);
+}
+
+body.dark .profile-avatar {
+  background: #1f1f1f;
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+body.dark h2 {
+  color: #ff4d4d;
+}
+
+body.dark .badge {
+  background: #330000;
+  color: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+body.dark .new-badge {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+body.dark .profile-button {
+  background: transparent;
+  color: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+body.dark .profile-button:hover {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+body.dark .social-icons a {
+  color: #ff4d4d;
+}
+
+body.dark .social-icons a:hover {
+  color: #ff9999;
+}
+
+body.dark input {
+  background-color: #2d2d2d;
+  color: #eee;
+  border-color: #444;
+}
+
+body.dark input:focus {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 5px rgba(255, 77, 77, 0.3);
+}
+
+body.dark button {
+  background: #ff4d4d;
+  color: white;
+}
+
+body.dark button:hover {
+  background: #cc0000;
+}
+
+
+body.dark .popup-activitate {
+  background: #1f1f1f;
+  border-color: #ff4d4d;
+  color: #eee;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .header-popup {
+  color: #fff;
+}
+
+body.dark .header-popup button {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+body.dark .header-popup button:hover {
+  background: #cc0000;
+}
+
+body.dark .zi-popup {
+  background: #2c2c2c;
+  border-color: #ff4d4d;
+  color: #ddd;
+}
+
+body.dark .zi-popup.selectata {
+  background: #ff4d4d;
+  color: white;
+}
+
+body.dark .nume-zi {
+  color: #eee;
+}
+
+body.dark .data-zi {
+  color: #aaa;
+}
+
+body.dark .durata-zi {
+  color: #ddd;
+}
+
+body.dark #detalii-zi {
+  background: #2b2b2b;
+  border-color: #ff4d4d;
+  color: #fff;
+}
+
+body.dark #durata-zi {
+  color: #ff9999;
+}
+
+body.dark #inchidePopup {
+  background: #ff4d4d;
+  color: white;
+}
+
+body.dark #inchidePopup:hover {
+  background: #cc0000;
+}
+body.dark #user-name {
+      color: #ffffff;
+    }

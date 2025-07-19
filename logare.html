@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Autentificare AnatomIQ</title>
+   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style-logare.css">
+  <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+</head>
+<body>
+   <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+
+  <!-- Select limbă -->
+  <select id="lang-select">
+    <option value="ro" data-i18n="text_1">Română</option>
+    <option value="en" data-i18n="text_2">Engleză</option>
+    <option value="es" data-i18n="text_21">Spaniolă</option>
+    <option value="zh" data-i18n="text_22">Chineză</option>
+    <option value="ar" data-i18n="text_23">Arabă</option>
+    <option value="hi" data-i18n="text_24">Hindi</option>
+    <option value="fr" data-i18n="text_25">Franceză</option>
+    <option value="ru" data-i18n="text_26">Rusă</option>
+  </select>
+
+  <a href="index.html" class="buton-inapoi">Înapoi pe prima pagină</a>
+  <div class="container">
+    <h2>Autentificare AnatomIQ</h2>
+    
+    <input type="text" id="name" placeholder="Nume complet" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Parolă" required />
+
+    <button onclick="register()">Creează cont</button>
+    <button onclick="login()">Autentifică-te</button>
+    <button onclick="resetPassword()">Resetare parolă</button>
+    <button onclick="logout()" id="logoutBtn" class="hidden">Deconectează-te</button>
+    <button onclick="viewProfile()" id="profileBtn" class="hidden">Vezi profilul tău</button>
+
+    <div id="user-info" class="hidden">
+      Conectat ca: <span id="user-email"></span><br />
+    </div>
+    <div class="info" id="messageBox"></div>
+  </div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged,
+    sendEmailVerification,
+    sendPasswordResetEmail,
+    updateProfile
+  } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDqWtrwa4BiCmHWKAbt3ACY_pB3I9T6-ac",
+    authDomain: "anatomiq-infoeducatie.firebaseapp.com",
+    projectId: "anatomiq-infoeducatie",
+    storageBucket: "anatomiq-infoeducatie.firebasestorage.app",
+    messagingSenderId: "393497248694",
+    appId: "1:393497248694:web:ed3897fea512024715f717",
+    measurementId: "G-3Z0KR90WTT"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const messageBox = document.getElementById("messageBox");
+
+  function showMessage(message, duration = 4000) {
+    messageBox.innerText = message;
+    setTimeout(() => messageBox.innerText = "", duration);
+  }
+
+  function clearInputs() {
+    nameInput.value = "";
+    emailInput.value = "";
+    passwordInput.value = "";
+  }
+
+  function getInitials(name) {
+    return name.split(' ').map(n => n[0].toUpperCase()).join('');
+  }
+
+  window.register = async function () {
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+    if (!name) {
+      showMessage("Te rugăm să introduci numele complet.");
+      return;
+    }
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(userCredential.user, {
+        displayName: name
+      });
+      await sendEmailVerification(userCredential.user);
+      showMessage("Cont creat. Verifică-ți emailul pentru activare.");
+      clearInputs();
+    } catch (error) {
+      showMessage("Eroare la înregistrare: " + error.message);
+    }
+  };
+
+  window.login = async function () {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      if (!userCredential.user.emailVerified) {
+        await signOut(auth);
+        showMessage("Te rugăm să îți verifici emailul înainte de autentificare.");
+        return;
+      }
+      showMessage("Autentificat cu succes!");
+      clearInputs();
+    } catch (error) {
+      showMessage("Eroare la login: " + error.message);
+    }
+  };
+
+  window.resetPassword = async function () {
+    const email = emailInput.value.trim();
+    if (!email) {
+      showMessage("Introduceți emailul pentru resetare.");
+      return;
+    }
+    try {
+      await sendPasswordResetEmail(auth, email);
+      showMessage("Email de resetare trimis!");
+      clearInputs();
+    } catch (error) {
+      showMessage("Eroare resetare: " + error.message);
+    }
+  };
+
+  window.logout = async function () {
+    await signOut(auth);
+    showMessage("Te-ai deconectat.");
+  };
+
+  window.viewProfile = function () {
+    const user = auth.currentUser;
+    if (user && user.emailVerified) {
+      window.location.href = "profile.html";
+    } else {
+      showMessage("Te rugăm să te autentifici sau să-ți creezi un cont pentru a vedea profilul.");
+    }
+  };
+
+  onAuthStateChanged(auth, (user) => {
+    const userInfo = document.getElementById("user-info");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const profileBtn = document.getElementById("profileBtn");
+
+    if (user && user.emailVerified) {
+      userInfo.classList.remove("hidden");
+      logoutBtn.classList.remove("hidden");
+      profileBtn.classList.remove("hidden");
+      document.getElementById("user-email").innerText = user.email;
+
+      // Afișează numele
+      if(user.displayName) {
+        if(!document.getElementById("user-name")) {
+          const spanName = document.createElement("span");
+          spanName.id = "user-name";
+          userInfo.appendChild(document.createElement("br"));
+          userInfo.appendChild(spanName);
+        }
+        document.getElementById("user-name").innerText = `Nume: ${user.displayName}`;
+
+      
+      }
+    } else {
+      userInfo.classList.add("hidden");
+      logoutBtn.classList.add("hidden");
+      profileBtn.classList.add("hidden");
+      document.getElementById("user-email").innerText = "";
+      if(document.getElementById("user-name")) document.getElementById("user-name").remove();
+      if(document.getElementById("user-icon")) document.getElementById("user-icon").remove();
+    }
+  });
+</script>
+
+ <script src="assets/js/script-logare.js"></script>
+
+</body>
+</html>

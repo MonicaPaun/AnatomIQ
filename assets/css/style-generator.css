@@ -1,0 +1,672 @@
+/* Culori principale */
+:root {
+  --rosu-pale: #f8d7da;
+  --rosu-intens: #dc3545;
+  --verde-corect: #28a745;
+  --gri-fundal: #f9f9f9;
+  --text-normal: #333;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+   
+    min-height: 100vh;
+    transition: background 0.4s ease, color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+
+}
+
+
+
+form {
+  margin-top: 20px;
+}
+
+.intrebare {
+  background: linear-gradient(135deg, #ffe5e5, #ff9999);
+  border-radius: 8px;
+  margin-bottom: 18px;
+  padding: 15px 20px;
+  box-shadow: inset 0 0 10px rgba(220,53,69,0.15);
+  transition: background-color 0.3s ease;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+  color: #800000; /* un rosu inchis */
+}
+
+
+
+
+.intrebare:nth-child(1) { animation-delay: 0.1s; }
+.intrebare:nth-child(2) { animation-delay: 0.15s; }
+.intrebare:nth-child(3) { animation-delay: 0.2s; }
+.intrebare:nth-child(4) { animation-delay: 0.25s; }
+.intrebare:nth-child(5) { animation-delay: 0.3s; }
+.intrebare:nth-child(6) { animation-delay: 0.35s; }
+.intrebare:nth-child(7) { animation-delay: 0.4s; }
+.intrebare:nth-child(8) { animation-delay: 0.45s; }
+.intrebare:nth-child(9) { animation-delay: 0.5s; }
+.intrebare:nth-child(10) { animation-delay: 0.55s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.enunt {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.variante {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+input[type="radio"]:not(:checked) + label:hover,
+input[type="text"]:not(:disabled):focus {
+  background-color: #f8d7da;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--rosu-intens);
+  color: white;
+}
+
+input[type="text"] {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 2px solid var(--rosu-intens);
+  border-radius: 6px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+  width: 60%;
+  max-width: 300px;
+}
+
+input[type="text"]:focus {
+  border-color: var(--rosu-intens);
+}
+
+/* Feedback corect/greșit după submit */
+.corect {
+  background-color: #d4edda !important; /* verde pal */
+  color: var(--verde-corect) !important;
+  font-weight: 700;
+  border: 2px solid var(--verde-corect);
+}
+
+.gresit {
+  background-color: #f8d7da !important;
+  color: var(--rosu-intens) !important;
+  font-weight: 700;
+  border: 2px solid var(--rosu-intens);
+}
+
+.feedback {
+  font-size: 0.9rem;
+  margin-top: 6px;
+  font-style: italic;
+}
+.bio-btn {
+  margin-top: 25px;
+  background-color: var(--rosu-intens);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  transition: background-color 0.3s ease;
+}
+
+.bio-btn:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+.bio-btn:disabled {
+  background-color: #e8a1a6;
+  cursor: not-allowed;
+}
+
+#nota {
+  margin-top: 30px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  form {
+    margin-top: 15px;
+    padding: 0 10px;
+  }
+
+  .intrebare {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+  }
+
+  .enunt {
+    font-size: 1rem;
+  }
+
+  .variante label {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .bio-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  #nota {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+}
+
+
+/* =============================== */
+/* DARK MODE pentru întrebări quiz */
+/* =============================== */
+
+body.dark .intrebare {
+  background: linear-gradient(135deg, #3b1c1c, #5a2a2a); /* Roșu-închis și burgundy */
+  color: #ffeaea; /* Roz pal pentru contrast */
+  box-shadow: inset 0 0 10px rgba(255, 99, 132, 0.2);
+}
+
+body.dark .enunt {
+  color: #ffd4d4;
+}
+
+body.dark .variante label {
+  background-color: #4b2b2b;
+  color: #ffdddd;
+}
+
+body.dark input[type="radio"]:not(:checked) + label:hover {
+  background-color: #803434;
+  color: white;
+}
+
+body.dark input[type="radio"]:checked + label {
+  background-color: #c62828;
+  color: white;
+}
+
+body.dark input[type="text"] {
+  background-color: #4a2a2a;
+  border: 2px solid #e57373;
+  color: #000000;
+}
+
+body.dark input[type="text"]::placeholder {
+  color: #ffcccc;
+}
+
+body.dark input[type="text"]:focus {
+  border-color: #ef5350;
+}
+
+body.dark .corect {
+  background-color: #2e7d32 !important;
+  color: #a5d6a7 !important;
+  border: 2px solid #81c784;
+}
+
+body.dark .gresit {
+  background-color: #c62828 !important;
+  color: #ffcdd2 !important;
+  border: 2px solid #ef5350;
+}
+
+body.dark .feedback {
+  color: #f8bbd0;
+}
+
+body.dark .bio-btn {
+  background-color: #d32f2f;
+  color: white;
+}
+
+body.dark .bio-btn:hover:not(:disabled) {
+  background-color: #b71c1c;
+}
+
+body.dark .bio-btn:disabled {
+  background-color: #8e5353;
+}
+
+body.dark #nota {
+  color: #ffcdd2;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    height: 100vh;
+}
+/* SIDEBAR */
+.sidebar {
+    width: 60px;
+    background-color: #b22222;
+    color: white;
+    transition: width 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y:hidden;
+    overflow-x: hidden;
+    z-index: 10;
+}
+
+.sidebar:hover {
+    width: 220px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.sidebar li {
+    padding: 8px;
+    border-bottom: 1px solid white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar li:hover {
+    background-color: white;
+    color: #b22222;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.item-icon {
+    font-size: 1rem;
+}
+
+.item-txt {
+    margin-left: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.sidebar:hover .item-txt {
+    opacity: 1;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    flex: 1;
+    padding: 5rem;
+    overflow: auto;
+    z-index: 1;
+    
+}
+
+
+
+
+
+/* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+body.dark {
+    background: linear-gradient(to right, #3b0a0a, #5a1f1f);
+    color: white;
+}
+
+body.dark .main-content {
+    background: rgba(255,255,255,0.05);
+}
+
+body.dark .sidebar {
+    background: #3a0f0f;
+    color: #eee;
+}
+
+body.dark .sidebar li:hover {
+    background-color: #ffffff22;
+    color: #fff;
+}
+
+/* SCROLL PROGRESS BAR */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: #8b0000;
+    z-index: 10000;
+    transition: width 0.3s ease-in-out;
+}
+
+/* SCROLL PROGRESS BAR (when scroll progresses) */
+#progress-bar.active {
+    animation: progressFill 0.3s ease-out forwards;
+}
+
+@keyframes progressFill {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+
+
+/* Icona User în colțul din dreapta sus */
+#user-icon {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 5rem;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+#user-toggle {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: #eb3030; /* Culoare roșie pentru butonul care deschide meniul */
+    cursor: pointer;
+    z-index: 10001;
+}
+
+#user-toggle i {
+    color: white; /* Setează culoarea iconiței de afisaj pe alb */
+}
+
+#user-menu {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: rgb(198, 27, 27); /* Fundal roșu pentru meniu */
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    min-width: 140px;
+    display: none;
+    z-index: 10002;
+}
+
+#user-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#user-menu li {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#user-menu li:hover {
+    background-color: #f2f2f2;
+}
+
+#user-menu li i {
+    font-size: 1.1rem;
+    color: #eb3030; /* Iconițele din meniu vor fi roșii */
+}
+
+/* Show menu when active */
+#user-menu.show {
+    display: block;
+}
+
+/* Dark mode adaptation */
+body.dark #user-menu {
+    background: #3b0a0a;
+    color: white;
+}
+
+body.dark #user-menu li:hover {
+    background-color: #5a1f1f;
+}
+
+/* Meniu User cu efect de tranziție */
+#user-menu {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: white; /* Fundal alb pentru meniul de utilizator */
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    min-width: 140px;
+    display: block;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10002;
+}
+
+#user-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Meniu User cu fundal alb pentru tema deschisă */
+#user-menu {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    min-width: 140px;
+    display: block;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10002;
+}
+
+#user-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+
+
+/* Logo Styles */
+ .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    left: -6px;
+    position: relative;
+    
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    
+}
+.logo-img:hover {
+    transform: scale(1.2);
+}
+
+
+.logo-preview {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 100;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
+}
+.logo-preview img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.logo:hover .logo-preview {
+    display: block;
+}
+
+.top-menu {
+    width: 100%;
+    background-color: #c0392b; /* Roșu plăcut */
+    padding: 7px 20px; /* Creștem puțin padding-ul pentru a face bara mai mare */
+    color: white;
+    font-size: 20px; /* Mărim puțin fontul */
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px; /* Înalțimea barei este mai mare */
+}
+
+.top-menu h1 {
+    margin: 0;
+    font-size: 20px;
+    padding-left: 40px; /* Adăugăm puțin spațiu la stânga pentru a muta titlul spre dreapta */
+}
+
+
+.top-menu .icon {
+    font-size: 28px; /* Mărimea icon-ului mai mare */
+    margin-left: 10px;
+}
+/* Stiluri pentru bara de meniu în Dark Mode */
+body.dark .top-menu {
+    background-color: #8e1f1f; /* O nuanță mai închisă de roșu, dar încă plăcută */
+}
+
+body.dark .top-menu h1 {
+    color: white; /* Asigurăm că textul rămâne alb în dark mode */
+}
+
+body.dark .top-menu .icon {
+    color: white; /* Facem și iconițele albe în dark mode */
+}
+
+  .fancy-button {
+    background: linear-gradient(135deg, #ff4e50, #f44336); /* Gradient roșu */
+    color: white; /* Culoare text */
+    border: none;
+    border-radius: 8px; /* Colțuri rotunjite */
+    padding: 10px 20px; /* Spațiu intern */
+    font-size: 16px; /* Mărimea textului */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
+    transition: all 0.3s ease; /* Animație de tranziție pentru toate efectele */
+  }
+
+  /* Efect la hover */
+  .fancy-button:hover {
+     background: linear-gradient(135deg, #e53935, #d32f2f); /* Schimbă culoarea pe hover */
+    transform: translateY(-3px); /* Ridică ușor butonul */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Umbră mai puternică */
+  }
+
+  /* Efect de focus (când butonul este activat cu click) */
+  .fancy-button:focus {
+    outline: none; /* Elimină conturul implicit */
+     box-shadow: 0 0 0 4px rgba(255, 82, 82, 0.4);
+  }
+
+  /* Efect de apăsare */
+  .fancy-button:active {
+    transform: translateY(1px); /* Simulează un efect de apăsare */
+  }
+
+
+

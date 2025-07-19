@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>👨‍👩‍👧‍👧 Test - Sistemul Reproducător </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/teste/css/reproducator.css">
+   <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="../../assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+<h2>👨‍👩‍👧‍👧 Test Biologie - Sistemul Reproducător Uman</h2>
+
+
+<form id="quizForm">
+    <!-- Întrebarea 1 -->
+    <div class="question">
+        <label>1. Care este funcția principală a testiculelor?</label>
+        <div class="quiz-option"><input type="radio" name="q1" value="a"> Producerea ovulelor</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="b"> Secreția de estrogen</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="c"> Producerea spermatozoizilor și testosteronului</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="d"> Susținerea uterului</div>
+        <div class="explanation" id="explanation-q1"></div>
+    </div>
+
+    <!-- Întrebarea 2 -->
+    <div class="question">
+        <label>2. Ce rol are LH (hormonul luteinizant) la femei?</label>
+        <div class="quiz-option"><input type="radio" name="q2" value="a"> Inhibă ovulația</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="b"> Stimulează ovulația</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="c"> Reduce secreția de progesteron</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="d"> Provoacă dezvoltarea uterului</div>
+        <div class="explanation" id="explanation-q2"></div>
+    </div>
+
+    <!-- Întrebarea 3 -->
+    <div class="question">
+        <label>3. Unde are loc, de obicei, fertilizarea?</label>
+        <div class="quiz-option"><input type="radio" name="q3" value="a"> În ovare</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="b"> În uter</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="c"> În trompele uterine</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="d"> În vagin</div>
+        <div class="explanation" id="explanation-q3"></div>
+    </div>
+
+    <!-- Întrebarea 4 -->
+    <div class="question">
+        <label>4. Care organ feminin este locul dezvoltării embrionului?</label>
+        <div class="quiz-option"><input type="radio" name="q4" value="a"> Ovul</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="b"> Trompă uterină</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="c"> Uter</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="d"> Vagin</div>
+        <div class="explanation" id="explanation-q4"></div>
+    </div>
+
+    <!-- Întrebarea 5 -->
+    <div class="question">
+        <label>5. Care este rolul principal al prostatei?</label>
+        <div class="quiz-option"><input type="radio" name="q5" value="a"> Produce ovule</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="b"> Transportă urina</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="c"> Produce lichid care protejează spermatozoizii</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="d"> Controlează erecția</div>
+        <div class="explanation" id="explanation-q5"></div>
+    </div>
+
+    <!-- Întrebarea 6 -->
+    <div class="question">
+        <label>6. Ce hormon este produs de ovare și menține sarcina?</label>
+        <div class="quiz-option"><input type="radio" name="q6" value="a"> FSH</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="b"> LH</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="c"> Estrogen</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="d"> Progesteron</div>
+        <div class="explanation" id="explanation-q6"></div>
+    </div>
+
+    <!-- Întrebarea 7 -->
+    <div class="question">
+        <label>7. Adevărat sau Fals: Ovogeneza are loc în ovare.</label>
+        <div class="quiz-option"><input type="radio" name="q7" value="true"> Adevărat</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="false"> Fals</div>
+        <div class="explanation" id="explanation-q7"></div>
+    </div>
+
+    <!-- Întrebarea 8 -->
+    <div class="question">
+        <label>8. Ce organ din sistemul reproducător masculin transportă spermatozoizii de la epididim?</label>
+        <div class="quiz-option"><input type="radio" name="q8" value="a"> Uretra</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="b"> Canalul deferent</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="c"> Prostata</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="d"> Veziculele seminale</div>
+        <div class="explanation" id="explanation-q8"></div>
+    </div>
+
+    <!-- Întrebarea 9 -->
+    <div class="question">
+        <label>9. Ce funcție are vaginul?</label>
+        <div class="quiz-option"><input type="radio" name="q9" value="a"> Produce estrogen</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="b"> Produce ovule</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="c"> Reprezintă canalul de naștere și receptacul pentru spermă</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="d"> Transportă ovulul spre uter</div>
+        <div class="explanation" id="explanation-q9"></div>
+    </div>
+
+    <!-- Întrebarea 10 -->
+    <div class="question">
+        <label>10. Ce afecțiune constă în dilatarea venelor testiculare și poate duce la infertilitate?</label>
+        <div class="quiz-option"><input type="radio" name="q10" value="a"> Endometrioza</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="b"> Varicocelul</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="c"> Prostatita</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="d"> ITS</div>
+        <div class="explanation" id="explanation-q10"></div>
+    </div>
+
+    <button type="button" onclick="evaluateQuiz()">Evaluare</button>
+</form>
+
+<div id="results"></div>
+
+<button onclick="window.location.href='../../teste.html';" style="position: fixed; bottom: 20px; left: 20px; padding: 10px 20px; background-color: #00796b; color: white; font-size: 18px; border: none; border-radius: 30px; cursor: pointer; transition: background-color 0.3s ease; box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);">
+⟵ Înapoi la Teste
+</button>
+
+
+<script src="../../assets/js/script-activitate.js"></script>
+<script src="../../assets/teste/traduceri/repro.js"></script>
+<script src="../../assets/teste/js/reproducator.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sistemul respirator</title>
+   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #a5d6a7, #81c784); /* Gradient verde deschis și verde */
+      font-family: 'Poppins', sans-serif;
+      color: #2e7d32; /* Verde închis */
+      padding: 40px 20px;
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 3rem 2rem 1rem;
+      text-align: center;
+      font-size: 4rem;
+      font-weight: 800;
+      color: #2e7d32;
+      text-shadow: 1px 1px 4px rgba(46, 125, 50, 0.3);
+    }
+
+    .description {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #27632a;
+      padding: 0 1rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    .model-card {
+      width: 90%;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(46, 125, 50, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .model-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 40px rgba(46, 125, 50, 0.5);
+    }
+
+    .model-info {
+      padding: 1.5rem;
+      background-color: rgba(46, 125, 50, 0.15);
+    }
+
+    .model-info h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #2e7d32;
+      text-align: center;
+    }
+
+    .model-info p {
+      font-size: 1rem;
+      color: #4a7c4a;
+      text-align: center;
+    }
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border: none;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      color: #2e7d32cc;
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 2.5rem;
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+    }
+
+    .back-button-fixed {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #4caf50, #81c784);
+      color: #1b3a16;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 20px rgba(30, 90, 20, 0.4);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .back-button-fixed:hover {
+      background: linear-gradient(135deg, #81c784, #4caf50);
+      color: #0d1f0a;
+      transform: scale(1.05);
+    }
+/* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+body.dark {
+  background: linear-gradient(135deg, #1b4020, #244d2a); /* verde foarte închis pentru fundal */
+  color: #c8e6c9; /* verde deschis pastel pentru text */
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body.dark header {
+  padding: 3rem 2rem 1rem;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 800;
+  color: #a5d6a7; /* verde pastel */
+  text-shadow: 1px 1px 6px rgba(129, 199, 132, 0.3);
+  user-select: none;
+}
+
+body.dark .description {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #81c784; /* verde deschis */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+body.dark .container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  padding: 0 2rem 4rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+body.dark .model-card {
+  width: 100%;
+  background: rgba(0, 30, 0, 0.4);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(76, 175, 80, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .model-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(76, 175, 80, 0.5);
+}
+
+body.dark .model-info {
+  padding: 1.5rem;
+  background-color: rgba(0, 60, 0, 0.3);
+  color: #c8e6c9;
+  text-align: center;
+}
+
+body.dark .model-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #a5d6a7;
+  text-shadow: 1px 1px 4px rgba(129, 199, 132, 0.2);
+}
+
+body.dark iframe {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: none;
+  border-radius: 0 0 20px 20px;
+  display: block;
+  filter: brightness(0.95) contrast(1.05);
+}
+
+body.dark footer {
+  text-align: center;
+  color: #81c784;
+  font-size: 0.9rem;
+  padding: 2rem 1rem 0;
+  user-select: none;
+}
+
+body.dark .back-button-fixed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  color: #e8f5e9;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+body.dark .back-button-fixed:hover {
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  body.dark header {
+    font-size: 2.5rem;
+  }
+
+  body.dark .description {
+    font-size: 1rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+  <header>Sistemul respirator</header>
+
+  <p class="description">
+    Explorează în detaliu sistemul respirator al corpului uman cu ajutorul acestor modele interactive. Atinge, rotește și învață despre diferențele anatomice dintre bărbat și femeie!
+  </p>
+
+  <div class="container">
+
+    <!-- Model Feminin -->
+    <div class="model-card">
+      <div class="model-info">
+        <h2>Sistemul respirator feminin</h2>
+      </div>
+      <iframe id="embedded-female" frameborder="0" allowfullscreen loading="lazy"
+        src="https://human.biodigital.com/tiny-viewer/?id=6AF0&ui-anatomy-descriptions=true&ui-anatomy-pronunciations=true&ui-anatomy-labels=true&ui-audio=true&ui-chapter-list=false&ui-fullscreen=true&ui-help=true&ui-info=true&ui-label-list=true&ui-layers=true&ui-skin-layers=true&ui-loader=circle&ui-media-controls=full&ui-menu=true&ui-nav=true&ui-search=true&ui-tools=true&ui-tutorial=true&ui-undo=true&ui-whiteboard=true&auto-load=false&initial.hand=true&disable-scroll=false&uaid=M44ZB&paid=o_2244a44b">
+      </iframe>
+    </div>
+
+    <!-- Model Masculin -->
+    <div class="model-card">
+      <div class="model-info">
+        <h2>Sistemul respirator masculin</h2>
+      </div>
+      <iframe id="embedded-male" frameborder="0" allowfullscreen loading="lazy"
+        src="https://human.biodigital.com/tiny-viewer/?id=6AF2&ui-anatomy-descriptions=true&ui-anatomy-pronunciations=true&ui-anatomy-labels=true&ui-audio=true&ui-chapter-list=false&ui-fullscreen=true&ui-help=true&ui-info=true&ui-label-list=true&ui-layers=true&ui-skin-layers=true&ui-loader=circle&ui-media-controls=full&ui-menu=true&ui-nav=true&ui-search=true&ui-tools=true&ui-tutorial=true&ui-undo=true&ui-whiteboard=true&auto-load=false&initial.hand=true&disable-scroll=false&uaid=M44ZF&paid=o_2244a44b">
+      </iframe>
+    </div>
+
+  </div>
+
+  <a href="modele3d.html" class="back-button-fixed">⟵ Înapoi</a>
+
+  <footer>
+    &copy; 2025 AnatomIQ | Proiect educațional
+  </footer>
+<script>
+  // Se aplică clasa .dark pe body dacă userul a salvat-o anterior
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+  const icon = document.querySelector("#theme-toggle i");
+  icon.classList.remove("bx-moon");
+  icon.classList.add("bx-sun");
+}
+
+function toggleTheme() {
+  const icon = document.querySelector("#theme-toggle i");
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    icon.classList.remove("bx-moon");
+    icon.classList.add("bx-sun");
+    localStorage.setItem("theme", "dark");
+  } else {
+    icon.classList.remove("bx-sun");
+    icon.classList.add("bx-moon");
+    localStorage.setItem("theme", "light");
+  }
+}
+</script>
+</body>
+</html>

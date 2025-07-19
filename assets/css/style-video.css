@@ -1,0 +1,93 @@
+ .video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+.video-card {
+  perspective: 1000px;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+  transform: scale(1.03) rotateX(2deg);
+}
+
+.video-preview {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.video-preview video {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover video {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay i {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.video-card:hover .overlay {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .video-gallery {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 12px; /* un padding modest pe margini */
+  }
+
+  .video-preview {
+    width: 75vw;         
+    max-width: 75vw;    
+    height: 260px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    left: -10vw;          /* centrarea lățimii extinse */
+  }
+
+  .video-preview video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: inherit;
+    transition: transform 0.3s ease;
+  }
+
+  .overlay {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  .overlay i {
+    font-size: 3.5rem;
+  }
+}

@@ -1,0 +1,350 @@
+
+body {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9); /* Verde pal deschis */
+  font-family: 'Poppins', sans-serif;
+  color: #2e7d32; /* Verde închis pentru text */
+  padding: 40px 20px;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  color: #2e7d32; /* Verde închis */
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 4px rgba(46, 125, 50, 0.2); /* Umbră subtilă în verde închis */
+}
+
+form {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #f1f8e9; /* Verde foarte deschis pentru fundal */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.question {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.question label {
+  display: block;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #2e7d32;
+}
+
+.quiz-option {
+  background: #ffffff;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.quiz-option:hover {
+  background-color: #c8e6c9;
+  border-color: #2e7d32;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #2e7d32;
+  transform: scale(1.2);
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #a5d6a7;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+button {
+  display: block;
+  margin: 40px auto 0;
+  padding: 14px 32px;
+  background: linear-gradient(90deg, #66bb6a, #43a047);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #388e3c, #2e7d32);
+}
+
+#results {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-top: 35px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.correct {
+  border-color: #66bb6a !important;
+  background-color: #e8f5e9 !important;
+}
+
+.wrong {
+  border-color: #e57373 !important;
+  background-color: #ffebee !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.explanation {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #f1f8e9;
+  border-left: 4px solid #66bb6a;
+  color: #2e7d32;
+  font-style: italic;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  form {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .question label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .quiz-option {
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 12px 28px;
+    margin-top: 30px;
+  }
+
+  #results {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+
+  .explanation {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+/* Pentru telefoane foarte mici, ex. max 400px */
+@media (max-width: 400px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  .question label {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+}
+   /* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+/* =============================== */
+/* DARK MODE - Verde Pal & Verde Închis */
+/* =============================== */
+
+body.dark {
+  background: linear-gradient(135deg, #1b5e20, #2e7d32); /* Verde foarte închis */
+  color: #e8f5e9; /* Verde pal deschis pentru text */
+  padding: 40px 20px;
+  margin: 0;
+}
+
+body.dark h2 {
+  color: #c8e6c9; /* Verde pastel */
+  text-shadow: 1px 1px 4px rgba(200, 230, 201, 0.4);
+}
+
+body.dark form {
+  background: #1b4d1b; /* Verde-maro închis */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+body.dark .question label {
+  color: #dcedc8; /* Verde pal */
+}
+
+body.dark .quiz-option {
+  background: #244c28; /* Verde intens */
+  border: 2px solid transparent;
+  color: #e8f5e9;
+  transition: 0.25s ease;
+}
+
+body.dark .quiz-option:hover {
+  background-color: #388e3c; /* Verde deschis la hover */
+  border-color: #c8e6c9;
+  color: #fff;
+}
+
+body.dark input[type="radio"],
+body.dark input[type="checkbox"] {
+  accent-color: #c8e6c9;
+}
+
+body.dark input[type="text"] {
+  background: #1c3520;
+  border: 2px solid #a5d6a7;
+  color: #e8f5e9;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+body.dark input[type="text"]::placeholder {
+  color: #a5d6a7;
+}
+
+body.dark button {
+  background: linear-gradient(90deg, #66bb6a, #43a047);
+  box-shadow: 0 5px 15px rgba(102, 187, 106, 0.5);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+body.dark button:hover {
+  background: linear-gradient(90deg, #2e7d32, #66bb6a);
+  transform: scale(1.05);
+}
+
+body.dark #results {
+  color: #c8e6c9;
+}
+
+body.dark .correct {
+  border-color: #aed581 !important;
+  background-color: #33691e !important;
+  color: #fff !important;
+}
+
+body.dark .wrong {
+  border-color: #ef5350 !important;
+  background-color: #b71c1c !important;
+  color: #fff !important;
+}
+
+body.dark .explanation {
+  background-color: #2b4d2b;
+  border-left: 4px solid #a5d6a7;
+  color: #dcedc8;
+  font-style: italic;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  body.dark form {
+    padding: 20px;
+    border-radius: 15px;
+  }
+  body.dark .question label {
+    font-size: 16px;
+  }
+  body.dark .quiz-option {
+    padding: 8px 12px;
+  }
+  body.dark input[type="text"] {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  body.dark button {
+    font-size: 18px;
+    padding: 12px 28px;
+    margin-top: 30px;
+  }
+  body.dark #results {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+  body.dark .explanation {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  body.dark h2 {
+    font-size: 24px;
+  }
+  body.dark .question label {
+    font-size: 14px;
+  }
+  body.dark button {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+}

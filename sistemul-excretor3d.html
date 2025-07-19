@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sistemul excretor</title>
+   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f8f1e4, #e2d2bb); /* Bej deschis -> bej cald */
+      font-family: 'Poppins', sans-serif;
+      color: #4b3a2c; /* Maro închis pentru text */
+      padding: 40px 20px;
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4b3a2c; /* Maro închis pentru titlu */
+      font-size: 36px;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 4px rgba(75, 58, 44, 0.2); /* Umbră discretă maro */
+    }
+
+    header {
+      text-align: center;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #4b3a2c;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 6px rgba(75, 58, 44, 0.3);
+    }
+
+    .description {
+      text-align: center;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+      color: #6b5842;
+      padding: 0 10px;
+      line-height: 1.5;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .model-card {
+      background: rgba(75, 58, 44, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(75, 58, 44, 0.15);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .model-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(75, 58, 44, 0.3);
+    }
+
+    .model-info {
+      padding: 1.5rem;
+      background-color: rgba(75, 58, 44, 0.07);
+    }
+
+    .model-info h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #4b3a2c;
+    }
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border: none;
+    }
+
+    .back-button-fixed {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #a27f56, #d0b084);
+      color: #4b3a2c;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 20px rgba(75, 58, 44, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .back-button-fixed:hover {
+      background: linear-gradient(135deg, #d0b084, #a27f56);
+      color: #2f2310;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      color: #6b5842;
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+    }
+    /* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+body.dark {
+  background: linear-gradient(135deg, #2b1d14, #3e2c21); /* maro foarte închis spre bej */
+  font-family: 'Poppins', sans-serif;
+  color: #f5e8d8; /* crem deschis pentru text */
+  padding: 40px 20px;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body.dark h2 {
+  text-align: center;
+  color: #ffe0b2; /* bej cald */
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 4px rgba(255, 224, 178, 0.3); /* umbră aurie subtilă */
+}
+
+body.dark header {
+  color: #f5e8d8;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 800;
+  padding: 3rem 2rem 1rem;
+  text-shadow: 1px 1px 6px rgba(255, 224, 178, 0.2);
+}
+
+body.dark .description {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #d7c2ae;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+body.dark .model-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(255, 236, 179, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .model-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(255, 236, 179, 0.3);
+}
+
+body.dark .model-info {
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #ffe0b2;
+  text-align: center;
+}
+
+body.dark .model-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ffe0b2;
+  text-shadow: 1px 1px 4px rgba(255, 224, 178, 0.2);
+}
+
+body.dark iframe {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: none;
+  border-radius: 0 0 20px 20px;
+  display: block;
+  filter: brightness(0.9) contrast(1.05);
+}
+
+body.dark footer {
+  text-align: center;
+  color: #d7c2ae;
+  font-size: 0.9rem;
+  padding: 2rem 1rem 0;
+  user-select: none;
+}
+
+body.dark .back-button-fixed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #6d4c41, #8d6e63);
+  color: #fff3e0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+body.dark .back-button-fixed:hover {
+  background: linear-gradient(135deg, #8d6e63, #6d4c41);
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
+  </style>
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+  <header>Sistemul excretor</header>
+
+  <p class="description">
+    Explorează în detaliu sistemul excretor al corpului uman cu ajutorul acestor modele interactive. Atinge, rotește și învață despre diferențele anatomice dintre bărbat și femeie!
+  </p>
+
+  <div class="container">
+
+    <div class="model-card">
+      <div class="model-info">
+        <h2>Sistemul excretor feminin</h2>
+      </div>
+      <iframe
+        id="embedded-female"
+        frameborder="0"
+        allowfullscreen="true"
+        loading="lazy"
+        src="https://human.biodigital.com/viewer/?id=6GXl&ui-anatomy-descriptions=true&ui-anatomy-pronunciations=true&ui-anatomy-labels=true&ui-audio=true&ui-chapter-list=false&ui-fullscreen=true&ui-help=true&ui-info=true&ui-label-list=true&ui-layers=true&ui-skin-layers=true&ui-loader=circle&ui-media-controls=full&ui-menu=true&ui-nav=true&ui-search=true&ui-tools=true&ui-tutorial=true&ui-undo=true&ui-whiteboard=true&initial.hand=true&disable-scroll=false&uaid=M812e&paid=o_2138f87b"
+        style="aspect-ratio: 4 / 3; width: 100%;"
+      ></iframe>
+    </div>
+
+    <div class="model-card">
+      <div class="model-info">
+        <h2>Sistemul excretor masculin</h2>
+      </div>
+      <iframe
+        id="embedded-male"
+        frameborder="0"
+        allowfullscreen="true"
+        loading="lazy"
+        src="https://human.biodigital.com/viewer/?id=6GXm&ui-anatomy-descriptions=true&ui-anatomy-pronunciations=true&ui-anatomy-labels=true&ui-audio=true&ui-chapter-list=false&ui-fullscreen=true&ui-help=true&ui-info=true&ui-label-list=true&ui-layers=true&ui-skin-layers=true&ui-loader=circle&ui-media-controls=full&ui-menu=true&ui-nav=true&ui-search=true&ui-tools=true&ui-tutorial=true&ui-undo=true&ui-whiteboard=true&initial.hand=true&disable-scroll=false&uaid=M812x&paid=o_2138f87b"
+        style="aspect-ratio: 4 / 3; width: 100%;"
+      ></iframe>
+    </div>
+
+  </div>
+
+  <a href="modele3d.html" class="back-button-fixed">⟵ Înapoi</a>
+
+  <footer>
+    &copy; 2025 AnatomIQ | Proiect educațional
+  </footer>
+<script>
+  // Se aplică clasa .dark pe body dacă userul a salvat-o anterior
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+  const icon = document.querySelector("#theme-toggle i");
+  icon.classList.remove("bx-moon");
+  icon.classList.add("bx-sun");
+}
+
+function toggleTheme() {
+  const icon = document.querySelector("#theme-toggle i");
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    icon.classList.remove("bx-moon");
+    icon.classList.add("bx-sun");
+    localStorage.setItem("theme", "dark");
+  } else {
+    icon.classList.remove("bx-sun");
+    icon.classList.add("bx-moon");
+    localStorage.setItem("theme", "light");
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>🍽️ Test - Sistemul Digestiv </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/teste/css/digestiv.css">
+     <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="../../assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+ 
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+<h2>🍽️ Test Biologie - Sistemul Digestiv Uman</h2>
+
+<form id="quizForm">
+    <!-- Question 1 -->
+    <div class="question">
+        <label>1. Care este rolul principal al sistemului digestiv?</label>
+        <div class="quiz-option"><input type="radio" name="q1" value="a"> Digestia alimentelor și absorbția nutrienților</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="b"> Transportul oxigenului în corp</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="c"> Reglarea temperaturii corpului</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="d"> Protecția organelor interne</div>
+        <div class="explanation" id="explanation-q1"></div>
+    </div>
+
+   <!-- Question 2 -->
+    <div class="question">
+        <label>2. Funcția principală a glandelor salivare este de a secreta salivă. (Adevărat/Fals)</label>
+        <div class="quiz-option"><input type="radio" name="q2" value="true"> Adevărat</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="false"> Fals</div>
+        <div class="explanation" id="explanation-q2"></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <label>3. Care este rolul principal al stomacului?</label>
+        <div class="quiz-option"><input type="radio" name="q3" value="a"> Digestia mecanică și chimică a alimentelor</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="b"> Absorbția nutrienților</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="c"> Formarea bolului alimentar</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="d"> Protecția organismului de infecții</div>
+        <div class="explanation" id="explanation-q3"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <label>4. Care este rolul principal al intestinului subțire?</label>
+        <div class="quiz-option"><input type="radio" name="q4" value="a"> Absorbția nutrienților</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="b"> Eliminarea reziduurilor</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="c"> Digestia proteinelor</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="d"> Stocarea apei</div>
+        <div class="explanation" id="explanation-q4"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <label>5. Ce substanță secretă ficatul pentru a ajuta digestia grăsimilor?</label>
+        <div class="quiz-option"><input type="radio" name="q5" value="a"> Bilă</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="b"> Suc gastric</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="c"> Amilază salivară</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="d"> Suc pancreatic</div>
+        <div class="explanation" id="explanation-q5"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <label>6. Ce rol are pancreasul în digestie?</label>
+        <div class="quiz-option"><input type="radio" name="q6" value="a"> Produce suc gastric</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="b"> Produce suc pancreatic cu enzime digestive</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="c"> Stochează bila</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="d"> Produce amilază salivară</div>
+        <div class="explanation" id="explanation-q6"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+        <label>7. Care este rolul intestinului gros?</label>
+        <div class="quiz-option"><input type="radio" name="q7" value="a"> Absorbția nutrienților</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="b"> Absorbția apei și formarea fecalelor</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="c"> Digestia proteinelor</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="d"> Eliberarea bilei</div>
+        <div class="explanation" id="explanation-q7"></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <label>8. Ce substanță ajută la digestia amidonului?</label>
+        <div class="quiz-option"><input type="radio" name="q8" value="a"> Amilaza salivară</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="b"> Lipaza</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="c"> Pepsina</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="d"> Tripsina</div>
+        <div class="explanation" id="explanation-q8"></div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+        <label>9. Care este rolul bilei în procesul digestiv?</label>
+        <div class="quiz-option"><input type="radio" name="q9" value="a"> Digera proteinele</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="b"> Emulsionează grăsimile pentru a facilita digestia</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="c"> Provoacă aciditatea în stomac</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="d"> Descompune amidonul</div>
+        <div class="explanation" id="explanation-q9"></div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+        <label>10. Ce se întâmplă în intestinul subțire în timpul procesului de absorbție?</label>
+        <div class="quiz-option"><input type="radio" name="q10" value="a"> Apa și electroliții sunt absorbiți</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="b"> Nutrienții sunt transferați în sânge sau limfă</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="c"> Fecalele sunt formate</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="d"> Nutrienții sunt digerați în continuare</div>
+        <div class="explanation" id="explanation-q10"></div>
+    </div>
+
+    <button type="button" onclick="evaluateQuiz()">Evaluare</button>
+</form>
+
+<div id="results"></div>
+
+<button onclick="window.location.href='../../teste.html';" style="position: fixed; bottom: 20px; left: 20px; padding: 10px 20px; background-color: #00796b; color: white; font-size: 18px; border: none; border-radius: 30px; cursor: pointer; transition: background-color 0.3s ease; box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);">
+⟵ Înapoi la Teste
+</button>
+<script src="../../assets/js/script-activitate.js"></script>
+<script src="../../assets/teste/traduceri/dig.js"></script>
+<script src="../../assets/teste/js/digestiv.js"></script>
+</body>
+</html>

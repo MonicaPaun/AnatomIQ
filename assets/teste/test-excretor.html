@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>💧 Test - Sistemul Excretor </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/teste/css/excretor.css">
+ <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="../../assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+<h2>💧 Test Biologie - Sistemul Excretor Uman</h2>
+
+<form id="quizForm">
+    <!-- Întrebarea 1 -->
+    <div class="question">
+        <label>1. Care este rolul principal al sistemului excretor?</label>
+        <div class="quiz-option"><input type="radio" name="q1" value="a"> Digestia proteinelor</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="b"> Eliminarea produselor azotoase și reglarea homeostaziei</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="c"> Producerea hormonilor sexuali</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="d"> Transportul oxigenului</div>
+        <div class="explanation" id="explanation-q1"></div>
+    </div>
+
+    <!-- Întrebarea 2 -->
+    <div class="question">
+        <label>2. Ce structură din rinichi conține glomerulul și capsula Bowman?</label>
+        <div class="quiz-option"><input type="radio" name="q2" value="a"> Tubul colector</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="b"> Corpul renal</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="c"> Ansă Henle</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="d"> Bazinetul</div>
+        <div class="explanation" id="explanation-q2"></div>
+    </div>
+
+    <!-- Întrebarea 3 -->
+    <div class="question">
+        <label>3. Unde are loc ultrafiltrarea sângelui?</label>
+        <div class="quiz-option"><input type="radio" name="q3" value="a"> Tubul contort distal</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="b"> Glomerul → capsula Bowman</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="c"> Vezica urinară</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="d"> Ureter</div>
+        <div class="explanation" id="explanation-q3"></div>
+    </div>
+
+    <!-- Întrebarea 4 -->
+    <div class="question">
+        <label>4. Ce hormon favorizează reabsorbția apei în tubii colectori?</label>
+        <div class="quiz-option"><input type="radio" name="q4" value="a"> Insulina</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="b"> ADH (vasopresina)</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="c"> PTH</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="d"> Adrenalină</div>
+        <div class="explanation" id="explanation-q4"></div>
+    </div>
+
+    <!-- Întrebarea 5 -->
+    <div class="question">
+        <label>5. Ce rol are aldosteronul în funcția renală?</label>
+        <div class="quiz-option"><input type="radio" name="q5" value="a"> Elimină proteinele din sânge</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="b"> Inhibă secreția de urină</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="c"> Reabsoarbe Na⁺ și elimină K⁺</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="d"> Reduce tensiunea arterială</div>
+        <div class="explanation" id="explanation-q5"></div>
+    </div>
+
+    <!-- Întrebarea 6 -->
+    <div class="question">
+        <label>6. Ce componentă a sistemului excretor transportă urina de la rinichi la vezică?</label>
+        <div class="quiz-option"><input type="radio" name="q6" value="a"> Uretra</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="b"> Vezica urinară</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="c"> Ureterele</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="d"> Nefronii</div>
+        <div class="explanation" id="explanation-q6"></div>
+    </div>
+
+    <!-- Întrebarea 7 -->
+    <div class="question">
+        <label>7. Ce se întâmplă în cazul unei secreții crescute de ADH?</label>
+        <div class="quiz-option"><input type="radio" name="q7" value="a"> Se formează mai multă urină diluată</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="b"> Se elimină mai mult K⁺</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="c"> Se reabsoarbe mai multă apă, urina devine concentrată</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="d"> Crește volumul de sânge</div>
+        <div class="explanation" id="explanation-q7"></div>
+    </div>
+
+    <!-- Întrebarea 8 -->
+    <div class="question">
+        <label>8. Care este rolul celulelor podocitare din capsula Bowman?</label>
+        <div class="quiz-option"><input type="radio" name="q8" value="a"> Produc eritropoetină</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="b"> Controlează fin filtrarea plasmei</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="c"> Elimină toxinele din urină</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="d"> Favorizează secreția tubulară</div>
+        <div class="explanation" id="explanation-q8"></div>
+    </div>
+
+    <!-- Întrebarea 9 -->
+    <div class="question">
+        <label>9. Ce afecțiune este cauzată de absența sau insensibilitatea la ADH?</label>
+        <div class="quiz-option"><input type="radio" name="q9" value="a"> Diabet zaharat</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="b"> Glomerulonefrită</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="c"> Diabet insipid</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="d"> Litiază renală</div>
+        <div class="explanation" id="explanation-q9"></div>
+    </div>
+
+    <!-- Întrebarea 10 -->
+    <div class="question">
+        <label>10. Ce structură renală este responsabilă de reabsorbția masivă a substanțelor utile?</label>
+        <div class="quiz-option"><input type="radio" name="q10" value="a"> Tubul contort proximal</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="b"> Corpul renal</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="c"> Bazinetul</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="d"> Tubul colector</div>
+        <div class="explanation" id="explanation-q10"></div>
+    </div>
+
+    <button type="button" onclick="evaluateQuiz()">Evaluare</button>
+</form>
+
+<div id="results"></div>
+
+<button onclick="window.location.href='../../teste.html';" style="position: fixed; bottom: 20px; left: 20px; padding: 10px 20px; background-color: #00796b; color: white; font-size: 18px; border: none; border-radius: 30px; cursor: pointer; transition: background-color 0.3s ease; box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);">
+⟵ Înapoi la Teste
+</button>
+
+<script src="../../assets/js/script-activitate.js"></script>
+<script src="../../assets/teste/traduceri/excre.js"></script>
+<script src="../../assets/teste/js/excretor.js"></script>
+</body>
+</html>

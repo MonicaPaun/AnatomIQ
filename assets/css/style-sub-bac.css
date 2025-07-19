@@ -1,0 +1,218 @@
+.countdown {
+    background-color: #ff6666;
+    padding: 10px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1.5em;
+    text-align: center;
+    color: #fff;
+  }
+body.dark .countdown {
+    background-color: #850000;
+
+  }
+
+  /* FILTER SECTION */
+  .exam-filter-section {
+    background-color: #ffe6e6;
+    border-radius: 16px;
+    padding: 40px 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.1);
+  }
+
+  .filter-card {
+    background-color: #fff0f0;
+    border: 1px solid #ffcccc;
+    border-radius: 16px;
+    padding: 25px;
+  }
+
+  .form-label {
+    color: #800000;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .form-select {
+    width: 100%;
+    background-color: #fffafa;
+    border-color: #ff9999;
+    color: #800000;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+
+  .form-select:focus {
+    border-color: #cc0000;
+    box-shadow: 0 0 0 0.25rem rgba(204, 0, 0, 0.25);
+    outline: none;
+  }
+
+  /* EXAM CONTAINER */
+  .exam-container {
+    background-color: #fff0f0;
+    border: 1px solid #ffc0c0;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+  }
+
+  .exam-container h2 {
+    border-bottom: 2px solid #ff9999;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  /* LISTA DOCUMENTE */
+  .list-group-item {
+    background-color: #fff5f5;
+    border-color: #ffcccc;
+    padding: 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .list-group-item a {
+    text-decoration: none;
+    color: #cc0000;
+    font-weight: 500;
+    word-break: break-word;
+  }
+
+  .list-group-item:hover {
+    background-color: #ffe0e0;
+  }
+
+  /* NO RESULTS */
+  .text-muted {
+    color: #b36b6b !important;
+    font-size: 1.2rem;
+    padding: 2rem 0;
+  }
+
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .main-content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    overflow-x: hidden;
+     padding-top: 70px;
+  }
+
+  .exam-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 20px;
+    margin: 0;
+  }
+
+  .exam-filter-section {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 20px;
+    margin: 0 auto;
+  }
+
+  .filter-card {
+    padding: 20px 15px;
+  }
+
+  .form-label {
+    font-size: 1rem;
+  }
+
+  .form-select {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.65rem;
+  }
+
+  .exam-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .list-group-item {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+
+  .countdown {
+    font-size: 1.2em;
+    padding: 10px 20px;
+  }
+}
+
+body.dark .exam-filter-section {
+  background-color: #2a0f0f;
+  box-shadow: 0 0 12px rgba(255, 77, 77, 0.1);
+}
+
+body.dark .filter-card {
+  background-color: #3a1a1a;
+  border-color: #994444;
+}
+
+body.dark .form-label {
+  color: #ff9999;
+}
+
+body.dark .form-select {
+  background-color: #4a1f1f;
+  border-color: #b35c5c;
+  color: #ffe6e6;
+}
+
+body.dark .form-select:focus {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 0 0.25rem rgba(255, 77, 77, 0.25);
+  background-color: #5a2a2a;
+}
+
+/* ============================ */
+/* ==== DARK MODE: EXAMEN ==== */
+/* ============================ */
+
+body.dark .exam-container {
+  background-color: #3a1a1a;
+  border-color: #b35c5c;
+}
+
+body.dark .exam-container h2 {
+  border-color: #ff6666;
+  color: #ffdede;
+}
+
+/* ============================ */
+/* ==== DARK MODE: LISTĂ ===== */
+/* ============================ */
+
+body.dark .list-group-item {
+  background-color: #4a1f1f;
+  border-color: #a64d4d;
+  color: #ffdada;
+}
+
+body.dark .list-group-item a {
+  color: #ff8888;
+}
+
+body.dark .list-group-item:hover {
+  background-color: #5a2a2a;
+}
+
+/* ============================ */
+/* ==== DARK MODE: EMPTY ===== */
+/* ============================ */
+
+body.dark .text-muted {
+  color: #cc7a7a !important;
+}

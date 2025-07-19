@@ -1,0 +1,433 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button, .button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+/* Aplicația (notițele) */
+.app {
+  display: flex;
+  flex-direction: row;
+  width: 2000px;
+  max-width: 1000px;
+  height: 550px;
+  box-shadow:
+    0 15px 25px rgba(0, 0, 0, 0.12),
+    0 10px 10px rgba(0, 0, 0, 0.07);
+  border-radius: 12px;
+  overflow: none;
+  background: #fff;
+  margin-bottom: 55px;
+}
+
+/* Sidebar pentru notițe */
+.sidebar-notite {
+  width: 20%;
+  background: linear-gradient(180deg, #ff5f5f 0%, #fe7b7b 100%);
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-right: 5px solid #d30000;
+  box-shadow: inset 0 0 15px rgba(255, 126, 95, 0.3);
+  overflow-y: auto;
+}
+
+/* Buton de adăugare notă */
+#add-note {
+  padding: 14px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #fff 0%, #ffd1d1 100%);
+  color: #d30000;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.15s ease;
+  font-size: 1.1rem;
+}
+
+#add-note:hover {
+  background: linear-gradient(45deg, #d30000 0%, #ff5f5f 100%);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(211, 0, 0, 0.6);
+}
+
+/* Lista de notițe */
+#notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Note Items */
+.note-item {
+  padding: 14px 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.4s forwards;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.note-item:hover {
+  background: #fff7f1;
+  box-shadow: 0 6px 12px rgba(255, 95, 95, 0.3);
+}
+
+.note-item.active {
+  background: #ffd8d8;
+  border-color: #ff5f5f;
+  box-shadow: 0 0 15px rgba(255, 95, 95, 0.7);
+}
+
+/* Note Editor */
+.note-editor {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background: #fffdfa;
+  border-radius: 0 50px 50px 0;
+  box-shadow: inset 0 0 40px rgba(255, 126, 95, 0.05);
+  animation: fadeIn 0.5s ease-in;
+  overflow: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.note-editor input,
+.note-editor textarea {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 1.15rem;
+  border: 2px solid #f0e6db;
+  border-radius: 16px;
+  background: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.note-editor input:focus,
+.note-editor textarea:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  box-shadow: 0 0 0 4px rgba(255, 126, 95, 0.3);
+}
+
+/* Textarea Scrollbar */
+.note-editor textarea {
+  resize: none;
+  overflow-y: auto;
+  height: 524px;
+}
+
+.note-editor textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.note-editor textarea::-webkit-scrollbar-track {
+  background: #f0e6db;
+  border-radius: 10px;
+}
+
+.note-editor textarea::-webkit-scrollbar-thumb {
+  background-color: #ff4c4c;
+  border-radius: 10px;
+  border: 2px solid #f0e6db;
+}
+
+.note-editor textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #e03e3e;
+}
+
+/* Buton ștergere */
+.notes__delete-btn {
+  background: transparent;
+  border: none;
+  color: #ff6347;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: absolute;
+  top: -5px;
+  right: 0;
+}
+
+.notes__delete-btn:hover {
+  color: #e03e2f;
+  transform: scale(1.2);
+}
+
+.notes__delete-btn:focus {
+  outline: none;
+}
+/* === DARK MODE === */
+
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .app {
+  background: #1e1e1e;
+  box-shadow:
+    0 15px 25px rgba(0, 0, 0, 0.5),
+    0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .sidebar-notite {
+  background: linear-gradient(180deg, #550000 0%, #8b1a1a 100%);
+  border-right: 5px solid #aa0000;
+  box-shadow: inset 0 0 15px rgba(211, 0, 0, 0.3);
+}
+
+body.dark #add-note {
+  background: linear-gradient(45deg, #ffdddd 0%, #550000 100%);
+  color: #ff6d6d;
+  box-shadow: 0 4px 10px rgba(255, 50, 50, 0.2);
+}
+
+body.dark #add-note:hover {
+  background: linear-gradient(45deg, #ff6d6d 0%, #aa0000 100%);
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(255, 50, 50, 0.5);
+}
+
+body.dark .note-item {
+  background: #2b2b2b;
+  color: #f5f5f5;
+  border: 1px solid #444;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .note-item:hover {
+  background: #3a3a3a;
+  box-shadow: 0 6px 12px rgba(255, 50, 50, 0.3);
+}
+
+body.dark .note-item.active {
+  background: #662222;
+  border-color: #ff6d6d;
+  box-shadow: 0 0 15px rgba(255, 95, 95, 0.6);
+}
+
+body.dark .note-editor {
+  background: #242424;
+  box-shadow: inset 0 0 40px rgba(255, 126, 95, 0.05);
+}
+
+body.dark .note-editor input,
+body.dark .note-editor textarea {
+  background: #1a1a1a;
+  color: #e6e6e6;
+  border: 2px solid #444;
+}
+
+body.dark .note-editor input:focus,
+body.dark .note-editor textarea:focus {
+  border-color: #ff7e5f;
+  box-shadow: 0 0 0 4px rgba(255, 126, 95, 0.3);
+}
+
+body.dark .note-editor textarea::-webkit-scrollbar-track {
+  background: #333;
+}
+
+body.dark .note-editor textarea::-webkit-scrollbar-thumb {
+  background-color: #ff4c4c;
+  border: 2px solid #333;
+}
+
+body.dark .note-editor textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #e03e3e;
+}
+
+body.dark .notes__delete-btn {
+  color: #ff4c4c;
+}
+
+body.dark .notes__delete-btn:hover {
+  color: #ff9999;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+    padding: 0;
+  }
+
+  .main-content {
+    padding: 1.5rem 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .app {
+    flex-direction: column;
+    width: 70vw; /* ocupă 96% din lățimea ecranului */
+    max-width: 70vw;
+    margin: 0 auto; /* centrat frumos */
+    height: auto;
+    left: -20px;
+    bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .trash-section {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.note-item.trashed {
+  background-color: #f8d7da;
+  border-left: 4px solid #dc3545;
+  padding: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+  .sidebar-notite {
+    width: 100%;
+    border-right: none;
+    border-bottom: 5px solid #d30000;
+    border-radius: 0;
+    padding: 22px 16px;
+    box-shadow: none;
+  }
+
+  #add-note {
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 16px;
+  }
+
+  #notes-list {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .note-item {
+    padding: 16px;
+    font-size: 1.05rem;
+  }
+
+  .note-editor {
+    padding: 22px 16px;
+    border-radius: 0;
+  }
+
+  .note-editor textarea {
+    width: 100%;
+    height: 340px;
+    font-size: 1.1rem;
+    padding: 16px;
+  }
+
+  .notes__preview {
+    padding: 22px 16px;
+    margin-top: 22px;
+    border-radius: 14px;
+  }
+
+  .notes__title,
+  .notes__body {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .notes__delete-btn {
+    font-size: 22px;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+ .btn {
+  padding: 8px 16px;
+  margin: 8px 8px 8px 0; /* sus, dreapta, jos, stanga */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  line-height: 1.5;
+}
+
+.btn-restore {
+  background-color: #4caf50; /* verde */
+  color: white;
+}
+
+.btn-restore:hover {
+  background-color: #45a049;
+}
+
+.btn-delete {
+  background-color: #f44336; /* roșu */
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #da190b;
+}
+
+/* Pentru containerul note șterse ca să aibă spațiu între elemente */
+.trashed-note-item {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}

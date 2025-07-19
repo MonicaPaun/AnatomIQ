@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>🧬 Test - Sistemul Endocrin </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/teste/css/endocrin.css">
+   <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="../../assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+<h2>🧬 Test Biologie - Sistemul Endocrin la Om</h2>
+
+<form id="quizForm">
+    <!-- Întrebarea 1 -->
+    <div class="question">
+        <label>1. Care este rolul principal al sistemului endocrin?</label>
+        <div class="quiz-option"><input type="radio" name="q1" value="a"> Coordonarea mișcărilor voluntare</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="b"> Reglarea funcțiilor organismului prin hormoni</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="c"> Protejarea organismului împotriva agenților patogeni</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="d"> Digestia alimentelor</div>
+        <div class="explanation" id="explanation-q1"></div>
+    </div>
+
+    <!-- Întrebarea 2 -->
+    <div class="question">
+        <label>2. Ce glandă face legătura între sistemul nervos și cel endocrin?</label>
+        <div class="quiz-option"><input type="radio" name="q2" value="a"> Hipofiza</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="b"> Pancreasul</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="c"> Tiroida</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="d"> Hipotalamusul</div>
+        <div class="explanation" id="explanation-q2"></div>
+    </div>
+
+    <!-- Întrebarea 3 -->
+    <div class="question">
+        <label>3. Ce hormon reglează nivelul calciului în sânge prin creșterea acestuia?</label>
+        <div class="quiz-option"><input type="radio" name="q3" value="a"> Calcitonina</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="b"> Parathormonul</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="c"> Insulina</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="d"> ADH</div>
+        <div class="explanation" id="explanation-q3"></div>
+    </div>
+
+    <!-- Întrebarea 4 -->
+    <div class="question">
+        <label>4. Care este funcția principală a insulinei?</label>
+        <div class="quiz-option"><input type="radio" name="q4" value="a"> Crește glicemia</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="b"> Reduce glicemia</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="c"> Stimulează lactația</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="d"> Inhibă cortizolul</div>
+        <div class="explanation" id="explanation-q4"></div>
+    </div>
+
+    <!-- Întrebarea 5 -->
+    <div class="question">
+        <label>5. Unde este localizată glanda tiroidă?</label>
+        <div class="quiz-option"><input type="radio" name="q5" value="a"> În spatele stomacului</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="b"> Pe fața anterioară a traheei</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="c"> În interiorul creierului</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="d"> Sub rinichi</div>
+        <div class="explanation" id="explanation-q5"></div>
+    </div>
+
+    <!-- Întrebarea 6 -->
+    <div class="question">
+        <label>6. Ce hormon este implicat în „răspunsul de tip luptă sau fugi”?</label>
+        <div class="quiz-option"><input type="radio" name="q6" value="a"> TSH</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="b"> Cortizol</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="c"> Adrenalină</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="d"> Progesteron</div>
+        <div class="explanation" id="explanation-q6"></div>
+    </div>
+
+    <!-- Întrebarea 7 -->
+    <div class="question">
+        <label>7. Care dintre următorii hormoni este secretat de lobul anterior al hipofizei?</label>
+        <div class="quiz-option"><input type="radio" name="q7" value="a"> Oxitocina</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="b"> ADH</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="c"> GH (hormon de creștere)</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="d"> Melatonina</div>
+        <div class="explanation" id="explanation-q7"></div>
+    </div>
+
+    <!-- Întrebarea 8 -->
+    <div class="question">
+        <label>8. Ce hormon are efect opus insulinei?</label>
+        <div class="quiz-option"><input type="radio" name="q8" value="a"> Somatostatină</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="b"> ADH</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="c"> Glucagon</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="d"> Oxitocină</div>
+        <div class="explanation" id="explanation-q8"></div>
+    </div>
+
+    <!-- Întrebarea 9 -->
+    <div class="question">
+        <label>9. Ce mecanism de reglare hormonală este cel mai frecvent?</label>
+        <div class="quiz-option"><input type="radio" name="q9" value="a"> Feedback pozitiv</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="b"> Feedback negativ</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="c"> Reglare paracrină</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="d"> Feedback intermediar</div>
+        <div class="explanation" id="explanation-q9"></div>
+    </div>
+
+    <!-- Întrebarea 10 -->
+    <div class="question">
+        <label>10. Ce hormon stimulează tiroida să producă T3 și T4?</label>
+        <div class="quiz-option"><input type="radio" name="q10" value="a"> ACTH</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="b"> TRH</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="c"> TSH</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="d"> GH</div>
+        <div class="explanation" id="explanation-q10"></div>
+    </div>
+
+    <button type="button" onclick="evaluateQuiz()">Evaluare</button>
+</form>
+
+
+
+<div id="results"></div>
+
+<button onclick="window.location.href='../../teste.html';" style="position: fixed; bottom: 20px; left: 20px; padding: 10px 20px; background-color: #00796b; color: white; font-size: 18px; border: none; border-radius: 30px; cursor: pointer; transition: background-color 0.3s ease; box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);">
+⟵ Înapoi la Teste
+</button>
+
+<script src="../../assets/js/script-activitate.js"></script>
+<script src="../../assets/teste/traduceri/endo.js"></script>
+<script src="../../assets/teste/js/endocrin.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>💪 Test - Sistemul Muscular</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/teste/css/muscular.css">
+   <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="../../assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+<h2>💪 Test Biologie - Sistemul Muscular Uman</h2>
+
+<form id="quizForm">
+    <!-- Question 1 -->
+    <div class="question">
+        <label>1. Ce reprezintă sistemul muscular?</label>
+        <div class="quiz-option"><input type="radio" name="q1" value="a"> Totalitatea oaselor și articulațiilor</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="b"> Totalitatea mușchilor care generează mișcarea corpului</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="c"> Mușchii care ajută la respirație</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="d"> Mușchii care protejează organele interne</div>
+        <div class="explanation" id="explanation-q1"></div>
+    </div>
+
+   <!-- Question 2 -->
+    <div class="question">
+        <label>2. Sistemul muscular are rol doar în mișcarea corpului. (Adevărat/Fals)</label>
+        <div class="quiz-option"><input type="radio" name="q2" value="true"> Adevărat</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="false"> Fals</div>
+        <div class="explanation" id="explanation-q2"></div>
+    </div>
+
+
+    <!-- Question 3 -->
+    <div class="question">
+        <label>3. Care dintre următoarele tipuri de mușchi este controlat involuntar?</label>
+        <div class="quiz-option"><input type="radio" name="q3" value="a"> Mușchi striați</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="b"> Mușchi netezi</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="c"> Mușchi cardiaci</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="d"> Toate tipurile de mușchi</div>
+        <div class="explanation" id="explanation-q3"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <label>4. Ce tip de mușchi sunt mușchii bicepsului?</label>
+        <div class="quiz-option"><input type="radio" name="q4" value="a"> Mușchi striați (scheletici)</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="b"> Mușchi netezi</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="c"> Mușchi cardiaci</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="d"> Mușchi netezi și striați</div>
+        <div class="explanation" id="explanation-q4"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <label>5. Care dintre următoarele reprezintă o contracție izometrică?</label>
+        <div class="quiz-option"><input type="radio" name="q5" value="a"> Mușchiul se contractă și lungimea acestuia se schimbă</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="b"> Mușchiul se contractă dar lungimea nu se schimbă</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="c"> Mișcarea are o viteză constantă</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="d"> Nu există contracție</div>
+        <div class="explanation" id="explanation-q5"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <label>6. Care dintre următoarele este un exemplu de mușchi din grupa agoniștilor?</label>
+        <div class="quiz-option"><input type="radio" name="q6" value="a"> Triceps brahial</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="b"> Biceps brahial</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="c"> Mușchii antebrațului</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="d"> Mușchii din spate</div>
+        <div class="explanation" id="explanation-q6"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+        <label>7. Care dintre următoarele mușchi are rol în respirație?</label>
+        <div class="quiz-option"><input type="radio" name="q7" value="a"> Pectoralul mare</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="b"> Diafragma</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="c"> Bicepsul brahial</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="d"> Trapezul</div>
+        <div class="explanation" id="explanation-q7"></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <label>8. Ce tip de mușchi ajută la mișcările fine ale mâinii?</label>
+        <div class="quiz-option"><input type="radio" name="q8" value="a"> Mușchii gambei</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="b"> Mușchii flexori și extensori ai antebrațului</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="c"> Mușchii tenar și hipotenar</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="d"> Mușchii trapezi</div>
+        <div class="explanation" id="explanation-q8"></div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+        <label>9. Ce reprezintă o contracție izotonică?</label>
+        <div class="quiz-option"><input type="radio" name="q9" value="a"> Mușchiul nu își schimbă lungimea</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="b"> Mușchiul se contractă și lungimea acestuia se schimbă</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="c"> Mușchiul se contractă, dar nu se produce mișcare</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="d"> Mușchiul are o viteză constantă de contracție</div>
+        <div class="explanation" id="explanation-q9"></div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+        <label>10. Care dintre următoarele grupuri musculare este implicat în mișcările brațului?</label>
+        <div class="quiz-option"><input type="radio" name="q10" value="a"> Mușchii capului</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="b"> Mușchii toracelui și umărului</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="c"> Mușchii trunchiului</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="d"> Mușchii gambei</div>
+        <div class="explanation" id="explanation-q10"></div>
+    </div>
+
+    <button type="button" onclick="evaluateQuiz()">Evaluare</button>
+</form>
+
+
+<div id="results"></div>
+
+<button onclick="window.location.href='../../teste.html';" style="position: fixed; bottom: 20px; left: 20px; padding: 10px 20px; background-color: #00796b; color: white; font-size: 18px; border: none; border-radius: 30px; cursor: pointer; transition: background-color 0.3s ease; box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);">
+⟵ Înapoi la Teste
+</button>
+
+<script src="../../assets/js/script-activitate.js"></script>
+<script src="../../assets/teste/traduceri/musc.js"></script>
+<script src="../../assets/teste/js/muscular.js"></script>
+</body>
+</html>

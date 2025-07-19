@@ -1,0 +1,351 @@
+
+body {
+  background: linear-gradient(135deg, #f3e5f5, #ce93d8); /* Nuanțe de mov deschis */
+  font-family: 'Poppins', sans-serif;
+  color: #4a148c; /* Mov închis pentru text */
+  padding: 40px 20px;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  color: #4a148c;
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 4px rgba(74, 20, 140, 0.2);
+}
+
+form {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #f3e5f5; /* Fundal foarte pal mov */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.question {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.question label {
+  display: block;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #4a148c;
+}
+
+.quiz-option {
+  background: #ffffff;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.quiz-option:hover {
+  background-color: #ce93d8;
+  border-color: #6a1b9a;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #6a1b9a;
+  transform: scale(1.2);
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #ba68c8;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+button {
+  display: block;
+  margin: 40px auto 0;
+  padding: 14px 32px;
+  background: linear-gradient(90deg, #ab47bc, #8e24aa);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(142, 36, 170, 0.4);
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #7b1fa2, #6a1b9a);
+}
+
+#results {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #4a148c;
+  margin-top: 35px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.correct {
+  border-color: #66bb6a !important;
+  background-color: #e8f5e9 !important;
+}
+
+.wrong {
+  border-color: #f44336 !important;
+  background-color: #ffebee !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.explanation {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #f3e5f5;
+  border-left: 4px solid #ab47bc;
+  color: #4a148c;
+  font-style: italic;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  form {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .question label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .quiz-option {
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 12px 28px;
+    margin-top: 30px;
+  }
+
+  #results {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+
+  .explanation {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+/* Pentru telefoane foarte mici, ex. max 400px */
+@media (max-width: 400px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  .question label {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+}
+   /* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+/* =============================== */
+/* DARK MODE - Mov Deschis & Mov Închis */
+/* =============================== */
+
+body.dark {
+  background: linear-gradient(135deg, #4a148c, #6a1b9a); /* Mov închis */
+  color: #f3e5f5; /* Mov pal pentru text */
+  padding: 40px 20px;
+  margin: 0;
+}
+
+body.dark h2 {
+  color: #ce93d8; /* Mov pastel pentru titlu */
+  text-shadow: 1px 1px 4px rgba(206, 147, 216, 0.4);
+}
+
+body.dark form {
+  background: #311b92; /* Fundal mov intens */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+body.dark .question label {
+  color: #e1bee7;
+}
+
+body.dark .quiz-option {
+  background: #4527a0;
+  border: 2px solid transparent;
+  color: #f3e5f5;
+  transition: 0.25s ease;
+}
+
+body.dark .quiz-option:hover {
+  background-color: #7e57c2;
+  border-color: #ce93d8;
+  color: #fff;
+}
+
+body.dark input[type="radio"],
+body.dark input[type="checkbox"] {
+  accent-color: #ce93d8;
+}
+
+body.dark input[type="text"] {
+  background: #4a148c;
+  border: 2px solid #ba68c8;
+  color: #f3e5f5;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+body.dark input[type="text"]::placeholder {
+  color: #ce93d8;
+}
+
+body.dark button {
+  background: linear-gradient(90deg, #ab47bc, #8e24aa);
+  box-shadow: 0 5px 15px rgba(171, 71, 188, 0.5);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+body.dark button:hover {
+  background: linear-gradient(90deg, #6a1b9a, #ba68c8);
+  transform: scale(1.05);
+}
+
+body.dark #results {
+  color: #e1bee7;
+}
+
+body.dark .correct {
+  border-color: #aed581 !important;
+  background-color: #2e7d32 !important;
+  color: #fff !important;
+}
+
+body.dark .wrong {
+  border-color: #ef5350 !important;
+  background-color: #b71c1c !important;
+  color: #fff !important;
+}
+
+body.dark .explanation {
+  background-color: #512da8;
+  border-left: 4px solid #ba68c8;
+  color: #e1bee7;
+  font-style: italic;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  body.dark form {
+    padding: 20px;
+    border-radius: 15px;
+  }
+  body.dark .question label {
+    font-size: 16px;
+  }
+  body.dark .quiz-option {
+    padding: 8px 12px;
+  }
+  body.dark input[type="text"] {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  body.dark button {
+    font-size: 18px;
+    padding: 12px 28px;
+    margin-top: 30px;
+  }
+  body.dark #results {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+  body.dark .explanation {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  body.dark h2 {
+    font-size: 24px;
+  }
+  body.dark .question label {
+    font-size: 14px;
+  }
+  body.dark button {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+}

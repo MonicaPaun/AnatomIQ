@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Celula</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    color: #00796b;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px;
+  }
+
+  header {
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 121, 107, 0.2);
+    animation: pulse 3s infinite;
+  }
+
+  @keyframes pulse {
+    0% { text-shadow: 0 0 4px rgba(0,121,107,0.2); }
+    50% { text-shadow: 0 0 15px rgba(0,121,107,0.4); }
+    100% { text-shadow: 0 0 4px rgba(0,121,107,0.2); }
+  }
+
+  main {
+    flex: 1;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 0 30px rgba(0, 121, 107, 0.2);
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    aspect-ratio: 16 / 9;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    iframe {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  .back-button-fixed {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #80deea, #4dd0e1);
+    color: #004d40;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .back-button-fixed:hover {
+    background: linear-gradient(135deg, #4dd0e1, #80deea);
+    color: #00332f;
+    transform: scale(1.05);
+  }
+  
+   /* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+body.dark {
+  background: linear-gradient(135deg, #003d3d, #005c5c);
+  color: #e0f2f1;
+}
+
+body.dark header {
+  color: #b2dfdb;
+  text-shadow: 1px 1px 6px rgba(0, 96, 100, 0.4);
+}
+
+body.dark main {
+  background-color: #1b2c2c;
+  box-shadow: 0 0 25px rgba(0, 150, 136, 0.3);
+}
+
+body.dark iframe {
+  filter: brightness(0.9) contrast(1.05);
+}
+
+/* Buton Înapoi */
+body.dark .back-button-fixed {
+  background: linear-gradient(135deg, #004d40, #00695c);
+  color: #e0f2f1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .back-button-fixed:hover {
+  background: linear-gradient(135deg, #00695c, #004d40);
+  color: #ffffff;
+}
+
+</style>
+
+</head>
+<body>
+    
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+
+  <header>Celula</header>
+  <main>
+    <iframe id="embedded-human"
+      loading="lazy"
+      allowfullscreen="true"
+      src="https://human.biodigital.com/viewer/?id=69ou&ui-anatomy-descriptions=true&ui-anatomy-pronunciations=true&ui-anatomy-labels=true&ui-audio=true&ui-chapter-list=false&ui-fullscreen=true&ui-help=true&ui-info=true&ui-label-list=true&ui-layers=true&ui-skin-layers=true&ui-loader=circle&ui-media-controls=full&ui-menu=true&ui-nav=true&ui-search=true&ui-tools=true&ui-tutorial=false&ui-undo=true&ui-whiteboard=true&initial.hand=true&disable-scroll=false&uaid=M3tuq&paid=o_2244a44b">
+    </iframe>
+  </main>
+ <a href="modele3d.html" class="back-button-fixed">⟵ Înapoi</a>
+
+<script>
+  // Se aplică clasa .dark pe body dacă userul a salvat-o anterior
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+  const icon = document.querySelector("#theme-toggle i");
+  icon.classList.remove("bx-moon");
+  icon.classList.add("bx-sun");
+}
+
+function toggleTheme() {
+  const icon = document.querySelector("#theme-toggle i");
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    icon.classList.remove("bx-moon");
+    icon.classList.add("bx-sun");
+    localStorage.setItem("theme", "dark");
+  } else {
+    icon.classList.remove("bx-sun");
+    icon.classList.add("bx-moon");
+    localStorage.setItem("theme", "light");
+  }
+}
+</script>
+</body>
+</html>

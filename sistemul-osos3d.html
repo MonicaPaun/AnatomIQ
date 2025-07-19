@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sistemul osos</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffd54f, #ffb300);
+      color: #bf360c;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 30px 20px;
+    }
+
+    header {
+      padding: 3rem 2rem 1rem;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 800;
+      color: #bf360c;
+      text-shadow: 1px 1px 4px rgba(191, 54, 12, 0.2);
+    }
+
+    .description {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #5d2600;
+      padding: 0 1rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    .model-card {
+      width: 90%;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .model-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .model-info {
+      padding: 1.5rem;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .model-info h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #bf360c;
+    }
+
+    .model-info p {
+      font-size: 1rem;
+      color: #6d3600;
+    }
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      color: #5d2600;
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
+    }
+
+    .back-button-fixed {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #ffb74d, #ffe082);
+      color: #4e2600;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .back-button-fixed:hover {
+      background: linear-gradient(135deg, #ffe082, #ffb74d);
+      color: #3e1d00;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 2.5rem;
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+    }
+
+    /* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b7b00;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #a55d00, #bc6e01); /* tonuri întunecate de portocaliu/galben închis */
+  color: #ffd54f; /* galben pal pentru text */
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 30px 20px;
+}
+
+body.dark header {
+  color: #ffcc80; /* galben cald pentru titlu */
+  text-shadow: 1px 1px 6px rgba(255, 213, 79, 0.3); /* umbră galbenă */
+}
+
+
+  </style>
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+
+  <header>Sistemul osos</header>
+
+  <p class="description">
+    Explorează în detaliu structura osoasă a corpului uman cu ajutorul acestor modele interactive. Atinge, rotește și învață despre diferențele anatomice dintre bărbat și femeie!
+  </p>
+
+  <div class="container">
+
+    <!-- Model Feminin -->
+    <div class="model-card">
+      <div class="model-info">
+        <h2>Scheletul osos feminin</h2>
+        <p>
+          Acest model 3D reprezintă structura osoasă a corpului feminin, evidențiind detalii unice precum bazinul mai larg, oasele mai fine și adaptările specifice fiziologiei feminine.
+        </p>
+      </div>
+      <iframe loading="lazy" allowfullscreen="true"
+        src="https://human.biodigital.com/viewer/?id=69oy&ui-anatomy-descriptions=true&ui-anatomy-pronunciations=true&ui-anatomy-labels=true&ui-audio=true&ui-chapter-list=false&ui-fullscreen=true&ui-help=true&ui-info=true&ui-label-list=true&ui-layers=true&ui-skin-layers=true&ui-loader=circle&ui-media-controls=full&ui-menu=true&ui-nav=true&ui-search=true&ui-tools=true&ui-tutorial=false&ui-undo=true&ui-whiteboard=true&initial.hand=true&disable-scroll=false&uaid=M3tws&paid=o_2244a44b">
+      </iframe>
+    </div>
+
+    <!-- Model Masculin -->
+    <div class="model-card">
+      <div class="model-info">
+        <h2>Scheletul osos masculin</h2>
+        <p>
+          Modelul prezintă sistemul osos al corpului masculin, evidențiind oasele mai masive, un torace mai robust și un craniu ușor diferit față de cel feminin.
+        </p>
+      </div>
+      <iframe loading="lazy" allowfullscreen="true"
+        src="https://human.biodigital.com/viewer/?id=69oz&ui-anatomy-descriptions=true&ui-anatomy-pronunciations=true&ui-anatomy-labels=true&ui-audio=true&ui-chapter-list=false&ui-fullscreen=true&ui-help=true&ui-info=true&ui-label-list=true&ui-layers=true&ui-skin-layers=true&ui-loader=circle&ui-media-controls=full&ui-menu=true&ui-nav=true&ui-search=true&ui-tools=true&ui-tutorial=false&ui-undo=true&ui-whiteboard=true&initial.hand=true&disable-scroll=false&uaid=M3twy&paid=o_2244a44b">
+      </iframe>
+    </div>
+
+  </div>
+
+  <a href="modele3d.html" class="back-button-fixed">⟵ Înapoi</a>
+
+  <footer>
+    &copy; 2025 AnatomIQ | Proiect educațional
+  </footer>
+<script>
+  // Se aplică clasa .dark pe body dacă userul a salvat-o anterior
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+  const icon = document.querySelector("#theme-toggle i");
+  icon.classList.remove("bx-moon");
+  icon.classList.add("bx-sun");
+}
+
+function toggleTheme() {
+  const icon = document.querySelector("#theme-toggle i");
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    icon.classList.remove("bx-moon");
+    icon.classList.add("bx-sun");
+    localStorage.setItem("theme", "dark");
+  } else {
+    icon.classList.remove("bx-sun");
+    icon.classList.add("bx-moon");
+    localStorage.setItem("theme", "light");
+  }
+}
+</script>
+</body>
+</html>

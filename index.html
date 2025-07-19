@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AnatomIQ</title>
+    <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/style.css">
+   
+</head>
+<body>
+
+      <!-- Progress bar -->
+    <div id="progress-bar"></div>
+
+    <!-- Light/Dark toggle at the bottom-right corner -->
+    <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+        <i class="bx bx-moon"></i>
+    </div>
+
+<!-- Buton pentru deschiderea/închiderea meniului -->
+<button id="menu-toggle" class="menu-toggle" data-i18n="text_0">
+  ☰
+</button>
+<select id="lang-select">
+  <option value="ro" data-i18n="text_1">Română</option>
+  <option value="en" data-i18n="text_2">Engleză</option>
+  <option value="es" data-i18n="text_21">Spaniolă</option>
+  <option value="zh" data-i18n="text_22">Chineză</option>
+  <option value="ar" data-i18n="text_23">Arabă</option>
+  <option value="hi" data-i18n="text_24">Hindi</option>
+  <option value="fr" data-i18n="text_25">Franceză</option>
+  <option value="ru" data-i18n="text_26">Rusă</option>
+</select>
+
+
+    <!-- Main Layout -->
+    <div class="container">
+        <div class="sidebar">
+           <!-- Logo-ul din pagină -->
+<div class="logo">
+    <img src="assets/poze/logo-ANATOMIQ.png" alt="Logo" class="logo-img">
+  <div class="logo-preview">
+                <img src="assets/poze/logo-ANATOMIQ.png" alt="Logo Preview">
+            </div>
+        </div>
+
+
+            <ul>
+                <li><a href="index.html" class="nav-link"><i class="bx bxs-home"></i><span class="item-txt" data-i18n="text_3">Introducere</span></a></li>
+                <li><a href="sisteme.html" class="nav-link"><i class="bx bxs-capsule"></i><span class="item-txt" data-i18n="text_4">Sisteme ale corpului</span></a></li>
+                <li><a href="teste.html" class="nav-link"><i class="bx bx-task"></i><span class="item-txt" data-i18n="text_5">Teste</span></a></li> 
+                <li><a href="generator.html" class="nav-link"><i class='bx  bx-ruler'></i><span class="item-txt" data-i18n="text_01619">BioCheck</span></a></li>
+                <li><a href="bio-bot.html" class="nav-link"><i class="bx bxs-message-dots"></i><span class="item-txt" data-i18n="text_6">Chatbot</span></a></li>
+                <li><a href="modele3d.html" class="nav-link"><i class="bx bxs-cube"></i><span class="item-txt" data-i18n="text_7">Modele 3D</span></a></li>
+                <li><a href="videoclipuri.html" class="nav-link"><i class="bx bxs-video"></i><span class="item-txt" data-i18n="text_8">Videoclipuri</span></a></li>
+                <li><a href="notite.html" class="nav-link"><i class="bx bxs-pencil"></i><span class="item-txt" data-i18n="text_9">Notițe</span></a></li>
+                <li><a href="todo.html" class="nav-link"><i class="bx bxs-pencil"></i><span class="item-txt" data-i18n="text_5876">TaskIQ</span></a></li>
+                <li><a href="calculator.html" class="nav-link"><i class="bx bxs-calculator"></i><span class="item-txt" data-i18n="text_10">Calculator</span></a></li>
+                <li><a href="subiecte-bac.html" class="nav-link"><i class="bx bxs-book"></i><span class="item-txt" data-i18n="text_11">Subiecte bac</span></a></li>
+                <li><a href="biblioteca.html" class="nav-link"><i class="bx bxs-book"></i><span class="item-txt" data-i18n="text_12">Biblioteca</span></a></li>
+                <li><a href="contact.html" class="nav-link"><i class="bx bxs-phone-call"></i><span class="item-txt" data-i18n="text_13">Contact</span></a></li>
+                 <li><a href="biostream.html" class="nav-link"><i class="bx  bx-rocket"></i><span class="item-txt" data-i18n="text_016">BioStream</span></a></li>
+                <li><a href="recenzii.html" class="nav-link"><i class="bx  bx-like"></i><span class="item-txt" data-i18n="text_0160">Recenzii</span></a></li>
+                <li><a href="translate.html" class="nav-link"><i class="bx  bx-wifi-2"></i><span class="item-txt" data-i18n="text_0161">TranslaIQ</span></a></li>
+        
+              </ul>
+        </div>
+     
+
+      <div class="main-content" style="background:linear-gradient(to right, #e8a1a1, #d67777);">
+            <section class="intro">
+            <div class="intro-content"> 
+  <div class="intro-text">
+    <h2 data-i18n="text_250" ><span>Bine ai venit pe AnatomIQ! 🧠</span>
+</h2>
+
+    <p data-i18n="text_260"> AnatomIQ este o platformă interactivă dedicată tuturor celor care vor să descopere, învețe și aprofundeze anatomia umană într-un mod modern și captivant. Am gândit acest site pentru a transforma învățarea biologiei într-o experiență dinamică, plăcută și accesibilă, indiferent dacă ești elev, pasionat de științe sau doar curios să înțelegi mai bine cum funcționează corpul tău.</p>
+    
+    <p data-i18n="text_27">
+      Pe AnatomIQ vei găsi:
+      </p><ul>
+        <li data-i18n="text_28">🧬 Modele 3D detaliate pentru fiecare sistem al corpului uman</li>
+        <li data-i18n="text_29">📝 Teste interactive și un generator de teste personalizate</li>
+        <li data-i18n="text_30">🎥 Filmulețe explicative pentru fiecare sistem</li>
+        <li data-i18n="text_31">📚 Manuale digitale (PDF) ușor de accesat</li>
+        <li data-i18n="text_32">🤖 BioBot – chatbot-ul nostru inteligent, gata să răspundă întrebărilor tale</li>
+        <li data-i18n="text_33">🖊️ Funcția de notițe personale direct pe platformă</li>
+        <li data-i18n="text_34">🧠 Mini-jocuri educative și opțiuni pentru pauze relaxante</li>
+        <li data-i18n="text_35">🧮 Calculator inclus, ideal pentru rezolvarea subiectelor de BAC</li>
+      </ul>
+    <p></p>
+    
+    <p data-i18n="text_36">
+      Îți poți crea un cont gratuit pentru a-ți salva progresul, notițele și pentru a-ți personaliza experiența de învățare. Astfel, știi mereu unde ai rămas și ce mai ai de parcurs.
+    </p>
+
+    <p data-i18n="text_37">Proiectul a fost realizat cu pasiune de <strong>Păun Monica Georgiana</strong> și <strong>Treanță Daria Mihaela</strong>, eleve ale Colegiului Național „Tudor Vladimirescu”, sub îndrumarea doamnei profesoare <strong>Mădălina Mareș</strong>. Ne-am propus să aducem biologia mai aproape de elevi, într-un mod care să inspire și să motiveze.</p>
+
+    <p data-i18n="text_40">Ești gata să explorezi corpul uman dintr-o perspectivă cu adevărat interactivă? Hai să învățăm împreună!</p>
+  </div>
+</div>
+            <div class="intro-image">
+              <img src="assets/poze/logo3.png" alt="Logo AnatomIQ">
+            </div>
+          </section></div>
+        </section>
+
+</div></div>
+
+
+
+
+<script src="assets/js/script-activitate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <script src="assets/js/script.js"></script>
+ <script src="assets/traducerile/index-traducere.js"></script>
+
+</body>
+</html>
+
+

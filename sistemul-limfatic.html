@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="text_001">Sistemul Limfatic</title>
+  <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<!--Google Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles-limfatic.css">
+</head>
+
+
+  
+<body>
+     <!-- Butonul pentru meniul retractabil -->
+   <div id="menu-toggle" class="menu-toggle">
+    <i class="bx bx-menu"></i> <!-- Iconița pentru meniu -->
+  </div>
+ <!-- Buton Notițe în colțul dreapta sus -->
+<div id="notite-btn-container" class="top-right">
+  <button id="notiteBtn" class="notite-btn" onclick="toggleNotite()">
+    <i class="bx bx-notepad"></i><span data-i18n="text_00">Notițe</span> 
+  </button>
+</div>
+
+<!-- Panoul Notițe -->
+<div id="notitePanel" class="notite-panel">
+  <div class="notite-header">
+    <span data-i18n="text_0">Notițele mele</span>
+    <span class="close-small" onclick="toggleNotite()" data-i18n="text_1">×</span>
+  </div>
+  <iframe src="notite1.html"></iframe>
+</div>
+
+
+<div id="side-menu" class="side-menu">
+  <ul>
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-book-open"></i><span data-i18n="side_menu_intro">Introducere</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#ce-este"><i class="bx bx-question-mark"></i> <span data-i18n="limfatic_definitie">Ce este sistemul limfatic?</span></a></li>
+        <li><a href="#functii"><i class="bx bx-cog"></i> <span data-i18n="limfatic_functii">Funcțiile sistemului limfatic</span></a></li>
+      </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-git-branch"></i><span data-i18n="limfatic_componente">Componente</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#clasificare"><i class="bx bx-layer"></i> <span data-i18n="limfatic_componente_intro">Componentele sistemului</span></a></li>
+        <li><a href="#structura"><i class="bx bx-transfer"></i> <span data-i18n="limfatic_vase">Vase limfatice</span></a></li>
+        <li><a href="#axial"><i class="bx bx-shield-alt"></i> <span data-i18n="limfatic_ganglioni">Ganglioni limfatici</span></a></li>
+        <li><a href="#apendicular"><i class="bx bx-clinic"></i> <span data-i18n="limfatic_organe">Organele limfatice</span></a></li>
+      </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-sync"></i><span data-i18n="limfatic_circulatie_submenu">Circulație și altele</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#circulatie"><i class="bx bx-sync"></i> <span data-i18n="limfatic_circulatie">Circulația limfei</span></a></li>
+        <li><a href="#afectiuni"><i class="bx bx-bug"></i> <span data-i18n="limfatic_afectiuni_list">Afecțiuni ale sistemului limfatic</span></a></li>
+        <li><a href="#rol-imunitate"><i class="bx bx-shield-quarter"></i> <span data-i18n="limfatic_imunitate">Rol în imunitate</span></a></li>
+      </ul>
+    </li>
+
+  
+    <li>
+      <a href="#harta-sistem"><i class="bx bx-map"></i> <span data-i18n="limfatic_harta">Hartă schematică</span></a>
+    </li>
+  </ul>
+</div>
+
+
+       
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <h1 data-i18n="text_2">Sistemul limfatic</h1>
+    <p data-i18n="text_3">Descoperă structura și funcțiile sistemului limfatic.</p>
+  <div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Caută..." autocomplete="off">
+  <div id="searchInfo" style="font-size: 0.9em; margin-top: 4px; color: #555;"></div>
+</div>
+  </header>
+
+ <div id="searchContainer">
+  <!-- CE ESTE? -->
+<section id="ce-este" class="section">
+  <h2 data-i18n="text_4">Ce este sistemul limfatic?</h2>
+  <div class="content-wrapper"></div>
+ <p data-i18n="text_5">
+  <strong>Sistemul limfatic</strong> este o rețea complexă de vase, organe și țesuturi care colectează și transportă limfa, un lichid transparent ce conține celule imune. 
+  Acesta protejează organismul prin apărarea împotriva agenților patogeni și asigură echilibrul lichidelor în țesuturi.
+</p>
+
+  <img src="assets/poze/limfatic.png" alt="scheletul-uman" class="center-img dynamic-img">
+</section>
+
+<!-- FUNCȚIILE SISTEMULUI LIMFATIC -->
+<section id="functii" class="section">
+  <h2 data-i18n="text_6">2. Funcțiile sistemului limfatic</h2>
+  <div class="tabel-functii-container">
+    <table class="tabel-functii">
+      <thead>
+        <tr>
+          <th data-i18n="text_7">Funcție</th>
+          <th data-i18n="text_8">Descriere</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Drenaj limfatic</td>
+          <td>Colectează excesul de lichid interstițial și îl reintroduce în circulația sanguină</td>
+        </tr>
+        <tr>
+          <td>Apărare imună</td>
+          <td>Filtrează limfa prin ganglioni limfatici, unde celulele imune distrug agenții patogeni</td>
+        </tr>
+        <tr>
+          <td>Absorbție lipide</td>
+          <td>În intestinul subțire, vasele limfatice (vasele chilifere) absorb și transportă grăsimile</td>
+        </tr>
+        <tr>
+          <td>Menținerea echilibrului hidric</td>
+          <td>Previne acumularea de lichid în țesuturi (edeme) prin drenajul limfatic</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+<section id="clasificare" class="section">
+  <h2 data-i18n="text_23">3. Componentele sistemului limfatic</h2>
+  <div class="tabel-clasificare-container">
+    <table class="tabel-clasificare">
+      <thead>
+        <tr>
+          <th data-i18n="text_24">Componentă</th>
+          <th data-i18n="text_25">Caracteristici</th>
+          <th data-i18n="text_26">Exemple</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-i18n="limfatic_vase">Vase limfatice</td>
+          <td data-i18n="limfatic_vase_descriere">Conducte prin care circulă limfa</td>
+          <td data-i18n="limfatic_vase_exemplu">Vase superficiale și profunde</td>
+        </tr>
+        <tr>
+          <td data-i18n="limfatic_ganglioni">Ganglioni limfatici</td>
+          <td data-i18n="limfatic_ganglioni_descriere">Filtre biologice cu rol în apărare</td>
+          <td data-i18n="limfatic_ganglioni_exemplu">Submandibulari, axilari, inghinali</td>
+        </tr>
+        <tr>
+          <td data-i18n="limfatic_organe">Organe limfoide</td>
+          <td data-i18n="limfatic_organe_descriere">Produc și matură celule imune</td>
+          <td data-i18n="limfatic_organe_exemplu">Timus, splină, amigdală, măduva osoasă</td>
+        </tr>
+        <tr>
+          <td data-i18n="limfatic_tesut">Țesut limfoid</td>
+          <td data-i18n="limfatic_tesut_descriere">Țesut cu celule imune în mucoase</td>
+          <td data-i18n="limfatic_tesut_exemplu">Placă Peyer în intestin, amigdală</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="structura" class="section">
+  <h2 data-i18n="text_42">4. Structura vaselor limfatice</h2>
+
+  <div class="accordion">
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_43">Capilarele limfatice</button>
+      <div class="accordion-content">
+        <div class="card-grid">
+          <div class="card">
+            <h3 data-i18n="text_44">Capilarele limfatice</h3>
+            <p data-i18n="text_45">Foarte fine, cu pereți permeabili, colectează lichidul din spațiile intercelulare</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_56">Vasele limfatice mici și mari</button>
+      <div class="accordion-content">
+        <div class="card-grid">
+          <div class="card">
+            <h3 data-i18n="text_57">Vasele limfatice mici și mari</h3>
+            <p data-i18n="text_58">Au valve care împiedică refluxul limfei, conduc limfa spre ganglioni și apoi spre vene</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_59">Ductele limfatice</button>
+      <div class="accordion-content">
+        <div class="card-grid">
+          <div class="card">
+            <h3 data-i18n="text_60">Ductul toracic</h3>
+            <p data-i18n="text_61">Cel mai mare, drenează limfa din jumătatea stângă a corpului și membrele inferioare</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="text_62">Ductul limfatic drept</h3>
+            <p data-i18n="text_63">Drenează limfa din partea dreaptă a capului, gâtului și toracelui</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="axial" class="section">
+  <h2 data-i18n="text_67">5. Ganglionii limfatici</h2>
+
+  <div class="axial-cards">
+    <div class="axial-card">
+      <h3 data-i18n="text_68">Formă</h3>
+      <p data-i18n="text_01">Ovală, dimensiuni mici</p>
+    </div>
+
+    <div class="axial-card">
+      <h3 data-i18n="text_69">Funcții</h3>
+      <p data-i18n="text_02">Filtrează limfa și produc limfocite</p>
+    </div>
+
+    <div class="axial-card">
+      <h3 data-i18n="text_70">Exemple</h3>
+      <p data-i18n="text_03">Ganglion axilar, inghinal, cervical</p>
+    </div>
+
+    <div class="axial-card">
+      <h3 data-i18n="text_73">Celule imune</h3>
+      <p data-i18n="text_74">Limfocite B și T, esențiale în apărarea organismului</p>
+    </div>
+
+    <div class="axial-card">
+      <h3 data-i18n="text_75">Sensibilitate</h3>
+      <p data-i18n="text_76">Se pot mări în caz de infecții sau inflamații</p>
+    </div>
+  </div>
+
+  <!-- Buton imagine (poți schimba sau elimina imaginea) -->
+  <button id="openImageBtn" class="open-image-btn" data-i18n="text_71">📷 Ganglion limfatic (schematic)</button>
+
+  <!-- Lightbox -->
+  <div id="imageModal" class="image-modal">
+    <span class="close-modal" data-i18n="text_72">×</span>
+    <img class="modal-content" id="modalImage" src="assets/poze/ganglion-limfatic.jpeg" alt="Ganglion limfatic schematic">
+  </div>
+</section>
+
+<section id="apendicular" class="section">
+  <h2 data-i18n="text_73">6. Organele sistemului limfatic</h2>
+
+  <div class="apendicular-cards">
+    <div class="apendicular-card">
+      <h3 data-i18n="text_74">🫁 Timus</h3>
+      <p data-i18n="text_75">Organ situat în mediastin, maturare limfocite T</p>
+      <p>Formarea și maturarea limfocitelor T</p>
+    </div>
+
+    <div class="apendicular-card">
+      <h3 data-i18n="text_76">🩸 Splina</h3>
+      <p data-i18n="text_04">Cel mai mare organ limfatic, situat în stânga sus abdomen</p>
+      <p>Filtrează sângele, elimină celulele vechi, stochează sânge</p>
+    </div>
+
+    <div class="apendicular-card">
+      <h3 data-i18n="text_77">👄 Amigdale</h3>
+      <p data-i18n="text_78">Țesut limfoid în gât</p>
+      <p>Apără tractul respirator și digestiv</p>
+    </div>
+
+    <div class="apendicular-card">
+      <h3 data-i18n="text_79">🦴 Măduva osoasă</h3>
+      <p data-i18n="text_05">Țesut hematopoietic din oase</p>
+      <p>Producția tuturor celulelor sanguine, inclusiv limfocite</p>
+    </div>
+  </div>
+
+</section>
+<section id="circulatie" class="section">
+  <h2>7. Circulația limfei</h2>
+
+  <div class="stepper">
+
+    <input type="checkbox" id="step1" class="step-checkbox" hidden>
+    <label for="step1" class="step-label">1. Limfa este colectată din țesuturi de capilarele limfatice</label>
+    <div class="step-content">
+      Limfa începe să circule prin capilarele mici din țesuturi, colectând lichidul interstițial.
+    </div>
+
+    <input type="checkbox" id="step2" class="step-checkbox" hidden>
+    <label for="step2" class="step-label">2. Limfa trece prin vasele limfatice și ganglionii limfatici, unde este filtrată</label>
+    <div class="step-content">
+      Ganglionii limfatici acționează ca filtre care opresc bacteriile și alte impurități.
+    </div>
+
+    <input type="checkbox" id="step3" class="step-checkbox" hidden>
+    <label for="step3" class="step-label">3. Vasele limfatice mari o conduc către ductul toracic și ductul limfatic drept</label>
+    <div class="step-content">
+      Limfa este condusă spre ductele mari care o colectează și o transportă spre circulația sanguină.
+    </div>
+
+    <input type="checkbox" id="step4" class="step-checkbox" hidden>
+    <label for="step4" class="step-label">4. Limfa se varsă în circulația sanguină prin vena subclaviculară</label>
+    <div class="step-content">
+      Limfa se reintroduce în sânge prin venele subclaviculare, completând circuitul.
+    </div>
+
+  </div>
+</section>
+
+<section id="afectiuni" class="section">
+  <h2>8. Afecțiuni ale sistemului limfatic</h2>
+
+  <div class="afectiuni-list">
+    <div class="afectiune-item">
+      <input type="checkbox" id="limfedem" class="toggle-checkbox">
+      <label for="limfedem" class="afectiune-label">Limfedem</label>
+      <div class="afectiune-desc">
+        Acumulare anormală de lichid limfatic în țesuturi, cauzând edem.
+      </div>
+    </div>
+
+    <div class="afectiune-item">
+      <input type="checkbox" id="limfadenita" class="toggle-checkbox">
+      <label for="limfadenita" class="afectiune-label">Limfadenită</label>
+      <div class="afectiune-desc">
+        Inflamația ganglionilor limfatici, de obicei din cauza infecției.
+      </div>
+    </div>
+
+    <div class="afectiune-item">
+      <input type="checkbox" id="limfom" class="toggle-checkbox">
+      <label for="limfom" class="afectiune-label">Limfom</label>
+      <div class="afectiune-desc">
+        Cancer al țesutului limfatic, afectează limfocitele.
+      </div>
+    </div>
+
+    <div class="afectiune-item">
+      <input type="checkbox" id="filarioza" class="toggle-checkbox">
+      <label for="filarioza" class="afectiune-label">Filarioza</label>
+      <div class="afectiune-desc">
+        Parazitoză care blochează vasele limfatice, duce la edeme masive (elefantiază).
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rol-imunitate" class="section">
+  <h2>9. Rolul sistemului limfatic în imunitate</h2>
+
+  <div class="interactive-list">
+    <div class="item">
+      <input type="checkbox" id="imunitate1" hidden>
+      <label for="imunitate1" class="item-title">🛡️ Detectează și distruge microorganisme patogene</label>
+      <p class="item-content">
+        Sistemul limfatic recunoaște și elimină bacterii, virusuri și alte microorganisme care pot cauza boli.
+      </p>
+    </div>
+
+    <div class="item">
+      <input type="checkbox" id="imunitate2" hidden>
+      <label for="imunitate2" class="item-title">⚔️ Produce și activează limfocitele (celule T și B)</label>
+      <p class="item-content">
+        Limfocitele sunt celule esențiale ale imunității, care recunosc antigenele și atacă țintele specifice.
+      </p>
+    </div>
+
+    <div class="item">
+      <input type="checkbox" id="imunitate3" hidden>
+      <label for="imunitate3" class="item-title">🔄 Imunizarea organismului prin reacții specifice și nonspecifice</label>
+      <p class="item-content">
+        Sistemul limfatic asigură o apărare rapidă și eficientă atât prin mecanisme generale, cât și prin cele adaptative.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="harta-sistem" class="section">
+  <h2>🌿 SISTEMUL LIMFATIC — Hartă schematică</h2>
+
+  <ul class="tree">
+    <li>
+      <span class="branch-label">🌱 Vase limfatice</span>
+      <ul>
+        <li>Capilare limfatice: colectare lichid interstițial</li>
+        <li>Vase limfatice cu valve: transport limfă spre ganglioni</li>
+        <li>Ducte limfatice: duct toracic și duct limfatic drept</li>
+      </ul>
+    </li>
+
+    <li>
+      <span class="branch-label">🌳 Ganglioni limfatici</span>
+      <ul>
+        <li>Cervicali: gât, cap</li>
+        <li>Axilari: sub braț</li>
+        <li>Inghinali: regiunea inghinală</li>
+      </ul>
+    </li>
+
+    <li>
+      <span class="branch-label">🌿 Organe limfoide</span>
+      <ul>
+        <li>Timus: maturare limfocite T</li>
+        <li>Splină: filtrare sânge, imunitate</li>
+        <li>Amigdale: protecție tract respirator</li>
+        <li>Măduva osoasă: producție celule sanguine</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+
+
+</div>
+
+ <!-- ÎNAPOI -->
+  <div class="buttons" style="margin-bottom: 3rem;">
+    <button id="goBackBtn" data-i18n="text_233">Înapoi la Sisteme</button>
+  </div>
+
+  <!-- SWITCH TEMĂ -->
+  <div id="theme-toggle" onclick="toggleTheme()">
+    <i class="bx bx-moon"></i>
+  </div>
+<button id="scrollTopBtn" title="Du-te sus" style="display: flex;">
+  <i class="bx bx-up-arrow-alt"></i>
+</button>
+
+
+<!-- Buton deschidere ChatBot -->
+<div id="chat-toggle"><i class="bx bx-bot"></i></div>
+
+<!-- Fereastra ChatBot -->
+<div id="chat-box">
+  <div id="chat-header">
+    <span data-i18n="text_234">BioBot</span>
+    <button id="chat-close" data-i18n="text_235">✖</button>
+  </div>
+  <iframe src="bio-bot2.html"></iframe>
+</div>
+
+<select id="lang-select">
+  <option value="ro" data-i18n="text_499">Română</option>
+  <option value="en" data-i18n="text_500">Engleză</option>
+  <option value="es" data-i18n="text_501">Spaniolă</option>
+  <option value="zh" data-i18n="text_502">Chineză</option>
+  <option value="ar" data-i18n="text_503">Arabă</option>
+  <option value="hi" data-i18n="text_504">Hindi</option>
+  <option value="fr" data-i18n="text_505">Franceză</option>
+  <option value="ru" data-i18n="text_506">Rusă</option>
+</select>
+
+
+
+
+
+
+  <script src="assets/js/script-limfatic.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="assets/js/script-activitate.js"></script>
+<script src="assets/traducerile/limfatic-traducere.js"></script>
+</body>
+</html>

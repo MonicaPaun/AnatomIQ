@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Joc Memorie</title>
+<style>
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #222;
+    color: #eee;
+    margin: 0; padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    margin-bottom: 15px;
+  }
+  #levelSelect {
+    margin-bottom: 20px;
+  }
+  #gameBoard {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    max-width: 440px; /* fixăm lățimea containerului */
+    width: 100%;
+    /* vom seta numărul de coloane din JS */
+  }
+
+  /* dimensiune fixă pentru carduri */
+  .card {
+    background: #444;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    width: 160px;
+    height: 160px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    user-select: none;
+    perspective: 600px;
+  }
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    backface-visibility: hidden;
+  }
+
+  .card-front {
+    background: #ccc url('assets/poze/logo-ANATOMIQ.png') center/cover no-repeat;
+  }
+  .card-back {
+    transform: rotateY(180deg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card.match {
+    box-shadow: 0 0 15px 4px #4caf50;
+    cursor: default;
+  }
+  .card.shake {
+    animation: shake 0.5s;
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+  }
+  @media (max-width: 600px) {
+ 
+  #gameBoard {
+    max-width: 100vw;
+    max-height: calc(100vh - 150px); /* lasă spațiu pentru alte elemente */
+    width: 100vw;
+    display: grid;
+    gap: 6px;
+    padding: 0 10px;
+    box-sizing: border-box;
+
+    /* coloane flexibile, minim 80px lățime, maximizăm numărul de coloane care pot încape */
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-auto-rows: 1fr; /* înălțime egală cu lățimea pentru pătrat */
+  }
+
+  .card {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* aspect ratio 1:1 */
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    position: relative;
+  }
+
+  .card-inner {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+  }
+}
+
+ 
+</style>
+</head>
+<body>
+
+<h1 data-i18n="text_0">Joc Memorie</h1>
+
+<label for="level" data-i18n="text_1">Alege nivel:</label>
+<select id="levelSelect">
+  <option value="easy" selected="" data-i18n="text_2">Ușor (4 cărți)</option>
+  <option value="medium" data-i18n="text_3">Mediu (6 cărți)</option>
+  <option value="hard" data-i18n="text_4">Greu (12 cărți)</option>
+</select>
+
+<div id="gameBoard" style="grid-template-columns: repeat(3, 1fr);"><div class="card" data-image="assets/poze/img1.png"><div class="card-inner"><div class="card-front" style="background-image: url(&quot;assets/poze/logo-ANATOMIQ.png&quot;);"></div><div class="card-back" style="background-image: url(&quot;assets/poze/img1.png&quot;);"></div></div></div><div class="card" data-image="assets/poze/img3.png"><div class="card-inner"><div class="card-front" style="background-image: url(&quot;assets/poze/logo-ANATOMIQ.png&quot;);"></div><div class="card-back" style="background-image: url(&quot;assets/poze/img3.png&quot;);"></div></div></div><div class="card" data-image="assets/poze/img1.png"><div class="card-inner"><div class="card-front" style="background-image: url(&quot;assets/poze/logo-ANATOMIQ.png&quot;);"></div><div class="card-back" style="background-image: url(&quot;assets/poze/img1.png&quot;);"></div></div></div><div class="card" data-image="assets/poze/img2.png"><div class="card-inner"><div class="card-front" style="background-image: url(&quot;assets/poze/logo-ANATOMIQ.png&quot;);"></div><div class="card-back" style="background-image: url(&quot;assets/poze/img2.png&quot;);"></div></div></div><div class="card" data-image="assets/poze/img3.png"><div class="card-inner"><div class="card-front" style="background-image: url(&quot;assets/poze/logo-ANATOMIQ.png&quot;);"></div><div class="card-back" style="background-image: url(&quot;assets/poze/img3.png&quot;);"></div></div></div><div class="card" data-image="assets/poze/img2.png"><div class="card-inner"><div class="card-front" style="background-image: url(&quot;assets/poze/logo-ANATOMIQ.png&quot;);"></div><div class="card-back" style="background-image: url(&quot;assets/poze/img2.png&quot;);"></div></div></div></div>
+
+<script>
+  const levelSelect = document.getElementById('levelSelect');
+  const gameBoard = document.getElementById('gameBoard');
+  let cards = [];
+  let flippedCards = [];
+  let matchedCount = 0;
+  let busy = false;
+
+  const backImg = 'assets/poze/logo-ANATOMIQ.png';
+
+  const levelPairs = {
+    easy: 2,
+    medium: 3,
+    hard: 6
+  };
+
+  const images = [
+    'assets/poze/img1.png',
+    'assets/poze/img2.png',
+    'assets/poze/img3.png',
+    'assets/poze/img4.png',
+    'assets/poze/img5.png',
+    'assets/poze/img6.png'
+  ];
+
+  function shuffle(array) {
+    for(let i = array.length - 1; i > 0; i--){
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  function createCards(level) {
+    const pairCount = levelPairs[level];
+    const selectedImages = images.slice(0, pairCount);
+    let cardImages = selectedImages.concat(selectedImages);
+    cardImages = shuffle(cardImages);
+
+    cards = [];
+    cardImages.forEach((imgSrc) => {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      card.dataset.image = imgSrc;
+
+      const inner = document.createElement('div');
+      inner.classList.add('card-inner');
+
+      const front = document.createElement('div');
+      front.classList.add('card-front');
+      front.style.backgroundImage = `url(${backImg})`;
+
+      const back = document.createElement('div');
+      back.classList.add('card-back');
+      back.style.backgroundImage = `url(${imgSrc})`;
+
+      inner.appendChild(front);
+      inner.appendChild(back);
+      card.appendChild(inner);
+
+      card.addEventListener('click', () => onCardClick(card));
+
+      cards.push(card);
+    });
+  }
+
+  function onCardClick(card) {
+    if(busy) return;
+    if(card.classList.contains('flipped') || card.classList.contains('match')) return;
+    if(flippedCards.length === 2) return;
+
+    card.classList.add('flipped');
+    flippedCards.push(card);
+
+    if(flippedCards.length === 2) {
+      busy = true;
+      setTimeout(checkMatch, 1000);
+    }
+  }
+
+  function checkMatch() {
+    const [card1, card2] = flippedCards;
+    if(card1.dataset.image === card2.dataset.image){
+      card1.classList.add('match');
+      card2.classList.add('match');
+      matchedCount += 2;
+      playSuccessEffect(card1);
+      playSuccessEffect(card2);
+    } else {
+      playFailEffect(card1);
+      playFailEffect(card2);
+      setTimeout(() => {
+        card1.classList.remove('flipped');
+        card2.classList.remove('flipped');
+      }, 500);
+    }
+    flippedCards = [];
+    busy = false;
+
+    if(matchedCount === cards.length) {
+     setTimeout(() => {
+  alert(translations[currentLang].alerts.gameWon);
+}, 500);
+
+    }
+  }
+
+  function playSuccessEffect(card) {
+    card.style.boxShadow = '0 0 20px 6px #4caf50';
+    setTimeout(() => {
+      card.style.boxShadow = '';
+    }, 1000);
+  }
+
+  function playFailEffect(card) {
+    card.classList.add('shake');
+    setTimeout(() => {
+      card.classList.remove('shake');
+    }, 500);
+  }
+
+ function setGridColumns(level) {
+  let cols;
+  if(level === 'easy') cols = 2;    // 4 cards -> 2 col x 2 rows
+  else if(level === 'medium') cols = 3;  // 6 cards -> 3 col x 2 rows
+  else if(level === 'hard') cols = 4;    // 12 cards -> 4 col x 3 rows
+  gameBoard.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+}
+
+
+  function startGame() {
+    const level = levelSelect.value;
+    matchedCount = 0;
+    flippedCards = [];
+    busy = false;
+
+    createCards(level);
+
+    gameBoard.innerHTML = '';
+    cards.forEach(card => gameBoard.appendChild(card));
+
+    setGridColumns(level);
+  }
+
+  levelSelect.addEventListener('change', startGame);
+
+  startGame(); // start cu easy
+
+</script>
+
+
+<script>
+function extractTextNodes() {
+  const elements = document.querySelectorAll("body *");
+  let translations = {};
+  let index = 0;
+
+  elements.forEach(el => {
+    // Ignorăm script/style/code/pre etc
+    if (["SCRIPT", "STYLE", "NOSCRIPT", "CODE", "PRE"].includes(el.tagName)) return;
+
+    if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+      const text = el.textContent.trim();
+      if (text && !/^\s*$/.test(text) && isNaN(text)) {
+        const key = `text_${index++}`;
+        el.setAttribute("data-i18n", key);
+        translations[key] = text;
+      }
+    }
+  });
+
+  console.log("JSON de copiat în ro.json:", JSON.stringify(translations, null, 2));
+}
+
+</script>
+
+<script>
+const translations = {
+  ro: {
+    text_0: "Joc Memorie",
+    text_1: "Alege nivel:",
+    text_2: "Ușor (4 cărți)",
+    text_3: "Mediu (6 cărți)",
+    text_4: "Greu (12 cărți)",
+    alerts: {
+      clearCanvasConfirm: "Ești sigur că vrei să ștergi tot? Nu vei putea recupera ce ștergi!",
+      gameWon: "Felicitări! Ai terminat jocul!"
+    }
+  },
+  en: {
+    text_0: "Memory Game",
+    text_1: "Choose level:",
+    text_2: "Easy (4 cards)",
+    text_3: "Medium (6 cards)",
+    text_4: "Hard (12 cards)",
+    alerts: {
+      clearCanvasConfirm: "Are you sure you want to clear everything? You won't be able to recover what you delete!",
+      gameWon: "Congratulations! You finished the game!"
+    }
+  },
+  es: {
+    text_0: "Juego de Memoria",
+    text_1: "Elige nivel:",
+    text_2: "Fácil (4 cartas)",
+    text_3: "Medio (6 cartas)",
+    text_4: "Difícil (12 cartas)",
+    alerts: {
+      clearCanvasConfirm: "¿Estás seguro de que quieres borrar todo? ¡No podrás recuperar lo que borres!",
+      gameWon: "¡Felicidades! ¡Has terminado el juego!"
+    }
+  },
+  zh: {
+    text_0: "记忆游戏",
+    text_1: "选择难度：",
+    text_2: "简单（4 张牌）",
+    text_3: "中等（6 张牌）",
+    text_4: "困难（12 张牌）",
+    alerts: {
+      clearCanvasConfirm: "您确定要清除所有内容吗？删除后将无法恢复！",
+      gameWon: "恭喜！你完成了游戏！"
+    }
+  },
+  ar: {
+    text_0: "لعبة الذاكرة",
+    text_1: "اختر المستوى:",
+    text_2: "سهل (4 بطاقات)",
+    text_3: "متوسط (6 بطاقات)",
+    text_4: "صعب (12 بطاقة)",
+    alerts: {
+      clearCanvasConfirm: "هل أنت متأكد أنك تريد مسح كل شيء؟ لن تتمكن من استعادة ما تحذفه!",
+      gameWon: "تهانينا! لقد أنهيت اللعبة!"
+    }
+  },
+  hi: {
+    text_0: "स्मृति खेल",
+    text_1: "स्तर चुनें:",
+    text_2: "आसान (4 कार्ड)",
+    text_3: "मध्यम (6 कार्ड)",
+    text_4: "कठिन (12 कार्ड)",
+    alerts: {
+      clearCanvasConfirm: "क्या आप वाकई सब कुछ साफ़ करना चाहते हैं? आप जो हटाएंगे उसे पुनः प्राप्त नहीं कर पाएंगे!",
+      gameWon: "बधाई हो! आपने खेल समाप्त कर लिया है!"
+    }
+  },
+  fr: {
+    text_0: "Jeu de mémoire",
+    text_1: "Choisissez le niveau :",
+    text_2: "Facile (4 cartes)",
+    text_3: "Moyen (6 cartes)",
+    text_4: "Difficile (12 cartes)",
+    alerts: {
+      clearCanvasConfirm: "Êtes-vous sûr de vouloir tout effacer ? Vous ne pourrez pas récupérer ce que vous supprimez !",
+      gameWon: "Félicitations ! Vous avez terminé le jeu !"
+    }
+  },
+  ru: {
+    text_0: "Игра на память",
+    text_1: "Выберите уровень:",
+    text_2: "Лёгкий (4 карт)",
+    text_3: "Средний (6 карт)",
+    text_4: "Тяжёлый (12 карт)",
+    alerts: {
+      clearCanvasConfirm: "Вы уверены, что хотите всё очистить? Вы не сможете восстановить удалённое!",
+      gameWon: "Поздравляем! Вы закончили игру!"
+    }
+  }
+};
+
+
+  let currentLang = localStorage.getItem('lang') || 'ro';
+
+  function loadTranslations(lang) {
+    if (!translations[lang]) return;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadTranslations(currentLang);
+
+    const langSelect = document.getElementById('lang-select');
+    if (langSelect) {
+      langSelect.value = currentLang;
+      langSelect.addEventListener('change', (e) => {
+        currentLang = e.target.value;
+        localStorage.setItem('lang', currentLang);
+        loadTranslations(currentLang);
+      });
+    }
+  });
+</script>
+
+
+</body>
+</html>

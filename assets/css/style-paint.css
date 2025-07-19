@@ -1,0 +1,246 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #fdb6ed, #fcabff);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  color: white;
+  text-align: center;
+  font-size: 1.5rem; /* font-size relativ */
+  font-weight: bold;
+  padding: 0.5rem;
+  text-shadow: 0 0 8px #fff, 0 0 12px #f0f;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  letter-spacing: 2px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Layout principal: toolbar + canvas */
+main {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  min-height: 0; /* pentru a preveni overflow */
+}
+
+/* Toolbar stânga */
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: linear-gradient(180deg, #ffffff, #f7f7f7);
+  padding: 1rem;
+  gap: 0.75rem;
+  width: 250px;
+  max-width: 40vw; /* pentru ecrane mici */
+  box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  border-right: 3px solid #ccc;
+  position: relative;
+  min-width: 180px;
+}
+
+/* Elemente din toolbar */
+.toolbar > * {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+select, input[type="color"], input[type="range"] {
+  cursor: pointer;
+}
+
+.toolbar button:hover {
+  background: #ffecf1;
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+}
+
+.toolbar label {
+  font-weight: bold;
+}
+
+.toolbar input[type="range"] {
+  width: 100%;
+}
+
+button {
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  border: 2px solid #ff6ec4;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #fad0c4, #ff9a9e);
+}
+
+/* Canvas */
+canvas {
+  flex-grow: 1;
+  margin: 0.5rem;
+  border: 4px solid #7873f5;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 0 15px rgba(120, 115, 245, 0.4);
+  transition: box-shadow 0.4s ease;
+
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+  align-self: center;
+}
+
+canvas:hover {
+  box-shadow: 0 0 25px rgba(120, 115, 245, 0.8);
+}
+
+/* Meniul fixat în colțul stânga sus */
+#menu-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1100;
+}
+
+#menu-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 1.75rem;
+  background: none;
+  border: none;
+  color: #3b3b3b;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 1100;
+  user-select: none;
+}
+
+#menu-btn:hover {
+  color: #ff5733;
+}
+
+/* Meniul dropdown poziționat relativ față de buton */
+nav ul {
+  list-style: none;
+  margin-top: 0.625rem;
+  padding: 0;
+  background: #ff6f61;
+  position: fixed;
+  top: 3.6rem; /* puțin sub buton */
+  left: 10px;
+  border-radius: 12px;
+  width: 180px;
+  box-shadow: 0 6px 15px rgba(255, 111, 97, 0.5);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1050;
+}
+
+nav ul.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0.875rem 1.25rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom: 2px solid transparent;
+  transition: background 0.3s ease, border-bottom 0.3s ease;
+  border-radius: 0;
+}
+
+nav ul li:last-child a {
+  border-bottom: none;
+}
+
+nav ul li a:hover {
+  background: #ffb3aa;
+  border-bottom: 2px solid #fff;
+  color: #3b3b3b;
+}
+
+nav ul li a.active {
+  background: #ffd5f9;
+  border-bottom: 2px solid #fff;
+  color: #3b3b3b;
+}
+
+/* MEDIA QUERIES - pentru ecrane mici */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .toolbar {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 3px solid #ccc;
+    padding: 0.5rem;
+  }
+
+  .toolbar > * {
+    flex: 1 0 auto;
+    margin-right: 0.5rem;
+  }
+
+  canvas {
+    margin: 0.5rem 0.5rem 1rem 0.5rem;
+    max-width: 100%;
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    font-size: 1.2rem;
+    padding: 0.25rem;
+  }
+
+  #menu-btn {
+    font-size: 1.4rem;
+  }
+
+  nav ul {
+    width: 140px;
+    left: 5px;
+  }
+  canvas {
+    margin: 0.5rem 0.5rem 1rem 0.5rem;
+    max-width: 60%;    
+    max-height: 80vh;  
+  }
+}
+

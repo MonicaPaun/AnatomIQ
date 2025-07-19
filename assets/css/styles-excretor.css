@@ -1,0 +1,2231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #f8f1e4, #e2d2bb); /* bej deschis -> bej cald */
+  color: #4b3a2c; /* maro închis pentru text */
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Scrollbar personalizat */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdfaf5; /* alb-bej foarte deschis */
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(75, 58, 44, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #5c4433, #4b3a2c);
+  border-radius: 10px;
+  border: 2px solid #fdfaf5;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #4b3a2c, #5c4433);
+  transform: scale(1.1);
+}
+
+::-webkit-scrollbar-track-piece {
+  background: #e2d2bb;
+  border-radius: 10px;
+}
+
+/* Hero Section */
+header.hero {
+  background: linear-gradient(to right, #e2d2bb, #fdfaf5);
+  color: #4b3a2c;
+  text-align: center;
+  padding: 4rem 2rem;
+  border-radius: 50px;
+  animation: waveBg 10s infinite alternate ease-in-out;
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 10%;
+  box-shadow: 0 6px 10px rgba(75, 58, 44, 0.2);
+  z-index: 2;
+}
+
+@keyframes waveBg {
+  0% { border-radius: 0 0 60px 60px / 0 0 40px 40px; }
+  50% { border-radius: 0 0 75px 45px / 0 0 60px 30px; }
+  100% { border-radius: 0 0 60px 60px / 0 0 40px 40px; }
+}
+
+header.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  animation: slideIn 1.5s ease-out;
+  text-shadow: 1px 1px 4px rgba(75, 58, 44, 0.2);
+}
+header.hero p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  animation: slideIn 1.5s ease-out;
+  text-shadow: 1px 1px 4px rgba(75, 58, 44, 0.2);
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+h1 .highlight {
+  background: #fdfaf5;
+  color: #5c4433; /* accent maro mediu pe titlu */
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 3rem;
+  animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+button, .button {
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #5c4433, #4b3a2c);
+  box-shadow: 0 6px 15px rgba(75, 58, 44, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s;
+  background-size: 200% 200%;
+  background-position: left center;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover, .button:hover {
+  transform: scale(1.08);
+  background-position: right center;
+  box-shadow: 0 8px 20px rgba(75, 58, 44, 0.5);
+}
+
+/* Shine effect */
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: skewX(-20deg);
+}
+
+button:hover::before {
+  animation: shine 0.75s ease-in-out;
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+#goBackBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 6px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #5c4433, #4b3a2c);
+  box-shadow: 0 6px 15px rgba(75, 58, 44, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s;
+  background-size: 200% 200%;
+  background-position: left center;
+  z-index: 10;
+  overflow: hidden;
+}
+
+#goBackBtn:hover {
+  transform: scale(1.07);
+  background-position: right center;
+  box-shadow: 0 6px 18px rgba(75, 58, 44, 0.5);
+}
+
+#goBackBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: skewX(-20deg);
+}
+
+#goBackBtn:hover::before {
+  animation: shine 0.75s ease-in-out;
+}
+
+.section {
+  padding: 3rem;
+  background: linear-gradient(to right bottom, #e2d2bb, #d7c9a7); /* bej cald */
+  color: #4b3a2c; /* maro închis */
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(75, 58, 44, 0.15); /* maro difuz */
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem 0;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInUp 1.2s ease;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  color: #5c4433; /* maro mediu */
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease-in-out;
+  
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-top: 10px;
+}
+
+img {
+  max-width: 200px;
+  margin: 20px auto;
+  display: block;
+}
+
+
+/* Stiluri specifice pentru secțiuni noi */
+#ce-este {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #f8f1e4, #e2d2bb); /* bej deschis */
+  color: #4b3a2c; /* maro închis */
+  border-radius: 20px;
+  border: 2px solid #452907; /* portocaliu intens */
+  box-shadow: 0 12px 20px rgba(255, 140, 0, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#ce-este > h2 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #4b3a2c; /* maro închis */
+  margin-bottom: 1.5rem;
+  text-align: center;
+  animation: slideUp 1s ease-out;
+}
+
+#ce-este > p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #5c4433; /* maro mediu */
+  margin: 1.5rem 0;
+  text-align: justify;
+  max-width: 900px;
+  animation: fadeInText 1.5s ease-out;
+}
+
+
+/* Wrapper pentru conținut (text + imagine) în #ce-este */
+#ce-este .content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+/* Imagine din #ce-este */
+#ce-este img {
+  max-width: 600px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(230, 115, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#ce-este img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(230, 115, 0, 0.25);
+}
+
+/* Animații specifice pentru #ce-este */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Funcțiile Sistemului Excretor - Stil Bej */
+#functii {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #f8f1e4, #e2d2bb); /* bej deschis */
+  color: #4b3a2c; /* maro închis */
+  border-radius: 20px;
+  border: 2px solid #452907; /* maro intens */
+  box-shadow: 0 12px 20px rgba(139, 69, 19, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#functii h2 {
+  text-align: center;
+  color: #4b3a2c; /* maro închis */
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.tabel-functii-container {
+  overflow-x: auto;
+}
+
+.tabel-functii {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fef9f3;
+  color: #4b3a2c;
+  border: 2px solid #c7a57d;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabel-functii th,
+.tabel-functii td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e9d6bd;
+}
+
+.tabel-functii th {
+  background-color: #c7a57d; /* bej mai închis */
+  color: white;
+  font-size: 1rem;
+}
+
+.tabel-functii tr:nth-child(even) {
+  background-color: #f1e3d0;
+}
+
+.tabel-functii tr:hover {
+  background-color: #e9d6bd;
+}
+
+/* Secțiunea interactivă din josul tabelului */
+.interactivitate {
+  margin-top: 2rem;
+  font-size: 1.05rem;
+  color: #5c4433;
+  text-align: left;
+  max-width: 900px;
+  animation: fadeInText 1s ease-in;
+}
+
+.interactivitate h3 {
+  color: #4b3a2c;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.interactivitate ul {
+  list-style-type: "💡 ";
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.interactivitate li {
+  margin-bottom: 0.5rem;
+}
+
+.interactivitate p em {
+  color: #452907;
+  font-style: italic;
+}
+
+#produsi-excretati {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #f8f1e4, #e2d2bb); /* bej deschis */
+  color: #4b3a2c; /* maro închis */
+  border-radius: 20px;
+  border: 2px solid #7b5e3d; /* maro-portocaliu cald */
+  box-shadow: 0 12px 20px rgba(155, 93, 40, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#produsi-excretati h2 {
+  color: #5e3d20;
+  margin-bottom: 1.5rem;
+}
+
+#produsi-excretati .accordion {
+  text-align: left;
+  max-width: 700px;
+  margin: auto;
+}
+
+#produsi-excretati .accordion-header {
+  background-color: #d7b899;
+  color: #ffffff;
+  padding: 1rem;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+#produsi-excretati .accordion-header:hover {
+  background-color: #c8a987;
+}
+
+#produsi-excretati .accordion-body {
+  padding: 1rem;
+  background-color: #fdf6ee;
+  border: 1px solid #e5d1b8;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: none;
+  animation: fadeIn 0.3s ease-in;
+}
+
+#rinichii {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #f8f1e4, #e2d2bb);
+  color: #4b3a2c;
+  border-radius: 20px;
+  border: 2px solid #452907;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#rinichii h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4b3a2c;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.grid-rinichi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.rinichi-card {
+  background-color: #fffaf1;
+  border: 1px solid #d1bfa3;
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rinichi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.rinichi-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #5a3e2b;
+}
+
+.rinichi-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.rinichi-card li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+/* Refolosim imagine modal */
+.open-image-btn {
+  margin-top: 2rem;
+  background-color: #a97142;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.open-image-btn:hover {
+  background-color: #8b5e34;
+}
+
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 12px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#caiurinare {
+   font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #f8f1e4, #e2d2bb);
+  color: #4b3a2c;
+  border-radius: 20px;
+  border: 2px solid #452907;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #5a3e2b;
+}
+
+/* Timeline core */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #783f03;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.timeline-item {
+  padding: 2rem 3rem;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -10px;
+  background-color: #774d0a;
+  border: 3px solid #fff;
+  top: 30px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.timeline-item.right::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -10px;
+  background-color: #774d0a;
+  border: 3px solid #fff;
+  top: 30px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-content {
+  padding: 1rem;
+  background-color: #f2ece0;
+  border-radius: 12px;
+  border: 1px solid #9d4701;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: scale(1.03);
+}
+
+/* Refolosim imagine modal */
+.open-image-btn {
+  margin-top: 2rem;
+  background-color: #a97142;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.open-image-btn:hover {
+  background-color: #8b5e34;
+}
+
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 12px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 8px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 2.5rem;
+    padding-right: 0;
+  }
+  .timeline-item.right {
+    left: 0;
+  }
+  .timeline-item.left {
+    left: 0;
+  }
+  .timeline-item::after {
+    left: 0;
+  }
+  .timeline-content {
+    text-align: left;
+  }
+}
+
+
+/* ===== STRUCTURA NEFRONULUI ===== */
+
+#structura-nefronului {
+font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #f8f1e4, #e2d2bb);
+  color: #4b3a2c;
+  border-radius: 20px;
+  border: 2px solid #452907;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#structura-nefronului > h2 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: #452907;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  animation: slideUp 1s ease-out;
+}
+
+#structura-nefronului > h2 i {
+  font-size: 2.8rem;
+  color: #e67800; /* portocaliu intens */
+}
+
+/* TAB BUTTONS CONTAINER */
+#structura-nefronului .tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+/* TAB BUTTONS */
+#structura-nefronului .tab-btn {
+  background: #e2d2bb;
+  color: #4b3a2c;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#structura-nefronului .tab-btn i {
+  font-size: 1.3rem;
+  color: #c47400;
+}
+
+#structura-nefronului .tab-btn:hover,
+#structura-nefronului .tab-btn:focus {
+  background: #f8f1e4;
+  border-color: #e67800;
+  color: #e67800;
+  outline: none;
+  box-shadow: 0 4px 14px rgba(230, 120, 0, 0.3);
+}
+
+#structura-nefronului .tab-btn.active {
+  background: #e67800;
+  color: white;
+  border-color: #b25c00;
+  box-shadow: 0 6px 20px rgba(230, 115, 0, 0.5);
+}
+
+/* TAB CONTENT PANELS */
+#structura-nefronului .tab-content {
+  background: #f8f4ec;
+  border-radius: 15px;
+  padding: 2rem 2.5rem;
+  box-shadow: inset 0 0 10px rgba(200,180,140,0.3);
+  flex-grow: 1;
+  min-height: 280px;
+  color: #5c4433;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  animation: fadeInText 0.8s ease-out;
+  overflow-y: auto;
+}
+
+#structura-nefronului .tab-content h3 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #452907;
+}
+
+#structura-nefronului .tab-content ul {
+  margin-left: 1.2rem;
+  margin-top: 0.5rem;
+  list-style: inside disc;
+}
+
+#structura-nefronului .tab-content p {
+  margin-bottom: 1rem;
+}
+
+/* ACTIVE PANEL */
+#structura-nefronului .tab-panel {
+  display: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+#structura-nefronului .tab-panel.active {
+  display: block;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeIn {
+  0% {opacity: 0; transform: translateY(20px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInText {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes slideUp {
+  0% {opacity: 0; transform: translateY(30px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+
+/* Secțiunea Urinogeneză */
+#urinogeneza {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #f8f1e4, #e2d2bb);
+  color: #4b3a2c;
+  border-radius: 20px;
+  border: 2px solid #452907;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#urinogeneza h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  color: #4b2e1e;
+  margin-bottom: 2rem;
+}
+
+#urinogeneza .slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.steps-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.step-btn {
+  background: #fff5ea;
+  border: 2px solid #d29b68;
+  color: #5b3a24;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.step-btn:hover,
+.step-btn.active {
+  background-color: #e6c49f;
+  border-color: #c27b39;
+  color: #3b2617;
+}
+
+.step-content {
+  display: none;
+  background: #fff8f1;
+  border: 1px solid #e5cdb3;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 900px;
+  text-align: left;
+  animation: fadeInStep 0.5s ease-in-out;
+}
+
+.step-content.active {
+  display: block;
+}
+
+.step-content h3 {
+  font-size: 1.8rem;
+  color: #4d2e1d;
+  margin-bottom: 1rem;
+}
+
+.step-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #5d4433;
+}
+
+.step-content ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  list-style: circle;
+  color: #5c3f2b;
+}
+
+.urin-details {
+  margin-top: 3rem;
+  background: #f5e7d6;
+  border: 2px dashed #cc9b70;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  max-width: 800px;
+  font-size: 1.1rem;
+  color: #533825;
+  animation: fadeInText 1s ease-out;
+}
+
+.urin-details p {
+  margin: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.urin-details i {
+  font-size: 1.4rem;
+  color: #a36633;
+}
+
+/* Animații */
+@keyframes fadeInStep {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#hormoni-renali {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right, #f3e9db, #e7d1af);
+  border-radius: 20px;
+  border: 2px solid #6a4225;
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+  max-width: 1200px;
+  box-shadow: 0 10px 25px rgba(110, 70, 20, 0.1);
+}
+
+#hormoni-renali h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #4b3a2c;
+  margin-bottom: 1rem;
+}
+
+#hormoni-renali .intro-text {
+  font-size: 1.2rem;
+  color: #5a4636;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.flipcard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.flipcard {
+  background-color: transparent;
+  width: 250px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flipcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flipcard:hover .flipcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flipcard-front,
+.flipcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.flipcard-front {
+  background: #fff9f1;
+  color: #4b3a2c;
+}
+
+.flipcard-front i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #b07b3e;
+}
+
+.flipcard-back {
+  background: #6a4225;
+  color: #fff;
+  transform: rotateY(180deg);
+  font-size: 0.95rem;
+}
+
+
+#simulator-reglare {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #f8f1e4, #e2d2bb);
+  color: #4b3a2c;
+  border-radius: 20px;
+  border: 2px solid #452907;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#simulator-reglare h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  animation: slideUp 1s ease-out;
+}
+
+#simulator-reglare .intro-text {
+  font-size: 18px;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #5c4433;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.slider-group label {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #452907;
+}
+
+.slider-group input[type="range"] {
+  width: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  height: 10px;
+  border-radius: 5px;
+  background: #d2b790;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #452907;
+  border: 2px solid #fff3dd;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.slider-group input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.output-box {
+  background-color: #fffaf3;
+  border: 2px solid #d7b77b;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  animation: fadeInText 1.5s ease-out;
+}
+
+.output-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #4b3a2c;
+}
+
+.output-box p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #5c4433;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .sliders {
+    gap: 1.5rem;
+  }
+
+  .output-box {
+    padding: 1.5rem;
+  }
+
+  #simulator-reglare h2 {
+    font-size: 2rem;
+  }
+}
+
+#patologii-section {
+ font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #f8f1e4, #e2d2bb);
+  color: #4b3a2c;
+  border-radius: 20px;
+  border: 2px solid #452907;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#patologii-section h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #452907;
+}
+
+.patologie-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.patologie-item {
+  background: #fff;
+  border-radius: 15px;
+  border: 1.5px solid #d4b77a;
+  box-shadow: 0 4px 8px rgba(180, 150, 90, 0.15);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline-offset: 4px;
+}
+
+.patologie-item:hover,
+.patologie-item:focus {
+  background-color: #f0e5cf;
+  border-color: #b08520;
+  outline: none;
+}
+
+.patologie-item[aria-expanded="true"] {
+  background-color: #e2d2bb;
+  border-color: #8c6d12;
+}
+
+.patologie-icon {
+  width: 40px;
+  height: 40px;
+  fill: #d4b77a;
+  flex-shrink: 0;
+}
+
+.patologie-item[aria-expanded="true"] .patologie-icon {
+  fill: #b08520;
+  transform: rotate(15deg);
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.patologie-item > div > strong {
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+.patologie-info {
+  margin-top: 0.6rem;
+  color: #5c4b26;
+  line-height: 1.4;
+  font-size: 1rem;
+  user-select: text;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #patologii-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .patologie-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .patologie-icon {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Stiluri pentru secțiunea Elemente Avansate */
+#elemente-avansate {
+font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #f8f1e4, #e2d2bb);
+  color: #4b3a2c;
+  border-radius: 20px;
+  border: 2px solid #452907;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Titluri */
+#elemente-avansate > h2,
+#elemente-avansate > h3 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #3a2f1e;
+}
+
+/* Tabel avansat */
+.advanced-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 3rem;
+  box-shadow: 0 3px 10px rgba(69, 41, 7, 0.15);
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #fff8e7;
+}
+
+.advanced-table thead {
+  background-color: #e2d2bb;
+}
+
+.advanced-table th,
+.advanced-table td {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  color: #4b3a2c;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #d9c9a3;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.advanced-table th {
+  font-weight: 700;
+}
+
+/* Interactivitate la hover și focus pentru rânduri */
+.advanced-table tbody tr {
+  cursor: pointer;
+  outline: none;
+}
+
+.advanced-table tbody tr:hover,
+.advanced-table tbody tr:focus {
+  background: #f2e7cd;
+  color: #452907;
+  box-shadow: inset 4px 0 0 0 #ff8c00;
+}
+
+/* Listă homeostazie */
+.homeostazie-list {
+  list-style-type: none;
+  padding-left: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.homeostazie-list li {
+  background-color: #fff8e7;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  border: 1.8px solid #d9c9a3;
+  color: #4b3a2c;
+  font-size: 1.1rem;
+  cursor: default;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  outline: none;
+}
+
+/* Hover și focus pentru elementele listei */
+.homeostazie-list li:hover,
+.homeostazie-list li:focus {
+  background-color: #f2e7cd;
+  color: #452907;
+  border-color: #ff8c00;
+  box-shadow: 0 0 8px #ff8c00;
+}
+
+/* Animație fadeIn */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #elemente-avansate {
+    padding: 2rem 1rem;
+  }
+
+  .advanced-table th,
+  .advanced-table td {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+
+  .homeostazie-list li {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+}
+
+
+
+/* THEME TOGGLE */
+#theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.8rem;
+  background: #d7b49e;        /* Bej cald */
+  color: #4b3a2c;             /* Maro închis */
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(75, 58, 44, 0.3);
+  z-index: 10000;
+  transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: #b89172;        /* Maro mai închis */
+  color: #f8f1e4;             /* Bej deschis */
+}
+
+body.dark {
+  background: linear-gradient(to right, #8b6d5c, #a7886f, #c1a783);
+  color: #f8f1e4;
+}
+
+/* Stilizare pentru meniul lateral retractabil */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Inițial, meniul este ascuns pe stânga */
+  width: 250px;
+  height: 100%;
+  background-color: #a7886f; /* Maro mediu, cald */
+
+  color: #f8f1e4;            /* Bej deschis */
+  z-index: 1000;
+  transition: left 0.3s ease-in-out;
+  box-shadow: 3px 0 10px rgba(75, 58, 44, 0.2);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.side-menu li {
+  margin-bottom: 1.5rem;
+}
+
+.side-menu a {
+  display: flex;
+  align-items: center;
+  color: #f8f1e4;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 20px 30px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.side-menu .submenu a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: #f8f1e4;
+  text-decoration: none;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+.side-menu a i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.side-menu a:hover {
+  background-color: #6b4f3a; /* Maro închis */
+  color: #fdfaf5;
+}
+
+#menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #8b6d5c; /* Maro mediu */
+  color: #f8f1e4;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  font-size: 2rem;
+}
+
+#menu-toggle i {
+  display: block;
+}
+
+/* Când meniul este deschis */
+.side-menu.open {
+  left: 0;
+}
+
+body {
+  transition: background-color 0.3s ease;
+}
+
+body.menu-open {
+  background-color: rgba(75, 58, 44, 0.4); /* Semi-transparent maro închis */
+}
+
+#menu-toggle:hover i, .side-menu a:hover i {
+  background-color: #c1a783;
+  border-radius: 50%;
+}
+
+.side-menu .has-submenu > a {
+  justify-content: space-between;
+  background-color: #b89172;
+  border-radius: 5px;
+}
+
+.side-menu .has-submenu .submenu a {
+  background-color: #d7b49e;
+  margin-left: 10px;
+  font-weight: normal;
+  font-size: 0.9rem;
+  padding: 10px 15px;
+  text-align: center;
+  white-space: normal;
+  border-radius: 5px;
+  align-items: start;
+  color: #4b3a2c;
+  text-decoration: none;
+}
+
+.side-menu .submenu {
+  display: none;
+  padding-left: 20px;
+  flex-direction: column;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+.side-menu .arrow {
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+
+.side-menu .has-submenu:hover .arrow,
+.arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.side-menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.side-menu::-webkit-scrollbar-thumb {
+  background-color: rgba(75, 58, 44, 0.5);
+  border-radius: 4px;
+}
+/* Butonul Notițe (dreapta sus) */
+.top-right {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.notite-btn {
+  background-color: #a67c52; /* maro-bej cald */
+  color: #f8f1e4;            /* bej deschis */
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(75, 58, 44, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.notite-btn:hover {
+  background-color: #6b4f3a; /* maro închis */
+  color: #fff3e0;
+}
+
+.notite-btn i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.notite-panel {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  width: 800px;
+  height: 600px;
+  background: #f8f1e4;      /* bej deschis */
+  border: 2px solid #a67c52; /* maro-bej */
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(75, 58, 44, 0.25);
+  display: none;
+  resize: both;
+  overflow: hidden;
+  z-index: 10;
+  cursor: move;
+}
+
+.notite-panel iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.notite-header {
+  background: #6b4f3a;       /* maro închis */
+  color: #f8f1e4;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* Stiluri pentru butonul de închidere */
+.close-small {
+  cursor: pointer;
+  font-size: 24px;
+  color: #6b4f3a;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: #f8f1e4;
+  box-shadow: 0 4px 8px rgba(75, 58, 44, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close-small:hover {
+  background-color: #6b4f3a;
+  color: #f8f1e4;
+  transform: scale(1.1);
+}
+
+.close-small:active {
+  transform: scale(0.95);
+}
+
+.notite-panel:active {
+  cursor: grabbing;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: auto;
+  z-index: 10;
+  margin-top: 20px;
+}
+
+.search-bar input {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: 2px solid #a67c52;
+  border-radius: 25px;
+  width: 400px;
+  outline: none;
+  background-color: transparent;
+  color: #4b3a2c;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.search-bar input::placeholder {
+  color: #6b4f3a;
+}
+
+.search-bar input:focus {
+  border-color: #6b4f3a;
+}
+
+.search-bar i {
+  font-size: 24px;
+  margin-left: -40px;
+  cursor: pointer;
+  color: #4b3a2c;
+  transition: color 0.3s ease;
+}
+
+.search-bar i:hover {
+  color: #a67c52;
+}
+
+/* Dark Mode Search */
+body.dark .search-bar input {
+  background-color: transparent;
+  color: #f8f1e4;
+}
+
+body.dark .search-bar i {
+  color: #f8f1e4;
+}
+
+body.light .search-bar input {
+  border-color: #a67c52;
+  color: #4b3a2c;
+}
+
+body.light .search-bar i {
+  color: #4b3a2c;
+}
+
+.highlighted {
+  background-color: #f4d35e; /* galben cald */
+  text-decoration: underline;
+}
+
+.current-highlighted {
+  background-color: #f0a500 !important; /* galben mai intens */
+}
+
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 75px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(to right bottom, #6b4f3a, #a67c52);
+  color: #f8f1e4;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(75, 58, 44, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#scrollTopBtn:hover {
+  background: #b89172;
+  color: #4b3a2c;
+}
+
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  background: linear-gradient(to right bottom, #6b4f3a, #a67c52);
+  color: #f8f1e4;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(75, 58, 44, 0.3);
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+#chat-box {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 500px;
+  height: 500px;
+  background-color: #f8f1e4;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(75, 58, 44, 0.3);
+  z-index: 10000;
+  flex-direction: column;
+}
+
+#chat-header {
+  background-color: #a67c52;
+  color: #4b3a2c;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+#chat-close {
+  background: transparent;
+  border: none;
+  color: #4b3a2c;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#chat-box iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* CONTENIT SELECTION LIMBI */
+#lang-select {
+    position: fixed;
+top: 70px;
+right: 20px;
+    font-size: 1rem;
+    background: #fff;
+    color: #8b0000;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 100;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 120px;
+    appearance: none; /* scoate stilul nativ */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'7'%20viewBox%3D'0%200%2010%207'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%207%205-7H0z'%20fill%3D'%238b0000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px 7px;
+   
+}
+
+#lang-select:hover {
+    background-color: #8b0000;
+    color: #fff;
+    border-color: #8b0000;
+}
+
+#lang-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #8b0000aa;
+    background-color: #8b0000;
+    color: #fff;
+}
+
+/* opțiunile dropdown */
+#lang-select option {
+    color: #8b0000;
+    background: #fff;
+}
+
+body.dark #lang-select {
+    background: #3a0f0f;
+    color: #eee;
+    border-color: #eee;
+    background-color: #661111;
+}
+
+body.dark #lang-select:hover,
+body.dark #lang-select:focus {
+    background-color: #eee;
+    color: #3a0f0f;
+    border-color: #eee;
+}
+
+@media (max-width: 600px) {
+  .section, #ce-este,#functii, #produsi-excretati, #rinichii, #caiurinare, #structura-nefronului, #urinogeneza, #hormoni-renali, #simulator-reglare, #patologii-section, #elemente-avansate {
+    width: 90vw;          /* 90% din viewport width */
+    max-width: none;      /* eliminăm limitarea max-width */
+    padding: 1rem 1rem;   /* padding mai mic */
+    min-height: 100vh;    /* ocupa toată înălțimea ecranului */
+    font-size: 0.95rem;   /* font mai mic pentru text */
+    line-height: 1.4;     /* mai compact */
+    border-radius: 15px;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;     /* scroll dacă depășește */
+  }
+
+  .section h2, #ce-este h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  #ce-este p {
+    font-size: 1rem;
+    max-width: 100%;
+    margin: 0.5rem 0 1rem;
+    text-align: justify;
+  }
+
+  #ce-este .content-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  #ce-este img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: none;   /* mai simplu pe telefon */
+    transform: none !important; /* dezactivare hover scaling */
+  }
+
+  img {
+    max-width: 100%;
+    margin: 1rem auto;
+  }
+ .notite-panel {
+      position: fixed;
+    width: 70vw;
+    height: 70vh;
+    top: 10vh;
+    left: 5vw;
+    max-width: none;
+    max-height: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    
+  }
+
+
+/* Cursor grab când mutăm cu mouse-ul */
+.notite-panel:active,
+.notite-panel.dragging {
+  cursor: grabbing;
+}
+
+/* Header-ul rămâne vizibil și poate fi zona de drag */
+.notite-header {
+  
+  color: white;
+  padding: 4px 8px; /* mai mic */
+  font-size: 14px;   /* mai mic */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  user-select: none;
+  cursor: grab;
+}
+
+/* Butonul close - stilizat pentru acces ușor */
+.close-small {
+  cursor: pointer;
+  font-size: 20px;
+  color: #ff4040;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close-small:hover {
+  background-color: #ff4040;
+  color: white;
+  transform: scale(1.1);
+}
+
+.close-small:active {
+  transform: scale(0.95);
+
+}
+
+
+ #chat-box {
+    width: 90vw;  /* ocupă aproape tot ecranul pe lățime */
+    height: 60vh; /* înălțime mai mică pentru a nu bloca tot ecranul */
+    bottom: 70px;
+    right: 5vw;
+    border-radius: 15px;
+  }
+  
+  #chat-toggle {
+    bottom: 20px;
+    right: 70px; /* mai aproape de margine pe mobil */
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
+  }
+
+  /* CONTENIT SELECTION LIMBI */
+#lang-select {
+    position: fixed;
+top:60px;
+right: 20px;
+    font-size: 0.8rem;
+    background: #fff;
+    color: #8b0000;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 10;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 90px;
+    appearance: none; /* scoate stilul nativ */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'7'%20viewBox%3D'0%200%2010%207'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%207%205-7H0z'%20fill%3D'%238b0000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px 7px;
+   
+}
+.notite-btn {
+  background-color: #00796b;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+  header.hero {
+    padding: 2rem 1rem;
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+
+  header.hero h1 {
+    font-size: 2rem;
+  }
+
+  header.hero p {
+    font-size: 1.2rem;
+  }
+
+  h1 .highlight {
+    font-size: 1.5rem;
+    padding: 6px 12px;
+  }
+
+.tabel-clasificare-container {
+    overflow-x: hidden; /* fără scroll orizontal */
+  }
+
+  .tabel-clasificare {
+    table-layout: auto;
+    font-size: 0.85rem;
+  }
+
+  .tabel-clasificare th,
+  .tabel-clasificare td {
+    padding: 1.2rem 0.5rem; /* mai mult padding vertical (de la 0.6rem la 1.2rem) */
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .tabel-clasificare th {
+    font-size: 0.9rem;
+  }
+
+  .tabel-clasificare td:first-child {
+    font-weight: bold;
+    color: #bf360c;
+  }
+   .tabel-inferior table {
+    table-layout: auto;
+    width: 100%;
+    overflow-x: hidden; /* elimină scroll orizontal */
+    font-size: 0.85rem;
+  }
+
+  .tabel-inferior th,
+  .tabel-inferior td {
+    padding: 1.2rem 0.5rem; /* mai mult padding vertical, padding orizontal redus */
+    word-wrap: break-word;
+    white-space: normal;
+  }
+ .flip-card {
+    width: 280px;   /* mai îngust */
+    height: 200px;  /* mai scurt */
+  }
+
+  .flip-card-front h3,
+  .flip-card-back h3 {
+    font-size: 1.1rem;  /* titlu mai mic */
+  }
+
+  .flip-card-front p,
+  .flip-card-back p {
+    font-size: 0.85rem; /* text mai mic */
+  }
+
+  .trunchi-functii {
+    max-width: 90vw; /* să se adapteze la ecran */
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .trunchi-functii h4 {
+    font-size: 1.1rem;
+  }
+
+  .trunchi-functii ul {
+    font-size: 0.9rem;
+  }
+}

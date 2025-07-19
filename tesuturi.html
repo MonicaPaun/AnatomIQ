@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Țesuturi</title>
+  <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style-tesuturi.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- Butonul pentru meniul retractabil -->
+   <div id="menu-toggle" class="menu-toggle">
+    <i class="bx bx-menu"></i> <!-- Iconița pentru meniu -->
+  </div>
+
+  <!-- Buton Notițe în colțul dreapta sus -->
+<div id="notite-btn-container" class="top-right">
+  <button id="notiteBtn" class="notite-btn" onclick="toggleNotite()">
+    <i class="bx bx-notepad"></i><span data-i18n="text_00">Notițe</span> 
+  </button>
+</div>
+
+<div id="notitePanel" class="notite-panel">
+  <div class="notite-header">
+    <span data-i18n="text_0">Notițele mele</span>
+    <span class="close-small" onclick="toggleNotite()" data-i18n="text_1">×</span>
+  </div>
+  <iframe src="notite1.html"></iframe>
+  
+ </div>
+
+<!-- Meniul lateral -->
+<div id="side-menu" class="side-menu">
+  <ul>
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-git-branch"></i><span data-i18n="side_menu_100">Introducere</span><i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#ce-este"><i class="bx bx-info-circle"></i> <span data-i18n="side_menu_1000">Ce este țesutul?</span></a></li>
+      </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-git-branch"></i><span data-i18n="side_menu_101">Țesuturi vegetale</span><i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#embrionare"><i class="bx bx-info-circle"></i> <span data-i18n="side_menu_1010">Țesuturi embrionare</span></a></li>
+        <li><a href="#definitive"><i class="bx bx-heart"></i> <span data-i18n="side_menu_1011">Țesuturi definitive</span></a></li>
+      </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-git-branch"></i><span data-i18n="side_menu_102">Țesuturi animale</span><i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#epitelial"><i class="bx bx-brain"></i> <span data-i18n="side_menu_1020">Țesuturi epiteliale</span></a></li>
+        <li><a href="#conjunctiv"><i class="bx bx-dizzy"></i> <span data-i18n="side_menu_1021">Țesuturi conjunctive</span></a></li>
+        <li><a href="#muscular"><i class="bx bx-heart"></i> <span data-i18n="side_menu_1022">Țesuturi musculare</span></a></li>
+        <li><a href="#nervos"><i class="bx bx-brain"></i> <span data-i18n="side_menu_1023">Țesuturi nervoase</span></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <h1 data-i18n="text_2">Țesuturi</h1>
+    <p data-i18n="text_3">Unde celulele dansează împreună, iar viața prinde formă și culoare.</p>
+    <div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+  <div id="searchInfo" style="font-size: 0.9em; margin-top: 4px; color: #555;"></div>
+</div>
+  </header>
+
+
+<div id="searchContainer">
+
+
+  <section id="ce-este" class="section light">
+  <h2 data-i18n="text_4">🧬 Ce este țesutul?</h2>
+
+  <!-- Container 1 -->
+  <div class="ce-este-container">
+    <p data-i18n="text_5">Țesutul este o grupare de <strong>celule interdependente</strong> care au aceeași:</p>
+    <ul>
+      <li data-i18n="text_6"> formă</li>
+      <li data-i18n="text_7"> origine</li>
+      <li data-i18n="text_8"> structură</li>
+      <li data-i18n="text_9"> funcție</li>
+    </ul>
+
+    <p data-i18n="text_10">
+      Știința care se ocupă cu studiul țesuturilor se numește <strong >🔬 Histologie</strong>.
+    </p>
+  </div>
+
+  <!-- Container 2 -->
+  <div class="ce-este-container">
+    <p data-i18n="text_11">Țesuturile pot fi:</p>
+    <ul>
+      <li data-i18n="text_12">🌱 <strong >Embrionare</strong> (meristeme / formative / meristematice)</li>
+      <li data-i18n="text_13">🌿 <strong >Definitive</strong></li>
+    </ul>
+  </div>
+
+  <!-- Container 3 -->
+  <div class="ce-este-container">
+    <p data-i18n="text_14">
+      Diferența dintre <strong>țesuturile vegetale meristematice</strong> și
+      <strong >țesuturile vegetale definitive</strong>:
+    </p>
+    <ul>
+      <li data-i18n="text_16">🔄 <strong >Meristemele</strong> sunt formate din celule care se divid continuu.</li>
+      <li  data-i18n="text_17">⛔ La <strong>țesuturile definitive</strong>, celulele nu se mai divid.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- embrionare -->
+<section id="embrionare" class="section light">
+  <h2 data-i18n="text_18">🌿 Meristemele</h2>
+  <div class="content-block">
+    <p data-i18n="text_19"><strong >Meristemele</strong> sunt formate din celule care se divid continuu.</p>
+    <p data-i18n="text_20">Celulele sunt mici, rotunjite, cu pereți subțiri, fără spații libere între ele.</p>
+    <p data-i18n="text_21">Pot fi:</p>
+     <div class="meristeme-container">
+      <h3 data-i18n="text_22">⚡ Apicale:</h3>
+      <ul>
+        <li data-i18n="text_23">⬆️ Asigură creșterea în lungime a plantei.</li>
+        <li data-i18n="text_24">📍 Sunt localizate în vârful rădăcinii și al tulpinii.</li>
+        <li data-i18n="text_25">🌱 Pot fi și intercalare (exemplu: graminee), situate la nivelul nodurilor, asigurând creșterea în lungime.</li>
+      </ul>
+    </div>
+
+    <!-- Container Secundare -->
+    <div class="meristeme-container">
+      <h3 data-i18n="text_26">🔄 Secundare (laterale):</h3>
+      <ul>
+        <li data-i18n="text_27">🪴 Asigură creșterea în grosime a plantei (exemplu: inelele de creștere → cambiul subero-felodermic).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  <section id="definitive" class="section light">
+  <h2 data-i18n="text_28">Țesuturile vegetale definitive 🌿</h2>
+
+  <!-- Container 1: Apărare -->
+  <div class="definitive-container defense">
+    <h3 data-i18n="text_29">1) Țesuturile definitive de apărare 🛡️</h3>
+    <p data-i18n="text_30">Sunt formate din unul sau mai multe straturi de celule ce acoperă organele plantei.</p>
+    <p data-i18n="text_31">Pot fi:</p>
+    <ul>
+      <li ><strong data-i18n="text_32">Primare – exemplu:</strong>
+        <ul>
+          <li data-i18n="text_33">🧫epiderma</li>
+          <li data-i18n="text_34">🧫exoderma</li>
+          <li data-i18n="text_35">🧫endoderma</li>
+          <li data-i18n="text_36">🧫rizoderma</li>
+        </ul>
+      </li>
+      <li ><strong data-i18n="text_37">Secundare – exemplu:</strong>
+        <ul>
+          <li ><strong data-i18n="text_15">cambiul subero-felodermic care generează:</strong>
+            <ul>
+              <li data-i18n="text_38">🍂 suber spre exterior (celule moarte) 🍂</li>
+              <li data-i18n="text_39">🌱 feloderm spre interior (celule vii) 🌱</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Container 2: Fundamentale -->
+  <div class="definitive-container fundamental">
+    <h3 data-i18n="text_40">2) Țesuturi definitive fundamentale 🧪</h3>
+    <p data-i18n="text_41">Produc sau depozitează diverse substanțe.</p>
+    <p data-i18n="text_42">Pot fi:</p>
+    <ul>
+      <li data-i18n="text_43">📦 de depozitare 📦</li>
+      <li data-i18n="text_44">🍃 asimilatoare 🍃</li>
+      <li data-i18n="text_45">💧 acvifere 💧</li>
+      <li data-i18n="text_46">🌬️ aerifere 🌬️</li>
+    </ul>
+  </div>
+
+  <!-- Container 3: Conducătoare -->
+  <div class="definitive-container conductive">
+    <h3 data-i18n="text_47">3) Țesuturile definitive conducătoare 🚰</h3>
+    <p data-i18n="text_48">Conduc seva:</p>
+    <ul>
+      <li data-i18n="text_49">🌊 seva brută (apă + substanțe anorganice) prin vase lemnoase (celule moarte)</li>
+      <li data-i18n="text_50">🍯 seva elaborată (substanțe organice) prin vase liberiene (celule vii)</li>
+    </ul>
+  </div>
+
+  <!-- Container 4: Mecanice -->
+  <div class="definitive-container mechanical">
+    <h3 data-i18n="text_51">4) Țesuturile definitive mecanice (de susținere) 🏗️</h3>
+    <p data-i18n="text_52">Oferă rezistența necesară plantei pentru susținerea greutății propriului corp.</p>
+    <p data-i18n="text_53">Pot fi:</p>
+    <ul>
+      <li data-i18n="text_54"><strong>Colenchim</strong> (pereții celulari îngroșați neuniform)</li>
+      <li data-i18n="text_55"><strong>Sclerenchim</strong> (pereții celulari îngroșați uniform)</li>
+    </ul>
+  </div>
+
+  <!-- Container 5: Secretoare -->
+  <div class="definitive-container secretory">
+    <h3 data-i18n="text_56">5) Țesuturile definitive secretoare ✨</h3>
+    <p data-i18n="text_57">Produc și elimină diverse substanțe.</p>
+    <p data-i18n="text_58">Exemple:</p>
+    <ul>
+      <li data-i18n="text_59"> uleiuri eterice </li>
+      <li data-i18n="text_60">🍯balsamuri</li>
+      <li data-i18n="text_61">🌳rășină</li>
+      <li data-i18n="text_62">🧴latex </li>
+      <li data-i18n="text_63">🌼polen</li>
+    </ul>
+  </div>
+</section>
+
+<section id="epitelial" class="section epitelial-section">
+  <h2 data-i18n="text_64">🧬 Țesuturi epiteliale (epitelii)</h2>
+
+  <div class="epitelial-container covering">
+    <h3 data-i18n="text_65">🛡️ Epitelii de acoperire</h3>
+    <p data-i18n="text_66">- învelesc diverse suprafețe</p>
+    <p data-i18n="text_67">- sunt formate din 1 sau mai multe straturi celulare, de diferite forme (cubice, cilindrice, pavimentoase = turtite, așezate pe o membrană bazală)</p>
+    <p data-i18n="text_68">- nu sunt vascularizate</p>
+    
+    <ul>
+      <li data-i18n="text_69"><strong>I. Epitelii de acoperire unistratificate</strong> (un strat)</li>
+      <li data-i18n="text_70">Exemplu: epiteliul de la nivelul vilozităților intestinale</li>
+      <br>
+      <li  data-i18n="text_71"><strong>II. Epitelii de acoperire pluristratificate</strong> (mai multe straturi)</li>
+      <li data-i18n="text_72">Exemplu: epiderma, de la nivelul cavității bucale, faringe și prima parte a esofagului</li>
+      <br>
+      <li data-i18n="text_73"><strong >III. Epitelii de acoperire pseudostratificate</strong> (fals stratificate) = un singur strat de celule cu nucleii dispuși la înălțimi diferite</li>
+      <li data-i18n="text_74">Exemplu: mucoasa traheală</li>
+    </ul>
+  </div>
+
+  <div class="epitelial-container secretory">
+    <h3 data-i18n="text_75">🧪 Epitelii secretoare</h3>
+    <p data-i18n="text_76">- produc și elimină substanțe</p>
+    <p data-i18n="text_77">- intră în structura glandelor</p>
+    <p data-i18n="text_78"><strong >Țesut epitelial + Țesut conjunctiv + Vase de sânge + Nervi = Glande</strong></p>
+
+    <p><strong data-i18n="text_79">Glandele pot fi:</strong></p>
+    <ul>
+      <li data-i18n="text_80">💧 <strong >Exocrine</strong> (secretă diverși produși în exteriorul corpului și în cavități)</li>
+      <li data-i18n="text_81">Exemple: glandele sebacee, glandele sudoripare, glandele lacrimale, glandele salivare</li>
+      <br>
+      <li data-i18n="text_82">🧬 <strong >Endocrine</strong> (secretă hormoni, secreție internă)</li>
+      <li data-i18n="text_83">Exemple: tiroida, hipofiza</li>
+      <br>
+      <li data-i18n="text_84">⚖️ <strong >Mixte</strong> (cu secreție exocrină și endocrină)</li>
+      <li data-i18n="text_85">Exemple: pancreasul, gonadele (testicul + ovar)</li>
+    </ul>
+  </div>
+
+  <div class="epitelial-container sensory">
+    <h3 data-i18n="text_86">👁️ Epitelii senzoriale</h3>
+    <p data-i18n="text_87">- intră în alcătuirea organelor de simț</p>
+    <p data-i18n="text_88">- sunt formate din celule specializate în recepționarea stimulilor, transformarea în impuls nervos și conducerea către centrul nervos (rezultă senzație specifică)</p>
+
+    <p><strong data-i18n="text_89">Exemple:</strong></p>
+    <ul>
+      <li data-i18n="text_90">👅 analizatorul gustativ</li>
+      <li data-i18n="text_91">👃 analizatorul olfactiv</li>
+      <li data-i18n="text_92">✋ analizatorul cutanat</li>
+    </ul>
+  </div>
+</section>
+
+<section id="conjunctiv" class="section conjunctiv-section">
+  <h2 data-i18n="text_93">🧬 Țesuturi conjunctive</h2>
+
+  <div class="conjunctiv-container">
+    <p><strong data-i18n="text_94">Țesutul conjunctiv</strong></p>
+    <ul>
+      <li><strong data-i18n="text_940">sunt formate din:</strong>
+        <ul>
+          <li><strong data-i18n="text_95">• celule</strong></li>
+          <li><strong data-i18n="text_930">• substanța fundamentală:</strong>
+            <ul>
+              <li data-i18n="text_96">- moale</li>
+              <li data-i18n="text_97">- semidură</li>
+              <li data-i18n="text_98">- dură</li>
+              <li data-i18n="text_99">- fluidă</li>
+            </ul>
+          </li>
+          <li><strong data-i18n="text_920">• fibre:</strong>
+            <ul>
+              <li data-i18n="text_100">- de colagen</li>
+              <li data-i18n="text_101">- de reticulină</li>
+              <li data-i18n="text_102">- de elastină</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Dropdown 1 -->
+  <details class="conjunctiv-container soft">
+    <summary data-i18n="text_103">1) 🧵 Țesut conjunctiv moale</summary>
+    <p><strong data-i18n="text_104">Funcții:</strong></p>
+    <ul>
+      <li data-i18n="text_105">- leagă diferite organe sau părți de organe între ele</li>
+      <li data-i18n="text_106">- hrănesc alte țesuturi (rol trofic)</li>
+      <li data-i18n="text_107">- asigură rezistența și protecția mecanică</li>
+      <li data-i18n="text_108">- asigură imunitatea</li>
+      <li data-i18n="text_109">- produc elementele figurate ale sângelui</li>
+      <li data-i18n="text_110">- depozitează grăsimea</li>
+    </ul>
+    <p><strong data-i18n="text_111">Poate fi:</strong></p>
+    <ul>
+      <li data-i18n="text_112">- LAX</li>
+      <li data-i18n="text_113">- ADIPOS</li>
+      <li data-i18n="text_114">- RETICULAT</li>
+      <li data-i18n="text_115">- FIBROS</li>
+      <li data-i18n="text_116">- ELASTIC</li>
+    </ul>
+  </details>
+
+  <!-- Dropdown 2 -->
+  <details class="conjunctiv-container semi">
+    <summary data-i18n="text_117">2) 🧱 Țesut conjunctiv semidur (cartilaginos)</summary>
+    <ul>
+      <li data-i18n="text_118">- formează cartilajele</li>
+      <li data-i18n="text_119">- acestea nu prezintă vase de sânge (este avascular)</li>
+      <li data-i18n="text_120">- prezintă substanța fundamentală numită <strong >CONDRINĂ</strong></li>
+      <li><strong data-i18n="text_121">Exemple:</strong>
+        <ul>
+          <li data-i18n="text_122">- cartilaj elastic</li>
+          <li data-i18n="text_123">- cartilaj fibros</li>
+          <li data-i18n="text_124">- cartilaj hialin</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <!-- Dropdown 3 -->
+  <details class="conjunctiv-container hard">
+    <summary data-i18n="text_125">3) 🦴 Țesut conjunctiv dur (osos)</summary>
+    <ul>
+      <li data-i18n="text_126">- formează oasele</li>
+      <li data-i18n="text_127">- prezintă substanță fundamentală numită <strong >OSEINĂ</strong> (impregnată cu săruri minerale)</li>
+    </ul>
+    <p><strong data-i18n="text_128">Țesutul osos este format din lamele osoase dispuse în 2 moduri:</strong></p>
+    <ul>
+      <li><strong data-i18n="text_129">I) Țesut osos compact:</strong>
+        <ul>
+          <li data-i18n="text_130">- lamelele sunt dispuse concentric în jurul canalelor Havers (cu vase și nervi)</li>
+          <li data-i18n="text_131">- se găsește în DIAFIZA oaselor lungi și la periferia oaselor scurte și late</li>
+        </ul>
+      </li>
+      <li><strong data-i18n="text_132">II) Țesut osos spongios:</strong>
+        <ul>
+          <li data-i18n="text_133">- lamelele osoase se întretaie și delimitează cavități → aspect buretos</li>
+          <li data-i18n="text_134">- se găsește în EPIFIZELE oaselor lungi și centrul oaselor scurte/late</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</section>
+
+
+<section id="muscular" class="section muscular-section">
+  <h2 data-i18n="text_135">🦵 Țesuturi musculare</h2>
+  <div class="muscular-container">
+    <p><strong data-i18n="text_136">Țesutul muscular</strong></p>
+    <ul>
+      <li data-i18n="text_137">este format din celule alungite (fibre musculare) care se pot contracta producând la capete o forță de tracțiune</li>
+      <li data-i18n="text_138">prezintă organite specifice numite: <strong >miofibrile</strong></li>
+      <li data-i18n="text_139">poate fi:</li>
+      <ul class="muscle-types">
+        <li data-i18n="text_140">Țesut muscular striat</li>
+        <li data-i18n="text_141">Țesut muscular neted</li>
+        <li data-i18n="text_142">Țesut muscular cardiac (miocardul)</li>
+      </ul>
+    </ul>
+
+    <div class="muscle-box striat">
+      <h3 data-i18n="text_143">1️⃣ Țesut muscular striat</h3>
+      <ul>
+        <li data-i18n="text_144">Se găsește în mușchii scheletici și mai puțin în musculatura unor organe interne (limbă, faringe, laringe și prima parte a esofagului)</li>
+        <li data-i18n="text_145">Celulele musculare sunt alungite, fusiforme și multinucleate (cu numeroși nuclei așezați periferic)</li>
+      </ul>
+    </div>
+
+    <div class="muscle-box neted">
+      <h3 data-i18n="text_146">2️⃣ Țesut muscular neted</h3>
+      <ul>
+        <li data-i18n="text_147">Este situat în pereții organelor interne</li>
+        <li data-i18n="text_148">Fibrele musculare sunt unicelulare (cu un singur nucleu dispus central)</li>
+      </ul>
+    </div>
+
+    <div class="muscle-box cardiac">
+      <h3 data-i18n="text_149">3️⃣ Țesut muscular cardiac (miocardul)</h3>
+      <ul>
+        <li data-i18n="text_150">Este format din celule musculare striate, dar cu un singur nucleu dispus central</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="nervos" class="section nervos-section">
+  <h2 data-i18n="text_151">🧠 Țesuturi nervoase</h2>
+
+  <div class="accordion-container">
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_152">🔹 Ce este țesutul nervos?</button>
+      <div class="accordion-content">
+        <p data-i18n="text_153">🔍 Este format din:</p>
+        <ul>
+          <li data-i18n="text_154">🧬 <strong >Neuroni</strong> – nu se divid</li>
+          <li data-i18n="text_155">🛡️ <strong >Celule gliale (nevroglii)</strong> – se divid</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_156">🧬 Neuronii</button>
+      <div class="accordion-content">
+        <p data-i18n="text_157">🧠 Neuronii sunt celule nervoase specializate în generarea și conducerea impulsurilor nervoase.</p>
+        <ul>
+          <li><strong data-i18n="text_1360">🧩 Formate din:</strong>
+            <ul>
+              <li data-i18n="text_158">📍 <strong >Corp celular</strong> – formează substanța cenușie a SNC</li>
+              <li data-i18n="text_159">🕸️ <strong >Prelungiri:</strong>
+                <ul>
+                  <li data-i18n="text_160">🌿 <strong >Dendrite</strong> – scurte și ramificate, conduc impulsul de la periferie la corp</li>
+                  <li data-i18n="text_161">📡 <strong >Axon</strong> – lung și unic, conduce de la corp la butonii terminali</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li data-i18n="text_162">➡️ Impulsul nervos este <strong>unidirecțional</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_163">⚡ Sinapsa</button>
+      <div class="accordion-content">
+        <p data-i18n="text_164">🔗 Legătura dintre neuroni se numește <strong >sinapsă</strong>. Componente:</p>
+        <ul>
+          <li data-i18n="text_165">🧲 Componenta presinaptică</li>
+          <li data-i18n="text_166">🎯 Componenta postsinaptică</li>
+          <li data-i18n="text_167">🕳️ Fanta sinaptică</li>
+          <li data-i18n="text_168">💊 Vezicule cu mediator chimic</li>
+          <li data-i18n="text_169">🔓 Receptori</li>
+        </ul>
+        <p data-i18n="text_170">🚫 Neuronii NU se divid pentru că nu au centrozom.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item active">
+      <button class="accordion-header" data-i18n="text_171">🛡️ Celulele gliale</button>
+      <div class="accordion-content">
+        <ul>
+          <li data-i18n="text_172">🔢 De peste 10 ori mai numeroase decât neuronii</li>
+          <li data-i18n="text_173">🔁 Se divid (spre deosebire de neuroni)</li>
+          <li data-i18n="text_174">🧱 Ocupă locul neuronilor distruși</li>
+          <li><strong data-i18n="text_1555">🔧 Roluri:</strong>
+            <ul>
+              <li data-i18n="text_175">🍽️ Hrănesc neuronii (trofic)</li>
+              <li data-i18n="text_176">🧹 Fagocitează neuronii distruși</li>
+              <li data-i18n="text_177">🏗️ Susținere</li>
+              <li data-i18n="text_178">🧵 Sinteza mielinei (teaca de mielină învelește axonul)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<select id="lang-select">
+  <option value="ro" data-i18n="text_179">Română</option>
+  <option value="en" data-i18n="text_180">Engleză</option>
+  <option value="es" data-i18n="text_181">Spaniolă</option>
+  <option value="zh" data-i18n="text_182">Chineză</option>
+  <option value="ar" data-i18n="text_183">Arabă</option>
+  <option value="hi" data-i18n="text_184">Hindi</option>
+  <option value="fr" data-i18n="text_185">Franceză</option>
+  <option value="ru" data-i18n="text_186">Rusă</option>
+</select>
+
+  
+</div>
+ <!-- ÎNAPOI -->
+  <div class="buttons" style="margin-bottom: 3rem;">
+    <button id="goBackBtn" data-i18n="text_187">Înapoi la Sisteme</button>
+  </div>
+
+  <!-- SWITCH TEMĂ -->
+  <div id="theme-toggle" onclick="toggleTheme()">
+    <i class="bx bx-moon"></i>
+  </div>
+<button id="scrollTopBtn" title="Du-te sus" style="display: flex;">
+  <i class="bx bx-up-arrow-alt"></i>
+</button>
+
+
+<!-- Buton deschidere ChatBot -->
+<div id="chat-toggle"><i class="bx bx-bot"></i></div>
+
+<!-- Fereastra ChatBot -->
+<div id="chat-box">
+  <div id="chat-header">
+    <span data-i18n="text_188">BioBot</span>
+    <button id="chat-close" data-i18n="text_189">✖</button>
+  </div>
+  <iframe src="bio-bot2.html"></iframe>
+</div>
+
+
+
+
+
+
+  <script src="assets/js/script-tesuturi.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="assets/js/script-activitate.js"></script>
+<script src="assets/traducerile/tesuturi-traducere.js"></script>
+</body>
+</body>
+</html>

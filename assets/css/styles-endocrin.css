@@ -1,0 +1,1648 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to bottom right, #fff9c4, #fff176); /* galben palid spre galben mediu */
+  color: #f9a825; /* galben-muștar închis pentru text */
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Scrollbar personalizat */
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #f9a825, #fff176);
+    border-radius: 10px;
+    border: 2px solid #fff;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #fbc02d, #fff59d);
+    transform: scale(1.1);
+}
+
+::-webkit-scrollbar-track-piece {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+/* Hero Section */
+header.hero {
+  background: linear-gradient(to right, #fbc02d, #fff176);
+  color: #f9a825;
+  text-align: center;
+  padding: 4rem 2rem;
+  border-radius: 50px;
+  animation: waveBg 10s infinite alternate ease-in-out;
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 10%;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+@keyframes waveBg {
+  0% { border-radius: 0 0 60px 60px / 0 0 40px 40px; }
+  50% { border-radius: 0 0 75px 45px / 0 0 60px 30px; }
+  100% { border-radius: 0 0 60px 60px / 0 0 40px 40px; }
+}
+
+header.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  animation: slideIn 1.5s ease-out;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+header.hero p {
+  font-family:'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  animation: slideIn 1.5s ease-out;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+h1 .highlight {
+  background: #fff9c4;
+  color: #f9a825;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 3rem;
+  animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+button, .button {
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #f9a825, #fff176);
+  box-shadow: 0 6px 15px rgba(249, 168, 37, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s;
+  background-size: 200% 200%;
+  background-position: left center;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover, .button:hover {
+  transform: scale(1.08);
+  background-position: right center;
+  box-shadow: 0 8px 20px rgba(249, 168, 37, 0.5);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: skewX(-20deg);
+}
+
+button:hover::before {
+  animation: shine 0.75s ease-in-out;
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+#goBackBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 6px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #f9a825, #fff176);
+  box-shadow: 0 6px 15px rgba(249, 168, 37, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s;
+  background-size: 200% 200%;
+  background-position: left center;
+  z-index: 10;
+  overflow: hidden;
+}
+
+#goBackBtn:hover {
+  transform: scale(1.07);
+  background-position: right center;
+  box-shadow: 0 6px 18px rgba(249, 168, 37, 0.5);
+}
+
+#goBackBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: skewX(-20deg);
+}
+
+#goBackBtn:hover::before {
+  animation: shine 0.75s ease-in-out;
+}
+
+.section {
+  padding: 3rem;
+  background: linear-gradient(to right bottom, #fff9c4, #fff176);
+  color: #f9a825;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem 0;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInUp 1.2s ease;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  color: #f9a825;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-top: 10px;
+}
+
+img {
+  max-width: 200px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* Stiluri pentru secțiunea #ce-este */
+#ce-este {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #fffde7, #fff9c4); /* galben palid */
+  color: #f9a825; /* galben-muștar pentru text */
+  border-radius: 20px;
+  border: 2px solid #fbc02d; /* galben-muștar intens */
+  box-shadow: 0 12px 20px rgba(251, 192, 45, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Titlu din #ce-este */
+#ce-este > h2 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #f9a825; /* galben-muștar închis */
+  margin-bottom: 1.5rem;
+  text-align: center;
+  animation: slideUp 1s ease-out;
+}
+
+/* Paragraf din #ce-este */
+#ce-este > p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #b28704; /* galben-muștar închis, mai închis */
+  margin: 1.5rem 0;
+  text-align: justify;
+  max-width: 900px;
+  animation: fadeInText 1.5s ease-out;
+}
+
+/* Text evidențiat în #ce-este */
+#ce-este .highlight {
+  text-decoration: underline;
+  color: #fbc02d; /* galben-muștar intens */
+  font-weight: bold;
+}
+
+/* Wrapper pentru conținut (text + imagine) în #ce-este */
+#ce-este .content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+/* Imagine din #ce-este */
+#ce-este img {
+  max-width: 600px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(251, 192, 45, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#ce-este img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(251, 192, 45, 0.25);
+}
+
+/* Animații specifice pentru #ce-este */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* Stiluri pentru secțiunea #hipotalamus */
+#hipotalamus {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #fffde7, #fff9c4); /* galben palid */
+  color: #f9a825; /* galben-muștar */
+  border-radius: 20px;
+  border: 2px solid #fbc02d; /* galben-muștar intens */
+  box-shadow: 0 12px 20px rgba(251, 192, 45, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#hipotalamus h2 {
+  text-align: center;
+  color: #f9a825; /* galben-muștar intens */
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.hipo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.hipo-card {
+  background: #fffde7; /* galben palid foarte deschis */
+  border-left: 6px solid #fbc02d; /* galben-muștar intens */
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.hipo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.hipo-card h3 {
+  color: #f9a825; /* galben-muștar intens */
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hipo-card p, .hipo-card ul {
+  color: #555;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.hipo-card ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.hipo-card ul li {
+  list-style: square;
+  margin-bottom: 0.4rem;
+  color: #b28704; /* galben-muștar închis */
+}
+
+/* === HIPOFIZA === */
+#hipofiza {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #fffde7, #fff9c4); /* galben palid */
+  color: #f9a825; /* galben-muștar */
+  border-radius: 20px;
+  border: 2px solid #fbc02d; /* galben-muștar intens */
+  box-shadow: 0 12px 20px rgba(251, 192, 45, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#hipofiza h2 {
+  text-align: center;
+  color: #f9a825; /* galben-muștar închis */
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* === TIROIDĂ === */
+#tiroida {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #fffde7, #fff9c4);
+  color: #f9a825;
+  border-radius: 20px;
+  border: 2px solid #fbc02d;
+  box-shadow: 0 12px 20px rgba(251, 192, 45, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#tiroida h2 {
+  text-align: center;
+  color: #f9a825;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* === PARATIROIDE === */
+#paratiroide {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #fffde7, #fff9c4);
+  color: #f9a825;
+  border-radius: 20px;
+  border: 2px solid #fbc02d;
+  box-shadow: 0 12px 20px rgba(251, 192, 45, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#paratiroide h2 {
+  text-align: center;
+  color: #f9a825;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* === SUPRARENALE === */
+#suprarenale {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #fffde7, #fff9c4);
+  color: #f9a825;
+  border-radius: 20px;
+  border: 2px solid #fbc02d;
+  box-shadow: 0 12px 20px rgba(251, 192, 45, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#suprarenale h2 {
+  text-align: center;
+  color: #f9a825;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* === PANCREAS === */
+#pancreas {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #fffde7, #fff9c4);
+  color: #f9a825;
+  border-radius: 20px;
+  border: 2px solid #fbc02d;
+  box-shadow: 0 12px 20px rgba(251, 192, 45, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#pancreas h2 {
+  text-align: center;
+  color: #f9a825;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+/* === GONADE === */
+#gonade {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #fffde7, #fff9c4); /* galben palid */
+  color: #f9a825; /* galben muștar */
+  border-radius: 20px;
+  border: 2px solid #fbc02d; /* galben muștar intens */
+  box-shadow: 0 12px 20px rgba(251, 192, 45, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#gonade h2 {
+  text-align: center;
+  color: #f9a825;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+#mecanisme_actiune {
+   font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #fffde7, #fff9c4); /* galben palid */
+  color: #f9a825; /* galben muștar */
+  border-radius: 20px;
+  border: 2px solid #fbc02d; /* galben muștar intens */
+  box-shadow: 0 12px 20px rgba(251, 192, 45, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#mecanisme_actiune h2 {
+  color: #e65100;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 280px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-front {
+  background-color: #f9fbe7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d9dc39;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.flip-card-back {
+  background-color: #ffe0b2;
+  color: #5d4037;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#reglare {
+font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #fffde7, #fff9c4); /* galben palid */
+  color: #f9a825; /* galben muștar */
+  border-radius: 20px;
+  border: 2px solid #fbc02d; /* galben muștar intens */
+  box-shadow: 0 12px 20px rgba(251, 192, 45, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Ascundem radio-urile */
+input[name="tabset"] {
+  display: none;
+}
+
+/* Butoane tab */
+.tab-labels {
+  display: flex;
+  gap: 12px; /* un pic mai spațiat */
+  margin-bottom: 2rem; /* mai mult spațiu sub taburi */
+  flex-wrap: wrap; /* să nu sară conținutul pe linii noi dacă e spațiu mic */
+  justify-content: center; /* centrează taburile */
+}
+
+.tab-labels label {
+  padding: 12px 20px; /* puțin mai mare pentru click */
+  background-color: #f6ffa8;
+  border-radius: 30px; /* mai rotund */
+  cursor: pointer;
+  font-weight: 700;
+  color: #999600;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  user-select: none;
+  box-shadow: 0 2px 4px rgba(217, 138, 12, 0.3);
+}
+
+input#tab1:checked ~ .tab-labels label[for="tab1"],
+input#tab2:checked ~ .tab-labels label[for="tab2"] {
+  background-color: #ffee00;
+  color: white;
+  box-shadow: 0 4px 12px rgba(251, 255, 0, 0.6);
+}
+
+/* Conținut tab */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1.6;
+  color: #5d2e00; /* mai închis pentru text */
+  font-size: 1rem;
+}
+
+input#tab1:checked ~ .content #tab1-content,
+input#tab2:checked ~ .content #tab2-content {
+  display: block;
+}
+
+/* Tabele */
+table.reglare-table {
+  width: 100%;
+  border-collapse: separate; /* schimbat pentru bordere rotunde */
+  border-spacing: 0 10px; /* distanță verticală între rânduri */
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.reglare-table th,
+.reglare-table td {
+  padding: 14px 20px;
+  border-bottom: none; /* fără linii între rânduri */
+  text-align: left;
+  vertical-align: middle;
+  color: #5d2e00;
+}
+
+.reglare-table thead tr th {
+  background-color: #ffb74d;
+  font-weight: 700;
+  color: #4e2600;
+  border-bottom: 2px solid #ffa726;
+}
+
+.reglare-table tbody tr {
+  background-color: #fff8f0;
+  border-radius: 12px;
+  box-shadow: inset 0 0 8px rgba(255, 180, 80, 0.1);
+  transition: background-color 0.3s;
+}
+
+.reglare-table tbody tr:hover {
+  background-color: #ffe3b3;
+}
+
+/* Animație simplă */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#patologii {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #fffde7, #fff9c4); /* galben palid */
+  color: #f9a825; /* galben muștar */
+  border-radius: 20px;
+  border: 2px solid #fbc02d; /* galben intens */
+  box-shadow: 0 12px 20px rgba(251, 192, 45, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#patologii h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #f9a825;
+  font-weight: 600;
+}
+
+.tabel-patologii {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.tabel-patologii th,
+.tabel-patologii td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #fff9c4;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.tabel-patologii thead {
+  background-color: #fffde7;
+  color: #a67c00;
+  font-weight: bold;
+}
+
+.tabel-patologii tr:hover {
+  background-color: #fff9c4;
+  transition: background-color 0.3s ease;
+}
+
+
+#elementeavansate {
+  font-family: 'Poppins', serif;
+  background: linear-gradient(to right bottom, #fffde7, #fff9c4);
+  color: #f9a825;
+  border-radius: 20px;
+  border: 2px solid #fbc02d;
+  box-shadow: 0 12px 20px rgba(251, 192, 45, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+#elementeavansate h2 {
+  text-align: center;
+  color: #f9a825;
+  margin-bottom: 2rem;
+}
+
+.subsectiune h3 {
+  color: #fbc02d;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+#elementeavansate details {
+  background-color: #fffde7;
+  border: 2px solid #ffecb3;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+#elementeavansate summary {
+  font-weight: 600;
+  color: #fbc02d;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#elementeavansate details[open] {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fffefb;
+}
+
+th, td {
+  border: 1px solid #fff9c4;
+  padding: 0.8rem 1rem;
+  text-align: left;
+}
+
+th {
+  background-color: #ffecb3;
+  color: #6d4c41;
+  font-weight: 600;
+}
+
+td {
+  color: #7a5e00;
+}
+
+/* THEME TOGGLE */
+#theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.8rem;
+  background: #fff176;
+  color: #5d4037;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 10000;
+  transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: #fbc02d;
+  color: #3e2723;
+}
+
+body.dark {
+  background: linear-gradient(to right, #f9a825, #fbc02d, #fff176);
+  color: #5d4037;
+}
+
+/* Stilizare pentru meniul lateral retractabil */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Inițial, ascuns */
+  width: 250px;
+  height: 100%;
+  background-color: #fbc02d; /* galben muștar */
+  color: #5d4037; /* maro închis */
+  z-index: 1000;
+  transition: left 0.3s ease-in-out;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.side-menu li {
+  margin-bottom: 1.5rem;
+}
+
+.side-menu a {
+  display: flex;
+  align-items: center;
+  color: #5d4037;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 20px 30px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.side-menu .submenu a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: #5d4037;
+  text-decoration: none;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+.side-menu a i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.side-menu a:hover {
+  background-color: #f9a825;
+  color: #4e2600;
+}
+#menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #fbc02d; /* galben muștar */
+
+  color: #5d4037; /* maro închis */
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  font-size: 2rem;
+}
+
+#menu-toggle i {
+  display: block;
+}
+
+/* Când meniul este deschis */
+.side-menu.open {
+  left: 0; /* Meniul devine vizibil */
+}
+
+/* Fundal semitransparent când meniul este deschis */
+body {
+  transition: background-color 0.3s ease;
+}
+
+body.menu-open {
+  background-color: rgba(93, 64, 55, 0.5); /* maro închis semitransparent */
+}
+
+/* Stiluri pentru iconițele din meniu */
+#menu-toggle:hover i, .side-menu a:hover i {
+  background-color: #f9a825; /* galben intens */
+  border-radius: 50%;
+}
+
+.side-menu .has-submenu > a {
+  justify-content: space-between;
+  background-color: #fff176; /* galben pal */
+  border-radius: 5px;
+  color: #5d4037;
+}
+
+.side-menu .has-submenu .submenu a {
+  background-color: #fff9c4; /* galben deschis */
+  margin-left: 10px;
+  font-weight: normal;
+  font-size: 0.9rem;
+  padding: 10px 15px; /* padding mai mic */
+  text-align: center;
+  white-space: normal;
+  border-radius: 5px;
+  align-items: start;
+  color: #5d4037;
+  text-decoration: none;
+}
+
+.side-menu .submenu {
+  display: none;
+  padding-left: 20px;
+  flex-direction: column;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+.side-menu .arrow {
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+
+.side-menu .has-submenu:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.side-menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.side-menu::-webkit-scrollbar-thumb {
+  background-color: rgba(93, 64, 55, 0.5);
+  border-radius: 4px;
+}
+
+/* Butonul Notițe (dreapta sus) */
+.top-right {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.notite-btn {
+  background-color: #f9a825; /* galben intens */
+  color: #5d4037;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(93, 64, 55, 0.1);
+}
+
+.notite-btn i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.notite-panel {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  width: 800px;
+  height: 600px;
+  background: #fffde7; /* galben foarte pal */
+  border: 2px solid #fbc02d;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(93, 64, 55, 0.2);
+  display: none;
+  resize: both;
+  overflow: hidden;
+  z-index: 9999;
+  cursor: move;
+}
+
+.notite-panel iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.notite-header {
+  background: #f9a825;
+  color: #5d4037;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* Stiluri pentru butonul de închidere (close-small) */
+.close-small {
+  cursor: pointer;
+  font-size: 24px;
+  color: #bf360c; /* roșu-maron */
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: #fffde7;
+  box-shadow: 0 4px 8px rgba(93, 64, 55, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close-small:hover {
+  background-color: #bf360c;
+  color: #fffde7;
+  transform: scale(1.1);
+}
+
+.close-small:active {
+  transform: scale(0.95);
+}
+
+.notite-panel:active {
+  cursor: grabbing;
+}
+/* SEARCH BAR */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: auto;
+  z-index: 10;
+  margin: 0;
+}
+
+.search-bar input {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: 2px solid #d9a825; /* galben muștar */
+  border-radius: 25px;
+  width: 400px;
+  outline: none;
+  background-color: transparent;
+  color: #5d4037; /* maro închis */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.search-bar input::placeholder {
+  color: #5d4037; /* placeholder maro închis */
+}
+
+.search-bar input:focus {
+  border-color: #fbc02d; /* galben deschis la focus */
+}
+
+.search-bar i {
+  font-size: 24px;
+  margin-left: -40px;
+  cursor: pointer;
+  color: #5d4037; /* iconiță maro închis */
+}
+
+.search-bar i:hover {
+  color: #f9a825; /* galben intens */
+}
+
+/* Dark Mode Search */
+body.dark .search-bar input {
+  background-color: transparent;
+  color: #fffde7; /* galben foarte pal în dark mode */
+}
+
+body.dark .search-bar i {
+  color: #fffde7;
+}
+
+body.light .search-bar input {
+  border-color: #d9a825;
+  color: #5d4037;
+}
+
+body.light .search-bar i {
+  color: #5d4037;
+}
+
+/* Highlighted text */
+.highlighted {
+  background-color: #fbc02d; /* galben */
+  text-decoration: underline;
+}
+
+.current-highlighted {
+  background-color: #f9a825 !important; /* galben intens */
+}
+
+/* Scroll to Top Button */
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 75px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(to right bottom, #f9a825, #fff176); /* degrade galben */
+  color: #5d4037;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(93, 64, 55, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  z-index: 10000;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#scrollTopBtn:hover {
+  background: #fff9c4;
+  color: #bf360c;
+}
+
+/* Chat Toggle Button */
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  background: linear-gradient(to right bottom, #f9a825, #fff176);
+  color: #5d4037;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(93, 64, 55, 0.2);
+  z-index: 10000;
+  transition: background-color 0.3s ease;
+}
+
+/* Chat Box */
+#chat-box {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 500px;
+  height: 500px;
+  background-color: #fffde7; /* galben pal */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(93, 64, 55, 0.3);
+  z-index: 10000;
+  flex-direction: column;
+}
+
+#chat-header {
+  background-color: #f9a825;
+  color: #5d4037;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+#chat-close {
+  background: transparent;
+  border: none;
+  color: #5d4037;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#chat-box iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Language Select */
+#lang-select {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  font-size: 1rem;
+  background: #fffde7;
+  color: #5d4037;
+  border: 2px solid #5d4037;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
+  z-index: 10001;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 120px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'7'%20viewBox%3D'0%200%2010%207'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%207%205-7H0z'%20fill%3D'%235d4037'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 7px;
+}
+
+#lang-select:hover {
+  background-color: #5d4037;
+  color: #fffde7;
+  border-color: #5d4037;
+}
+
+#lang-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #5d4037aa;
+  background-color: #5d4037;
+  color: #fffde7;
+}
+
+#lang-select option {
+  color: #5d4037;
+  background: #fffde7;
+}
+
+body.dark #lang-select {
+  background: #3a0f0f;
+  color: #eee;
+  border-color: #eee;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'7'%20viewBox%3D'0%200%2010%207'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%207%205-7H0z'%20fill%3D'%23eee'/%3E%3C/svg%3E");
+}
+
+body.dark #lang-select:hover,
+body.dark #lang-select:focus {
+  background-color: #eee;
+  color: #3a0f0f;
+  border-color: #eee;
+}
+
+
+@media (max-width: 600px) {
+  .section, #ce-este,#hipotalamus, #hipofiza, #tiroida, #paratiroide, #suprarenale, #pancreas, #gonade, #mecanisme_actiune, #reglare, #patologii, #elementeavansate{
+    width: 90vw;          /* 90% din viewport width */
+    max-width: none;      /* eliminăm limitarea max-width */
+    padding: 1rem 1rem;   /* padding mai mic */
+    min-height: 100vh;    /* ocupa toată înălțimea ecranului */
+    font-size: 0.95rem;   /* font mai mic pentru text */
+    line-height: 1.4;     /* mai compact */
+    border-radius: 15px;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;     /* scroll dacă depășește */
+  }
+
+  .section h2, #ce-este h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  #ce-este p {
+    font-size: 1rem;
+    max-width: 100%;
+    margin: 0.5rem 0 1rem;
+    text-align: justify;
+  }
+
+  #ce-este .content-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  #ce-este img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: none;   /* mai simplu pe telefon */
+    transform: none !important; /* dezactivare hover scaling */
+  }
+
+  img {
+    max-width: 100%;
+    margin: 1rem auto;
+  }
+ .notite-panel {
+      position: fixed;
+    width: 70vw;
+    height: 70vh;
+    top: 10vh;
+    left: 5vw;
+    max-width: none;
+    max-height: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    
+  }
+
+
+/* Cursor grab când mutăm cu mouse-ul */
+.notite-panel:active,
+.notite-panel.dragging {
+  cursor: grabbing;
+}
+
+/* Header-ul rămâne vizibil și poate fi zona de drag */
+.notite-header {
+ 
+  color: white;
+  padding: 4px 8px; /* mai mic */
+  font-size: 14px;   /* mai mic */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  user-select: none;
+  cursor: grab;
+}
+
+/* Butonul close - stilizat pentru acces ușor */
+.close-small {
+  cursor: pointer;
+  font-size: 20px;
+  color: #ff4040;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close-small:hover {
+  background-color: #ff4040;
+  color: white;
+  transform: scale(1.1);
+}
+
+.close-small:active {
+  transform: scale(0.95);
+
+}
+
+
+ #chat-box {
+    width: 90vw;  /* ocupă aproape tot ecranul pe lățime */
+    height: 60vh; /* înălțime mai mică pentru a nu bloca tot ecranul */
+    bottom: 70px;
+    right: 5vw;
+    border-radius: 15px;
+  }
+  
+  #chat-toggle {
+    bottom: 20px;
+    right: 70px; /* mai aproape de margine pe mobil */
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
+  }
+
+  /* CONTENIT SELECTION LIMBI */
+#lang-select {
+    position: fixed;
+top:60px;
+right: 20px;
+    font-size: 0.8rem;
+    background: #fff;
+    color: #8b0000;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 10001;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 90px;
+    appearance: none; /* scoate stilul nativ */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'7'%20viewBox%3D'0%200%2010%207'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%207%205-7H0z'%20fill%3D'%238b0000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px 7px;
+   
+}
+.notite-btn {
+  background-color: #00796b;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+  header.hero {
+    padding: 2rem 1rem;
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+
+  header.hero h1 {
+    font-size: 2rem;
+  }
+
+  header.hero p {
+    font-size: 1.2rem;
+  }
+
+  h1 .highlight {
+    font-size: 1.5rem;
+    padding: 6px 12px;
+  }
+
+.tabel-clasificare-container {
+    overflow-x: hidden; /* fără scroll orizontal */
+  }
+
+  .tabel-clasificare {
+    table-layout: auto;
+    font-size: 0.85rem;
+  }
+
+  .tabel-clasificare th,
+  .tabel-clasificare td {
+    padding: 1.2rem 0.5rem; /* mai mult padding vertical (de la 0.6rem la 1.2rem) */
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .tabel-clasificare th {
+    font-size: 0.9rem;
+  }
+
+  .tabel-clasificare td:first-child {
+    font-weight: bold;
+    color: #bf360c;
+  }
+   .tabel-inferior table {
+    table-layout: auto;
+    width: 100%;
+    overflow-x: hidden; /* elimină scroll orizontal */
+    font-size: 0.85rem;
+  }
+
+  .tabel-inferior th,
+  .tabel-inferior td {
+    padding: 1.2rem 0.5rem; /* mai mult padding vertical, padding orizontal redus */
+    word-wrap: break-word;
+    white-space: normal;
+  }
+ .flip-card {
+    width: 280px;   /* mai îngust */
+    height: 200px;  /* mai scurt */
+  }
+
+  .flip-card-front h3,
+  .flip-card-back h3 {
+    font-size: 1.1rem;  /* titlu mai mic */
+  }
+
+  .flip-card-front p,
+  .flip-card-back p {
+    font-size: 0.85rem; /* text mai mic */
+  }
+
+  .trunchi-functii {
+    max-width: 90vw; /* să se adapteze la ecran */
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .trunchi-functii h4 {
+    font-size: 1.1rem;
+  }
+
+  .trunchi-functii ul {
+    font-size: 0.9rem;
+  }
+  
+.tabel-patologii {
+  width: 90%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.tabel-patologii th,
+.tabel-patologii td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #fff9c4;
+  text-align: left;
+  font-size: 0.8rem;
+}
+}

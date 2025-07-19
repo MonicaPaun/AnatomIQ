@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Desenează cu Stil!</title>
+  <link rel="stylesheet" href="assets/css/style-paint.css" />
+    <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<meta name="msapplication-TileColor" content="#2d89ef" />
+<meta name="theme-color" content="#ffffff" />
+
+
+</head>
+<body>
+
+<header data-i18n="text_0">
+
+  🎨 Desenează cu Plăcere! 🚀
+
+ 
+</header>
+<main>
+
+<div class="toolbar">
+  <select id="toolSelect">
+    <option value="pencil" data-i18n="text_1">✏️ Creion</option>
+    <option value="eraser" data-i18n="text_2">🧽 Guma</option>
+    <option value="line" data-i18n="text_3">📏 Linie</option>
+    <option value="rect" data-i18n="text_4">🟩 Pătrat</option>
+    <option value="circle" data-i18n="text_5">⚪ Cerc</option>
+    <option value="star" data-i18n="text_6">⭐ Stea</option>
+    <option value="diamond" data-i18n="text_7">🔷Romb</option>
+    <option value="heart" data-i18n="text_8">❤️ Inimioară</option>
+    <option value="robot" data-i18n="text_9">🤖 Robot</option>
+    <option value="tree" data-i18n="text_10">🌳 Copac</option>
+    <option value="sun" data-i18n="text_11">☀️ Soare</option>
+    <option value="fillShape" data-i18n="text_12">🪣 Umple Formă</option>
+    <option value="fillCanvas" data-i18n="text_13">🪣 Umple Fundal</option>
+  </select>
+<label><span data-i18n="text_18">Culoare</span>: 
+  <input type="color" id="colorPicker" value="#000000">
+</label>
+
+<label><span data-i18n="text_19">Dimensiune</span>: 
+  <input type="range" id="sizeSlider" min="1" max="50" value="5">
+</label>
+
+<span id="sizeValue">5</span>
+
+<button onclick="undo()" data-i18n="text_14">↩️ Undo</button>
+<button onclick="redo()" data-i18n="text_15">↪️ Redo</button>
+<button onclick="clearCanvas()" data-i18n="text_16">🗑️ Șterge tot</button>
+<button onclick="saveImage()" data-i18n="text_17">💾 Salvează</button>
+
+</div>
+
+<canvas id="drawingCanvas" width="624" height="450"></canvas>
+
+</main>
+
+
+
+<script>
+function extractTextNodes() {
+  const elements = document.querySelectorAll("body *");
+  let translations = {};
+  let index = 0;
+
+  elements.forEach(el => {
+    // Ignorăm script/style/code/pre etc
+    if (["SCRIPT", "STYLE", "NOSCRIPT", "CODE", "PRE"].includes(el.tagName)) return;
+
+    if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+      const text = el.textContent.trim();
+      if (text && !/^\s*$/.test(text) && isNaN(text)) {
+        const key = `text_${index++}`;
+        el.setAttribute("data-i18n", key);
+        translations[key] = text;
+      }
+    }
+  });
+
+  console.log("JSON de copiat în ro.json:", JSON.stringify(translations, null, 2));
+}
+
+</script>
+
+<script>
+  const translations = {
+   ro:  
+{  
+  "text_0": "Desenează cu Plăcere!",
+  "text_1": "✏️ Creion",
+  "text_2": "🧽 Guma",
+  "text_3": "📏 Linie",
+  "text_4": "🟩 Pătrat",
+  "text_5": "⚪ Cerc",
+  "text_6": "⭐ Stea",
+  "text_7": "🔷 Romb",
+  "text_8": "❤️ Inimioară",
+  "text_9": "🤖 Robot",
+  "text_10": "🌳 Copac",
+  "text_11": "☀️ Soare",
+  "text_12": "🪣 Umple Formă",
+  "text_13": "🪣 Umple Fundal",
+  "text_14": "↩️ Undo",
+  "text_15": "↪️ Redo",
+  "text_16": "🗑️ Șterge tot",
+  "text_17": "💾 Salvează",
+  "text_18": "Culoare",
+  "text_19": "Dimensiune",
+  alerts: {
+      clearCanvasConfirm: "Ești sigur că vrei să ștergi tot? Nu vei putea recupera ce ștergi!"
+    }
+},
+en:  
+{  
+  "text_0": "Draw with Joy!",
+  "text_1": "✏️ Pencil",
+  "text_2": "🧽 Eraser",
+  "text_3": "📏 Line",
+  "text_4": "🟩 Square",
+  "text_5": "⚪ Circle",
+  "text_6": "⭐ Star",
+  "text_7": "🔷 Rhombus",
+  "text_8": "❤️ Heart",
+  "text_9": "🤖 Robot",
+  "text_10": "🌳 Tree",
+  "text_11": "☀️ Sun",
+  "text_12": "🪣 Fill Shape",
+  "text_13": "🪣 Fill Background",
+  "text_14": "↩️ Undo",
+  "text_15": "↪️ Redo",
+  "text_16": "🗑️ Clear All",
+  "text_17": "💾 Save",
+  "text_18": "Color",
+  "text_19": "Size",
+   alerts: {
+      clearCanvasConfirm: "Are you sure you want to clear everything? You won't be able to recover what you delete!"
+    }
+},
+es:  
+{  
+  "text_0": "¡Dibuja con Alegría!",
+  "text_1": "✏️ Lápiz",
+  "text_2": "🧽 Borrador",
+  "text_3": "📏 Línea",
+  "text_4": "🟩 Cuadrado",
+  "text_5": "⚪ Círculo",
+  "text_6": "⭐ Estrella",
+  "text_7": "🔷 Rombo",
+  "text_8": "❤️ Corazón",
+  "text_9": "🤖 Robot",
+  "text_10": "🌳 Árbol",
+  "text_11": "☀️ Sol",
+  "text_12": "🪣 Rellenar Forma",
+  "text_13": "🪣 Rellenar Fondo",
+  "text_14": "↩️ Deshacer",
+  "text_15": "↪️ Rehacer",
+  "text_16": "🗑️ Borrar Todo",
+  "text_17": "💾 Guardar",
+  "text_18": "Color",
+  "text_19": "Tamaño",
+  alerts: {
+      clearCanvasConfirm: "¿Estás seguro de que quieres borrar todo? ¡No podrás recuperar lo que borres!"
+    }
+},
+zh:  
+{  
+  "text_0": "快乐绘画！",
+  "text_1": "✏️ 铅笔",
+  "text_2": "🧽 橡皮擦",
+  "text_3": "📏 直线",
+  "text_4": "🟩 正方形",
+  "text_5": "⚪ 圆形",
+  "text_6": "⭐ 星星",
+  "text_7": "🔷 菱形",
+  "text_8": "❤️ 爱心",
+  "text_9": "🤖 机器人",
+  "text_10": "🌳 树",
+  "text_11": "☀️ 太阳",
+  "text_12": "🪣 填充形状",
+  "text_13": "🪣 填充背景",
+  "text_14": "↩️ 撤销",
+  "text_15": "↪️ 重做",
+  "text_16": "🗑️ 清除全部",
+  "text_17": "💾 保存",
+  "text_18": "颜色",
+  "text_19": "尺寸",
+  alerts: {
+      clearCanvasConfirm: "您确定要清除所有内容吗？删除后将无法恢复！"
+    }
+},
+ar:  
+{  
+  "text_0": "ارسم بفرح!",
+  "text_1": "✏️ قلم رصاص",
+  "text_2": "🧽 ممحاة",
+  "text_3": "📏 خط",
+  "text_4": "🟩 مربع",
+  "text_5": "⚪ دائرة",
+  "text_6": "⭐ نجمة",
+  "text_7": "🔷 معين",
+  "text_8": "❤️ قلب",
+  "text_9": "🤖 روبوت",
+  "text_10": "🌳 شجرة",
+  "text_11": "☀️ شمس",
+  "text_12": "🪣 تعبئة الشكل",
+  "text_13": "🪣 تعبئة الخلفية",
+  "text_14": "↩️ تراجع",
+  "text_15": "↪️ إعادة",
+  "text_16": "🗑️ مسح الكل",
+  "text_17": "💾 حفظ",
+  "text_18": "لون",
+  "text_19": "الحجم",
+   alerts: {
+      clearCanvasConfirm: "هل أنت متأكد أنك تريد مسح كل شيء؟ لن تتمكن من استعادة ما تحذفه!"
+    }
+},
+hi:  
+{  
+  "text_0": "खुशी से चित्र बनाएं!",
+  "text_1": "✏️ पेंसिल",
+  "text_2": "🧽 रबर",
+  "text_3": "📏 रेखा",
+  "text_4": "🟩 वर्ग",
+  "text_5": "⚪ वृत्त",
+  "text_6": "⭐ सितारा",
+  "text_7": "🔷 समचतुर्भुज",
+  "text_8": "❤️ दिल",
+  "text_9": "🤖 रोबोट",
+  "text_10": "🌳 पेड़",
+  "text_11": "☀️ सूरज",
+  "text_12": "🪣 आकार भरें",
+  "text_13": "🪣 पृष्ठभूमि भरें",
+  "text_14": "↩️ पूर्ववत करें",
+  "text_15": "↪️ फिर से करें",
+  "text_16": "🗑️ सब हटाएं",
+  "text_17": "💾 सहेजें",
+  "text_18": "रंग",
+  "text_19": "आकार",
+  alerts: {
+      clearCanvasConfirm: "क्या आप वाकई सब कुछ साफ़ करना चाहते हैं? आप जो हटाएंगे उसे पुनः प्राप्त नहीं कर पाएंगे!"
+    }
+},
+fr:  
+{  
+  "text_0": "Dessine avec Joie !",
+  "text_1": "✏️ Crayon",
+  "text_2": "🧽 Gomme",
+  "text_3": "📏 Ligne",
+  "text_4": "🟩 Carré",
+  "text_5": "⚪ Cercle",
+  "text_6": "⭐ Étoile",
+  "text_7": "🔷 Losange",
+  "text_8": "❤️ Cœur",
+  "text_9": "🤖 Robot",
+  "text_10": "🌳 Arbre",
+  "text_11": "☀️ Soleil",
+  "text_12": "🪣 Remplir la Forme",
+  "text_13": "🪣 Remplir le Fond",
+  "text_14": "↩️ Annuler",
+  "text_15": "↪️ Rétablir",
+  "text_16": "🗑️ Tout effacer",
+  "text_17": "💾 Enregistrer",
+  "text_18": "Couleur",
+  "text_19": "Taille",
+  alerts: {
+      clearCanvasConfirm: "Êtes-vous sûr de vouloir tout effacer ? Vous ne pourrez pas récupérer ce que vous supprimez !"
+    }
+},
+ru:  
+{  
+  "text_0": "Рисуй с радостью!",
+  "text_1": "✏️ Карандаш",
+  "text_2": "🧽 Ластик",
+  "text_3": "📏 Линия",
+  "text_4": "🟩 Квадрат",
+  "text_5": "⚪ Круг",
+  "text_6": "⭐ Звезда",
+  "text_7": "🔷 Ромб",
+  "text_8": "❤️ Сердце",
+  "text_9": "🤖 Робот",
+  "text_10": "🌳 Дерево",
+  "text_11": "☀️ Солнце",
+  "text_12": "🪣 Залить форму",
+  "text_13": "🪣 Залить фон",
+  "text_14": "↩️ Отменить",
+  "text_15": "↪️ Повторить",
+  "text_16": "🗑️ Очистить всё",
+  "text_17": "💾 Сохранить",
+  "text_18": "Цвет",
+  "text_19": "Размер",
+  alerts: {
+      clearCanvasConfirm: "Вы уверены, что хотите всё очистить? Вы не сможете восстановить удалённое!"
+    }
+}
+
+  };
+
+  let currentLang = localStorage.getItem('lang') || 'ro';
+
+  function loadTranslations(lang) {
+    if (!translations[lang]) return;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadTranslations(currentLang);
+
+    const langSelect = document.getElementById('lang-select');
+    if (langSelect) {
+      langSelect.value = currentLang;
+      langSelect.addEventListener('change', (e) => {
+        currentLang = e.target.value;
+        localStorage.setItem('lang', currentLang);
+        loadTranslations(currentLang);
+      });
+    }
+  });
+</script>
+
+<script src="assets/js/script-paint.js"></script>
+
+
+</body>
+</html>

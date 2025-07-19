@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="text_001">Sistemul Excretor</title>
+  <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<!--Google Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles-excretor.css">
+</head>
+
+
+  
+<body>
+     <!-- Butonul pentru meniul retractabil -->
+   <div id="menu-toggle" class="menu-toggle">
+    <i class="bx bx-menu"></i> <!-- Iconița pentru meniu -->
+  </div>
+ <!-- Buton Notițe în colțul dreapta sus -->
+<div id="notite-btn-container" class="top-right">
+  <button id="notiteBtn" class="notite-btn" onclick="toggleNotite()">
+    <i class="bx bx-notepad"></i><span data-i18n="text_00">Notițe</span> 
+  </button>
+</div>
+
+<!-- Panoul Notițe -->
+<div id="notitePanel" class="notite-panel">
+  <div class="notite-header">
+    <span data-i18n="text_0">Notițele mele</span>
+    <span class="close-small" onclick="toggleNotite()" data-i18n="text_1">×</span>
+  </div>
+  <iframe src="notite1.html"></iframe>
+</div>
+
+
+
+<div id="side-menu" class="side-menu">
+  <ul>
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-book-open"></i><span data-i18n="side_menu_intro">Introducere</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#ce-este"><i class="bx bx-question-mark"></i> <span data-i18n="side_menu_ce_este">Ce este sistemul excretor?</span></a></li>
+        <li><a href="#functii"><i class="bx bx-cog"></i> <span data-i18n="side_menu_functii">Funcțiile sistemului excretor</span></a></li>
+        <li><a href="#produsi-excretati"><i class="bx bx-layer"></i> <span data-i18n="side_menu_clasificare">Produși excretați</span></a></li>
+       
+      </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-network-chart"></i> <span data-i18n="side_menu_scheletul_uman">Componentele sistemului excretor</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#rinichii"><i class="bx bx-body"></i> <span data-i18n="side_menu_scheletul_axial">Rinichii</span></a></li>
+        <li><a href="#caiurinare"><i class="bx bx-extension"></i> <span data-i18n="side_menu_scheletul_apendicular">Căile urinare</span></a></li>
+        
+      </ul>
+    </li>
+
+<li class="has-submenu">
+  <a href="#"><i class="bx bx-water"></i> Funcții și reglare renală <i class="bx bx-chevron-down arrow"></i></a>
+  <ul class="submenu">
+    <li><a href="#structura-nefronului"><i class="bx bx-cube"></i> Structura și funcția nefronului</a></li>
+    <li><a href="#urinogeneza"><i class="bx bx-droplet"></i> Urinogeneza – formarea urinei</a></li>
+    <li><a href="#hormoni-renali"><i class="bx bx-bar-chart-alt-2"></i> Hormonii implicați în reglarea funcțiilor renale</a></li>
+    <li><a href="#simulator-reglare"><i class="bx bx-adjust"></i> Mecanisme de reglare</a></li>
+    <li><a href="#patologii-section"><i class="bx bx-bug"></i> Patologii ale sistemului excretor</a></li>
+    <li><a href="#elemente-avansate"><i class="bx bx-brain"></i> Elemente avansate</a></li>
+  </ul>
+</li>
+
+
+</div>
+
+
+        <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+<link rel="manifest" href="assets/poze/Icon/site.webmanifest"> <!-- opțional dacă ai un manifest.json -->
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+       
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <h1 data-i18n="text_2">Sistemul excretor</h1>
+    <p data-i18n="text_3">Descoperă structura și funcțiile sistemului excretor.</p>
+  <div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Caută..." autocomplete="off">
+  <div id="searchInfo" style="font-size: 0.9em; margin-top: 4px; color: #555;"></div>
+</div>
+  </header>
+
+ <div id="searchContainer">
+  <!-- CE ESTE? -->
+<section id="ce-este" class="section">
+  <h2 data-i18n="text_4">Ce este sistemul excretor?</h2>
+  <div class="content-wrapper"></div>
+  <p data-i18n="text_5">
+  <strong>Sistemul excretor</strong> este alcătuit din totalitatea organelor care contribuie la eliminarea substanțelor toxice și a deșeurilor rezultate din metabolismul celular.
+  Acesta are rolul de a menține echilibrul intern al organismului prin filtrarea sângelui și eliminarea produselor reziduale, în special sub formă de urină.
+</p>
+
+  <img src="assets/poze/sistemul-excretor.png" alt="scheletul-uman" class="center-img dynamic-img">
+</section>
+
+<!-- FUNCȚIILE SISTEMULUI EXCRETOR -->
+<section id="functii" class="section">
+  <h2 data-i18n="text_ex_1">2. Funcțiile sistemului excretor</h2>
+  <p data-i18n="text_ex_2">
+    Sistemul excretor joacă un rol esențial în menținerea echilibrului intern al corpului. Organele din acest sistem – în special rinichii – funcționează ca niște „stații de filtrare” care mențin sângele curat și corpul sănătos. Iată cum ne ajută:
+  </p>
+  <div class="tabel-functii-container">
+    <table class="tabel-functii">
+      <thead>
+        <tr>
+          <th data-i18n="text_ex_3">Funcție</th>
+          <th data-i18n="text_ex_4">Descriere</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-i18n="text_ex_5">Eliminarea deșeurilor azotoase</td>
+          <td data-i18n="text_ex_6">
+            Prin urină, corpul elimină <strong>uree</strong>, <strong>acid uric</strong> și <strong>creatinină</strong> – substanțe toxice rezultate din descompunerea proteinelor.
+          </td>
+        </tr>
+        <tr>
+          <td data-i18n="text_ex_7">Reglarea volumului de sânge</td>
+          <td data-i18n="text_ex_8">
+            Rinichii controlează câtă <strong>apă</strong> este reținută sau eliminată, influențând astfel <strong>tensiunea arterială</strong> și <strong>cantitatea de sânge</strong> din organism.
+          </td>
+        </tr>
+        <tr>
+          <td data-i18n="text_ex_9">Menținerea echilibrului chimic</td>
+          <td data-i18n="text_ex_10">
+            Sistemul excretor reglează nivelul de <strong>săruri minerale</strong> (sodiu, potasiu, calciu) și ajută la <strong>echilibrul pH-ului</strong> din sânge, evitând acidifierea sau alcalinizarea excesivă.
+          </td>
+        </tr>
+        <tr>
+          <td data-i18n="text_ex_11">Homeostazie</td>
+          <td data-i18n="text_ex_12">
+            Menține un <strong>echilibru stabil</strong> în interiorul corpului, indiferent de schimbările externe – temperatura, alimentația sau hidratarea.
+          </td>
+        </tr>
+        <tr>
+          <td data-i18n="text_ex_13">Producerea hormonilor</td>
+          <td data-i18n="text_ex_14">
+            Rinichii secretă hormoni importanți, precum <strong>eritropoietina</strong> (stimulează producția de celule roșii) și <strong>renina</strong> (reglează tensiunea arterială).
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="interactivitate">
+    <h3 data-i18n="text_ex_15">💡 Știați că...?</h3>
+    <ul>
+      <li data-i18n="text_ex_16">Rinichii filtrează aproximativ <strong>50 de litri de sânge pe oră</strong>?</li>
+      <li data-i18n="text_ex_17">În fiecare zi producem între <strong>1 și 2 litri de urină</strong>?</li>
+      <li data-i18n="text_ex_18">Dacă bei mai multă apă, rinichii lucrează mai eficient!</li>
+    </ul>
+   
+  </div>
+</section>
+
+<section id="produsi-excretati" class="section">
+  <h2 data-i18n="text_101">Produși excretați</h2>
+
+  <div class="accordion">
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_102">💧 Uree</button>
+      <div class="accordion-body">
+        <span data-i18n="text_103"><strong>Origine:</strong> Rezultat al degradării proteinelor (mai ales din ficat).<br></span>
+        <span data-i18n="text_104"><strong>Eliminare:</strong> Prin urină, transportată de sânge la rinichi.<br></span>
+        <span data-i18n="text_105"><strong>Importanță:</strong> Excesul poate deveni toxic pentru organism (uremie).</span>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_106">🧪 Acid uric</button>
+      <div class="accordion-body">
+        <span data-i18n="text_107"><strong>Origine:</strong> Descompunerea acizilor nucleici (ADN/ARN).<br></span>
+        <span data-i18n="text_108"><strong>Eliminare:</strong> Prin urină.<br></span>
+        <span data-i18n="text_109"><strong>Importanță:</strong> În concentrații mari poate forma cristale – gută.</span>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_110">⚙️ Creatinină</button>
+      <div class="accordion-body">
+        <span data-i18n="text_111"><strong>Origine:</strong> Produs de degradare al creatinei din mușchi.<br></span>
+        <span data-i18n="text_112"><strong>Eliminare:</strong> Prin rinichi, direct proporțional cu masa musculară.<br></span>
+        <span data-i18n="text_113"><strong>Importanță:</strong> Indicator important al funcției renale.</span>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_114">💦 Apă și săruri minerale</button>
+      <div class="accordion-body">
+        <span data-i18n="text_115"><strong>Rol:</strong> Reglarea volumului de sânge și a tensiunii arteriale.<br></span>
+        <span data-i18n="text_116"><strong>Eliminare:</strong> Prin urină, transpirație și respirație.<br></span>
+        <span data-i18n="text_117"><strong>Importanță:</strong> Menținerea echilibrului hidric și electrolitic (homeostazie).</span>
+      </div>
+    </div>
+  </div>
+
+ 
+</section>
+
+<section id="rinichii" class="section">
+  <h2 data-i18n="text_1101"> Rinichi (organe pereche)</h2>
+
+  <div class="grid-rinichi">
+
+    <!-- Card Localizare & Protecție -->
+    <div class="rinichi-card">
+      <h3>📍 Localizare & protecție</h3>
+      <p>Rinichii sunt localizați în regiunea lombară, între vertebrele T12–L3. Sunt protejați parțial de coastele inferioare și înconjurați de grăsime perirenală, capsulă fibroasă și fascie renală.</p>
+    </div>
+
+    <!-- Card Formă, Mărime și Greutate -->
+    <div class="rinichi-card">
+      <h3>🔵 Formă, dimensiuni</h3>
+      <p>Au formă de boabe de fasole, cu o lungime de 10–12 cm, lățime de 5–7 cm și grosime de ~3 cm. Greutatea unui rinichi este de aprox. 120–150 g. Rinichiul drept e mai jos decât cel stâng, din cauza ficatului.</p>
+    </div>
+
+    <!-- Card Structura internă -->
+    <div class="rinichi-card">
+      <h3>🧬 Structură internă</h3>
+      <ul>
+        <li><strong>Corticală:</strong> zonă periferică, conține glomerulii – locul unde începe filtrarea.</li>
+        <li><strong>Medulară:</strong> piramide renale care colectează urina primară în tubii colectori.</li>
+        <li><strong>Bazinet (pelvis renal):</strong> cavitate în formă de pâlnie care colectează urina și o trimite în ureter.</li>
+        <li><strong>Hil renal:</strong> locul de intrare/ieșire pentru artera, vena și ureterul renal.</li>
+      </ul>
+    </div>
+
+    <!-- Card Funcții fiziologice -->
+    <div class="rinichi-card">
+      <h3>⚙️ Funcții esențiale</h3>
+      <ul>
+        <li>🧪 <strong>Filtrarea sângelui:</strong> eliminarea deșeurilor (uree, creatinină, acid uric).</li>
+        <li>💧 <strong>Formarea urinei:</strong> reglarea volumului și compoziției lichidului extracelular.</li>
+        <li>🧂 <strong>Reglare:</strong> echilibru acido-bazic, apă-electroliți, sodiu, potasiu, calciu etc.</li>
+        <li>🩺 <strong>Tensiune arterială:</strong> secreție de renină (enzimă ce activează sistemul RAA).</li>
+        <li>🩸 <strong>Producție hormonală:</strong> eritropoetină (pentru eritrocite), calcitriol (vitamina D activă).</li>
+        <li>🧬 <strong>Detoxifiere:</strong> descompune unele medicamente și hormoni.</li>
+      </ul>
+    </div>
+
+    <!-- Card Nefronul -->
+    <div class="rinichi-card">
+      <h3>🔬 Nefronul</h3>
+      <p>Este unitatea structurală și funcțională a rinichiului. Fiecare rinichi are ~1 milion de nefroni.</p>
+      <ul>
+        <li><strong>Glomerul:</strong> filtrare pasivă a plasmei sangvine.</li>
+        <li><strong>Capsula Bowman:</strong> colectează filtratul glomerular.</li>
+        <li><strong>Tubii renali:</strong> reabsorb și secretă apă, electroliți, substanțe organice.</li>
+        <li><strong>Ansă Henle:</strong> concentrează urina, permite reabsorbția apei și ionilor.</li>
+      </ul>
+    </div>
+
+    <!-- Card Flux sanguin renal -->
+    <div class="rinichi-card">
+      <h3>💉 Circulația sângelui</h3>
+      <p>Rinichii primesc ~20–25% din debitul cardiac total prin artera renală, ceea ce subliniază importanța lor în filtrare. Vena renală colectează sângele curățat și îl trimite spre vena cavă inferioară.</p>
+    </div>
+  </div>
+
+  <!-- Imagine interactivă -->
+  <button id="openImageBtn" class="open-image-btn" data-i18n="text_1106">📷 Vezi schema rinichiului</button>
+
+  <div id="imageModal" class="image-modal">
+    <span class="close-modal">×</span>
+    <img class="modal-content" id="modalImage" src="assets/poze/rinichii.jpeg" alt="Schema rinichiului">
+  </div>
+</section>
+
+<section id="caiurinare" class="section">
+  <h2 data-i18n="text_1200"> Căi urinare</h2>
+  <p class="intro-text">Urina, odată formată în rinichi, este transportată și eliminată printr-un sistem complex și bine coordonat: căile urinare. Iată parcursul ei:</p>
+
+  <div class="timeline">
+
+    <!-- URETERE -->
+    <div class="timeline-item left">
+      <div class="timeline-content">
+        <h3>🔄 Uretere</h3>
+        <p>✔ Sunt două tuburi musculare (25–30 cm fiecare)<br>
+           ✔ Leagă bazinetul rinichiului de vezica urinară<br>
+           ✔ Transportul urinei se face prin <strong>peristaltism</strong> (contracții musculare ritmice)<br>
+           ✔ Stratul intern este mucos și protejează împotriva acidității urinei
+        </p>
+      </div>
+    </div>
+
+    <!-- VEZICA URINARĂ -->
+    <div class="timeline-item right">
+      <div class="timeline-content">
+        <h3>🫙 Vezica urinară</h3>
+        <p>✔ Rezervor muscular elastic, capacitate ~500 ml<br>
+           ✔ Formată din mușchi neted detrusor (se contractă la urinare)<br>
+           ✔ Când se umple, semnalează centrul de micțiune din măduva spinării<br>
+           ✔ Mucoasa formează pliuri (rugae) pentru extensie
+        </p>
+      </div>
+    </div>
+
+    <!-- URETRĂ -->
+    <div class="timeline-item left">
+      <div class="timeline-content">
+        <h3>🚻 Uretra</h3>
+        <p>✔ Canal de eliminare a urinei în exterior<br>
+           ✔ Lungime: <strong>3–5 cm la femei</strong> (infecții mai frecvente)<br>
+           ✔ Lungime: <strong>18–20 cm la bărbați</strong> – traversează prostata și penisul<br>
+           ✔ Este prevăzută cu sfinctere (intern & extern) pentru control voluntar/involuntar
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+   <!-- Imagine interactivă -->
+  <button id="openImageBtn2" class="open-image-btn" data-i18n="text_1106">📷 Vezi schema </button>
+
+  <div id="imageModal2" class="image-modal">
+    <span class="close-modal">×</span>
+    <img class="modal-content" id="modalImage2" src="assets/poze/caiurinare.png" alt="Schema rinichiului">
+  </div>
+</section>
+
+<section id="structura-nefronului" class="section">
+  <h2>
+    <i class="bx bx-cube" aria-hidden="true"></i> Structura și funcția nefronului
+  </h2>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="malpighi" aria-selected="true" role="tab" tabindex="0">
+      <i class="bx bx-filter-alt"></i> Corp renal (Malpighi)
+    </button>
+    <button class="tab-btn" data-tab="proximal" aria-selected="false" role="tab" tabindex="-1">
+      <i class="bx bx-water"></i> Tub contort proximal
+    </button>
+    <button class="tab-btn" data-tab="henle" aria-selected="false" role="tab" tabindex="-1">
+      <i class="bx bx-trending-up"></i> Ansă Henle
+    </button>
+    <button class="tab-btn" data-tab="distal" aria-selected="false" role="tab" tabindex="-1">
+      <i class="bx bx-sliders"></i> Tub contort distal
+    </button>
+    <button class="tab-btn" data-tab="colector" aria-selected="false" role="tab" tabindex="-1">
+      <i class="bx bx-water"></i> Tub colector
+    </button>
+  </div>
+
+  <div class="tab-content">
+    <article id="malpighi" class="tab-panel active" role="tabpanel" tabindex="0">
+      <h3>🔬 Corp renal (Malpighi)</h3>
+      <p>Este compus din glomerul și capsula Bowman. Aici are loc ultrafiltrarea sângelui, procesul prin care plasma sanguină fără celule și proteine este forțată prin membranele capilarelor glomerulare, formând astfel urina primară.</p>
+      <ul>
+        <li>Filtrare selectivă prin membrane permeabile doar pentru molecule mici</li>
+        <li>Separă reziduurile și excesul de lichide din sânge</li>
+      </ul>
+    </article>
+
+    <article id="proximal" class="tab-panel" role="tabpanel" tabindex="0" hidden>
+      <h3>💧 Tub contort proximal</h3>
+      <p>Locul reabsorbției masive de substanțe esențiale din urina primară înapoi în sânge, inclusiv:</p>
+      <ul>
+        <li>Apă</li>
+        <li>Glucoză</li>
+        <li>Aminoacizi</li>
+        <li>Ioni: Na⁺, Cl⁻</li>
+      </ul>
+      <p>Astfel, corpul păstrează substanțele necesare și reduce pierderile inutile.</p>
+    </article>
+
+    <article id="henle" class="tab-panel" role="tabpanel" tabindex="0" hidden>
+      <h3>↕️ Ansă Henle</h3>
+      <p>Funcția principală este concentrarea urinei prin mecanisme contracurent:</p>
+      <ul>
+        <li>Reabsorbția apei în segmentul descendent</li>
+        <li>Reabsorbția Na⁺ în segmentul ascendent</li>
+      </ul>
+      <p>Acest proces ajută la menținerea echilibrului hidric al organismului și la formarea urinei concentrate.</p>
+    </article>
+
+    <article id="distal" class="tab-panel" role="tabpanel" tabindex="0" hidden>
+      <h3>⚙️ Tub contort distal</h3>
+      <p>Reabsorbție reglabilă a substanțelor, controlată hormonal, mai ales de aldosteron, care:</p>
+      <ul>
+        <li>Crește reabsorbția Na⁺</li>
+        <li>Reglează echilibrul hidroelectrolitic</li>
+      </ul>
+      <p>Aici se ajustează compoziția urinei conform nevoilor organismului.</p>
+    </article>
+
+    <article id="colector" class="tab-panel" role="tabpanel" tabindex="0" hidden>
+      <h3>🚰 Tub colector</h3>
+      <p>Ultima stație pentru urină înainte de a ajunge în calice și bazinet, unde are loc:</p>
+      <ul>
+        <li>Reabsorbția apei reglată de ADH (vasopresină)</li>
+        <li>Transportul urinei spre sistemul colector al rinichiului</li>
+      </ul>
+      <p>Permite ajustarea finală a volumului și concentrației urinei.</p>
+    </article>
+  </div>
+</section>
+
+<section id="urinogeneza" class="section">
+  <h2><i class="bx bx-droplet"></i>  URINOGENEZA – FORMAREA URINEI</h2>
+  <div class="slider-container">
+
+    <div class="steps-nav">
+      <button class="step-btn active" data-step="1"><i class="bx bx-filter"></i> Filtrare glomerulară</button>
+      <button class="step-btn" data-step="2"><i class="bx bx-repeat"></i> Reabsorbție tubulară</button>
+      <button class="step-btn" data-step="3"><i class="bx bx-transfer-alt"></i> Secreție tubulară</button>
+    </div>
+
+    <div class="step-content active" data-step="1">
+      <h3>🔍 Filtrare glomerulară</h3>
+      <p>În glomerul și capsula Bowman, presiunea hidrostatică din capilarele glomerulare forțează plasma să treacă prin membrana de filtrare, formând urina primară. Proteinele și celulele sanguine sunt reținute.</p>
+      <ul>
+        <li>Filtrare bazată pe mărime și încărcare electrică</li>
+        <li>Se elimină toxine, dar substanțe utile încă rămân în urina primară</li>
+      </ul>
+    </div>
+
+    <div class="step-content" data-step="2">
+      <h3>♻️ Reabsorbție tubulară</h3>
+      <p>În tubii nefronului, substanțele utile precum glucoza, aminoacizii, sărurile și apa sunt reabsorbite activ și pasiv în sânge, reducând volumul urinei și ajustând compoziția acesteia.</p>
+      <ul>
+        <li>Tub contort proximal – reabsorbție masivă</li>
+        <li>Ansă Henle – concentrare prin mecanism contracurent</li>
+      </ul>
+    </div>
+
+    <div class="step-content" data-step="3">
+      <h3>💊 Secreție tubulară</h3>
+      <p>În tubul distal și tubul colector, ionii H⁺, K⁺ și unele medicamente sunt eliminați activ din sânge în tubul urinar pentru a menține echilibrul acido-bazic și homeostazia electrolitică.</p>
+      <ul>
+        <li>Control fin al compoziției finale a urinei</li>
+        <li>Secreție adaptată după necesitățile organismului</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="urin-details">
+    <p><i class="bx bx-info-circle"></i> <strong>Volum urină finală:</strong> ~1,5 L/zi</p>
+    <p><i class="bx bx-water"></i> <strong>Compoziție:</strong> 95% apă, 5% reziduuri (ureea, săruri, acid uric)</p>
+  </div>
+</section>
+
+<section id="hormoni-renali" class="section">
+  <h2>🧬 Hormonii care reglează funcțiile rinichiului</h2>
+  <p class="intro-text">Acești hormoni controlează absorbția apei, sărurilor, tensiunea arterială și echilibrul mineralelor.</p>
+
+  <div class="flipcard-container">
+    
+    <!-- ADH -->
+    <div class="flipcard">
+      <div class="flipcard-inner">
+        <div class="flipcard-front">
+          <i class="bx bxs-droplet"></i>
+          <h3>ADH (Vasopresină)</h3>
+        </div>
+        <div class="flipcard-back">
+          <p><strong>Origine:</strong> Hipotalamus<br>(stocat în neurohipofiză)</p>
+          <p><strong>Rol:</strong> Reabsorbție de apă în tubii colectori → urina devine concentrată</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aldosteron -->
+    <div class="flipcard">
+      <div class="flipcard-inner">
+        <div class="flipcard-front">
+          <i class="bx bxs-bolt-circle"></i>
+          <h3>Aldosteron</h3>
+        </div>
+        <div class="flipcard-back">
+          <p><strong>Origine:</strong> Glandele suprarenale (cortex)</p>
+          <p><strong>Rol:</strong> Reabsorbție Na⁺ și eliminare K⁺ în tubii distali</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PTH -->
+    <div class="flipcard">
+      <div class="flipcard-inner">
+        <div class="flipcard-front">
+          <i class="bx bxs-bone"></i>
+          <h3>Parathormon (PTH)</h3>
+        </div>
+        <div class="flipcard-back">
+          <p><strong>Origine:</strong> Glandele paratiroide</p>
+          <p><strong>Rol:</strong> Reabsorbție de Ca²⁺, inhibă reabsorbția de fosfați</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANP -->
+    <div class="flipcard">
+      <div class="flipcard-inner">
+        <div class="flipcard-front">
+          <i class="bx bxs-heart"></i>
+          <h3>Peptid natriuretic (ANP)</h3>
+        </div>
+        <div class="flipcard-back">
+          <p><strong>Origine:</strong> Inima (atrii)</p>
+          <p><strong>Rol:</strong> Inhibă reabsorbția de Na⁺ → scade volumul sanguin și tensiunea</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="simulator-reglare" class="section">
+  <h2>🎯 Simulator: Mecanisme de Reglare</h2>
+  <p class="intro-text">Alege scenariile de mai jos pentru a vedea cum reacționează rinichii prin intermediul hormonilor:</p>
+
+  <div class="sliders">
+    <div class="slider-group">
+      <label for="hidratare">💧 Nivel de hidratare</label>
+      <input type="range" min="0" max="2" step="1" id="hidratare">
+    </div>
+
+    <div class="slider-group">
+      <label for="volum">🫀 Volum sangvin</label>
+      <input type="range" min="0" max="2" step="1" id="volum">
+    </div>
+
+    <div class="slider-group">
+      <label for="tensiune">📉 Tensiune arterială</label>
+      <input type="range" min="0" max="2" step="1" id="tensiune">
+    </div>
+  </div>
+
+  <div class="output-box">
+    <h3>🔬 Răspuns fiziologic:</h3>
+    <p id="hormon"></p>
+    <p id="mecanism"></p>
+    <p id="efect"></p>
+  </div>
+</section>
+
+<section id="patologii-section">
+  <h2> PATOLOGII ALE SISTEMULUI EXCRETOR</h2>
+
+  <ul class="patologie-list">
+
+    <li class="patologie-item" tabindex="0" aria-expanded="false">
+      <svg class="patologie-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+      <div>
+        <strong>Insuficiență renală</strong>
+        <div class="patologie-info" hidden>
+          <p><strong>Cauză:</strong> Diverse (toxine, boli)</p>
+          <p><strong>Simptome/Cu ce afectează:</strong> Scăderea funcției de filtrare, acumulare de toxine</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="patologie-item" tabindex="0" aria-expanded="false">
+      <svg class="patologie-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/></svg>
+      <div>
+        <strong>Infecții urinare</strong>
+        <div class="patologie-info" hidden>
+          <p><strong>Cauză:</strong> Bacterii (ex. E. coli)</p>
+          <p><strong>Simptome/Cu ce afectează:</strong> Uretrită, cistită, pielonefrită</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="patologie-item" tabindex="0" aria-expanded="false">
+      <svg class="patologie-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
+      <div>
+        <strong>Litiază renală</strong>
+        <div class="patologie-info" hidden>
+          <p><strong>Cauză:</strong> Pietre (săruri precipitate)</p>
+          <p><strong>Simptome/Cu ce afectează:</strong> Durere, hematurie, blocaj urinar</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="patologie-item" tabindex="0" aria-expanded="false">
+      <svg class="patologie-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+      <div>
+        <strong>Diabet insipid</strong>
+        <div class="patologie-info" hidden>
+          <p><strong>Cauză:</strong> Lipsa/insensibilitate la ADH</p>
+          <p><strong>Simptome/Cu ce afectează:</strong> Poliurie, deshidratare</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="patologie-item" tabindex="0" aria-expanded="false">
+      <svg class="patologie-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="6"/></svg>
+      <div>
+        <strong>Glomerulonefrită</strong>
+        <div class="patologie-info" hidden>
+          <p><strong>Cauză:</strong> Inflamație autoimună</p>
+          <p><strong>Simptome/Cu ce afectează:</strong> Proteinurie, edeme, hipertensiune</p>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<section id="elemente-avansate" class="section advanced-section">
+  <h2>🔬 Ultrafiltrarea – Mecanism</h2>
+
+  <table class="advanced-table" role="grid" aria-label="Componentele ultrafiltrării și rolurile lor">
+    <thead>
+      <tr>
+        <th>Componentă</th>
+        <th>Rol</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr tabindex="0" aria-describedby="desc1">
+        <td>Endoteliul capilar</td>
+        <td>Permeabil, permite trecerea plasmei</td>
+      </tr>
+      <tr tabindex="0" aria-describedby="desc2">
+        <td>Membrana bazală</td>
+        <td>Barieră de selecție (reține proteine mari)</td>
+      </tr>
+      <tr tabindex="0" aria-describedby="desc3">
+        <td>Celule podocitare (capsula Bowman)</td>
+        <td>Control fin al filtrării</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>🧬 Homeostazie prin rinichi</h3>
+  <ul class="homeostazie-list" role="list" aria-label="Funcții avansate ale rinichilor pentru menținerea homeostaziei">
+    <li tabindex="0" aria-describedby="desc4"><strong>Reglare pH:</strong> excretă H⁺, reabsoarbe HCO₃⁻</li>
+    <li tabindex="0" aria-describedby="desc5"><strong>Reglare osmolaritate:</strong> prin hormonii ADH/aldosteron</li>
+    <li tabindex="0" aria-describedby="desc6"><strong>Secreție eritropoetină:</strong> stimulează formarea de eritrocite în măduva osoasă</li>
+    <li tabindex="0" aria-describedby="desc7"><strong>Activare vitamina D:</strong> importantă în metabolismul calciului</li>
+  </ul>
+</section>
+
+
+</div>
+
+ <!-- ÎNAPOI -->
+  <div class="buttons" style="margin-bottom: 3rem;">
+    <button id="goBackBtn" data-i18n="text_233">Înapoi la Sisteme</button>
+  </div>
+
+  <!-- SWITCH TEMĂ -->
+  <div id="theme-toggle" onclick="toggleTheme()">
+    <i class="bx bx-moon"></i>
+  </div>
+<button id="scrollTopBtn" title="Du-te sus" style="display: flex;">
+  <i class="bx bx-up-arrow-alt"></i>
+</button>
+
+
+<!-- Buton deschidere ChatBot -->
+<div id="chat-toggle"><i class="bx bx-bot"></i></div>
+
+<!-- Fereastra ChatBot -->
+<div id="chat-box">
+  <div id="chat-header">
+    <span data-i18n="text_234">BioBot</span>
+    <button id="chat-close" data-i18n="text_235">✖</button>
+  </div>
+  <iframe src="bio-bot2.html"></iframe>
+</div>
+
+<select id="lang-select">
+  <option value="ro" data-i18n="text_499">Română</option>
+  <option value="en" data-i18n="text_500">Engleză</option>
+  <option value="es" data-i18n="text_501">Spaniolă</option>
+  <option value="zh" data-i18n="text_502">Chineză</option>
+  <option value="ar" data-i18n="text_503">Arabă</option>
+  <option value="hi" data-i18n="text_504">Hindi</option>
+  <option value="fr" data-i18n="text_505">Franceză</option>
+  <option value="ru" data-i18n="text_506">Rusă</option>
+</select>
+
+
+
+<script>
+function extractTextNodes() {
+  const elements = document.querySelectorAll("body *");
+  let translations = {};
+  let index = 0;
+
+  elements.forEach(el => {
+    // Ignorăm script/style/code/pre etc
+    if (["SCRIPT", "STYLE", "NOSCRIPT", "CODE", "PRE"].includes(el.tagName)) return;
+
+    if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+      const text = el.textContent.trim();
+      if (text && !/^\s*$/.test(text) && isNaN(text)) {
+        const key = `text_${index++}`;
+        el.setAttribute("data-i18n", key);
+        translations[key] = text;
+      }
+    }
+  });
+
+  console.log("JSON de copiat în ro.json:", JSON.stringify(translations, null, 2));
+}
+
+</script>
+
+
+
+<script src="assets/js/script-activitate.js"></script>
+<script src="assets/traducerile/excretor-traducere.js"></script>
+  <script src="assets/js/script-oase.js"></script>
+  <script src="assets/js/script-excretor.js"></script>
+
+</body>
+</html>

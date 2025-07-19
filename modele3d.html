@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Modele3D</title>
+    <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/style-modele3d.css">
+     <link rel="stylesheet" href="assets/css/style-sisteme.css">
+
+     <style>
+      /* Fundalul  */
+ body.page-biologie {
+    background-image: url('assets/poze/bk.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+    min-height: 100vh;
+
+}
+
+@media (max-width: 768px) {
+  body.page-biologie {
+    background-attachment: scroll;
+  }
+}
+body.page-biologie #background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(10px); 
+    z-index: -1; 
+}
+
+
+body.light-mode.page-biologie {
+    background-image: url('assets/poze/bk.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+body.dark-mode.page-biologie {
+    background-image: url('assets/poze/bk.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+  
+
+</style>
+</head>
+<body class="page-biologie">
+    <div id="background-overlay"></div>
+   <!-- Bara de meniu roșie cu titlul "SISTEME" și icon -->
+    <div class="top-menu">
+        <h1 data-i18n="text_0">🧬 MODELE 3D</h1>
+      </div>
+  
+   <div id="progress-bar"></div>
+
+    <!-- User icon in top-right corner -->
+    <div id="user-toggle">
+        <i class="bx bx-user-circle"></i>
+        <div id="user-menu" class="hidden">
+          <ul>
+             <li>
+  <a href="logare.html">
+    <i class="bx bxs-user"></i>
+    <span data-i18n="text_000">Profil</span>
+  </a>
+</li>
+          </ul>
+        </div>
+    </div>
+
+    <!-- Light/Dark toggle at the bottom-right corner -->
+    <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+        <i class="bx bx-moon"></i>
+    </div>
+
+
+<!-- Buton pentru deschiderea/închiderea meniului -->
+<button id="menu-toggle" class="menu-toggle" data-i18n="text_1">☰</button>
+
+<select id="lang-select">
+  <option value="ro" data-i18n="text_2">Română</option>
+  <option value="en" data-i18n="text_3">Engleză</option>
+  <option value="es" data-i18n="text_4">Spaniolă</option>
+  <option value="zh" data-i18n="text_5">Chineză</option>
+  <option value="ar" data-i18n="text_6">Arabă</option>
+  <option value="hi" data-i18n="text_7">Hindi</option>
+  <option value="fr" data-i18n="text_8">Franceză</option>
+  <option value="ru" data-i18n="text_9">Rusă</option>
+</select>
+     <!-- Main Layout -->
+    <div class="container">
+        <div class="sidebar">
+           <!-- Logo-ul din pagină -->
+<div class="logo">
+    <img src="assets/poze/logo-ANATOMIQ.png" alt="Logo" class="logo-img">
+  <div class="logo-preview">
+                <img src="assets/poze/logo-ANATOMIQ.png" alt="Logo Preview">
+            </div>
+        </div>
+           <ul>
+                <li><a href="index.html" class="nav-link"><i class="bx bxs-home"></i><span class="item-txt" data-i18n="text_10">Introducere</span></a></li>
+                <li><a href="sisteme.html" class="nav-link"><i class="bx bxs-capsule"></i><span class="item-txt" data-i18n="text_11">Sisteme ale corpului</span></a></li>
+                <li><a href="teste.html" class="nav-link"><i class="bx bx-task"></i><span class="item-txt" data-i18n="text_12">Teste</span></a></li>
+                <li><a href="generator.html" class="nav-link"><i class='bx  bx-ruler'></i><span class="item-txt" data-i18n="text_01619">BioCheck</span></a></li>
+                <li><a href="bio-bot.html" class="nav-link"><i class="bx bxs-message-dots"></i><span class="item-txt" data-i18n="text_13">Chatbot</span></a></li>
+                <li><a href="modele3d.html" class="nav-link"><i class="bx bxs-cube"></i><span class="item-txt" data-i18n="text_14">Modele 3D</span></a></li>
+                <li><a href="videoclipuri.html" class="nav-link"><i class="bx bxs-video"></i><span class="item-txt" data-i18n="text_15">Videoclipuri</span></a></li>
+                <li><a href="notite.html" class="nav-link"><i class="bx bxs-pencil"></i><span class="item-txt" data-i18n="text_16">Notițe</span></a></li>
+                 <li><a href="todo.html" class="nav-link"><i class="bx bxs-pencil"></i><span class="item-txt" data-i18n="text_9090">TaskIQ</span></a></li>
+                <li><a href="calculator.html" class="nav-link"><i class="bx bxs-calculator"></i><span class="item-txt" data-i18n="text_17">Calculator</span></a></li>
+                <li><a href="subiecte-bac.html" class="nav-link"><i class="bx bxs-book"></i><span class="item-txt" data-i18n="text_18">Subiecte BAC</span></a></li>
+                <li><a href="biblioteca.html" class="nav-link"><i class="bx bxs-book"></i><span class="item-txt" data-i18n="text_19">Biblioteca</span></a></li>
+                <li><a href="contact.html" class="nav-link"><i class="bx bxs-phone-call"></i><span class="item-txt" data-i18n="text_20">Contact</span></a></li>
+               <li><a href="biostream.html" class="nav-link"><i class="bx  bx-rocket"></i><span class="item-txt" data-i18n="text_016">BioStream</span></a></li>
+                <li><a href="recenzii.html" class="nav-link"><i class="bx  bx-like"></i><span class="item-txt" data-i18n="text_0160">Recenzii</span></a></li>
+                <li><a href="translate.html" class="nav-link"><i class="bx  bx-wifi-2"></i><span class="item-txt" data-i18n="text_0161">TranslaIQ</span></a></li>
+          </ul>
+        </div>
+
+     
+
+       
+      <div class="main-content">
+          
+       <div class="sistem" onclick="toggleDetalii(this)">
+    <h2 data-i18n="text_24">🧫 Celula</h2>
+    <div class="detalii">
+      <p data-i18n="text_25">Este este unitatea de bază, structurală, funcțională și genetică a tuturor organismelor vii.</p>
+      <a href="celula3d.html">
+        <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_26">Vezi modelul 3D</button>
+      </a>
+    </div>
+  </div>
+
+   <div class="sistem" onclick="toggleDetalii(this)">
+    <h2 data-i18n="text_27">🩻 Țesuturi</h2>
+    <div class="detalii">
+      <p data-i18n="text_28">O grupare de celule interdependente care au aceeași formă, origine,  structură și îndeplinesc aceeași funcție.</p>
+      <a href="tesuturi3d.html">
+       <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_29">Vezi modelul 3D</button>
+      </a>
+    </div>
+  </div>
+
+      <div class="sistem" onclick="toggleDetalii(this)">
+        <h2 data-i18n="text_30">🦴 Sistemul osos</h2>
+        <div class="detalii">
+          <p data-i18n="text_31">Sistemul osos oferă suport, protecție organelor și permite mișcarea. Este format din 206 oase, articulații și cartilaje.</p>
+          <a href="sistemul-osos3d.html">
+            <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_32">Vezi modelul 3D</button>
+          </a>
+        </div>
+      </div>
+      
+
+  <div class="sistem" onclick="toggleDetalii(this)">
+    <h2 data-i18n="text_33">💪 Sistemul muscular</h2>
+    <div class="detalii">
+      <p data-i18n="text_34">Este compus din peste 600 de mușchi. Colaborează cu sistemul osos pentru a produce mișcare și menține temperatura corporală.</p>
+      <a href="sistemul-muscular3d.html">
+        <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_35">Vezi modelul 3D</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="sistem" onclick="toggleDetalii(this)">
+    <h2 data-i18n="text_36">❤️ Sistemul circulator</h2>
+    <div class="detalii">
+      <p data-i18n="text_37">Include inima, sângele și vasele de sânge. Transportă oxigen, nutrienți și hormoni, eliminând totodată reziduurile metabolice.</p>
+      <a href="sistemul-circulator3d.html">
+        <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_38">Vezi modelul 3D</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="sistem" onclick="toggleDetalii(this)">
+    <h2 data-i18n="text_39">🌬️ Sistemul respirator</h2>
+    <div class="detalii">
+      <p data-i18n="text_40">Format din nas, trahee, bronhii și plămâni, are rolul de a aduce oxigen în corp și de a elimina dioxidul de carbon.</p>
+      <a href="sistemul-respirator3d.html">
+        <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_41">Vezi modelul 3D</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="sistem" onclick="toggleDetalii(this)">
+    <h2 data-i18n="text_42">🧠 Sistemul nervos</h2>
+    <div class="detalii">
+    <p data-i18n="text_43">Coordonează toate funcțiile corpului. Include creierul, măduva spinării și nervii periferici.</p>
+    <a href="sistemul-nervos3d.html">
+     <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_44">Vezi modelul 3D</button>
+    </a>
+  </div>
+    </div>
+    <div class="sistem" onclick="toggleDetalii(this)">
+        <h2 data-i18n="text_45">🍽️ Sistemul digestiv</h2>
+        <div class="detalii">
+          <p data-i18n="text_46">Transformă alimentele în nutrienți esențiali și elimină deșeurile. Include stomacul, intestinul și alte organe digestive.</p>
+        <a href="sistemul-digestiv3d.html">
+          <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_47">Vezi modelul 3D</button>
+        </a></div>
+      </div>
+    
+      <div class="sistem" onclick="toggleDetalii(this)">
+        <h2 data-i18n="text_48">💧 Sistemul excretor</h2>
+        <div class="detalii">
+           <p data-i18n="text_49">Elimină deșeurile lichide din organism prin rinichi, vezică urinară și uretere, menținând echilibrul chimic intern.</p>
+          <a href="sistemul-excretor3d.html">
+         <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_50">Vezi modelul 3D</button>
+     </a> </div>
+    </div>
+
+      <div class="sistem" onclick="toggleDetalii(this)">
+        <h2 data-i18n="text_51">🧬 Sistemul endocrin</h2>
+        <div class="detalii">
+          <p data-i18n="text_52">Reglează activitatea celulelor și organelor prin hormoni. Include glanda pituitară, tiroida, pancreasul și altele.</p>
+          <a href="sistemul-endocrin3d.html">
+        
+         <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_53">Vezi modelul 3D</button>
+        </a></div>
+        </div>
+
+        <div class="sistem" onclick="toggleDetalii(this)">
+            <h2 data-i18n="text_54">🦠 Sistemul limfatic</h2>
+            <div class="detalii"> 
+              <p data-i18n="text_55">Ajută la apărarea organismului și la transportul limfei. Include ganglionii limfatici, splina și vasele limfatice.</p>
+              <a href="sistemul-limfatic3d.html">
+             
+             <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_56">Vezi modelul 3D</button>
+            </a></div>
+          </div>
+        
+          
+        
+          <div class="sistem" onclick="toggleDetalii(this)">
+            <h2 data-i18n="text_60">👨‍👩‍👧‍👦 Sistemul reproducător</h2>
+            <div class="detalii">
+              <p data-i18n="text_61">Este responsabil pentru reproducere și perpetuarea speciei. Include organele genitale și hormonii sexuali.</p>
+              
+              <a href="sistemul-reproductor3d.html">
+              
+            
+           <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_62">Vezi modelul 3D</button>  
+          </a></div>
+            </div>
+
+            <div class="sistem" onclick="toggleDetalii(this)">
+            <h2 data-i18n="text_63">👁️ Organe de simț</h2>
+            <div class="detalii">
+  <p data-i18n="text_73">Permit perceperea mediului înconjurător prin văz, auz, miros, gust și atingere.</p>
+              <a href="organe-de-simt3d.html">
+           <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_64">Vezi modelul 3D</button>  
+          </a></div>
+            </div>
+            
+            <div class="sistem" onclick="toggleDetalii(this)">
+            <h2 data-i18n="text_57">Mai multe...</h2>
+            <div class="detalii"> 
+              
+              <a href="maimulte3d.html">
+             
+             <button class="fancy-button" style="margin-top:10px; padding:8px 16px; font-size:14px;" data-i18n="text_59">Vezi modelul 3D</button>
+            </a></div>
+          </div>
+</div>
+
+
+
+
+<button data-i18n="text_65" id="startPauseBtn" style="position:fixed; bottom:20px; right:20px; z-index: 999999; padding:10px 15px; font-size:14px; border:none; border-radius:5px; background:#8b0000; color:#fff; cursor:pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: background-color 0.3s ease;">Start pauză</button>
+
+<div id="pauseOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); color:white; z-index:1000000; align-items:center; justify-content:center; flex-direction:column; text-align:center; padding:20px;">
+  <h2 id="pauseMessage"></h2>
+  <p id="pauseTimer"></p>
+  <iframe id="gameFrame" src=""></iframe>
+
+  <div style="margin-top: 15px;">
+    <button data-i18n="text_66" id="endPauseBtn" style="padding:8px 12px; font-size:14px; border:none; border-radius:5px; background:#fff; color:#8b0000; cursor:pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: background-color 0.3s ease;" disabled="">Renunță la pauză</button>
+
+   <select id="changeGameSelect" style="padding:8px 12px; font-size:14px; border:none; border-radius:5px; margin-left:10px; display:none;">
+  <option data-i18n="text_67" value="">Schimbă jocul...</option>
+  <option data-i18n="text_68" value="Puzzle">Puzzle</option>
+
+  <option data-i18n="text_70" value="Memory">Memorie</option>
+  <option data-i18n="text_71" value="Desen">Desen</option>
+</select>
+
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/script-pauza.js"></script>
+<script src="assets/js/script-activitate.js"></script>
+<script src="assets/traducerile/modele3d-traducere.js"></script>
+<script src="assets/js/script-modele3d.js"></script></body>
+</html>
+
+

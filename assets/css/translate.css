@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff0f0, #ffeaea, #fff8f8);
+  transition: background 0.4s ease;
+}
+
+/* === Header TranslaIQ === */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 2px solid #ffcccc;
+}
+
+.header h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #d63333;
+  text-shadow: 1px 1px 0 #fff4f4;
+}
+.back-btn {
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #d94444;
+  background: #ffe5e5;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.back-btn:hover {
+  background: #ffd1d1;
+  color: #c53131;
+  transform: translateY(-2px);
+}
+
+/* === Container === */
+.container {
+  max-width: 720px;
+  width: 100%;
+  padding: 36px;
+  background: #fffafa;
+  border-radius: 40px 20px 40px 20px;
+  box-shadow: 0 10px 40px rgba(220, 100, 100, 0.1);
+  border: 2px solid #ffe1e1;
+  transition: all 0.3s ease-in-out;
+}
+
+/* === Wrapper === */
+.wrapper {
+  border-radius: 30px;
+  border: 1px solid #ffdada;
+  overflow: hidden;
+  background: #fffdfd;
+  box-shadow: inset 0 0 0 1px #ffecec;
+}
+
+/* === Text inputuri === */
+.wrapper .text-input {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ffd4d4;
+}
+
+.text-input textarea {
+  flex: 1;
+  height: 220px;
+  border: none;
+  outline: none;
+  resize: none;
+  background: #fffafa;
+  font-size: 16px;
+  padding: 20px;
+  color: #3b3b3b;
+  transition: background 0.3s ease;
+  border-right: 1px solid #f3bbbb;
+}
+
+.text-input .to-text {
+  border-left: none;
+}
+
+.text-input textarea:focus {
+  background: #fff2f2;
+}
+
+.text-input textarea::placeholder {
+  color: #c08383;
+  font-style: italic;
+}
+
+/* === Controls === */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: #fff3f3;
+  border-top: 1px solid #ffd4d4;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.controls .row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.controls .row .icons i {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffeded;
+  color: #c77474;
+  font-size: 16px;
+  cursor: pointer;
+  justify-content: center;
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.controls .row .icons i:hover {
+  color: #e63946;
+  background: #ffe7e7;
+  transform: scale(1.1);
+}
+
+.controls .exchange {
+  color: #d66666;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.controls .exchange:hover {
+  transform: rotate(180deg);
+  color: #f75454;
+}
+
+.controls select {
+  font-size: 15px;
+  border: none;
+  background: transparent;
+  color: #444;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* === Buton principal === */
+.container button {
+  width: 100%;
+  padding: 15px 20px;
+  margin-top: 25px;
+  background: linear-gradient(120deg, #f66f6f, #ff8a8a);
+  border: none;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 120, 120, 0.2);
+  transition: all 0.3s ease;
+}
+
+.container button:hover {
+  background: linear-gradient(120deg, #e63946, #ff5c5c);
+  transform: translateY(-2px);
+}
+
+/* === Scrollbar === */
+.text-input textarea::-webkit-scrollbar {
+  width: 6px;
+}
+.text-input textarea::-webkit-scrollbar-thumb {
+  background: #f1a1a1;
+  border-radius: 8px;
+}
+.text-input textarea::-webkit-scrollbar-track {
+  background: #fff;
+}
+/* === Dark Mode === */
+body.dark {
+  background: linear-gradient(135deg, #2b1b1b, #3a2727, #2e2020);
+  color: #f1d6d6;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+body.dark .header h1 {
+  color: #ff9a9a;
+  text-shadow: 1px 1px 3px #581616;
+}
+
+body.dark .header img {
+  border-color: #ff7272;
+  box-shadow: 0 4px 12px rgba(255, 114, 114, 0.6);
+}
+
+body.dark .back-btn {
+  background: #4c2c2c;
+  color: #ff8b8b;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+}
+
+body.dark .back-btn:hover {
+  background: #6b3a3a;
+  color: #ff4f4f;
+  transform: translateY(-2px);
+}
+
+body.dark .container {
+  background: #3a2727;
+  border-color: #702b2b;
+  box-shadow: 0 10px 40px rgba(180, 80, 80, 0.4);
+  color: #f1d6d6;
+}
+
+body.dark .wrapper {
+  background: #4a3636;
+  border-color: #662a2a;
+  box-shadow: inset 0 0 0 1px #733434;
+}
+
+body.dark .wrapper .text-input {
+  border-bottom-color: #663636;
+}
+
+body.dark .text-input textarea {
+  background: #563c3c;
+  color: #f1d6d6;
+  border-right: 1px solid #7a4a4a;
+}
+
+body.dark .text-input textarea:focus {
+  background: #6a4b4b;
+}
+
+body.dark .text-input textarea::placeholder {
+  color: #c48a8a;
+}
+
+body.dark .controls {
+  background: #4b3535;
+  border-top-color: #6b3a3a;
+}
+
+body.dark .controls .row .icons i {
+  background: #603c3c;
+  color: #d18f8f;
+}
+
+body.dark .controls .row .icons i:hover {
+  color: #ff7979;
+  background: #7a4a4a;
+}
+
+body.dark .controls .exchange {
+  color: #ff8c8c;
+}
+
+body.dark .controls .exchange:hover {
+  color: #ff4f4f;
+}
+
+body.dark .controls select {
+  color: #d8a3a3;
+}
+
+body.dark .container button {
+  background: linear-gradient(120deg, #cc5151, #e04f4f);
+  box-shadow: 0 8px 20px rgba(224, 79, 79, 0.4);
+}
+
+body.dark .container button:hover {
+  background: linear-gradient(120deg, #a73a3a, #cf3f3f);
+}
+/* === Responsive === */
+@media (max-width: 660px) {
+  .container {
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .wrapper .text-input {
+    flex-direction: column;
+  }
+  .text-input textarea {
+    height: 180px;
+    border-right: none;
+    border-bottom: 1px solid #ffdada;
+  }
+  .controls {
+    flex-direction:row;
+    gap: 5px;
+  }
+  .controls .exchange {
+    font-size: 10px;
+  }
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+   /* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+body.dark {
+    background: linear-gradient(to right, #5a0622, #600d0d);
+    color: white;
+}
+
+body.dark .main-content {
+    background: rgba(255,255,255,0.05);
+}
+
+body.dark .sidebar {
+    background: #3a0f0f;
+    color: #eee;
+}
+
+body.dark .sidebar li:hover {
+    background-color: #ffffff22;
+    color: #fff;
+}

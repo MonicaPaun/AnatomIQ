@@ -1,0 +1,429 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ec7b7b, #fda6a6);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.container {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  margin-bottom: 24px;
+  color: #cc0000;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 14px;
+  font-size: 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #cc0000;
+  box-shadow: 0 0 6px rgba(204, 0, 0, 0.4);
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #cc0000;
+  color: white;
+  margin-top: 14px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 16px rgba(204, 0, 0, 0.2);
+}
+
+button:hover {
+  background: #b30000;
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(204, 0, 0, 0.35);
+}
+
+/* Buton secundar (ex: resetare parolă) */
+button.secondary {
+  background: #ffcccc;
+  color: #cc0000;
+  border: 1.5px solid #cc0000;
+}
+
+button.secondary:hover {
+  background: #ffe5e5;
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(204, 0, 0, 0.25);
+}
+
+/* Deconectare / logout */
+button.logout {
+  background: #800000;
+  color: #fff;
+  margin-top: 20px;
+}
+
+button.logout:hover {
+  background: #660000;
+  box-shadow: 0 8px 22px rgba(128, 0, 0, 0.35);
+}
+
+#user-info {
+  margin-top: 20px;
+  text-align: center;
+  color: #333;
+  font-weight: 500;
+}
+
+.info {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 14px;
+  color: #666;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Listă activitate */
+ul {
+  margin-top: 24px;
+  padding-left: 0;
+  list-style: none;
+}
+
+ul li {
+  background: #fdfdfd;
+  margin-bottom: 12px;
+  padding: 14px 18px;
+  border-left: 5px solid #cc0000;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: background 0.3s, transform 0.2s;
+}
+
+ul li:hover {
+  background: #fff2f2;
+  transform: translateX(4px);
+}
+
+/* Mică responsivitate */
+@media (max-width: 480px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  .container {
+    padding: 30px 20px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+#logoutBtn {
+  background-color: #ff4b5c;      /* un roșu aprins */
+  color: white;                   /* text alb */
+  border: none;                  /* fără bordură */
+  padding: 12px 24px;            /* spațiu interior confortabil */
+  font-size: 16px;               /* text lizibil */
+  border-radius: 6px;            /* colțuri rotunjite */
+  cursor: pointer;               /* cursor pointer când e hover */
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: inline-block;
+}
+
+#logoutBtn:hover {
+  background-color: #e04350;     /* roșu mai închis la hover */
+}
+
+#logoutBtn:active {
+  background-color: #c0392b;     /* roșu și mai închis la apăsare */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Clasa pentru ascuns */
+.hidden {
+  display: none !important;
+}
+ #user-profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    #user-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #3f51b5;
+      color: white;
+      font-weight: 700;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+    }
+    #user-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+  
+    #lang-select {
+    position: fixed;
+    top: 70px; 
+    left: 20px; /* aliniat cu butonul */
+    font-size: 1rem;
+    background: #fff;
+    color: #8b0000;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 10;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 140px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'7'%20viewBox%3D'0%200%2010%207'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%207%205-7H0z'%20fill%3D'%238b0000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px 7px;
+}
+
+#lang-select:hover {
+    background-color: #8b0000;
+    color: #fff;
+    border-color: #8b0000;
+}
+
+#lang-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #8b0000aa;
+    background-color: #8b0000;
+    color: #fff;
+}
+
+/* opțiunile dropdown */
+#lang-select option {
+    color: #8b0000;
+    background: #fff;
+}
+
+body.dark #lang-select {
+    background: #3a0f0f;
+    color: #eee;
+    border-color: #eee;
+    background-color: #661111;
+}
+
+body.dark #lang-select:hover,
+body.dark #lang-select:focus {
+    background-color: #eee;
+    color: #3a0f0f;
+    border-color: #eee;
+}
+
+
+   /* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+body.dark {
+    background: linear-gradient(to right, #3b0a0a, #5a1f1f);
+    color: white;
+}
+
+body.dark .main-content {
+    background: rgba(255,255,255,0.05);
+}
+
+body.dark .sidebar {
+    background: #3a0f0f;
+    color: #eee;
+}
+
+body.dark .sidebar li:hover {
+    background-color: #ffffff22;
+    color: #fff;
+}
+
+.buton-inapoi {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #e60000; /* roșu intens */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+
+    .buton-inapoi:hover {
+      background-color: #cc0000; /* roșu mai închis la hover */
+    }
+
+body.dark .container {
+  background: #1e1e1e;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.dark h2 {
+  color: #ff4d4d;
+}
+
+body.dark input {
+  background: #2a2a2a;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark input:focus {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 6px rgba(255, 77, 77, 0.4);
+}
+
+body.dark button {
+  background: #ff4d4d;
+  color: white;
+  box-shadow: 0 6px 16px rgba(255, 77, 77, 0.3);
+}
+
+body.dark button:hover {
+  background: #cc0000;
+  box-shadow: 0 8px 24px rgba(204, 0, 0, 0.5);
+}
+
+body.dark button.secondary {
+  background: #3a0f0f;
+  color: #ffcccc;
+  border-color: #ff9999;
+}
+
+body.dark button.secondary:hover {
+  background: #5a1f1f;
+  box-shadow: 0 6px 18px rgba(255, 153, 153, 0.3);
+}
+
+body.dark button.logout {
+  background: #660000;
+  color: #fff;
+}
+
+body.dark button.logout:hover {
+  background: #990000;
+}
+
+body.dark #logoutBtn {
+  background-color: #ff4d4d;
+  color: white;
+  box-shadow: 0 4px 6px rgba(255, 77, 77, 0.3);
+}
+
+body.dark #logoutBtn:hover {
+  background-color: #cc0000;
+}
+
+body.dark #logoutBtn:active {
+  background-color: #990000;
+  box-shadow: 0 2px 4px rgba(255, 77, 77, 0.5);
+}
+
+body.dark #user-info,
+body.dark .info {
+  color: #ddd;
+}
+
+body.dark ul li {
+  background: #2a2a2a;
+  border-left: 5px solid #ff4d4d;
+  color: #f0f0f0;
+}
+
+body.dark ul li:hover {
+  background: #3a0f0f;
+}
+
+body.dark #user-icon {
+  background-color: #ff4d4d;
+  color: #1e1e1e;
+}
+
+body.dark #user-name {
+  color: #fff;
+}
+
+body.dark .buton-inapoi {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+body.dark .buton-inapoi:hover {
+  background-color: #cc0000;
+}
+
+
+body.dark input[type="password"] {
+  background-color: #2a2a2a;
+  color: #fff;
+  border-color: #555;
+}

@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="text_010">Celula</title>
+  <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style-celula.css" />
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<!--Google Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+   <!-- Butonul pentru meniul retractabil -->
+   <div id="menu-toggle" class="menu-toggle">
+    <i class="bx bx-menu"></i> <!-- Iconița pentru meniu -->
+  </div>
+
+  <!-- Buton Notițe în colțul dreapta sus -->
+<div id="notite-btn-container" class="top-right">
+  <button id="notiteBtn" class="notite-btn" onclick="toggleNotite()">
+    <i  class="bx bx-notepad"></i><span data-i18n="text_00">Notițe</span> 
+  </button>
+</div>
+
+<div id="notitePanel" class="notite-panel">
+  <div class="notite-header">
+    <span data-i18n="text_0">Notițele mele</span>
+    <span class="close-small" onclick="toggleNotite()" data-i18n="text_1">×</span>
+  </div>
+  <iframe src="notite1.html"></iframe>
+  
+ </div>
+<!-- Meniul lateral -->
+<div id="side-menu" class="side-menu">
+  <ul>
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-book-open"></i><span data-i18n="side_menu_000">Introducere</span><i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#ce-este"><i class="bx bx-question-mark"></i> <span data-i18n="side_menu_0000">Ce este celula?</span></a></li>
+        <li><a href="#caracteristici"><i class="bx bx-list-ul"></i><span data-i18n="side_menu_00000">Caracteristici și diferențe.</span></a></li>
+        <li><a href="#functii"><i class="bx bx-cog"></i> <span data-i18n="side_menu_02">Funcții, forma, dimensiuni și durata de viață a celulelor.</span></a></li>
+        <li><a href="#compozitie"><i class="bx bx-cube-alt"></i><span data-i18n="side_menu_01">Compoziția chimică a materiei vii.</span></a></li>
+      </ul>
+    </li>
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-network-chart"></i><span data-i18n="side_menu_types">Tipuri de celule</span><i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#pk"><i class="bx bx-target-lock"></i><span data-i18n="side_menu_pk">Celula procariotă</span></a></li>
+        <li><a href="#ek"><i class="bx bx-shape-square"></i><span data-i18n="side_menu_ek">Celula eucariotă</span></a></li>
+      </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-cube"></i> <span data-i18n="side_menu_structure">Structura</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#peretelecelular"><i class="bx bx-buildings"></i> <span data-i18n="side_menu_cellwall">Peretele celular</span></a></li>
+        <li><a href="#membranacel"><i class="bx bx-layer"></i> <span data-i18n="side_menu_cellmembrane">Membrana celulară</span></a></li>
+        <li><a href="#citoplasma"><i class="bx bx-droplet"></i> <span data-i18n="side_menu_cytoplasm">Citoplasma</span></a></li>
+        <li><a href="#nucleul"><i class="bx bx-radio-circle-marked"></i> <span data-i18n="side_menu_nucleus">Nucleul</span></a></li>
+      </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-brain"></i> <span data-i18n="side_menu_organelles">Organite celulare</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#mitocondrii"><i class="bx bx-battery"></i> <span data-i18n="side_menu_mitochondria">Mitocondria</span></a></li>
+        <li><a href="#ribozomi"><i class="bx bx-cog"></i> <span data-i18n="side_menu_ribosomes">Ribozomi</span></a></li>
+        <li><a href="#plastide"><i class="bx bx-palette"></i> <span data-i18n="side_menu_plastids">Plastide</span></a></li>
+        <li><a href="#centrozom"><i class="bx bx-cube"></i> <span data-i18n="side_menu_centrosome">Centrozom</span></a></li>
+        <li><a href="#lizozomi"><i class="bx bx-bug"></i> <span data-i18n="side_menu_lysosomes">Lizozomi</span></a></li>
+        <li><a href="#aparatgolgi"><i class="bx bx-package"></i> <span data-i18n="side_menu_golgi_apparatus">Aparatul Golgi</span></a></li>
+        <li><a href="#reticulendoplasmatic"><i class="bx bx-sitemap"></i> <span data-i18n="side_menu_endoplasmic_reticulum">Reticul endoplasmatic</span></a></li>
+      </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#divcel"><i class="bx bx-recycle"></i> <span data-i18n="side_menu_cell_division">Diviziunea celulară</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#diviziune"><i class="bx bx-info-circle"></i> <span data-i18n="side_menu_definition">Definiție</span></a></li>
+        <li><a href="#mitoza"><i class="bx bx-atom"></i> <span data-i18n="side_menu_mitosis">Mitoză</span></a></li>
+        <li><a href="#meioza"><i class="bx bx-unite"></i> <span data-i18n="side_menu_meiosis">Meioză</span></a></li>
+        <li><a href="#cromozom"><i class="bx bx-dna"></i><span data-i18n="side_menu_chromosomes">Cromozomi</span></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <h1 data-i18n="text_2">Celula</h1>
+    <p data-i18n="text_3">Descoperă structura și funcțiile celulei în corpul uman.</p>
+  <div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+  <div id="searchInfo" style="font-size: 0.9em; margin-top: 4px; color: #555;"></div>
+</div>
+    
+  </header>
+<div id="searchContainer">
+  <!-- CE ESTE? -->
+ <section id="ce-este" class="section">
+  <h2 data-i18n="text_4">Ce este celula?</h2>
+   <div class="ce-este-container"></div>
+  <p data-i18n="text_5">
+    <strong >Celula</strong> este unitatea de bază structurală, funcțională și genetică a tuturor organismelor vii.
+    Poate exista singură (organisme unicelulare) sau alături de alte celule, formând țesuturi (organisme pluricelulare).
+    A fost descoperită pentru prima dată în 1665 de <strong>Robert Hooke</strong>,
+    iar <strong>citologia</strong> este știința care studiază celula din punct de vedere structural, funcțional, anatomic și morfologic.
+  </p>
+  <img
+  src="assets/poze/celula.png"
+  alt="celula-eucariota"
+  class="center-img dynamic-img"
+  id="main-image"
+  data-ro="assets/poze/celula.png"
+  data-en="assets/poze/cell.png"
+/>
+
+</section>
+
+  <!-- FUNCTII, FORMA, DIMENSIUNI, DURATA DE VIAȚĂ -->
+<section id="functii" class="section">
+  <h2 data-i18n="text_8">Funcții, Formă, Dimensiuni și Durata de viață a celulelor</h2>
+  
+
+  <div class="cards-container">
+
+    <!-- Funcții -->
+    <div class="card">
+      <h3 data-i18n="text_9">🔧 Funcții ale celulei</h3>
+      <ul>
+        <li data-i18n="text_10">Pot conserva mediul intern, pastrandu-l intr-o stare de echilibru (homeostazie)</li>
+        <li data-i18n="text_11">Sintetizează compuși proprii după un cod genetic</li>
+        <li data-i18n="text_12">Au capacitatea de refacere și autoreproducere</li>
+        <li data-i18n="text_13">Se adaptează la condtiile din mediu</li>
+      </ul>
+    </div>
+
+    <!-- Forma -->
+    <div class="card">
+      <h3 data-i18n="text_14">🔵 Forma celulelor</h3>
+      <p data-i18n="text_15">Forma celulelor diferă în funcție de poziția și rolul lor:</p>
+      <ul>
+        <li data-i18n="text_16">Stelată</li>
+        <li data-i18n="text_17">Fusiformă</li>
+        <li data-i18n="text_18">Sferică</li>
+      </ul>
+    </div>
+
+    <!-- Dimensiuni -->
+    <div class="card">
+      <h3 data-i18n="text_19">📏 Dimensiuni ale celulelor</h3>
+      <ul>
+        <li data-i18n="text_20"><strong >Foarte mici:</strong> Bacterie ~0.005 µm</li>
+        <li data-i18n="text_21"><strong >Mici:</strong> Spermatozoid ~5 µm</li>
+        <li data-i18n="text_22"><strong >Medii:</strong> Hematii ~7-7.5 µm</li>
+        <li data-i18n="text_23"><strong >Standard:</strong> Majoritatea celulelor ~10-100 µm</li>
+        <li data-i18n="text_24"><strong >Vizibile cu ochiul liber:</strong> Fibre musculare, celule din citrice</li>
+        <li data-i18n="text_25"><strong >Gigantice:</strong> Ovocitul (ou) de struț ~9 cm</li>
+      </ul>
+    </div>
+
+    <!-- Durata de viață -->
+    <div class="card">
+      <h3 data-i18n="text_26">⏳ Durata de viață a celulelor</h3>
+      <ul>
+        <li data-i18n="text_27">Celulele hepatice: ~10–20 zile</li>
+        <li data-i18n="text_28">Globule roșii (hematii): ~120 zile</li>
+        <li data-i18n="text_29">Globule albe(leucocite): ~1–3 zile</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- COMPOZIȚIE -->
+<section id="compozitie" class="section compozitie-section">
+  <h2 data-i18n="text_30">Compoziția chimică a materiei vii</h2>
+  <div class="content-wrapper">
+   <p data-i18n="text_31">
+      În celulă se găsesc peste <strong>60 de elemente chimice</strong>, dintre care <strong>6 sunt esențiale</strong>: 
+      <strong>Carbon (C)</strong>, <strong >Hidrogen (H)</strong>, 
+      <strong>Oxigen (O)</strong>, <strong >Azot (N)</strong>, 
+      <strong>Fosfor (P)</strong> și <strong>Sulf (S)</strong>.
+    </p>
+    <p data-i18n="text_39">
+      Din punct de vedere chimic, în celulă găsim:
+    </p>
+    <ul>
+      <li><strong data-i18n="text_40">~60% Apă</strong></li>
+      <li data-i18n="text_41"><strong >Substanțe anorganice (S.A.):</strong> cloruri, sulfați, carbonați</li>
+      <ul>
+        <li>
+          <strong data-i18n="text_42">Substanțe organice (S.O.):</strong>
+          <ul class="org-substances">
+            <li>
+              <span class="glucide" data-i18n="text_43">Glucide-sunt reprezentate de carbohidrati:</span>
+              <span class="toggle-examples" data-i18n="text_44">+</span>
+              <ul class="example-list hidden">
+                <li data-i18n="text_45">Glucoză</li>
+                <li data-i18n="text_46">Amidon</li>
+                <li data-i18n="text_47">Glicogen</li>
+                <li data-i18n="text_48">Celuloză</li>
+                <li data-i18n="text_49">Chitina</li>
+              </ul>
+            </li>
+            <li>
+              <span class="lipide" data-i18n="text_50">Lipide</span>
+              <span class="toggle-examples" data-i18n="text_51">+</span>
+              <ul class="example-list hidden">
+                <li data-i18n="text_52">Trigliceride</li>
+                <li data-i18n="text_53">Fosfolipide</li>
+                
+              </ul>
+            </li>
+            <li>
+              <span class="proteine" data-i18n="text_54">Proteine-sunt reprezentate de aminoacizi:</span>
+              <span class="toggle-examples" data-i18n="text_55">+</span>
+              <ul class="example-list hidden">
+                <li data-i18n="text_56">Clorofila</li>
+                <li data-i18n="text_57">Cheratina</li>
+                <li data-i18n="text_58">Colagen</li>
+                <li data-i18n="text_59">Actina</li>
+                <li data-i18n="text_60">Myozina</li>
+                <li data-i18n="text_61">Albumina</li>
+                <li data-i18n="text_62">Anticorpi</li>
+                <li data-i18n="text_63">Hemoglobină</li>
+              </ul>
+            </li>
+            <li>
+              <span class="acizi" data-i18n="text_64">Acizi nucleici</span>
+              <span class="toggle-examples" data-i18n="text_65">+</span>
+              <ul class="example-list hidden">
+                <li data-i18n="text_66">ADN (Acid dezoxiribonucleic)</li>
+                <li data-i18n="text_67">ARN (Acid ribonucleic)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </ul>
+  </div>
+   <img src="assets/poze/so.png" alt="." class="center-img dynamic-img">
+</section>
+
+
+
+ <!-- CARACTERISTICI -->
+<section id="caracteristici" class="section">
+  <h2 data-i18n="text_68">Caracteristici generale și diferențe</h2>
+  <p><strong data-i18n="text_69">Tipuri de celule:</strong></p>
+  <ul>
+    <li data-i18n="text_70"><strong >Procariote:</strong> Celule simple, fără nucleu delimitat (ex: bacterii).</li>
+    <li data-i18n="text_71"><strong >Eucariote:</strong> Celule complexe, cu nucleu și organite delimitate (ex: animale, plante, fungi).</li>
+  </ul>
+
+  <p><strong data-i18n="text_72">Componentele celulei:</strong></p>
+  <ul>
+    <li data-i18n="text_73"><strong >Membrana celulară: </strong> Protejează celula și controlează schimburile cu mediul.</li>
+    <li data-i18n="text_74"><strong >Citoplasma: </strong> Conține organitele și este locul unde au loc majoritatea reacțiilor celulare.</li>
+    <li data-i18n="text_75"><strong >Nucleul: </strong> Prezent la celulele eucariote, conține ADN-ul.</li>
+    <li data-i18n="text_76"><strong >Organite celulare: </strong> Mitocondrii, ribozomi, reticul endoplasmatic, aparat Golgi, lizozomi, vacuole etc.</li>
+    <li data-i18n="text_77"><strong >Perete celular: </strong> Prezent doar la celulele vegetale, oferă protecție și formă.</li>
+  </ul>
+
+  <p data-i18n="text_78">Diferențe între celulele procarionte și eucarionte</p>
+  <table class="differences-table">
+    <thead>
+      <tr>
+        <th data-i18n="text_79">Caracteristică</th>
+        <th data-i18n="text_80">Celule Procarionte</th>
+        <th data-i18n="text_81">Celule Eucarionte</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-i18n="text_82">Nucleu</td>
+        <td data-i18n="text_83">Nu au nucleu delimitat</td>
+        <td data-i18n="text_84">Au nucleu delimitat de membrană</td>
+      </tr>
+      <tr>
+        <td data-i18n="text_85">Dimensiune</td>
+        <td data-i18n="text_86">Mai mici (1-10 µm)</td>
+        <td data-i18n="text_87">Mai mari (10-100 µm)</td>
+      </tr>
+      <tr>
+        <td data-i18n="text_88">Organite</td>
+        <td data-i18n="text_89">Nu au organite delimitate</td>
+        <td data-i18n="text_90">Au organite delimitate (ex: mitocondrii, reticul endoplasmatic)</td>
+      </tr>
+      <tr>
+        <td data-i18n="text_91">Exemple</td>
+        <td data-i18n="text_92">Bacterii</td>
+        <td data-i18n="text_93">Plante, animale, fungi</td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+</section>
+
+
+  <!-- CELULA PROCARIOTĂ -->
+ <section id="pk" class="section light pk-section">
+  <h2 data-i18n="text_94">Celula procariotă</h2>
+  
+  <p data-i18n="text_32"><strong><mark >Definiție:</mark></strong> Celula procariotă este o celulă simplă, fără un nucleu adevărat delimitat de o membrană.</p>
+  <p data-i18n="text_33"><strong><mark >Organizare:</mark></strong> Materialul genetic (<mark>ADN</mark>) este liber în citoplasmă, într-o zonă numită <em >nucleoid</em>.</p>
+  <p data-i18n="text_34"><strong><mark >Dimensiuni:</mark></strong> De obicei mai mici decât celulele eucariote, între <mark >1–10 micrometri</mark>.</p>
+<button id="openImageBtn" class="open-image-btn" data-i18n="text_101">📷 Celula procariotă</button>
+
+<!-- Lightbox pentru imagine -->
+<div id="imageModal" class="image-modal">
+  <span class="close-modal" data-i18n="text_102">×</span>
+  <img class="modal-content" id="modalImage" src="assets/poze/Celulă_procariotă.png" alt="Celula procariotă">
+</div>
+  <h3 data-i18n="text_103">Structuri principale:</h3>
+  <ul>
+    <li class="emoji-wall"><strong><mark data-i18n="text_104">Peretele celular:</mark></strong>
+      <ul>
+        <li data-i18n="text_105">situat la exterior, cu <mark >rol protector</mark></li>
+        <li data-i18n="text_106">format chimic din <mark >mureină</mark></li>
+        <li data-i18n="text_107">la cianobacterii: teacă gelatinoasă + <mark >cili</mark> și <mark>flageli</mark> (locomoție)</li>
+      </ul>
+    </li>
+    <li class="emoji-membrana"><strong><mark data-i18n="text_109">Membrana celulară:</mark></strong>
+      <ul>
+        <li data-i18n="text_110">numită și <mark >plasmalemă</mark></li>
+        <li data-i18n="text_111">separă <mark >citoplasma</mark> de peretele celular</li>
+        <li data-i18n="text_112">conține <mark >lipide</mark> și <mark>proteine</mark> (structură lipoproteică)</li>
+      </ul>
+    </li>
+    <li class="emoji-citoplasma"><strong><mark data-i18n="text_114">Citoplasma:</mark></strong>
+      <ul>
+        <li data-i18n="text_115">umple interiorul celulei</li>
+        <li data-i18n="text_116">lichid <mark >vâscos</mark>, <mark >incolor</mark></li>
+        <li  data-i18n="text_118">conține <mark >apă</mark>, <mark >substanțe organice</mark> și <mark>anorganice</mark></li>
+        <li data-i18n="text_121">nu prezintă <mark >curenți citoplasmatici</mark></li>
+      </ul>
+    </li>
+  <li class="emoji-mezozom"><strong><mark data-i18n="text_122">Mezozomul:</mark></strong>
+      <ul>
+        <li data-i18n="text_123">invaginare a <mark >membranei celulare</mark></li>
+       <li><mark data-i18n="text_7890">roluri:</mark>
+          <ul>
+            <li ><mark data-i18n="text_124">respirație celulară</mark></li>
+            <li ><mark data-i18n="text_125">ancorarea moleculei de ADN (nucleoidul)</mark></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="emoji-nucleoid"><strong><mark data-i18n="text_126">Nucleoidul:</mark></strong>
+      <ul>
+        <li><mark data-i18n="text_127">fără membrană nucleară</mark></li>
+        <li data-i18n="text_128">se află în <mark >citoplasmă</mark></li>
+        <li data-i18n="text_129">ancorat de <mark >mezozom</mark></li>
+        <li data-i18n="text_130">format dintr-o <mark >singură moleculă circulară de ADN</mark> = un singur <mark>cromozom bacterian</mark></li>
+        <li ><mark data-i18n="text_2008">roluri:</mark>
+          <ul>
+            <li><mark data-i18n="text_132">deține și transmite informația genetică</mark></li>
+            <li><mark data-i18n="text_133">creșterea și multiplicarea celulei</mark></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="emoji-ribozomi"><strong><mark data-i18n="text_134">Ribozomii:</mark></strong>
+      <ul>
+        <li  data-i18n="text_135">numiți și <mark>granulele lui Palade</mark> sau „<mark >fabrici de proteine</mark>”</li>
+        <li data-i18n="text_137">alcătuiți din <mark >ARN</mark> + <mark >proteine</mark></li>
+        <li data-i18n="text_139">au <mark >două subunități</mark></li>
+        <li data-i18n="text_140">rol: <mark >sinteza proteinelor</mark></li>
+      </ul>
+    </li>
+    <li class="emoji-fotosinteza"><strong><mark data-i18n="text_141">Aparatul fotosintetic:</mark></strong>
+      <ul>
+        <li data-i18n="text_142">conține <mark >lamele fotosintetice</mark></li>
+        <li data-i18n="text_143">rol: <mark >fotosinteză</mark></li>
+      </ul>
+    </li>
+    <li class="emoji-vacuole"><strong><mark data-i18n="text_144">Sistemul vacuolar:</mark></strong>
+      <ul>
+        <li data-i18n="text_145">totalitatea <mark >vacuolelor</mark> cu <mark >membrană vacuolară</mark></li>
+        <li data-i18n="text_147">conțin <mark >suc vacuolar</mark>: apă + substanțe diverse</li>
+      </ul>
+    </li>
+    <li class="emoji-incluziuni"><strong><mark data-i18n="text_148">Substanțe de rezervă (incluziuni ergastrice):</mark></strong>
+      <ul>
+        <li data-i18n="text_149">depozitate sub formă de <mark >incluziuni</mark></li>
+        <li data-i18n="text_150">rol: <mark >rezervă de energie sau substanțe nutritive</mark></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+ 
+<section id="ek" class="section light ek-section">
+  <h2 data-i18n="text_151">Celula eucariotă</h2>
+
+    <!-- Definiție -->
+  <div class="ek-card">
+    <h3><mark data-i18n="text_152">Definiție:</mark></h3>
+    <p data-i18n="text_153">Celula eucariotă este o celulă complexă, care are un nucleu adevărat delimitat de o membrană nucleară și prezintă organite celulare specializate.</p>
+  </div>
+
+  <!-- Dimensiuni și organizare -->
+  <div class="ek-card">
+    <h3><mark data-i18n="text_154">Dimensiuni și organizare:</mark></h3>
+    <p data-i18n="text_155">Celulele eucariote sunt mai mari decât cele procariote, având dimensiuni cuprinse între aproximativ 10 și 100 micrometri. Ele au o organizare internă complexă, cu compartimente separate, fiecare având funcții specifice.</p>
+ </div>
+<button id="ekOpenImageBtn" class="ek-open-image-btn" data-i18n="text_156">📷 Celula eucariotă</button>
+
+<div id="ekImageModal" class="ek-image-modal">
+  <span class="ek-close-modal" data-i18n="text_157">×</span>
+  <img class="modal-content" id="ekModalImage" src="assets/poze/celula-eucariota.jpg" alt="Celula eucariotă">
+</div>
+ 
+
+
+  <!-- Regnuri -->
+  <div class="ek-card">
+    <h3 data-i18n="text_158">Se găsesc în organisme din regnul:</h3>
+    <div class="ek-regnuri-grid">
+      <div class="ek-regn-card" data-i18n="text_159">🦠 Protista</div>
+      <div class="ek-regn-card" data-i18n="text_160">🍄 Fungi</div>
+      <div class="ek-regn-card" data-i18n="text_161">🌿 Plante</div>
+      <div class="ek-regn-card" data-i18n="text_162">🐾 Animale</div>
+    </div>
+  </div>
+
+  <!-- Componente de bază -->
+  <div class="ek-card">
+    <h3 data-i18n="text_163">Componente de bază:</h3>
+    <div class="ek-list-grid">
+      <div class="ek-chip emoji-membrana" data-i18n="text_164">Membrana celulară</div>
+      <div class="ek-chip emoji-citoplasma" data-i18n="text_165">Citoplasma</div>
+      <div class="ek-chip emoji-nucleu" data-i18n="text_166">Nucleu</div>
+    </div>
+  </div>
+
+  <!-- Organite celulare -->
+  <div class="ek-card">
+    <h3 data-i18n="text_167">Prezintă organite celulare:</h3>
+    <ul>
+      <li><strong><mark data-i18n="text_168">Cu membrană dublă:</mark></strong>
+        <ul>
+          <li class="emoji-nucleu" data-i18n="text_169">Nucleu</li>
+          <li class="emoji-plastide" data-i18n="text_170">Plastide</li>
+          <li class="emoji-mitocondrii" data-i18n="text_171">Mitocondrii</li>
+        </ul>
+      </li>
+      <li><strong><mark data-i18n="text_172">Fără membrană:</mark></strong>
+        <ul>
+          <li class="emoji-ribozomi" data-i18n="text_173">Ribozomi</li>
+          <li class="emoji-centrozom" data-i18n="text_174">Centrozomi</li>
+        </ul>
+      </li>
+      <li><strong><mark data-i18n="text_175">Cu membrană simplă: restul organitelor</mark></strong></li>
+    </ul>
+  </div>
+
+  <!-- Protoplast -->
+  <div class="ek-card">
+    <h3 data-i18n="text_176">Corpul celulei eucariote se numește <em >protoplast</em> și prezintă două tipuri de componente:</h3>
+    <ul>
+      <li data-i18n="text_177"><strong><mark >Nevii</mark> (neprotoplasmatice):</strong>
+        <ul>
+          <li class="emoji-perete" data-i18n="text_178">Peretele celular</li>
+          <li class="emoji-incluziuni" data-i18n="text_179">Incluziunile ergastice</li>
+          <li class="emoji-vacuole" data-i18n="text_180">Vacuolele</li>
+        </ul>
+      </li>
+      <li data-i18n="text_181"><strong><mark >Vii</mark> (protoplasmatice):</strong> restul componentelor</li>
+    </ul>
+  </div>
+  <h3 data-i18n="text_182">Comparație între celula vegetală și cea animală:</h3>
+<div class="ek-table-wrapper">
+  <div id="vegImageModal" class="ek-image-modal">
+  <span class="ek-close-modal" data-i18n="text_183">×</span>
+  <img class="modal-content" src="assets/poze/celula-vegetala.png" alt="Celula vegetală">
+</div><div id="aniImageModal" class="ek-image-modal">
+  <span class="ek-close-modal" data-i18n="text_184">×</span>
+  <img class="modal-content" src="assets/poze/celula-animala.png" alt="Celula animală">
+</div><table class="ek-table">
+   <thead>
+      <tr class="ek-table-header">
+        <th data-i18n="text_185">🌿 Celula vegetală</th>
+        <th data-i18n="text_186">🐾 Celula animală</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-i18n="text_187">Are perete celular</td>
+        <td data-i18n="text_188">-</td>
+      </tr>
+      <tr>
+        <td data-i18n="text_189">Are plastide</td>
+        <td data-i18n="text_190">-</td>
+      </tr>
+      <tr>
+        <td data-i18n="text_191">Are vacuole mari si permanente</td>
+        <td data-i18n="text_192">Are vacuole mici si temporare </td>
+      </tr>
+      <tr>
+        <td data-i18n="text_193">-</td>
+        <td data-i18n="text_194">Are centrozom</td>
+      </tr>
+      <tr>
+  </tr><tr>
+  <td>
+    <button class="ek-open-image-btn" data-target="vegImageModal" data-i18n="text_195">📷 Celulă vegetală</button>
+  </td>
+  <td>
+    <button class="ek-open-image-btn" data-target="aniImageModal" data-i18n="text_196">📷 Celulă animală</button>
+  </td>
+</tr>
+
+<!-- Modal pentru celula vegetală -->
+
+
+<!-- Modal pentru celula animală -->
+
+    </tbody>
+  </table>
+</div>
+</section>
+
+
+ 
+
+  <!-- PERETELE CELULAR -->
+<section id="peretelecelular" class="section light">
+  <h2 data-i18n="text_197">🧱 Peretele celular</h2>
+
+<ul>
+  <li data-i18n="text_136">Se găsește la:
+    <ul>
+      <li data-i18n="text_198">🦠 <strong >bacterii</strong> – Regnul Monera ← format din <strong >MUREINĂ</strong></li>
+      <li data-i18n="text_200">🍄 <strong >ciuperci</strong> – Regnul Fungi ← format din <strong >chitină</strong></li>
+      <li data-i18n="text_202">🌿 <strong >celula vegetală</strong> – Regnul Plante ← din punct de vedere chimic este format din:</li>
+        <ul>
+  
+              <li data-i18n="text_203">• <strong >celuloză</strong> – oferă <em >elasticitate</em> 🌱</li>
+              <li data-i18n="text_205">• <strong >hemiceluloză</strong>– oferă <em >plasticitate</em> 🧬</li>
+              <li data-i18n="text_207">• <strong >pectină</strong>– oferă <em>plasticitate</em> 🧬</li>
+            </ul>
+          
+        </ul>
+      </li>
+    </ul>
+  
+
+   <p class="highlight" data-i18n="text_209">📌 Peretele celular este o structură rigidă care înconjoară membrana celulară a celulelor vegetale, bacteriilor și ciupercilor. Acesta oferă protecție, suport și formă celulei.</p>
+  <p data-i18n="text_210">🌳 La tulpinile lemnoase (arbori, arbuști) pe lângă peretele celular primar apare peretele celular secundar ⇒ sporirea rezistenței</p>
+  <p><strong data-i18n="text_211">🎯 Rolul peretelui celular:</strong></p>
+  <ol>
+    <li data-i18n="text_212">✅ Asigură protecție</li>
+    <li data-i18n="text_213">📏 Asigură poziția în spațiu al plantelor</li>
+    <li data-i18n="text_214">🌪️ Asigură rezistența plantelor la acțiunea factorilor din mediu (vânt, furtună, ploi)</li>
+    <li data-i18n="text_215">💧 Asigură transportul de substanțe (fiind permeabil pentru apă și majoritatea substanțelor solubile în apă)</li>
+  </ol>
+</section>
+
+ <!-- MEMBRANA CELULARĂ -->
+<section id="membranacel" class="section light animated-section">
+  <h2 data-i18n="text_216">🧬 Membrana celulară</h2>
+
+  <!-- FUNCȚII -->
+  <div class="membrana-block">
+    <h3 data-i18n="text_217">📌 Funcții</h3>
+    <ul>
+      <li data-i18n="text_218">📦 Delimitează spațiul celular</li>
+      <li ><mark data-i18n="text_204">📍 Se găsește:</mark>
+        <ul>
+          <li data-i18n="text_219">la exterior în <strong >celula animală</strong></li>
+          <li data-i18n="text_220">sub peretele celular în <strong >celula vegetală</strong></li>
+        </ul>
+      </li>
+      <li><mark data-i18n="text_206">🔁 Transportă substanțe:</mark>
+        <ul>
+          <li data-i18n="text_221">⚡ Activ (cu consum de energie)</li>
+          <li data-i18n="text_222">💤 Pasiv (fără consum de energie)</li>
+        </ul>
+      </li>
+      <li data-i18n="text_223">⚖️ Asigură <strong >homeostazia</strong> (echilibrul celulei)</li>
+      <li data-i18n="text_224">🔒 Are <strong >permeabilitate selectivă</strong></li>
+    </ul>
+  </div>
+
+  <!-- STRUCTURĂ GENERALĂ -->
+  <div class="membrana-block">
+    <h3 data-i18n="text_225">🧪 Structură generală</h3>
+    <ul>
+      <li data-i18n="text_226">Este de natură <strong >fosfolipoproteică</strong></li>
+      <li><mark data-i18n="text_208">Conține în cantități mari:</mark>
+        <ul>
+          <li data-i18n="text_227">🧪 Lipide</li>
+          <li data-i18n="text_228">🧫 Proteine</li>
+        </ul>
+      </li>
+      <li><mark data-i18n="text_2080">Conține în cantități mici:</mark>
+        <ul>
+          <li data-i18n="text_229">🍬 Glucide</li>
+          <li data-i18n="text_230">🧈 Colesterol – reduce fluiditatea membranei</li>
+        </ul>
+      </li>
+      <li data-i18n="text_231" >🧿 Are aspect de <strong >„mozaic fluid”</strong></li>
+    </ul>
+  </div>
+
+  <!-- LIPIDE -->
+  <div class="membrana-block">
+    <h3 data-i18n="text_232">💧 Lipide</h3>
+    <ul>
+      <li data-i18n="text_233">Reprezentate de <strong >fosfolipide</strong></li>
+      <li data-i18n="text_234">Sunt dispuse pe <strong >două straturi</strong></li>
+      <li><mark data-i18n="text_2000">Prezintă:</mark>
+        <ul>
+          <li data-i18n="text_235">💧 Partea <strong >hidrofilă</strong></li>
+          <li data-i18n="text_236">🔥 Partea <strong >hidrofobă</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- PROTEINE -->
+  <div class="membrana-block">
+    <h3 data-i18n="text_237">🔬 Proteine</h3>
+    <ul>
+      <li data-i18n="text_238">Sunt <strong >macromolecule</strong></li>
+
+      <li><strong data-i18n="text_239">Din punct de vedere structural:</strong>
+        <ul>
+          <li data-i18n="text_240">🔗 Transmembranare</li>
+          <li data-i18n="text_241">🧷 Extrinseci</li>
+          <li data-i18n="text_242">🧷 Intrinseci</li>
+        </ul>
+      </li>
+
+      <li><strong data-i18n="text_243">Din punct de vedere funcțional:</strong>
+        <ul>
+          <li data-i18n="text_244">🚪 Canale</li>
+          <li data-i18n="text_245">📡 Receptori</li>
+          <li data-i18n="text_246">🏗️ Susținere</li>
+          <li data-i18n="text_247">🧬 Markeri</li>
+          <li data-i18n="text_248">🧫 Enzime</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+
+  <!-- CITOPLASMA -->
+<section id="citoplasma" class="section light">
+  <h2 data-i18n="text_249">🧫 Citoplasma</h2>
+
+  <div class="citoplasma-block">
+    <ul>
+      <li data-i18n="text_250">🔹 este masa fundamentală a celulei</li>
+      <li data-i18n="text_251">🔹 umple interiorul celulei între membrana nucleară și cea celulară</li>
+      <li data-i18n="text_252">🔹 prezintă curenți citoplasmatici, antrenând în această mișcare și o serie de organite celulare precum mitocondriile și cloroplastele</li>
+      <li data-i18n="text_253">🔹 este formată din 2 părți:</li>
+    </ul>
+
+    <!-- HIALOPLASMA -->
+    <button class="dropdown-toggle" data-i18n="text_254">🔬 HIALOPLASMĂ (matrix citoplasmatic)</button>
+    <div class="dropdown-content">
+      <ul>
+        <li data-i18n="text_255">– este un lichid vâscos, semitransparent, incolor</li>
+        <li data-i18n="text_256">– este un sistem coloidal format din particule numite coloizi/micele ce se găsesc într-o continuă mișcare Browniană</li>
+      </ul>
+    </div>
+
+    <!-- CITOSCHELET -->
+    <button class="dropdown-toggle" data-i18n="text_257">🧱 CITOSCHELET</button>
+    <div class="dropdown-content">
+      <ul>
+        <li data-i18n="text_258">– oferă arhitectura celulei</li>
+        <li data-i18n="text_259">– este o rețea tridimensională de molecule proteice, pe care se dispun organitele celulare</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+  <!-- NUCLEUL -->
+<section id="nucleul" class="section light">
+  <h2 data-i18n="text_260">🧠 Nucleul</h2>
+
+  <div class="nucleus-intro">
+    <p data-i18n="text_261">🔹 Este centrul de comandă și control al celulei</p>
+    <p data-i18n="text_262">🔹 Este <strong >"sediul eredității"</strong></p>
+    <p data-i18n="text_263">🔹 Are acizi nucleici:</p>
+    <ul>
+      <li data-i18n="text_264">🧬 prin <strong >ADN</strong>: deține și transmite informația genetică</li>
+      <li data-i18n="text_265">🧬 prin <strong >ARN</strong>: determină sinteza proteinelor</li>
+    </ul>
+  </div>
+
+  <h3 data-i18n="text_266">🔬 Structura nucleului</h3>
+  <div class="nucleus-structure-grid">
+    <div class="structure-card">🔸 1–2 <strong data-i18n="text_267">nucleoli</strong></div>
+    <div class="structure-card">🔸 <strong data-i18n="text_268">membrană externă</strong></div>
+    <div class="structure-card">🔸 <strong data-i18n="text_269">membrană internă</strong></div>
+    <div class="structure-card">🔸 <strong data-i18n="text_270">spațiu intermembranar</strong></div>
+    <div class="structure-card">🔸 <strong data-i18n="text_271">ribozomi</strong></div>
+    <div class="structure-card">🔸 <strong data-i18n="text_272">pori nucleari</strong></div>
+    <!-- Nucleoplasmă cu sub-elemente integrate -->
+  <div class="structure-card grouped">
+    🔸 <strong data-i18n="text_273">nucleoplasmă (carioplasmă)</strong>
+    <div class="substructure">
+      <div data-i18n="text_274">• partea lichidă: <em >cariolimfă</em></div>
+      <div data-i18n="text_275">• filamente de <em >cromatină</em> (ADN)</div>
+    </div>
+  </div>
+</div>
+
+  <button id="openNucleusModalBtn" class="open-image-btn" data-i18n="text_276">📷 Vezi structura nucleului</button>
+
+  <div id="nucleusModal" class="image-modal">
+    <span class="close-nucleus-modal" data-i18n="text_277">×</span>
+    <img class="modal-content" id="modalNucleusImage" src="assets/poze/nucleu.png" alt="Structura nucleului">
+  </div>
+</section>
+
+
+
+ <section id="mitocondrii" class="section light">
+  <h2 data-i18n="text_278">🔋 Mitocondria</h2>
+
+
+  <!-- Prezentare generală cu buton imagine -->
+<div class="mito-structure-wrapper">
+  <div class="mito-structure-text">
+    <p data-i18n="text_279">🔹 Este un organit celular:</p>
+    <ul>
+      <li data-i18n="text_280">• cu membrană dublă</li>
+      <li data-i18n="text_281">• autodivizibil</li>
+      <li data-i18n="text_282">• cu material genetic propriu – <strong >ADN, ARN mitocondrial</strong></li>
+    </ul>
+
+    <!-- Buton pentru imagine -->
+    <button id="openMitoModalBtn" class="open-image-btn" data-i18n="text_283">📷 Vezi structura mitocondriei</button>
+  </div>
+
+  <!-- Modal lightbox imagine -->
+  <div id="mitoModal" class="image-modal">
+    <span class="close-mito-modal" data-i18n="text_284">×</span>
+    <img class="modal-content" id="modalMitoImage" src="assets/poze/mitocondria.jpg" alt="Structura mitocondriei">
+  </div>
+</div>
+
+
+
+  <!-- Roluri -->
+  <div class="mito-roles">
+    <h3 data-i18n="text_285">📌 Roluri</h3>
+    <ul>
+      <li data-i18n="text_286"><strong >Principal:</strong> realizează <em >respirația celulară</em> și produce energie înmagazinată în <strong >ATP</strong> (acid adenozintrifosforic)</li>
+      <li data-i18n="text_287" class="energy-note">👉 De aceea, mitocondriile sunt numite: <strong >„uzinele energetice ale celulei”</strong></li>
+      <li data-i18n="text_290"><strong >Secundar:</strong> transportă ioni și contribuie la sinteza proteinelor și lipidelor</li>
+    </ul>
+  </div>
+
+  <!-- Respirația celulară -->
+  <div class="respiratie-container">
+    <h3 data-i18n="text_291">⚙️ Respirația celulară</h3>
+    <div class="respiratie-tabel">
+      <div class="etapa">
+        <h4 data-i18n="text_292">🔸 Etapa 1: Glicoliza</h4>
+        <ul>
+          <li data-i18n="text_293">• are loc în <strong >hialoplasmă</strong></li>
+          <li data-i18n="text_294">• <em >anaerobă</em> (fără oxigen)</li>
+          <li data-i18n="text_295">• ardere parțială → compuși organici intermediari</li>
+          <li data-i18n="text_296">• produce puțină energie: <strong >2 moli ATP</strong></li>
+        </ul>
+      </div>
+      <div class="etapa">
+        <h4 data-i18n="text_297">🔸 Etapa 2: Etapa mitocondrială</h4>
+        <ul>
+          <li data-i18n="text_298">• are loc în <strong >mitocondrie</strong></li>
+          <li data-i18n="text_299">• <em >aerobă</em> (cu oxigen)</li>
+          <li data-i18n="text_300">• ardere totală → produși finali</li>
+          <li data-i18n="text_301">• produce multă energie: <strong >36 moli ATP</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ribozomi" class="section light">
+  <h2 data-i18n="text_302">🔬 Ribozomi – Micile fabrici de proteine 🧬</h2>
+
+  <p data-i18n="text_303">Ribozomii sunt organite celulare care joacă un rol esențial în sinteza proteinelor. Aceștia sunt compuși din ARN și proteine și se găsesc în citoplasmă sau atașați de reticulul endoplasmatic.</p>
+
+  <ul>
+    <li data-i18n="text_304">📛 se mai numesc granulele/ corpusculii lui Palade</li>
+    <li data-i18n="text_305">⚪ au formă sferică</li>
+    <li data-i18n="text_306">🧪 prezintă ARN+ proteine</li>
+    <li data-i18n="text_307">🧩 prezintă 2 subunități</li>
+    <li data-i18n="text_308">💪 au rol în sinteza proteinelor</li>
+  </ul>
+
+  <!-- Buton pentru imagine -->
+  <button id="openRiboModalBtn" class="open-image-btn" data-i18n="text_309">🖼️ Vezi structura ribozomului 🔍</button>
+
+  <!-- Modal lightbox imagine -->
+  <div id="riboModal" class="image-modal">
+    <span class="close-ribo-modal" data-i18n="text_310">×</span>
+    <img class="modal-content" id="modalRiboImage" src="assets/poze/ribozomi.jpg" alt="Structura ribozomului">
+  </div>
+</section>
+
+
+   <section id="plastide" class="section light">
+  <h2 data-i18n="text_311">🧫 Plastide</h2>
+  <p data-i18n="text_312">Plastidele sunt organite celulare specifice plantelor, care au roluri variate, inclusiv în fotosinteză și stocarea substanțelor nutritive.</p>
+
+  <div class="plastide-box">
+  <ul class="fancy-list">
+    <li>🔁 <span data-i18n="text_313">cu membrană dublă</span></li>
+    <li>🧬 <span data-i18n="text_314">autodivizibile</span></li>
+    <li>🧾 <span data-i18n="text_315">cu material genetic propriu: ADN, ARN plastidial</span></li>
+    <li>🌿 <span data-i18n="text_316">se găsesc la:</span>
+      <ul>
+        <li>📗 <span data-i18n="text_317">celulele vegetale</span></li>
+        <li>🦠 <span data-i18n="text_318">protiste fotosintetizatoare</span></li>
+      </ul>
+    </li>
+    <li>🔍 <span data-i18n="text_319">Din punct de vedere funcțional plastidele pot fi:</span>
+      <ul>
+        <li>🌱 <span data-i18n="text_320">cloroplaste (fotosinteză)</span></li>
+        <li>🌺 <span data-i18n="text_321">cromoplaste (dau culoare)</span></li>
+        <li>💾 <span data-i18n="text_322">leucoplaste (depozitează substanțe)</span></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+  <!-- Plastide Nefotosintetizatoare -->
+  <details>
+    <summary data-i18n="text_323">🧪 Plastide nefotosintetizatoare</summary>
+    <p><strong data-i18n="text_324">1. Cromoplastele</strong> 🌈</p>
+    <ul>
+      <li data-i18n="text_325">conțin pigmenți: roșii, galbeni, portocalii...</li>
+      <li data-i18n="text_326">dau culoare unor petale, frunze, rădăcini</li>
+    </ul>
+    <p><strong data-i18n="text_327">2. Leucoplastele</strong> ⚪</p>
+    <ul>
+      <li data-i18n="text_328">incolore, fără pigmenți</li>
+      <li data-i18n="text_329">depozitează substanțe de rezervă</li>
+      <li><stong data-i18n="text_3259">se găsesc în:</stong>
+        <ul>
+          <li data-i18n="text_330">porțiunile albicioase ale tulpinilor și frunzelor</li>
+          <li data-i18n="text_331">rădăcinile și tulpinile tuberizate</li>
+          <li data-i18n="text_332">endospermul seminal</li>
+        </ul>
+      </li>
+      <li><stong data-i18n="text_3269">tipuri:</stong>
+        <ul>
+          <li data-i18n="text_333">🔸 proteoplaste (P)</li>
+          <li data-i18n="text_334">🔸 oleoplaste (L)</li>
+          <li data-i18n="text_335">🔸 amiloplaste (G)</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <!-- Plastide Fotosintetizatoare -->
+  <details>
+    <summary data-i18n="text_336">☀️ Plastide fotosintetizatoare</summary>
+    <p><strong data-i18n="text_337">Cloroplastul</strong></p>
+    <ul>
+      <li data-i18n="text_338">conține clorofila 🌿 (= pigment verde)</li>
+      <li data-i18n="text_339">transformă energia luminoasă în energie chimică ⚡</li>
+      <li data-i18n="text_340">rol esențial în fotosinteză – proces autotrof</li>
+    </ul>
+    <p><strong data-i18n="text_341">🌿 Ecuația fotosintezei:</strong></p>
+    <code>6H₂O + 6CO₂ → C₆H₁₂O₆ + 6O₂ + E</code>
+  </details>
+
+  <!-- Fazele fotosintezei -->
+  <details>
+    <summary data-i18n="text_342">📊 Fazele fotosintezei</summary>
+    <p><strong data-i18n="text_343">1. Faza de lumină (faza Hill)</strong> ☀️</p>
+    <ul>
+      <li data-i18n="text_344">are loc în grana</li>
+      <li data-i18n="text_345">lumina absorbită de clorofilă</li>
+      <li data-i18n="text_346">fotoliza apei ➡️ eliberare oxigen</li>
+      <li data-i18n="text_347">⚡ energie stocată în ATP</li>
+    </ul>
+    <p><strong data-i18n="text_348">2. Faza de întuneric (faza Blackman)</strong> 🌑</p>
+    <ul>
+      <li data-i18n="text_349">are loc în stroma</li>
+      <li data-i18n="text_350">reducerea dioxidului de carbon</li>
+      <li data-i18n="text_351">➡️ formare glucoză (substanțe organice)</li>
+    </ul>
+  </details>
+
+  <!-- Buton imagine -->
+  <button id="openPlastideModalBtn" class="open-image-btn" data-i18n="text_352">🖼️ Vezi structura plastidelor</button>
+
+  <!-- Modal lightbox -->
+  <div id="plastideModal" class="image-modal">
+    <span class="close-plastide-modal" data-i18n="text_353">×</span>
+    <img class="modal-content" src="assets/poze/plastide.jpg" alt="Structura plastidelor">
+  </div>
+</section>
+
+
+  <section id="centrozom" class="section light">
+  <h2 data-i18n="text_354">Centrozom</h2>
+  <p class="centrozom-intro" data-i18n="text_355">Centrozomul este o organită esențială în diviziunea celulară, situată aproape de nucleu și formată dintr-un complex centriolar.</p>
+
+  <!-- Buton imagine -->
+  <button id="openCentrozomModalBtn" class="open-image-btn" data-i18n="text_356">🖼️ Vezi structura centrozomului</button>
+
+  <!-- Modal lightbox -->
+  <div id="centrozomModal" class="image-modal">
+    <span class="close-centrozom-modal" data-i18n="text_357">×</span>
+    <img class="modal-content" src="assets/poze/centrozom.png" alt="Structura centrozomilor">
+  </div>
+
+
+  <div class="centrozom-details-grid">
+  <div data-i18n="text_358" class="info-box">✔️ <strong >Prezent:</strong> în celula animală și fungi</div>
+  <div data-i18n="text_359" class="info-box">❌ <strong >Lipsește:</strong> în neuroni</div>
+  <div data-i18n="text_360" class="info-box">📍 <strong >Locație:</strong> Aproape de nucleu</div>
+  <div data-i18n="text_361" class="info-box">⚙️ <strong >Structură:</strong> Zonă citoplasmatică + 1–2 centrioli</div>
+  <div data-i18n="text_362" class="info-box">🎯 <strong >Rol:</strong> Diviziunea celulară, fus de diviziune</div>
+</div>
+</section>
+
+
+  <section id="lizozomi" class="section light">
+  <h2 data-i18n="text_363">🧪 Lizozomi</h2>
+  <p data-i18n="text_364">Lizozomii sunt organite celulare care conțin enzime digestive. Aceștia au rolul de a descompune substanțele nutritive și de a elimina deșeurile din celulă.</p>
+  
+  <ul class="lizozomi-list">
+    <li data-i18n="text_365">⚪ sunt corpusculi sferici</li>
+    <li data-i18n="text_366">🧫 conțin ~ 40 enzime digestive (hidrolitice)</li>
+    <li><stong data-i18n="text_3279">🧬 se găsesc în număr mare în:</stong>
+      <ul>
+        <li data-i18n="text_367">🛡️ celulele fagocitare</li>
+        <li data-i18n="text_368">🩸 leucocite</li>
+        <li data-i18n="text_369">⏳ celule îmbătrânite</li>
+      </ul>
+    </li>
+    <li data-i18n="text_370">🍽️ rol: digestia intracelulară</li>
+  </ul>
+
+  <!-- Buton pentru imagine -->
+  <button id="openLizozomiModalBtn" class="open-image-btn" data-i18n="text_371">📷 Vezi structura lizozomului</button>
+
+  <!-- Modal imagine -->
+  <div id="lizozomiModal" class="image-modal">
+    <span class="close-lizozomi-modal" data-i18n="text_372">×</span>
+    <img class="modal-content" id="modalLizozomiImage" src="assets/poze/lizozomi.jpg" alt="Structura lizozomului">
+  </div>
+</section>
+
+
+  <section id="aparatgolgi" class="section light">
+  <h2 data-i18n="text_373">Aparatul Golgi</h2>
+  <p data-i18n="text_374">Aparatul Golgi este organitul celulei responsabil pentru procesarea și transportul substanțelor. Este format din:</p>
+  <ul class="aparatGolgi-list">
+    <li data-i18n="text_375">totalitatea dictiozomilor,</li>
+    <li data-i18n="text_376">cisterne (saculeti) turtiti și suprapuși care prezintă la capete macro/microvezicule,</li>
+    <li data-i18n="text_377">rol: secretor (elaborarea secretiilor).</li>
+  </ul>
+  <button class="open-image-btn" id="openAparatGolgiModalBtn" data-i18n="text_378">Vezi imaginea</button>
+
+  <div id="aparatGolgiModal" class="image-modal">
+    <span class="close-aparatgolgi-modal" data-i18n="text_379">×</span>
+    <img class="modal-content" src="assets/poze/aparatgolgi.jpg" alt="Aparatul Golgi">
+  </div>
+</section>
+
+  <section id="reticulendoplasmatic" class="reticul-section">
+  <h2 data-i18n="text_380">Reticulul Endoplasmatic</h2>
+  <p data-i18n="text_381">Reticulul endoplasmatic este un sistem de membrane interconectate cu roluri importante în sinteza, transportul și procesarea substanțelor celulare.</p>
+
+  <ul class="reticul-list">
+    <li data-i18n="text_382">Este un sistem de canalicule intracitoplasmatice.</li>
+    <li data-i18n="text_383">Face legătura dintre membrana celulară și cea nucleară.</li>
+    <li data-i18n="text_384">Este mai dezvoltat în celule cu activitate metabolică intensă (ex: celulele hepatice).</li>
+    <li><strong data-i18n="text_3805">Poate fi de 2 tipuri:</strong>
+      <ul class="sublist">
+        <li><strong data-i18n="text_385">Reticul endoplasmatic neted (REN)</strong></li>
+        <li><strong data-i18n="text_386">Reticul endoplasmatic rugos (REG)</strong> – are ribozomi pe suprafață</li>
+      </ul>
+    </li>
+    <li><strong data-i18n="text_3815">Roluri:</strong>
+      <ul class="sublist">
+        <li data-i18n="text_387">Transportul substanțelor prin citoplasmă</li>
+        <li data-i18n="text_388">REN – sinteza lipidelor</li>
+        <li data-i18n="text_389">REG – sinteza proteinelor</li>
+      </ul>
+    </li>
+  </ul>
+
+  <button class="open-reticul-image-btn" data-i18n="text_390">Vezi imaginea</button>
+
+  <div class="reticul-image-modal" id="reticulModal">
+    <span class="close-reticul-modal" data-i18n="text_391">×</span>
+    <img src="assets/poze/reticul.jpg" alt="Reticulul Endoplasmatic" class="modal-content">
+  </div>
+</section>
+
+
+<section id="diviziune" class="section light">
+  <h2 data-i18n="text_392">Diviziunea celulară</h2>
+
+  <div class="container-box">
+    <p data-i18n="text_393">Diviziunea celulară este procesul prin care o celulă se împarte în două sau mai multe celule fiice. Există două tipuri principale de diviziune celulară: mitoză și meioză.</p>
+  </div>
+
+  <div class="container-box">
+    <p data-i18n="text_394">Diviziunea celulară este strict controlată de <strong >nucleu</strong>. Când celulele scapă de sub acest control, ele se pot înmulți haotic și pot forma tumori:</p>
+    <ul>
+      <li data-i18n="text_395"><strong >Benigne</strong>: nu se răspândesc la alte țesuturi</li>
+      <li data-i18n="text_396"><strong >Maligne (canceroase)</strong>: dau metastaze, adică se răspândesc în alte țesuturi și organe</li>
+    </ul>
+  </div>
+
+  <div class="container-box">
+    <p><strong data-i18n="text_397">Există două tipuri de diviziune celulară:</strong></p>
+    <ul>
+      <li><strong data-i18n="text_398">Directă (amitoză)</strong>
+        <ul>
+          <li data-i18n="text_399">Celulele se înmulțesc rapid</li>
+          <li><strong data-i18n="text_3917">Apare la:</strong>
+            <ul>
+              <li data-i18n="text_400">a) procariote</li>
+              <li data-i18n="text_401">b) celule eucariote aflate în diferențiere sau regenerare</li>
+              <li data-i18n="text_402">c) celule canceroase</li>
+            </ul>
+          </li>
+          <li><strong data-i18n="text_4020">Caracteristici:</strong>
+            <ul>
+              <li data-i18n="text_403">a) cromozomii nu sunt evidențiați</li>
+              <li data-i18n="text_404">b) membrana nucleară nu dispare</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container-box">
+    <p><strong data-i18n="text_405">Indirectă (cariochineză):</strong></p>
+    <ul>
+      <li data-i18n="text_406">Diviziunea nucleului precede diviziunea citoplasmei</li>
+      <li data-i18n="text_407">Apare la majoritatea celulelor eucariote</li>
+      <li><strong data-i18n="text_4089">Se clasifică în:</strong>
+        <select id="tipDiviziune">
+          <option disabled="" selected="" data-i18n="text_408">-- Alege tipul --</option>
+          <option value="mitoza" data-i18n="text_409">MITOZA</option>
+          <option value="meioza" data-i18n="text_410">MEIOZĂ</option>
+        </select>
+      </li>
+    </ul>
+    <div id="descriereDiviziune" style="display: none; margin-top: 15px;"></div>
+  </div>
+<h3 data-i18n="text_411">🔍 Diferențe între mitoză și meioză</h3>
+<table class="tabel-diviziune">
+  <thead>
+    <tr>
+      <th data-i18n="text_412">Mitoză</th>
+      <th data-i18n="text_413">Meioză</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-i18n="text_414">Nu are etape</td>
+      <td data-i18n="text_415">Are 2 etape: reductională și ecvațională</td>
+    </tr>
+    <tr>
+      <td data-i18n="text_416">Se formează 2 celule fiice=Somatice=Diploide</td>
+      <td data-i18n="text_417">Se formează 4 celule fiice=Haploide=Gameti</td>
+    </tr>
+    <tr>
+      <td data-i18n="text_418">-</td>
+      <td data-i18n="text_419">Are crossing-over si recombinaea genetică</td>
+    </tr>
+    <tr>
+      <td data-i18n="text_420">-</td>
+      <td data-i18n="text_421">Profaza este mai lunga decat la mitoză</td>
+    </tr>
+    <tr>
+      <td data-i18n="text_422">Interfaza dubleaza cantitatea de ADN</td>
+      <td data-i18n="text_423">Interfaza NU dubleaza cantitatea de ADN</td>
+    </tr>
+  </tbody>
+</table>
+
+  
+    <img src="assets/poze/diviziune.png" alt="Imagine diviziune celulară">
+  </section>
+
+
+
+
+  <!-- MITOZA -->
+
+  <section id="mitoza" class="section light">
+  <h2 data-i18n="text_424">🔬 MITOZA</h2>
+  <p data-i18n="text_425">Mitoza este un proces de diviziune celulară care are loc în celulele somatice. Acesta constă în patru etape principale: profaza, metafaza, anafaza și telofaza. Mitoza asigură formarea a două celule fiice identice dintr-o celulă mamă.</p>
+
+  <div class="accordion-container">
+
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_426">🌀 Profaza</button>
+      <div class="accordion-content">
+        <ul>
+          <li data-i18n="text_427">🔹 este cea mai lungă fază</li>
+          <li data-i18n="text_428">🔹 crește volumul nucleului</li>
+          <li data-i18n="text_429">🔹 dispar membrana nucleară + nucleolii</li>
+          <li data-i18n="text_430">🔹 se individualizează cromozomii bicromatidici</li>
+          <li data-i18n="text_431">🔹 diviziunea cromozomilor + deplasarea celor 2 centrioli la cei 2 poli</li>
+          <li data-i18n="text_432">🔹 are loc fusul de diviziune</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_433">📐 Metafaza</button>
+      <div class="accordion-content">
+        <ul>
+          <li data-i18n="text_434">🔹 se vede cel mai clar fusul de diviziune (formarea completă) + poziționarea centriolilor la cei 2 poli</li>
+          <li data-i18n="text_435">🔹 cromozomii bicromatidici sunt evidențiați</li>
+          <li data-i18n="text_436">🔹 cele 2 cromatide sunt despărțite ⇒ cromozomi monocromatidici</li>
+          <li data-i18n="text_437">🔹 cromozomii sunt agățați de centromer</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_438">🎯 Anafaza</button>
+      <div class="accordion-content">
+        <ul>
+          <li data-i18n="text_439">🔹 cromozomii monocromatidici sunt atrași de cei 2 poli datorită contracției filamentelor fusului de diviziune</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_440">🌱 Telofaza</button>
+      <div class="accordion-content">
+        <ul>
+          <li data-i18n="text_441">🔹 se dezorganizează cromozomii monocromatidici (iau formă de filamente de cromatină)</li>
+          <li data-i18n="text_442">🔹 apare membrana nucleară + nucleolii</li>
+          <li data-i18n="text_443">🔹 dispare fusul de diviziune</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" data-i18n="text_444">🧫 După mitoză</button>
+      <div class="accordion-content">
+        <ul>
+          <li data-i18n="text_445">🔹 începe diviziunea citoplasmatică (citochineză)</li>
+          <li data-i18n="text_446">🔹 apare o membrană despărțitoare ⇒ 2 celule fiice</li>
+          <li data-i18n="text_447">🔹 urmează interfaza, unde celulele își dublează cantitatea de ADN și se reia ciclul</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="open-mitoza-image-btn" data-i18n="text_448">🖼️ Vezi imaginea</button>
+
+  <div class="mitoza-image-modal" id="mitozaModal">
+    <span class="close-mitoza-modal" data-i18n="text_449">×</span>
+    <img src="assets/poze/mitoza.jpg" alt="Mitoza" class="modal-content">
+  </div>
+
+</section>
+
+
+
+  <!-- Meioza -->
+    <section id="meioza" class="section light">
+    <h2 data-i18n="text_450">Meioza</h2>
+<p data-i18n="text_451">Meioza este un tip special de diviziune celulară care are loc în celulele reproducătoare (gameți), prin care dintr-o celulă diploidă se obțin patru celule haploide, fiecare cu jumătate din numărul inițial de cromozomi.</p>
+
+<div class="accordion-container">
+  <!-- Etapa I -->
+  <div class="accordion-item">
+    <button class="accordion-header" data-i18n="text_452">Etapa I (reducțională)</button>
+    <div class="accordion-content">
+      <ul>
+        <li><strong data-i18n="text_453">Profaza I</strong>
+          <ul>
+            <li data-i18n="text_454">Mai lungă decât profaza mitotică</li>
+            <li data-i18n="text_455">Individualizarea cromozomilor bicromatidici</li>
+            <li data-i18n="text_456">Recombinarea cromozomilor omologi ⇒ tetrade (cromozomi tetracromatidici)</li>
+            <li data-i18n="text_457">Crossing-over → 2 cromatide schimbă informație genetică</li>
+            <li data-i18n="text_458">Dispar membrana nucleară și nucleolii</li>
+            <li data-i18n="text_459">Începe formarea fusului de diviziune</li>
+          </ul>
+        </li>
+        <li><strong data-i18n="text_460">Metafaza I</strong>
+          <ul>
+            <li data-i18n="text_461">Cromozomii tetracromatidici se aliniază pe placa metafazică</li>
+            <li data-i18n="text_462">Are loc separarea cromozomilor omologi ⇒ cromozomi bicromatidici</li>
+          </ul>
+        </li>
+        <li><strong data-i18n="text_463">Anafaza I</strong>
+          <ul>
+            <li data-i18n="text_464">Cromozomii bicromatidici recombinați migrează spre polii opuși</li>
+          </ul>
+        </li>
+        <li><strong data-i18n="text_465">Telofaza I</strong>
+          <ul>
+            <li data-i18n="text_466">Cromozomii ajung la poli, se despiralizează</li>
+            <li data-i18n="text_467">Se formează doi nuclei, se reface membrana nucleară</li>
+          </ul>
+        </li>
+        <li data-i18n="text_468">Ulterior are loc diviziunea citoplasmei ⇒ 2 celule-fiice haploide</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Etapa II -->
+  <div class="accordion-item">
+    <button class="accordion-header" data-i18n="text_469">Etapa II (ecvațională)</button>
+    <div class="accordion-content">
+      <ul>
+        <li data-i18n="text_470">Are loc după o scurtă interfază fără replicare ADN</li>
+        <li data-i18n="text_471">Fiecare celulă haploidă intră într-o diviziune similară mitozei:</li>
+        <li data-i18n="text_472"><strong >Profaza II</strong>, <strong >Metafaza II</strong>, <strong>Anafaza II</strong>, <strong >Telofaza II</strong></li>
+        <li data-i18n="text_476">La final → 4 celule haploide cu <em >n</em> cromozomi</li>
+        <li data-i18n="text_477">Aceste celule nu se mai divid, dar au material genetic mozaicat (matern + patern)</li>
+        <li data-i18n="text_478">Fecundația → două celule haploide se unesc ⇒ zigot diploid</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Poza și butonul pentru deschiderea imaginii -->
+<button class="open-meioza-image-btn" data-i18n="text_479">Vezi imagine meioza</button>
+
+<!-- Modalul pentru imagine -->
+<div class="meioza-image-modal" id="meiozaImageModal">
+  <span class="close-meioza-modal" id="closeMeiozaModal" data-i18n="text_480">×</span>
+  <img class="modal-content" id="meiozaModalImage" src="assets/poze/meioza.jpg" alt="Meioza">
+</div>
+    </section>
+
+
+   
+<section id="cromozom">
+  <h2 data-i18n="text_481">🧬 Cromozomul</h2>
+  <p data-i18n="text_482"><strong >Definiție:</strong> structură permanentă în nucleu și sunt vizibile în timpul diviziunii nucleului.</p>
+
+  <h3 data-i18n="text_483">🧫 Cariotipul (numărul de cromozomi)</h3>
+  <ul>
+    <li data-i18n="text_484"><strong >Om:</strong> 46 cromozomi (= 23 perechi)
+      <ul>
+        <li data-i18n="text_485">44 autozomi identici (= 22 perechi)</li>
+        <li data-i18n="text_486">2 heterozomi (= o pereche)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 data-i18n="text_487">🧪 Tipuri de celule</h3>
+  <ul>
+    <li><strong data-i18n="text_4880">Celulele pot fi:</strong>
+      <ul>
+        <li data-i18n="text_488"><strong >ale corpului = SOMATICE = 2n = DIPLOIDE</strong> – numărul întreg de cromozomi → apar în urma <em >MITOZEI</em> 🔄</li>
+        <li data-i18n="text_490"><strong >reproducătoare = GAMEȚI = n = HAPLOIDE</strong> – cu număr redus la jumătate de cromozomi → apar în urma <em >MEIOZEI</em> ⚛️</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 data-i18n="text_492">🧬 Tipuri de cromozomi</h3>
+  <ul>
+    <li><strong data-i18n="text_493">Cromozomii pot fi:</strong>
+      <ul>
+        <li data-i18n="text_494">bicromatidici (2 brațe) ✌️</li>
+        <li data-i18n="text_495">monocromatidici (1 braț) ☝️</li>
+        <li data-i18n="text_496">tetracromatidici (4 brațe) 🖐️</li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- Poza și butonul pentru deschiderea imaginii -->
+<button class="open-cromozom-image-btn" data-i18n="text_497">Vezi imagine Cromozom</button>
+
+<!-- Modalul pentru imagine -->
+<div class="cromozom-image-modal" id="cromozomImageModal">
+  <span class="close-cromozom-modal" id="closecromozomModal" data-i18n="text_498">×</span>
+  <img class="modal-content" id="cromozomModalImage" src="assets/poze/centrozom.gif" alt="Cromozom">
+</div>
+</section>
+</div>
+
+
+<select id="lang-select">
+  <option value="ro" data-i18n="text_499">Română</option>
+  <option value="en" data-i18n="text_500">Engleză</option>
+  <option value="es" data-i18n="text_501">Spaniolă</option>
+  <option value="zh" data-i18n="text_502">Chineză</option>
+  <option value="ar" data-i18n="text_503">Arabă</option>
+  <option value="hi" data-i18n="text_504">Hindi</option>
+  <option value="fr" data-i18n="text_505">Franceză</option>
+  <option value="ru" data-i18n="text_506">Rusă</option>
+</select>
+
+
+
+  <!-- ÎNAPOI -->
+  <div class="buttons" style="margin-bottom: 3rem;">
+    <button id="goBackBtn" data-i18n="text_507">Înapoi la Sisteme</button>
+  </div>
+
+  <!-- SWITCH TEMĂ -->
+  <div id="theme-toggle" onclick="toggleTheme()">
+    <i class="bx bx-moon"></i>
+  </div>
+<button id="scrollTopBtn" title="Du-te sus">
+  <i class="bx bx-up-arrow-alt"></i>
+</button>
+
+
+<!-- Buton deschidere ChatBot -->
+<div id="chat-toggle"><i class="bx bx-bot"></i></div>
+
+<!-- Fereastra ChatBot -->
+<div id="chat-box">
+  <div id="chat-header">
+    <span data-i18n="text_508">BioBot</span>
+    <button id="chat-close" data-i18n="text_509">✖</button>
+  </div>
+  <iframe src="bio-bot2.html"></iframe>
+</div>
+
+
+<script>
+  function toggleNotite() {
+    const panel = document.getElementById("notitePanel");
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  }
+</script>
+
+ <script src="assets/js/script-celula.js"></script>
+
+<script src="assets/js/script-activitate.js"></script>
+<script src="assets/traducerile/celula-traducere.js"></script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="text_001">Sistemul Reproducător</title>
+  <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<!--Google Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles-reproducator.css">
+</head>
+
+
+  
+<body>
+     <!-- Butonul pentru meniul retractabil -->
+   <div id="menu-toggle" class="menu-toggle">
+    <i class="bx bx-menu"></i> <!-- Iconița pentru meniu -->
+  </div>
+ <!-- Buton Notițe în colțul dreapta sus -->
+<div id="notite-btn-container" class="top-right">
+  <button id="notiteBtn" class="notite-btn" onclick="toggleNotite()">
+    <i class="bx bx-notepad"></i><span data-i18n="text_00">Notițe</span> 
+  </button>
+</div>
+
+<!-- Panoul Notițe -->
+<div id="notitePanel" class="notite-panel">
+  <div class="notite-header">
+    <span data-i18n="text_0">Notițele mele</span>
+    <span class="close-small" onclick="toggleNotite()" data-i18n="text_1">×</span>
+  </div>
+  <iframe src="notite1.html"></iframe>
+</div>
+
+
+
+<div id="side-menu" class="side-menu">
+  <ul>
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-book-open"></i><span data-i18n="side_menu_intro">Introducere</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#ce-este"><i class="bx bx-question-mark"></i> <span data-i18n="side_menu_ce_este">Ce este sistemul reproducător?</span></a></li>
+        <li><a href="#functii"><i class="bx bx-cog"></i> <span data-i18n="side_menu_functii">Funcțiile sistemului reproducător</span></a></li>
+        <li><a href="#clasificare"><i class="bx bx-layer"></i> <span data-i18n="side_menu_clasificare">Componentele sistemului reproducător</span></a></li>
+        <li><a href="#structura-masculin"><i class="bx bx-body"></i> <span data-i18n="side_menu_structura-m">Structura și funcțiile organelor reproducătoare masculine</span></a></li>
+      <li><a href="#structura-feminin"><i class="bx bx-body"></i> <span data-i18n="side_menu_structura-f">Structura și funcțiile organelor reproducătoare feminine</span></a></li>
+      </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-network-chart"></i> <span data-i18n="side_menu_scheletul_uman">Procese și reglare</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#axial"><i class="bx bx-body"></i> <span data-i18n="side_menu_scheletul_axial">Procesul reproducției umane</span></a></li>
+        <li><a href="#hormoni-repro"><i class="bx bx-extension"></i> <span data-i18n="side_menu_scheletul_apendicular">Hormonii implicați în reproducere</span></a></li>
+        <li><a href="#afectiuni-repro"><i class="bx bx-walk"></i> <span data-i18n="side_menu_membre_superioare">Afecțiuni ale sistemului reproducător</span></a></li>
+        </ul>
+    </li>
+
+
+    <li>
+      <a href="#harta-sistem"><i class="bx bx-map"></i> <span data-i18n="side_menu_harta_schematică">Hartă schematică</span></a>
+    </li>
+  </ul>
+</div>
+
+       
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <h1 data-i18n="text_2">Sistemul reproducător</h1>
+    <p data-i18n="text_3">Descoperă structura și funcțiile sistemului reproducător.</p>
+  <div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Caută..." autocomplete="off">
+  <div id="searchInfo" style="font-size: 0.9em; margin-top: 4px; color: #555;"></div>
+</div>
+  </header>
+
+ <div id="searchContainer">
+  <!-- CE ESTE? -->
+<section id="ce-este" class="section">
+  <h2 data-i18n="text_4">Ce este sistemul reproducător?</h2>
+  <div class="content-wrapper"></div>
+  <p data-i18n="text_5">
+    <strong>Sistemul reproducător</strong> este ansamblul organelor care asigură reproducerea speciei umane prin producerea, maturarea și unirea celulelor germinale (gametelor), precum și susținerea dezvoltării embrionului. Este format din organe diferite la bărbat și femeie, cu funcții specifice în reproducere.
+  </p>
+  <img src="assets/poze/sistemul-reproducator.png" alt="scheletul-uman" class="center-img dynamic-img">
+</section>
+
+<!-- FUNCȚIILE SISTEMULUI REPRODUCĂTOR -->
+<section id="functii" class="section">
+  <h2 data-i18n="text_6">2. Funcțiile sistemului reproducător</h2>
+  <div class="tabel-functii-container">
+    <table class="tabel-functii">
+      <thead>
+        <tr>
+          <th data-i18n="text_7">Funcție</th>
+          <th data-i18n="text_8">Descriere</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-i18n="text_9">Producerea gametelor</td>
+          <td data-i18n="text_10">Spermatogeneza la bărbat (spermatozoizi), ovogeneza la femeie (ovule)</td>
+        </tr>
+        <tr>
+          <td data-i18n="text_11">Fertilizarea</td>
+          <td data-i18n="text_12">Întâlnirea și unirea spermatozoidului cu ovulul pentru formarea zigotului</td>
+        </tr>
+        <tr>
+          <td data-i18n="text_13">Dezvoltarea embrionului</td>
+          <td data-i18n="text_14">Oferă condiții pentru dezvoltarea și protecția embrionului (în uter la femeie)</td>
+        </tr>
+        <tr>
+          <td data-i18n="text_15">Secreția hormonilor</td>
+          <td data-i18n="text_16">Producerea hormonilor sexuali (testosteron, estrogen, progesteron) care reglează funcțiile sexuale și reproducerea</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- COMPONENTELE SISTEMULUI REPRODUCĂTOR -->
+<section id="clasificare" class="section">
+  <h2 data-i18n="text_23">3. Componentele sistemului reproducător</h2>
+  <div class="tabel-clasificare-container">
+    <table class="tabel-clasificare">
+      <thead>
+        <tr>
+          <th data-i18n="text_24">Sistem reproducător masculin</th>
+          <th data-i18n="text_25">Sistem reproducător feminin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-i18n="text_27">Testicule</td>
+          <td data-i18n="text_28">Ovare</td>
+        </tr>
+        <tr>
+          <td data-i18n="text_30">Epididim</td>
+          <td data-i18n="text_31">Trompe uterine (trompe Fallopiene)</td>
+        </tr>
+        <tr>
+          <td data-i18n="text_33">Canal deferent</td>
+          <td data-i18n="text_34">Uter</td>
+        </tr>
+        <tr>
+          <td data-i18n="text_36">Uretra</td>
+          <td data-i18n="text_37">Vagin</td>
+        </tr>
+        <tr>
+          <td data-i18n="text_39">Glandele anexă (prostată, vezicule seminale)</td>
+          <td data-i18n="text_40">Vulvă, clitoris</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+ <section id="structura-masculin" class="section">
+  <h2>4. Structura și funcțiile organelor reproducătoare masculine</h2>
+
+  <details class="accordion-box">
+    <summary>Organe și roluri</summary>
+    <ul>
+      <li><strong>Testicule:</strong> Glande pereche care produc spermatozoizi și testosteron</li>
+      <li><strong>Epididim:</strong> Depozit și loc de maturare a spermatozoizilor</li>
+      <li><strong>Canal deferent:</strong> Transportă spermatozoizii spre uretră</li>
+      <li><strong>Uretra:</strong> Canal comun pentru urină și spermă</li>
+      <li><strong>Vezicule seminale:</strong> Secreție nutritivă pentru spermatozoizi</li>
+      <li><strong>Prostată:</strong> Lichid protector pentru spermatozoizi</li>
+    </ul>
+  </details>
+
+  <details class="accordion-box">
+    <summary>Funcții principale</summary>
+    <ul>
+      <li><strong>Spermatogeneza:</strong> Producerea spermatozoizilor în testicule</li>
+      <li><strong>Secreție hormonală:</strong> Testosteronul reglează funcțiile sexuale</li>
+      <li><strong>Transportul gametului:</strong> Asigurarea traseului spermatozoizilor</li>
+      <li><strong>Fertilizarea:</strong> Participarea la unirea cu ovulul</li>
+    </ul>
+  </details>
+</section>
+
+
+<section id="structura-feminin" class="section">
+  <h2>5. Structura și funcțiile organelor reproducătoare feminine</h2>
+
+  <details class="accordion-box">
+    <summary>Organe și roluri</summary>
+    <ul>
+      <li><strong>Ovare:</strong> Produc ovule și secretă hormonii estrogen și progesteron</li>
+      <li><strong>Trompe uterine:</strong> Transportă ovulul spre uter și reprezintă locul fertilizării</li>
+      <li><strong>Uter:</strong> Organ muscular unde se implantează și dezvoltă embrionul</li>
+      <li><strong>Vagin:</strong> Canal muscular elastic, primește spermatozoizii și servește ca ieșire la naștere</li>
+      <li><strong>Vulva:</strong> Ansamblu de organe genitale externe feminine</li>
+    </ul>
+  </details>
+
+  <details class="accordion-box">
+    <summary>Funcții principale</summary>
+    <ul>
+      <li><strong>Ovogeneza:</strong> Producerea ovulelor în ovare</li>
+      <li><strong>Fertilizarea și dezvoltarea embrionului:</strong> Asigurarea condițiilor pentru sarcină</li>
+      <li><strong>Menstruația:</strong> Reglarea ciclului menstrual prin hormonii sexuali</li>
+      <li><strong>Nașterea:</strong> Expulzarea fătului prin canalul vaginal</li>
+    </ul>
+  </details>
+</section>
+
+  
+<section id="axial" class="section">
+  <h2>6. Procesul reproducției umane</h2>
+
+  <div class="axial-cards">
+    <div class="axial-card">
+      <h3>🧬 Ovogeneza</h3>
+      <p>Formarea ovulelor în ovare</p>
+    </div>
+
+    <div class="axial-card">
+      <h3>🧬 Spermatogeneza</h3>
+      <p>Formarea spermatozoizilor în testicule</p>
+    </div>
+
+    <div class="axial-card">
+      <h3>🔄 Ovulația</h3>
+      <p>Eliberarea ovulului matur din ovar</p>
+    </div>
+
+    <div class="axial-card">
+      <h3>❤️ Fertilizarea</h3>
+      <p>Fuziunea spermatozoidului cu ovulul, de obicei în trompa uterină</p>
+    </div>
+
+    <div class="axial-card">
+      <h3>🧫 Dezvoltarea embrionului</h3>
+      <p>Implantarea zigotului în uter și dezvoltarea fătului</p>
+    </div>
+
+    <div class="axial-card">
+      <h3>👶 Nașterea</h3>
+      <p>Expulzarea fătului prin canalul vaginal</p>
+    </div>
+  </div>
+</section>
+
+<section id="hormoni-repro" class="section">
+  <h2>7. Hormonii implicați în reproducere</h2>
+
+  <div class="tabs" id="tabs-hormoni-repro">
+    <nav class="tab-nav">
+      <button class="tab-link active" data-tab="testosteron">Testosteron</button>
+      <button class="tab-link" data-tab="estrogen">Estrogen</button>
+      <button class="tab-link" data-tab="progesteron">Progesteron</button>
+      <button class="tab-link" data-tab="fsh">FSH</button>
+      <button class="tab-link" data-tab="lh">LH</button>
+    </nav>
+
+    <div class="tab-content active" id="testosteron">
+      <h3>Testosteron</h3>
+      <p><strong>Loc de secreție:</strong> Testicule</p>
+      <p><strong>Rol principal:</strong> Dezvoltarea caracterelor sexuale masculine, spermatogeneza.</p>
+    </div>
+
+    <div class="tab-content" id="estrogen">
+      <h3>Estrogen</h3>
+      <p><strong>Loc de secreție:</strong> Ovare</p>
+      <p><strong>Rol principal:</strong> Dezvoltarea caracterelor sexuale feminine, ciclul menstrual.</p>
+    </div>
+
+    <div class="tab-content" id="progesteron">
+      <h3>Progesteron</h3>
+      <p><strong>Loc de secreție:</strong> Ovare</p>
+      <p><strong>Rol principal:</strong> Pregătirea uterului pentru sarcină, menținerea sarcinii.</p>
+    </div>
+
+    <div class="tab-content" id="fsh">
+      <h3>FSH (hormon foliculostimulant)</h3>
+      <p><strong>Loc de secreție:</strong> Hipofiză</p>
+      <p><strong>Rol principal:</strong> Stimulează maturarea ovulelor și spermatogeneza.</p>
+    </div>
+
+    <div class="tab-content" id="lh">
+      <h3>LH (hormon luteinizant)</h3>
+      <p><strong>Loc de secreție:</strong> Hipofiză</p>
+      <p><strong>Rol principal:</strong> Stimulează ovulația și secreția de testosteron.</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="afectiuni-repro" class="section">
+  <h2>8. Afecțiuni ale sistemului reproducător</h2>
+
+  <div class="table-wrapper">
+    <table class="fancy-table">
+      <thead>
+        <tr>
+          <th>Afecțiune</th>
+          <th>Descriere</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Infertilitatea</td>
+          <td>Incapacitatea de a concepe după un an de încercări</td>
+        </tr>
+        <tr>
+          <td>Endometrioza</td>
+          <td>Creșterea țesutului endometrial în afara uterului</td>
+        </tr>
+        <tr>
+          <td>Prostatita</td>
+          <td>Inflamație a prostatei</td>
+        </tr>
+        <tr>
+          <td>Varicocelul</td>
+          <td>Dilatarea venelor testiculare, afectează fertilitatea</td>
+        </tr>
+        <tr>
+          <td>Infecții cu transmitere sexuală (ITS)</td>
+          <td>Afectează funcția reproductivă, cauzează complicații</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+<section id="harta-sistem" class="section">
+  <h2>🧬 SISTEMUL REPRODUCĂTOR — Hartă schematică</h2>
+
+  <ul class="tree">
+    <li>
+      <span class="branch-label">👨 Sistem reproducător masculin</span>
+      <ul>
+        <li>🟢 Testicule (produc spermatozoizi și testosteron)</li>
+        <li>🟠 Epididim (maturarea spermatozoizilor)</li>
+        <li>🟡 Canal deferent (transport spermatozoizi)</li>
+        <li>🔵 Prostată și vezicule seminale (lichid nutritiv și protecție)</li>
+        <li>🟣 Uretra (canal comun pentru urină și spermă)</li>
+      </ul>
+    </li>
+    <li>
+      <span class="branch-label">👩 Sistem reproducător feminin</span>
+      <ul>
+        <li>🟢 Ovare (produc ovule, estrogen, progesteron)</li>
+        <li>🟠 Trompe uterine (loc fertilizare, transport ovul)</li>
+        <li>🟡 Uter (dezvoltare embrion)</li>
+        <li>🔵 Vagin (canal de naștere, receptacul spermatozoizi)</li>
+        <li>🟣 Vulvă (organe genitale externe)</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+
+
+</div>
+
+ <!-- ÎNAPOI -->
+  <div class="buttons" style="margin-bottom: 3rem;">
+    <button id="goBackBtn" data-i18n="text_233">Înapoi la Sisteme</button>
+  </div>
+
+  <!-- SWITCH TEMĂ -->
+  <div id="theme-toggle" onclick="toggleTheme()">
+    <i class="bx bx-moon"></i>
+  </div>
+<button id="scrollTopBtn" title="Du-te sus" style="display: flex;">
+  <i class="bx bx-up-arrow-alt"></i>
+</button>
+
+
+<!-- Buton deschidere ChatBot -->
+<div id="chat-toggle"><i class="bx bx-bot"></i></div>
+
+<!-- Fereastra ChatBot -->
+<div id="chat-box">
+  <div id="chat-header">
+    <span data-i18n="text_234">BioBot</span>
+    <button id="chat-close" data-i18n="text_235">✖</button>
+  </div>
+  <iframe src="bio-bot2.html"></iframe>
+</div>
+
+<select id="lang-select">
+  <option value="ro" data-i18n="text_499">Română</option>
+  <option value="en" data-i18n="text_500">Engleză</option>
+  <option value="es" data-i18n="text_501">Spaniolă</option>
+  <option value="zh" data-i18n="text_502">Chineză</option>
+  <option value="ar" data-i18n="text_503">Arabă</option>
+  <option value="hi" data-i18n="text_504">Hindi</option>
+  <option value="fr" data-i18n="text_505">Franceză</option>
+  <option value="ru" data-i18n="text_506">Rusă</option>
+</select>
+
+
+
+
+
+
+  <script src="assets/js/script-reproducator.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="assets/js/script-activitate.js"></script>
+<script src="assets/traducerile/reproducator-traducere.js"></script>
+</body>
+</html>

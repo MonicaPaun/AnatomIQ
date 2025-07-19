@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sistemul reproducător</title>
+   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f3e5f5, #ce93d8); /* Nuanțe de mov deschis */
+      font-family: 'Poppins', sans-serif;
+      color: #4a148c; /* Mov închis pentru text */
+      padding: 40px 20px;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4a148c;
+      font-size: 36px;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 4px rgba(74, 20, 140, 0.2);
+    }
+
+    header {
+      text-align: center;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #4a148c;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 6px rgba(74, 20, 140, 0.3);
+    }
+
+    .description {
+      text-align: center;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+      color: #38006b;
+      padding: 0 10px;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .model-card {
+      background: rgba(74, 20, 140, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(74, 20, 140, 0.15);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .model-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(74, 20, 140, 0.3);
+    }
+
+    .model-info {
+      padding: 1.5rem;
+      background-color: rgba(74, 20, 140, 0.07);
+    }
+
+    .model-info h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #4a148c;
+    }
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border: none;
+    }
+
+    .back-button-fixed {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #4a148c, #ce93d8);
+      color: #2c0451;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 20px rgba(74, 20, 140, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .back-button-fixed:hover {
+      background: linear-gradient(135deg, #ce93d8, #4a148c);
+      color: #16022a;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      color: #38006b;
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+    }
+    /* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+body.dark {
+  background: linear-gradient(135deg, #2e003e, #4a0072); /* Mov închis pentru fundal */
+  font-family: 'Poppins', sans-serif;
+  color: #e1bee7; /* Mov pastel pentru text */
+  padding: 40px 20px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body.dark h2 {
+  text-align: center;
+  color: #f3e5f5; /* Mov foarte deschis */
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 4px rgba(236, 179, 255, 0.3); /* Umbră subtilă mov deschis */
+}
+
+body.dark header {
+  color: #f3e5f5;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 800;
+  padding: 3rem 2rem 1rem;
+  text-shadow: 1px 1px 6px rgba(236, 179, 255, 0.25);
+}
+
+body.dark .description {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ce93d8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+body.dark .model-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(206, 147, 216, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .model-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(206, 147, 216, 0.4);
+}
+
+body.dark .model-info {
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #f3e5f5;
+  text-align: center;
+}
+
+body.dark .model-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ce93d8;
+  text-shadow: 1px 1px 4px rgba(206, 147, 216, 0.2);
+}
+
+body.dark iframe {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: none;
+  border-radius: 0 0 20px 20px;
+  display: block;
+  filter: brightness(0.9) contrast(1.05);
+}
+
+body.dark footer {
+  text-align: center;
+  color: #ce93d8;
+  font-size: 0.9rem;
+  padding: 2rem 1rem 0;
+  user-select: none;
+}
+
+body.dark .back-button-fixed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #8e24aa, #ab47bc); /* Nuante vibrante de mov */
+  color: #f3e5f5;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+body.dark .back-button-fixed:hover {
+  background: linear-gradient(135deg, #ab47bc, #8e24aa);
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
+  </style>
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+  <header>Sistemul reproducător</header>
+
+  <p class="description">
+    Explorează sistemul reproducător uman prin modelele interactive feminine și masculine de mai jos.
+  </p>
+
+  <div class="container">
+
+    <div class="model-card">
+      <div class="model-info">
+        <h2>Sistemul reproducător feminin</h2>
+      </div>
+      <iframe
+        id="embedded-female-repro"
+        frameborder="0"
+        allowfullscreen="true"
+        loading="lazy"
+        src="https://human.biodigital.com/viewer/?id=6GY8&ui-anatomy-descriptions=true&ui-anatomy-pronunciations=true&ui-anatomy-labels=true&ui-audio=true&ui-chapter-list=false&ui-fullscreen=true&ui-help=true&ui-info=true&ui-label-list=true&ui-layers=true&ui-skin-layers=true&ui-loader=circle&ui-media-controls=full&ui-menu=true&ui-nav=true&ui-search=true&ui-tools=true&ui-tutorial=true&ui-undo=true&ui-whiteboard=true&initial.hand=true&disable-scroll=false&uaid=M81Oh&paid=o_2138f87b"
+        style="aspect-ratio: 4 / 3; width: 100%;"
+      ></iframe>
+    </div>
+
+    <div class="model-card">
+      <div class="model-info">
+        <h2>Sistemul reproducător masculin</h2>
+      </div>
+      <iframe
+        id="embedded-male-repro"
+        frameborder="0"
+        allowfullscreen="true"
+        loading="lazy"
+        src="https://human.biodigital.com/viewer/?id=6GY9&ui-anatomy-descriptions=true&ui-anatomy-pronunciations=true&ui-anatomy-labels=true&ui-audio=true&ui-chapter-list=false&ui-fullscreen=true&ui-help=true&ui-info=true&ui-label-list=true&ui-layers=true&ui-skin-layers=true&ui-loader=circle&ui-media-controls=full&ui-menu=true&ui-nav=true&ui-search=true&ui-tools=true&ui-tutorial=true&ui-undo=true&ui-whiteboard=true&initial.hand=true&disable-scroll=false&uaid=M81Os&paid=o_2138f87b"
+        style="aspect-ratio: 4 / 3; width: 100%;"
+      ></iframe>
+    </div>
+
+  </div>
+
+  <a href="modele3d.html" class="back-button-fixed">⟵ Înapoi</a>
+
+  <footer>
+    &copy; 2025 AnatomIQ | Proiect educațional
+  </footer>
+<script>
+  // Se aplică clasa .dark pe body dacă userul a salvat-o anterior
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+  const icon = document.querySelector("#theme-toggle i");
+  icon.classList.remove("bx-moon");
+  icon.classList.add("bx-sun");
+}
+
+function toggleTheme() {
+  const icon = document.querySelector("#theme-toggle i");
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    icon.classList.remove("bx-moon");
+    icon.classList.add("bx-sun");
+    localStorage.setItem("theme", "dark");
+  } else {
+    icon.classList.remove("bx-sun");
+    icon.classList.add("bx-moon");
+    localStorage.setItem("theme", "light");
+  }
+}
+</script>
+</body>
+</html>

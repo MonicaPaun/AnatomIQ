@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>🧬 Test - Țesuturile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/teste/css/tesuturi.css">
+   <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="../../assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+  
+  
+</head>
+<body>
+ <!-- Light/Dark toggle bottom-right -->
+  <div id="theme-toggle" onclick="toggleTheme()" class="bottom-right">
+    <i class="bx bx-moon"></i>
+  </div>
+
+<h2>🧬 Test Biologie - Țesuturile</h2>
+
+<form id="quizForm">
+    <!-- Question 1 -->
+    <div class="question">
+        <label>1. Ce este un țesut?</label>
+        <div class="quiz-option"><input type="radio" name="q1" value="a"> O grupare de celule cu forme și funcții diferite</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="b"> O grupare de celule care au aceeași formă, origine, structură și funcție</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="c"> Un organ format din diferite tipuri de celule</div>
+        <div class="quiz-option"><input type="radio" name="q1" value="d"> O structură care nu conține celule</div>
+        <div class="explanation" id="explanation-q1"></div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <label>2. Care este știința care se ocupă cu studiul țesuturilor?</label>
+        <div class="quiz-option"><input type="radio" name="q2" value="a"> Histologia</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="b"> Anatomia</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="c"> Biologia celulară</div>
+        <div class="quiz-option"><input type="radio" name="q2" value="d"> Genetica</div>
+        <div class="explanation" id="explanation-q2"></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <label>3. Care este diferența principală între țesuturile vegetale meristematice și cele definitive?</label>
+        <div class="quiz-option"><input type="radio" name="q3" value="a"> Celulele din țesuturile meristematice nu se divid</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="b"> Celulele din țesuturile definitive se divid continuu</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="c"> Celulele din țesuturile meristematice se divid continuu, iar în cele definitive nu se mai divid</div>
+        <div class="quiz-option"><input type="radio" name="q3" value="d"> Nu există nicio diferență între aceste tipuri de țesuturi</div>
+        <div class="explanation" id="explanation-q3"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <label>4. Ce rol au meristemele apicale la plante?</label>
+        <div class="quiz-option"><input type="radio" name="q4" value="a"> Creșterea în grosime a plantei</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="b"> Creșterea în lungime a plantei</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="c"> Stocarea apei</div>
+        <div class="quiz-option"><input type="radio" name="q4" value="d"> Transportul nutrienților</div>
+        <div class="explanation" id="explanation-q4"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <label>5. Ce rol au țesuturile definitive de apărare?</label>
+        <div class="quiz-option"><input type="radio" name="q5" value="a"> Produc substanțe nutritive pentru plantă</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="b"> Protejează plantele prin acoperirea organelor</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="c"> Asigură creșterea plantei în grosime</div>
+        <div class="quiz-option"><input type="radio" name="q5" value="d"> Realizează transportul apei și nutrienților</div>
+        <div class="explanation" id="explanation-q5"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <label>6. Ce tip de țesut vegetal este responsabil cu transportul sevei brute (apă și substanțe anorganice)?</label>
+        <div class="quiz-option"><input type="radio" name="q6" value="a"> Țesuturile de apărare</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="b"> Țesuturile fundamentale</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="c"> Țesuturile conducătoare</div>
+        <div class="quiz-option"><input type="radio" name="q6" value="d"> Țesuturile mecanice</div>
+        <div class="explanation" id="explanation-q6"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+        <label>7. Care este funcția principală a țesuturilor mecanice (de susținere) în plante?</label>
+        <div class="quiz-option"><input type="radio" name="q7" value="a"> Protejarea organelor plantei</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="b"> Asigurarea transportului sevei</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="c"> Oferirea rezistenței pentru susținerea greutății plantei</div>
+        <div class="quiz-option"><input type="radio" name="q7" value="d"> Creșterea în grosime a plantei</div>
+        <div class="explanation" id="explanation-q7"></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <label>8. Care tip de țesut epitelial se găsește în mucoasa traheală?</label>
+        <div class="quiz-option"><input type="radio" name="q8" value="a"> Epitelii de acoperire unistratificate</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="b"> Epitelii de acoperire pluristratificate</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="c"> Epitelii de acoperire pseudostratificate</div>
+        <div class="quiz-option"><input type="radio" name="q8" value="d"> Epitelii secretoare</div>
+        <div class="explanation" id="explanation-q8"></div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+        <label>9. Ce tip de țesut muscular se găsește în pereții organelor interne?</label>
+        <div class="quiz-option"><input type="radio" name="q9" value="a"> Țesut muscular striat</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="b"> Țesut muscular neted</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="c"> Țesut muscular cardiac</div>
+        <div class="quiz-option"><input type="radio" name="q9" value="d"> Nu există țesuturi musculare în organele interne</div>
+        <div class="explanation" id="explanation-q9"></div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+        <label>10. Ce rol au celulele gliale în țesutul nervos?</label>
+        <div class="quiz-option"><input type="radio" name="q10" value="a"> Produc impulsuri nervoase</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="b"> Susțin și hrănesc neuronii, ocupă locul acestora când sunt distruși</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="c"> Transportă impulsurile nervoase</div>
+        <div class="quiz-option"><input type="radio" name="q10" value="d"> Nu au rol în țesutul nervos</div>
+        <div class="explanation" id="explanation-q10"></div>
+    </div>
+
+    <button type="button" onclick="evaluateQuiz()">Evaluare</button>
+</form>
+
+<div id="results"></div>
+
+<button onclick="window.location.href='../../teste.html';" style="position: fixed; bottom: 20px; left: 20px; padding: 10px 20px; background-color: #00796b; color: white; font-size: 18px; border: none; border-radius: 30px; cursor: pointer; transition: background-color 0.3s ease; box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);">
+  ⟵ Înapoi la Teste
+</button>
+
+
+<script src="../../assets/js/script-activitate.js"></script>
+<script src="../../assets/teste/traduceri/tes.js"></script>
+<script src="../../assets/teste/js/tesuturi.js"></script>
+</body>
+</html>

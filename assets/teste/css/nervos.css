@@ -1,0 +1,348 @@
+body {
+  background: linear-gradient(135deg, #cce7ff, #e1f5fe); /* Albastru pal și un albastru mai deschis */
+  font-family: 'Poppins', sans-serif;
+  color: #003366; /* Albastru închis pentru text */
+  padding: 40px 20px;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  color: #003366; /* Albastru închis pentru titlu */
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 4px rgba(0, 51, 102, 0.2); /* Umbră în albastru închis */
+}
+
+form {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #cce7ff; /* Fond în albastru pal */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.question {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.question label {
+  display: block;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #003366; /* Albastru închis pentru text */
+}
+
+.quiz-option {
+  background: #ffffff; /* Fond alb pentru opțiuni */
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.quiz-option:hover {
+  background-color: #e1f5fe; /* Albastru foarte pal la hover */
+  border-color: #003366; /* Albastru închis la hover */
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #003366; /* Albastru închis pentru radio/checkbox */
+  transform: scale(1.2);
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #cce7ff; /* Albastru pal pentru border */
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+button {
+  display: block;
+  margin: 40px auto 0;
+  padding: 14px 32px;
+  background: linear-gradient(90deg, #003366, #1e3a8a); /* Gradient între albastru închis și albastru mai deschis */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 51, 102, 0.4);
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #002244, #1e3a8a); /* Hover cu nuanțe mai intense de albastru închis */
+}
+
+#results {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #003366; /* Albastru închis pentru textul rezultatelor */
+  margin-top: 35px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.correct {
+  border-color: #66bb6a !important; /* Verde pentru corect */
+  background-color: #e8f5e9 !important;
+}
+
+.wrong {
+  border-color: #ef5350 !important; /* Roșu pentru greșit */
+  background-color: #ffebee !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.explanation {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #cce7ff; /* Fond în albastru pal */
+  border-left: 4px solid #003366; /* Linie laterală albastru închis */
+  color: #003366; /* Albastru închis pentru textul explicațiilor */
+  font-style: italic;
+  animation: fadeIn 0.4s ease-in-out;
+}
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  form {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .question label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .quiz-option {
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 12px 28px;
+    margin-top: 30px;
+  }
+
+  #results {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+
+  .explanation {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+/* Pentru telefoane foarte mici, ex. max 400px */
+@media (max-width: 400px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  .question label {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+}
+
+   /* LIGHT/DARK SWITCHER */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: #fff;
+    color: #8b0000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+/* =============================== */
+/* DARK MODE - albastru închis      */
+/* =============================== */
+
+body.dark {
+  background: linear-gradient(135deg, #003366, #001f4d); /* albastru închis foarte intens */
+  color: #cce7ff; /* albastru pal pentru text */
+  padding: 40px 20px;
+  margin: 0;
+}
+
+body.dark h2 {
+  color: #cce7ff; /* albastru pal pentru titlu */
+  text-shadow: 1px 1px 5px rgba(204, 231, 255, 0.7);
+}
+
+body.dark form {
+  background: #001f4d; /* albastru foarte închis pentru fundal */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+body.dark .question label {
+  color: #cce7ff;
+}
+
+body.dark .quiz-option {
+  background: #004080; /* albastru mediu */
+  border: 2px solid transparent;
+  color: #e1f5fe; /* albastru foarte deschis */
+  transition: 0.25s ease;
+}
+
+body.dark .quiz-option:hover {
+  background-color: #3399ff; /* albastru deschis la hover */
+  border-color: #cce7ff;
+  color: #001f4d;
+}
+
+body.dark input[type="radio"],
+body.dark input[type="checkbox"] {
+  accent-color: #cce7ff; /* albastru pal */
+}
+
+body.dark input[type="text"] {
+  background: #003366;
+  border: 2px solid #3399ff;
+  color: #e1f5fe;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+body.dark input[type="text"]::placeholder {
+  color: #cce7ff;
+}
+
+body.dark button {
+  background: linear-gradient(90deg, #003366, #001f4d);
+  box-shadow: 0 5px 15px rgba(0, 51, 102, 0.8);
+  color: #cce7ff;
+  transition: 0.3s ease;
+}
+
+body.dark button:hover {
+  background: linear-gradient(90deg, #001f4d, #3399ff);
+  transform: scale(1.05);
+}
+
+body.dark #results {
+  color: #cce7ff;
+}
+
+body.dark .correct {
+  border-color: #66bb6a !important; /* verde deschis */
+  background-color: #004d40 !important; /* verde-închis, contrast bun */
+  color: #cce7ff !important;
+}
+
+body.dark .wrong {
+  border-color: #ef5350 !important; /* roșu deschis */
+  background-color: #b71c1c !important; /* roșu intens */
+  color: #ffcdd2 !important;
+}
+
+body.dark .explanation {
+  background-color: #001f4d;
+  border-left: 4px solid #3399ff;
+  color: #cce7ff;
+  font-style: italic;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  body.dark form {
+    padding: 20px;
+    border-radius: 15px;
+  }
+  body.dark .question label {
+    font-size: 16px;
+  }
+  body.dark .quiz-option {
+    padding: 8px 12px;
+  }
+  body.dark input[type="text"] {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  body.dark button {
+    font-size: 18px;
+    padding: 12px 28px;
+    margin-top: 30px;
+  }
+  body.dark #results {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+  body.dark .explanation {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  body.dark h2 {
+    font-size: 24px;
+  }
+  body.dark .question label {
+    font-size: 14px;
+  }
+  body.dark button {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+}

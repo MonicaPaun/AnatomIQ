@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="text_001">Sistemul endocrin</title>
+  <!-- Faviconuri pentru toate dispozitivele -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/poze/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poze/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/poze/favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poze/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/poze/favicon_io/android-chrome-512x512.png">
+
+
+<!-- Clasic .ico pentru fallback pe browsere vechi -->
+<link rel="shortcut icon" href="assets/poze/favicon_io/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<!--Google Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles-endocrin.css">
+</head>
+
+
+  
+<body>
+     <!-- Butonul pentru meniul retractabil -->
+   <div id="menu-toggle" class="menu-toggle">
+    <i class="bx bx-menu"></i> <!-- Iconița pentru meniu -->
+  </div>
+ <!-- Buton Notițe în colțul dreapta sus -->
+<div id="notite-btn-container" class="top-right">
+  <button id="notiteBtn" class="notite-btn" onclick="toggleNotite()">
+    <i class="bx bx-notepad"></i><span data-i18n="text_00">Notițe</span> 
+  </button>
+</div>
+
+<!-- Panoul Notițe -->
+<div id="notitePanel" class="notite-panel">
+  <div class="notite-header">
+    <span data-i18n="text_0">Notițele mele</span>
+    <span class="close-small" onclick="toggleNotite()" data-i18n="text_1">×</span>
+  </div>
+  <iframe src="notite1.html"></iframe>
+</div>
+
+<div id="side-menu" class="side-menu">
+  <ul>
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-book-open"></i><span data-i18n="side_menu_intro">Noțiuni generale</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#ce-este"><i class="bx bx-question-mark"></i> <span data-i18n="side_menu_definitie">Ce este sistemul endocrin?</span></a></li>
+        </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-network-chart"></i> <span data-i18n="side_menu_glande_principale">Glande endocrine principale</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#hipotalamus"><i class="bx bx-brain"></i> <span data-i18n="side_menu_hipotalamus">Hipotalamus</span></a></li>
+        <li><a href="#hipofiza"><i class="bx bx-star"></i> <span data-i18n="side_menu_hipofiza">Hipofiza (glanda pituitară)</span></a></li>
+        <li><a href="#tiroida"><i class="bx bx-wind"></i> <span data-i18n="side_menu_tiroida">Glanda tiroidă</span></a></li>
+        <li><a href="#paratiroide"><i class="bx bx-layer"></i> <span data-i18n="side_menu_paratiroide">Glandele paratiroide</span></a></li>
+        <li><a href="#suprarenale"><i class="bx bx-shield"></i> <span data-i18n="side_menu_suprarenale">Glandele suprarenale</span></a></li>
+        <li><a href="#pancreas"><i class="bx bx-droplet"></i> <span data-i18n="side_menu_pancreas">Pancreas endocrin</span></a></li>
+        <li><a href="#gonade"><i class="bx bx-gender-female"></i> <span data-i18n="side_menu_gonade">Gonade (testicule și ovare)</span></a></li>
+      </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-git-merge"></i> <span data-i18n="side_menu_mecanisme">Mecanisme și reglare</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#mecanisme_actiune"><i class="bx bx-dialpad"></i> <span data-i18n="side_menu_mecanisme_actiune">Mecanisme de acțiune hormonală</span></a></li>
+        <li><a href="#reglare"><i class="bx bx-refresh"></i> <span data-i18n="side_menu_reglare">Reglarea activității hormonale</span></a></li>
+      </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#"><i class="bx bx-bug"></i> <span data-i18n="side_menu_afectiuni">Afecțiuni ale sistemului endocrin</span> <i class="bx bx-chevron-down arrow"></i></a>
+      <ul class="submenu">
+        <li><a href="#patologii"><i class="bx bx-error-alt"></i> <span data-i18n="side_menu_patologii">Patologii endocrine</span></a></li>
+      </ul>
+    </li>
+
+    <li >
+      <a href="#elementeavansate"><i class="bx bx-map"></i><span data-i18n="side_menu_avansat">Elemente avansate</span></a>
+     
+    </li>
+
+    
+  </ul>
+</div>
+
+
+       
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <h1 data-i18n="text_2">Sistemul endocrin</h1>
+    <p data-i18n="text_3">Descoperă structura și funcțiile sistemului endocrin.</p>
+  <div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Caută..." autocomplete="off">
+  <div id="searchInfo" style="font-size: 0.9em; margin-top: 4px; color: #555;"></div>
+</div>
+  </header>
+
+ <div id="searchContainer">
+<!-- CE ESTE? -->
+<section id="ce-este" class="section">
+  <h2 data-i18n="text_4">Ce este sistemul endocrin?</h2>
+  <div class="content-wrapper">
+   <p data-i18n="text_5">
+      Sistemul endocrin este un ansamblu de glande care secretă hormoni direct în sânge. Acest sistem reglează funcțiile organismului precum metabolismul, creșterea, reproducerea și menținerea echilibrului intern. Spre deosebire de sistemul nervos, sistemul endocrin acționează lent și are efecte de durată, folosind mesageri chimici numiți hormoni.
+    </p>
+    <img src="assets/poze/sistemul-endocrin.jpg" alt="Sistemul endocrin" class="center-img dynamic-img">
+  </div>
+</section>
+
+
+<section id="hipotalamus" class="section">
+  <h2>Hipotalamus</h2>
+  <div class="hipo-grid">
+    <div class="hipo-card">
+      <h3>Localizare</h3>
+      <p>Sub talamus, în encefal.</p>
+    </div>
+    <div class="hipo-card">
+      <h3>Rol</h3>
+      <p>Conectează sistemul nervos cu sistemul endocrin.</p>
+    </div>
+    <div class="hipo-card">
+      <h3>Hormoni secretați</h3>
+      <ul>
+        <li>Factori de eliberare (ex. TRH, CRH, GnRH)</li>
+        <li>Oxitocină și ADH (transportați în hipofiza posterioară)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+ <section id="hipofiza" class="section">
+  <h2>Hipofiza (Glanda Pituitară)</h2>
+  <div class="hipo-grid">
+    <div class="hipo-card">
+      <h3>Lob anterior (Adenohipofiză)</h3>
+      <p><strong>Hormonii:</strong></p>
+      <ul>
+        <li>GH – hormon de creștere</li>
+        <li>TSH – stimulează tiroida</li>
+        <li>ACTH – stimulează corticosuprarenala</li>
+        <li>FSH, LH – reglare sexuală</li>
+        <li>PRL – stimulează lactația</li>
+      </ul>
+      <p><strong>Funcție:</strong> Reglează alte glande și creșterea</p>
+    </div>
+    <div class="hipo-card">
+      <h3>Lob posterior (Neurohipofiză)</h3>
+      <p><strong>Hormonii:</strong></p>
+      <ul>
+        <li>ADH – retenție de apă</li>
+        <li>Oxitocină – contracții uterine, secreție lactată</li>
+      </ul>
+      <p><strong>Funcție:</strong> Control direct, fără sinteză locală</p>
+    </div>
+  </div>
+</section>
+<section id="tiroida" class="section">
+  <h2>Tiroida</h2>
+  <div class="hipo-grid">
+    <div class="hipo-card">
+      <h3>Localizare</h3>
+      <p>Anterior de trahee, sub cartilajul tiroid.</p>
+    </div>
+    <div class="hipo-card">
+      <h3>Hormonii secretați</h3>
+      <ul>
+        <li>T3 (triiodotironină)</li>
+        <li>T4 (tiroxină)</li>
+        <li>Calcitonină</li>
+      </ul>
+    </div>
+    <div class="hipo-card">
+      <h3>Funcții</h3>
+      <ul>
+        <li>Reglează metabolismul general</li>
+        <li>Susține dezvoltarea</li>
+        <li>Calcitonina ↓ calciul sanguin</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="paratiroide" class="section">
+  <h2>Glandele Paratiroide</h2>
+  <div class="hipo-grid">
+    <div class="hipo-card">
+      <h3>Număr & Locație</h3>
+      <p>4 glande mici situate pe fața posterioară a tiroidei</p>
+    </div>
+    <div class="hipo-card">
+      <h3>Hormon</h3>
+      <p>Parathormon (PTH)</p>
+    </div>
+    <div class="hipo-card">
+      <h3>Funcție</h3>
+      <p>Crește nivelul calciului în sânge prin acțiune asupra oaselor, rinichilor și intestinului</p>
+    </div>
+  </div>
+</section>
+<section id="suprarenale" class="section">
+  <h2>Glandele Suprarenale</h2>
+  <div class="hipo-grid">
+    <div class="hipo-card">
+      <h3>Cortex suprarenal</h3>
+      <ul>
+        <li><strong>Mineralocorticoizi</strong> (ex. aldosteron) – echilibru hidroelectrolitic</li>
+        <li><strong>Glucocorticoizi</strong> (ex. cortizol) – metabolism, stres</li>
+        <li><strong>Androgeni</strong> – hormoni sexuali (cantitate mică)</li>
+      </ul>
+    </div>
+    <div class="hipo-card">
+      <h3>Medulă suprarenală</h3>
+      <ul>
+        <li>Adrenalină</li>
+        <li>Noradrenalină</li>
+      </ul>
+      <p>Răspuns rapid „luptă sau fugi” (fight or flight)</p>
+    </div>
+  </div>
+</section>
+<section id="pancreas" class="section">
+  <h2>Pancreas Endocrin</h2>
+  <div class="hipo-grid">
+    <div class="hipo-card">
+      <h3>Structură</h3>
+      <p>Insulele Langerhans (celule β, α, δ)</p>
+    </div>
+    <div class="hipo-card">
+      <h3>Hormonii secretați</h3>
+      <ul>
+        <li>Insulină (β) – ↓ glicemie</li>
+        <li>Glucagon (α) – ↑ glicemie</li>
+        <li>Somatostatină (δ) – inhibă ceilalți hormoni</li>
+      </ul>
+    </div>
+    <div class="hipo-card">
+      <h3>Funcție</h3>
+      <p>Reglarea glicemiei</p>
+    </div>
+  </div>
+</section>
+<section id="gonade" class="section">
+  <h2>Gonade (Testicule și Ovare)</h2>
+  <div class="hipo-grid">
+    <div class="hipo-card">
+      <h3>Testicule</h3>
+      <ul>
+        <li><strong>Hormon:</strong> Testosteron (celulele Leydig)</li>
+        <li><strong>Funcții:</strong> dezvoltare sexuală masculină, spermatogeneză</li>
+      </ul>
+    </div>
+    <div class="hipo-card">
+      <h3>Ovare</h3>
+      <ul>
+        <li><strong>Estrogeni</strong> – dezvoltare feminină, ciclu menstrual</li>
+        <li><strong>Progesteron</strong> – menținerea sarcinii, faza luteală</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="mecanisme_actiune">
+  <h2>🔄 Mecanisme de Acțiune Hormonală</h2>
+  <div class="card-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h3>💧 Hormon Hidrosolubil</h3>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Receptor:</strong> Membranar</p>
+          <p><strong>Locație:</strong> Membrana celulară</p>
+          <p><strong>Exemple:</strong> Insulină, ADH</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h3>💊 Hormon Liposolubil</h3>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Receptor:</strong> Nuclear</p>
+          <p><strong>Locație:</strong> Nucleu</p>
+          <p><strong>Exemple:</strong> Cortizol, T3/T4</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reglare">
+  <h2> REGLAREA ACTIVITĂȚII HORMONALE</h2>
+
+  <!-- Tabs fără JS -->
+  <input type="radio" name="tabset" id="tab1" checked>
+  <input type="radio" name="tabset" id="tab2">
+
+  <div class="tab-labels">
+    <label for="tab1">❌ Feedback negativ</label>
+    <label for="tab2">✅ Feedback pozitiv</label>
+  </div>
+
+  <div class="content">
+    <div id="tab1-content" class="tab-content">
+      <table class="reglare-table">
+        <thead>
+          <tr><th>Exemplu</th><th>Mecanism</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TSH ↔ T3/T4</td>
+            <td>Nivelul crescut de T3/T4 inhibă secreția de TSH</td>
+          </tr>
+          <tr>
+            <td>ACTH ↔ Cortizol</td>
+            <td>Cortizolul în exces inhibă hipotalamusul și hipofiza</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="tab2-content" class="tab-content">
+      <table class="reglare-table">
+        <thead>
+          <tr><th>Exemplu</th><th>Mecanism</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Oxitocină în naștere</td>
+            <td>Contracțiile uterine stimulează eliberarea continuă de oxitocină</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="patologii">
+  <h2>PATOLOGII ENDOCRINE</h2>
+  <table class="tabel-patologii">
+    <thead>
+      <tr>
+        <th>Afectare</th>
+        <th>Hormon implicat</th>
+        <th>Manifestări</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hipotiroidism</td>
+        <td>↓ T3/T4</td>
+        <td>Creștere în greutate, lentoare</td>
+      </tr>
+      <tr>
+        <td>Hipertiroidism</td>
+        <td>↑ T3/T4</td>
+        <td>Slăbire, tahicardie, nervozitate</td>
+      </tr>
+      <tr>
+        <td>Diabet zaharat tip 1</td>
+        <td>↓ Insulină (autoimun)</td>
+        <td>Glicemie crescută, poliurie</td>
+      </tr>
+      <tr>
+        <td>Boala Addison</td>
+        <td>↓ Cortizol / Aldosteron</td>
+        <td>Slăbiciune, hipotensiune</td>
+      </tr>
+      <tr>
+        <td>Sindrom Cushing</td>
+        <td>↑ Cortizol</td>
+        <td>Obezitate facială, hipertensiune</td>
+      </tr>
+      <tr>
+        <td>Gigantism / Acromegalie</td>
+        <td>↑ GH</td>
+        <td>Creștere exagerată</td>
+      </tr>
+      <tr>
+        <td>Nanism hipofizar</td>
+        <td>↓ GH</td>
+        <td>Statură mică</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section id="elementeavansate">
+  <h2> ELEMENTE AVANSATE</h2>
+
+  <!-- Subsecțiunea: Axe hormonale -->
+  <div class="subsectiune">
+    <h3>⚙️ Control integrat – Axe hormonale</h3>
+
+    <details>
+      <summary>🔸 Axul hipotalamo-hipofizo-tiroidian</summary>
+      <p><strong>Secvență:</strong> TRH → TSH → T3/T4</p>
+      <p><strong>Rol:</strong> Reglează metabolismul și dezvoltarea generală.</p>
+    </details>
+
+    <details>
+      <summary>🔸 Axul hipotalamo-hipofizo-suprarenal</summary>
+      <p><strong>Secvență:</strong> CRH → ACTH → Cortizol</p>
+      <p><strong>Rol:</strong> Activează răspunsul la stres și metabolismul glucidic.</p>
+    </details>
+
+    <details>
+      <summary>🔸 Axul hipotalamo-hipofizo-gonadal</summary>
+      <p><strong>Secvență:</strong> GnRH → FSH/LH → Estrogen/Testosteron</p>
+      <p><strong>Rol:</strong> Controlează funcțiile sexuale și reproducerea.</p>
+    </details>
+  </div>
+
+  <!-- Subsecțiunea: Receptori -->
+  <div class="subsectiune">
+    <h3>🔍 Receptori și transducție de semnal</h3>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Tip receptor</th>
+            <th>Semnalizare</th>
+            <th>Exemple</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GPCR (cu proteină G)</td>
+            <td>AMPc, fosfolipază C</td>
+            <td>ADH, TSH</td>
+          </tr>
+          <tr>
+            <td>Receptori enzimatici</td>
+            <td>Tirozin-kinază</td>
+            <td>Insulină</td>
+          </tr>
+          <tr>
+            <td>Receptori nucleari</td>
+            <td>Modifică expresia genică</td>
+            <td>Cortizol, T3/T4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+
+</div>
+
+ <!-- ÎNAPOI -->
+  <div class="buttons" style="margin-bottom: 3rem;">
+    <button id="goBackBtn" data-i18n="text_233">Înapoi la Sisteme</button>
+  </div>
+
+  <!-- SWITCH TEMĂ -->
+  <div id="theme-toggle" onclick="toggleTheme()">
+    <i class="bx bx-moon"></i>
+  </div>
+<button id="scrollTopBtn" title="Du-te sus" style="display: flex;">
+  <i class="bx bx-up-arrow-alt"></i>
+</button>
+
+
+<!-- Buton deschidere ChatBot -->
+<div id="chat-toggle"><i class="bx bx-bot"></i></div>
+
+<!-- Fereastra ChatBot -->
+<div id="chat-box">
+  <div id="chat-header">
+    <span data-i18n="text_234">BioBot</span>
+    <button id="chat-close" data-i18n="text_235">✖</button>
+  </div>
+  <iframe src="bio-bot2.html"></iframe>
+</div>
+
+<select id="lang-select">
+  <option value="ro" data-i18n="text_499">Română</option>
+  <option value="en" data-i18n="text_500">Engleză</option>
+  <option value="es" data-i18n="text_501">Spaniolă</option>
+  <option value="zh" data-i18n="text_502">Chineză</option>
+  <option value="ar" data-i18n="text_503">Arabă</option>
+  <option value="hi" data-i18n="text_504">Hindi</option>
+  <option value="fr" data-i18n="text_505">Franceză</option>
+  <option value="ru" data-i18n="text_506">Rusă</option>
+</select>
+
+
+
+
+
+
+  <script src="assets/js/script-endocrin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="assets/js/script-activitate.js"></script>
+<script src="assets/traducerile/endocrin-traducere.js"></script>
+</body>
+</html>
