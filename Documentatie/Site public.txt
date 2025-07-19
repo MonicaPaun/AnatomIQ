@@ -3,7 +3,3 @@ Site public
 
 https://anatomiq.netlify.app/
 
-
-Site GitHub:
-
-https://github.com/MonicaPaun/AnatomIQ-InfoEducatie
